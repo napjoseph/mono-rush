@@ -1,3 +1,6 @@
 {
-  "recommendations": ["eamodio.toggle-excluded-files"]
+  "recommendations": [
+    "eamodio.toggle-excluded-files",
+    "folke.vscode-monorepo-workspace"
+  ]
 }

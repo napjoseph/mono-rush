@@ -1,5 +1,4 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 100],
   "editor.formatOnSave": true,
@@ -9,8 +8,8 @@
   "toggleexcludedfiles.statusBar.enabled": true,
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "files.associations": {
-    ".vscode/*.json": "jsonc",
-    "common/*/**/*.json": "jsonc",
+    "**/.vscode/*.json": "jsonc",
+    "**/common/config/rush/*.json": "jsonc",
     "rush.json": "jsonc"
   },
   "files.exclude": {
