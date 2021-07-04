@@ -18,6 +18,13 @@ nvm use
 nvm install
 ```
 
+Install pnpm globally:
+
+```shell
+# if pnpm version is updated, also update listing in rush.json
+npm i -g pnpm@6.9.1
+```
+
 Install `rush` globally:
 
 ```shell
@@ -25,7 +32,7 @@ Install `rush` globally:
 npm i -g @microsoft/rush@5.47.0
 ```
 
-To install the dependencies:
+To install the dependencies using `rush`:
 
 ```shell
 rush install
