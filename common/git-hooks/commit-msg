@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This command runs https://github.com/jvanbruegge/commithelper
+# and checks if the commit message follows the config specified in package.json.
+node common/scripts/install-run.js commithelper@1.2.0 commithelper check --file $1 --fix || exit $?

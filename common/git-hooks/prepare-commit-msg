@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This command runs https://github.com/jvanbruegge/commithelper
+# and creates a commit message that follows the config specified in package.json.
+exec < /dev/tty && node common/scripts/install-run.js commithelper@1.2.0 commithelper prompt --file $1
