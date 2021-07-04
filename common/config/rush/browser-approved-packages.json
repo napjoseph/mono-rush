@@ -1,0 +1,106 @@
+// DO NOT ADD COMMENTS IN THIS FILE.  They will be lost when the Rush tool resaves it.
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
+  "packages": [
+    {
+      "name": "@babel/core",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "@testing-library/react",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "autoprefixer",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "babel-jest",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "eslint",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "eslint-config-next",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "eslint-config-prettier",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "eslint-plugin-react",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "identity-obj-proxy",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "jest",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "jest-watch-typeahead",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "next",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "postcss",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "prettier",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "react",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "react-dom",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "sass",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "stylelint",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "stylelint-config-prettier",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "stylelint-config-recommended",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "stylelint-prettier",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "tailwindcss",
+      "allowedCategories": [ "prototypes" ]
+    },
+    {
+      "name": "typescript",
+      "allowedCategories": [ "prototypes" ]
+    }
+  ]
+}

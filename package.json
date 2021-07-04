@@ -1,6 +1,7 @@
 {
   "name": "mono-rush",
   "description": "a monorepo using rush",
+  "version": "0.0.0",
   "private": true,
   "commithelper": {
     "subjectLimit": 50,
@@ -44,6 +45,10 @@
       }
     ],
     "scopes": [
+      {
+        "name": "starters-nextjs",
+        "message": "anything related to the starters-nextjs project"
+      },
       {
         "name": "repo",
         "message": "anything related to managing the repository"
