@@ -175,6 +175,18 @@
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "rush-prettier",
       "shellCommand": "pretty-quick --staged"
+    },
+
+    // testing
+    {
+      "name": "test",
+      "commandKind": "bulk",
+      "summary": "Run the testing suite for each project",
+      "safeForSimultaneousRushProcesses": true,
+      "enableParallelism": true,
+      "ignoreDependencyOrder": true,
+      "ignoreMissingScript": true,
+      "incremental": true
     }
   ],
 
