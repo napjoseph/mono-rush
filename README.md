@@ -71,6 +71,7 @@ rush update
 
 | package | folder | category |
 | ------- | ------ | -------- |
+| `calub-web` | [apps/calub/web](./apps/calub/web) | `production` |
 | `starters-nextjs` | [apps/starters/nextjs](./apps/starters/nextjs) | `prototypes` |
 
 ## Contributing

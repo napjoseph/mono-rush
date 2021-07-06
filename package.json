@@ -46,6 +46,10 @@
     ],
     "scopes": [
       {
+        "name": "calub-web",
+        "message": "anything related to the calub-web project"
+      },
+      {
         "name": "starters-nextjs",
         "message": "anything related to the starters-nextjs project"
       },

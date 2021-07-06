@@ -449,6 +449,11 @@
     //   "reviewCategory": "tools"
     // }
     {
+      "packageName": "calub-web",
+      "projectFolder": "apps/calub/web",
+      "reviewCategory": "production"
+    },
+    {
       "packageName": "starters-nextjs",
       "projectFolder": "apps/starters/nextjs",
       "reviewCategory": "prototypes"

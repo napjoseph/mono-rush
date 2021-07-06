@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/core': ^7.14.6
+  '@rush-temp/calub-web': file:./projects/calub-web.tgz
   '@rush-temp/starters-nextjs': file:./projects/starters-nextjs.tgz
   '@testing-library/react': ^11.2.5
   '@types/jest': ^26.0.23
@@ -33,6 +34,7 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.14.6
+  '@rush-temp/calub-web': file:projects/calub-web.tgz
   '@rush-temp/starters-nextjs': file:projects/starters-nextjs.tgz
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@types/jest': 26.0.23
@@ -6497,6 +6499,51 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
+    dev: false
+
+  file:projects/calub-web.tgz:
+    resolution: {integrity: sha512-5yvZtIryAWS+yM6Z+5wgoPMfTn4pSOGXtP4DqU+zMNdI42S0VXXvTvqn0Ca7jhlbWrTVjEHOMnqBUNVkTEb2Jw==, tarball: file:projects/calub-web.tgz}
+    name: '@rush-temp/calub-web'
+    version: 0.0.0
+    dependencies:
+      '@babel/core': 7.14.6
+      '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
+      '@types/jest': 26.0.23
+      '@types/node': 14.17.4
+      '@types/react': 17.0.13
+      '@typescript-eslint/eslint-plugin': 4.28.2_5031fffb45dfb7117e61c1d8ea1ef3ff
+      '@typescript-eslint/parser': 4.28.2_eslint@7.30.0+typescript@4.3.5
+      autoprefixer: 10.2.6_postcss@8.3.5
+      babel-jest: 27.0.6_@babel+core@7.14.6
+      eslint: 7.30.0
+      eslint-config-next: 11.0.1_6b78ba35645ed557addbb8714920eb26
+      eslint-config-prettier: 7.2.0_eslint@7.30.0
+      eslint-plugin-react: 7.24.0_eslint@7.30.0
+      identity-obj-proxy: 3.0.0
+      jest: 27.0.6
+      jest-watch-typeahead: 0.6.4_jest@27.0.6
+      next: 11.0.1_8883d385509e392cb15b31185fe8b293
+      postcss: 8.3.5
+      prettier: 2.3.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      sass: 1.35.1
+      stylelint: 13.13.1
+      stylelint-config-prettier: 8.0.2_stylelint@13.13.1
+      stylelint-config-recommended: 5.0.0_stylelint@13.13.1
+      stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
+      tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - fibers
+      - node-notifier
+      - node-sass
+      - supports-color
+      - ts-node
+      - utf-8-validate
+      - webpack
     dev: false
 
   file:projects/starters-nextjs.tgz:

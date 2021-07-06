@@ -5,6 +5,10 @@
       "path": "."
     },
     {
+      "name": "apps/calub/web",
+      "path": "apps/calub/web"
+    },
+    {
       "name": "apps/starters/nextjs",
       "path": "apps/starters/nextjs"
     }
