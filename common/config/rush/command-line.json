@@ -177,6 +177,18 @@
       "shellCommand": "pretty-quick --staged"
     },
 
+    // exporter
+    {
+      "name": "export",
+      "commandKind": "bulk",
+      "summary": "Run the exporter for each project",
+      "safeForSimultaneousRushProcesses": true,
+      "enableParallelism": true,
+      "ignoreDependencyOrder": true,
+      "ignoreMissingScript": true,
+      "incremental": true
+    },
+
     // testing
     {
       "name": "test",
