@@ -11,8 +11,14 @@ Also includes configuration for:
 ## Local Development
 
 ```
+# use version defined in .nvmrc
+nvm use
+
+# install if not available
+nvm install
+
 # open workspace on vscode
-code mono-rush.code-workspace
+code default.code-workspace
 
 # install dependencies
 rush update
@@ -27,5 +33,5 @@ rushx dev
 rushx --help
 
 # adding new dependencies
-rush add --dev --package package-name
+rush add --dev --package <package-name>
 ```

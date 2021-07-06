@@ -12,14 +12,14 @@ It's recommended to use [Visual Studio Code](https://code.visualstudio.com/Downl
 
 ```shell
 # open the default vscode workspace
-code mono-rush.code-workspace
+code default.code-workspace
 ```
 
 You can also create your own workspace if you want:
 
 ```shell
 # clone the default workspace
-cp mono-rush.code-workspace your-custom-workspace.code-workspace
+cp default.code-workspace your-custom-workspace.code-workspace
 
 # open and update the settings to your liking
 code your-custom-workspace.code-workspace
