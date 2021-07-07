@@ -7,6 +7,26 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "@fortawesome/fontawesome-svg-core",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@fortawesome/free-brands-svg-icons",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@fortawesome/free-regular-svg-icons",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@fortawesome/free-solid-svg-icons",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@fortawesome/react-fontawesome",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@testing-library/react",
       "allowedCategories": [ "production", "prototypes" ]
     },
@@ -43,6 +63,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "fs-extra",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "identity-obj-proxy",
       "allowedCategories": [ "production", "prototypes" ]
     },
@@ -53,6 +77,10 @@
     {
       "name": "jest-watch-typeahead",
       "allowedCategories": [ "production", "prototypes" ]
+    },
+    {
+      "name": "js-yaml",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "next",

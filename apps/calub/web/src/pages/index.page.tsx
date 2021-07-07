@@ -1,16 +1,33 @@
 import React from 'react';
 
-import classes from './index.module.scss';
+import { GetStaticProps } from 'next';
 
-/* eslint-disable-next-line */
-interface HomePageProps {}
+import getConfig from '../utils/get-config';
+import { Section } from '../models';
+import SectionComponent from '../components/sections/section.component';
 
-const HomePage: React.FC<HomePageProps> = (_props) => {
+interface HomePageProps {
+  sections: Section[];
+}
+
+const HomePage: React.FC<HomePageProps> = ({ sections }) => {
   return (
     <>
-      <h1 className={classes.title}>Home Page</h1>
+      {sections.map((section) => (
+        <SectionComponent key={section.name} section={section} />
+      ))}
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (_context) => {
+  const config = getConfig();
+
+  return {
+    props: {
+      sections: config.sections
+    }
+  };
 };
 
 export default HomePage;

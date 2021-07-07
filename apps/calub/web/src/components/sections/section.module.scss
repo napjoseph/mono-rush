@@ -1,0 +1,19 @@
+.container {
+  @apply flex items-center;
+}
+
+.iconContainer {
+  @apply mr-2;
+}
+
+.icon {
+  @apply text-gray-600 #{!important};
+}
+
+.header {
+  @apply uppercase font-bold;
+}
+
+.content {
+  @apply mt-3 ml-5;
+}

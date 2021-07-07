@@ -5,9 +5,9 @@ import DocumentHead from '../document/document-head.component';
 import classes from './layout.module.scss';
 
 /* eslint-disable-next-line */
-interface LayoutProps {}
+interface LayoutComponentProps {}
 
-const Layout: React.FC<LayoutProps> = (props) => {
+const LayoutComponent: React.FC<LayoutComponentProps> = (props) => {
   return (
     <>
       <DocumentHead />
@@ -19,4 +19,4 @@ const Layout: React.FC<LayoutProps> = (props) => {
   );
 };
 
-export default Layout;
+export default LayoutComponent;

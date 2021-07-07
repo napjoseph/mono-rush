@@ -5,9 +5,11 @@ class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head />
-        <body>
-          <Main />
-          <NextScript />
+        <body className="bg-gray-700 print:bg-white">
+          <div id="root" className="lg:my-5 md:my-3 sm:my-2 sm:mx-2">
+            <Main />
+            <NextScript />
+          </div>
         </body>
       </Html>
     );

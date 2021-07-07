@@ -12,6 +12,11 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px'
     },
+    extend: {
+      screens: {
+        print: { raw: 'print' }
+      }
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
