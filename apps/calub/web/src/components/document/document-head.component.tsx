@@ -6,6 +6,11 @@ import Head from 'next/head';
 interface DocumentHeadProps {}
 
 const DocumentHead: React.FC<DocumentHeadProps> = (_props) => {
+  // For some reason, `import getConfig from 'next/config'` is not exposing the correct
+  // environment variables to this component.
+  // Using the NEXT_PUBLIC_* version instead.
+  const basePath = process.env.NEXT_PUBLIC_BASEPATH;
+
   return (
     <>
       <Head>
@@ -16,14 +21,14 @@ const DocumentHead: React.FC<DocumentHeadProps> = (_props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* See https://developers.google.com/web/fundamentals/web-app-manifest/ */}
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href={basePath + '/manifest.json'} />
 
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href={basePath + '/apple-touch-icon.png'} />
+        <link rel="icon" type="image/png" sizes="32x32" href={basePath + '/favicon-32x32.png'} />
+        <link rel="icon" type="image/png" sizes="16x16" href={basePath + '/favicon-16x16.png'} />
+        <link rel="icon" type="image/x-icon" href={basePath + '/favicon.ico'} />
 
-        <link rel="author" href="/humans.txt" />
+        <link rel="author" href={basePath + '/humans.txt'} />
 
         <meta name="theme-color" content="#ffffff" />
       </Head>

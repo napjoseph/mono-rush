@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: process.env.NEXT_BASEPATH || '',
+  basePath: process.env.NEXT_PUBLIC_BASEPATH || '',
   pageExtensions: [
     'page.tsx',
     'page.ts',
