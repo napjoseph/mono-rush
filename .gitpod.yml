@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+workspaceLocation: mono-rush/default.code-workspace
+checkoutLocation: mono-rush
+
+vscode:
+  extensions:
+    - bradlc.vscode-tailwindcss
+    - dbaeumer.vscode-eslint
+    - editorconfig.editorconfig
+    - esbenp.prettier-vscode
+    - firsttris.vscode-jest-runner
+    - stylelint.vscode-stylelint

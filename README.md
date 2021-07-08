@@ -1,5 +1,7 @@
 # mono-rush
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/napjoseph/mono-rush)
+
 A monorepo using [Rush](https://rushjs.io/).
 
 ## Requirements
