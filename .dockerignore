@@ -255,6 +255,18 @@ common/temp/
 common/autoinstallers/*/.npmrc
 **/.rush/temp/
 
+# local env files
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# vercel
+**/.vercel
+
 #-------------------------------------------------------------------------------------------------------------------
 # END: copy of .gitignore
 #-------------------------------------------------------------------------------------------------------------------
+
+# git
+.git
