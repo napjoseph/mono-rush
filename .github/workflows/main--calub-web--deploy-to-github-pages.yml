@@ -1,0 +1,44 @@
+name: (calub-web) deploy to github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        node:
+          - 14.17.2
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: install rush with no-link
+        run: node common/scripts/install-run-rush.js install --no-link
+      - name: link project
+        run: node common/scripts/install-run-rush.js link
+      - name: build and export
+        run: node common/scripts/install-run-rush.js export --verbose --to calub-web
+        env:
+          NEXT_BASEPATH: /calub
+          NEXT_IMAGES_LOADER: imgix
+          NEXT_IMAGES_PATH: <empty>
+      - name: deploy to external repository
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.CV_DEPLOY_KEY }}
+          external_repository: napjoseph/calub
+          publish_dir: ./apps/calub/web/out
+          publish_branch: export--mono-rush
+          keep_files: false
+          allow_empty_commit: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
