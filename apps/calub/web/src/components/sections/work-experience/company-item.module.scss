@@ -7,7 +7,7 @@
 }
 
 .content {
-  @apply relative flex items-start space-x-3;
+  @apply relative flex items-start space-x-3 print:avoid-page-break-inside;
 }
 
 .logo {

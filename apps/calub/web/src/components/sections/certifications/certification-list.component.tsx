@@ -34,9 +34,10 @@ const CertificationListComponent: React.FC<CertificationListComponentProps> = ({
             return (
               <li key={item.title}>
                 <div className={classes.certification}>
-                  {title}
-
-                  <div className={classes.meta}>{createSubHeaderItems(meta, item)}</div>
+                  <div className={classes.content}>
+                    {title}
+                    <div className={classes.meta}>{createSubHeaderItems(meta, item)}</div>
+                  </div>
 
                   {item.children && (
                     <div className={classes.children}>

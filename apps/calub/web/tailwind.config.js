@@ -9,6 +9,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      '2xs': '480px',
+      xs: '532px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -976,5 +978,18 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus']
   },
-  plugins: [require('@tailwindcss/aspect-ratio')]
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    // add page break utilities as a plugin
+    // https://github.com/tailwindlabs/tailwindcss/discussions/3754
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.avoid-page-break-before': { 'page-break-before': 'avoid' },
+          '.avoid-page-break-inside': { 'page-break-inside': 'avoid' }
+        },
+        ['responsive']
+      );
+    }
+  ]
 };

@@ -9,6 +9,10 @@
 .certification {
   @apply pb-1;
 
+  .content {
+    @apply print:avoid-page-break-inside;
+  }
+
   .title {
     @apply font-medium;
   }

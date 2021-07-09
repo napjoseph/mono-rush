@@ -11,3 +11,5 @@ rules:
     - true
     - ignoreAtRules:
         - tailwind
+        - layer
+        - variants
