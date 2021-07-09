@@ -10,7 +10,7 @@ export enum SectionType {
 export type SectionContent = WorkExperienceItem[] | CertificationItem[] | InformationSnippetItem[];
 
 export interface Section {
-  name?: string;
+  title?: string;
   icon?: IconLookup;
   meta?: SectionMeta;
   ofType: SectionType;

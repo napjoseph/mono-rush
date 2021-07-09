@@ -1,5 +1,5 @@
 sections:
-  - name: 'Information Snippets'
+  - title: 'Information Snippets'
     meta:
       displayHeader: false
     ofType: 'information-snippets'
@@ -28,7 +28,7 @@ sections:
         icon:
           prefix: 'fas'
           iconName: 'map-marker-alt'
-  - name: 'Work Experience'
+  - title: 'Work Experience'
     icon:
       prefix: 'fas'
       iconName: 'briefcase'
@@ -100,7 +100,7 @@ sections:
             startDate: 'September 2013'
             endDate: 'January 2016'
             description: "I created web applications using Python (Django and Flask) and front-end frameworks like AngularJS, Chaplin.js, and Bootstrap. I also created and deployed cross-platform mobile applications using Appcelerator Titanium, which served thousands of daily users. As a way to give back to the community, I also facilitated the training of high school students to create web applications using Python/Django, to improve their school's current information systems."
-  - name: 'Certifications'
+  - title: 'Certifications'
     icon:
       prefix: 'fas'
       iconName: 'certificate'

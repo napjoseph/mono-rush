@@ -51,9 +51,9 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
             <FontAwesomeIcon icon={section.icon} size="1x" fixedWidth className={classes.icon} />
           </div>
         )}
-        {section.name && (
+        {section.title && (
           <div>
-            <h2 className={classes.title}>{section.name}</h2>
+            <h2 className={classes.title}>{section.title}</h2>
           </div>
         )}
       </div>

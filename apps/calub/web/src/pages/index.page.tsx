@@ -14,7 +14,7 @@ const HomePage: React.FC<HomePageProps> = ({ sections = [] }) => {
   return (
     <>
       {sections.map((section) => (
-        <SectionComponent key={section.name} section={section} />
+        <SectionComponent key={section.title} section={section} />
       ))}
     </>
   );
