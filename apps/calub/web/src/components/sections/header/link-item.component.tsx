@@ -2,15 +2,15 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { InformationSnippetItem } from '../../../models';
+import { HeaderLinksItem } from '../../../models';
 
-import classes from './snippet-item.module.scss';
+import classes from './link-item.module.scss';
 
-interface SnippetItemComponentProps {
-  item: InformationSnippetItem;
+interface LinkItemComponentProps {
+  item: HeaderLinksItem;
 }
 
-const SnippetItemComponent: React.FC<SnippetItemComponentProps> = ({ item }) => {
+const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ item }) => {
   const { title, value, linkTo, icon } = item;
 
   let content: JSX.Element;
@@ -44,4 +44,4 @@ const SnippetItemComponent: React.FC<SnippetItemComponentProps> = ({ item }) => 
   );
 };
 
-export default SnippetItemComponent;
+export default LinkItemComponent;

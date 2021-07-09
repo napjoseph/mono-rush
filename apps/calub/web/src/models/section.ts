@@ -1,15 +1,8 @@
-import {
-  CertificationItem,
-  WorkExperienceItem,
-  InformationSnippetItem,
-  HeaderConfig,
-  DividerConfig
-} from './sections';
+import { CertificationItem, WorkExperienceItem, HeaderConfig, DividerConfig } from './sections';
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
 export enum SectionType {
   HEADER = 'header',
-  INFORMATION_SNIPPETS = 'information-snippets',
   DIVIDER = 'divider',
   WORK_EXPERIENCE = 'work-experience',
   CERTIFICATIONS = 'certifications'
@@ -19,7 +12,6 @@ export type SectionContent =
   | HeaderConfig
   | WorkExperienceItem[]
   | CertificationItem[]
-  | InformationSnippetItem[]
   | DividerConfig
   | null;
 

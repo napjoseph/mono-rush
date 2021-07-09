@@ -6,35 +6,31 @@ sections:
     ofValue:
       introText: 'Curriculum Vitae of'
       fullName: 'Nap Joseph Calub'
-  - title: 'Information Snippets'
-    meta:
-      displayHeader: false
-    ofType: 'information-snippets'
-    ofValue:
-      - title: 'Website'
-        value: 'napjose.ph'
-        linkTo: 'https://napjose.ph'
-        icon:
-          prefix: 'fas'
-          iconName: 'globe-asia'
-      - title: 'Email'
-        value: 'hello@napjose.ph'
-        linkTo: 'mailto:hello@napjose.ph'
-        icon:
-          prefix: 'far'
-          iconName: 'envelope'
-      - title: 'Mobile'
-        value: '+63 922 896 2503'
-        linkTo: 'callto:+639228962503'
-        icon:
-          prefix: 'fas'
-          iconName: 'mobile-alt'
-      - title: 'Address'
-        value: 'Tanauan City, Batangas, Philippines 4232'
-        linkTo: 'https://www.google.com/maps/place/Tanauan,+Batangas/@14.0912399,121.0738416,13z'
-        icon:
-          prefix: 'fas'
-          iconName: 'map-marker-alt'
+      links:
+        - title: 'Website'
+          value: 'napjose.ph'
+          linkTo: 'https://napjose.ph'
+          icon:
+            prefix: 'fas'
+            iconName: 'globe-asia'
+        - title: 'Email'
+          value: 'hello@napjose.ph'
+          linkTo: 'mailto:hello@napjose.ph'
+          icon:
+            prefix: 'far'
+            iconName: 'envelope'
+        - title: 'Mobile'
+          value: '+63 922 896 2503'
+          linkTo: 'callto:+639228962503'
+          icon:
+            prefix: 'fas'
+            iconName: 'mobile-alt'
+        - title: 'Address'
+          value: 'Tanauan City, Batangas, Philippines 4232'
+          linkTo: 'https://www.google.com/maps/place/Tanauan,+Batangas/@14.0912399,121.0738416,13z'
+          icon:
+            prefix: 'fas'
+            iconName: 'map-marker-alt'
   - title: 'Divider'
     meta:
       displayHeader: false
