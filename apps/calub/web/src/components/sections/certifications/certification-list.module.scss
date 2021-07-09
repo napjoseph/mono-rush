@@ -1,0 +1,35 @@
+.container {
+  @apply text-sm text-gray-700;
+}
+
+.list {
+  @apply list-square ml-4;
+}
+
+.certification {
+  @apply pb-1;
+
+  .title {
+    @apply font-medium;
+  }
+}
+
+.meta {
+  @apply text-gray-500 text-xs;
+
+  .key {
+    @apply mr-1;
+  }
+
+  .value {
+    @apply font-medium;
+  }
+
+  .divider {
+    @apply mx-1;
+  }
+}
+
+.children {
+  @apply ml-4 mt-1;
+}

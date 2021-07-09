@@ -1,38 +1,23 @@
 import React from 'react';
 
-import { CertificationItem } from '../../../models';
-import classes from './section.module.scss';
+import { CertificationsConfig, DEFAULT_CERTIFICATIONS_META } from '../../../models';
 
-interface CertificationSectionComponentProps {
-  items?: CertificationItem[];
+import CertificationListComponent from './certification-list.component';
+
+interface CertificationsSectionComponentProps {
+  config: CertificationsConfig;
 }
 
-const CertificationSectionComponent: React.FC<CertificationSectionComponentProps> = ({ items }) => {
+const CertificationsSectionComponent: React.FC<CertificationsSectionComponentProps> = ({
+  config
+}) => {
+  const meta = config.meta || DEFAULT_CERTIFICATIONS_META;
+
   return (
     <>
-      <ul>
-        {items.map((item) => {
-          return (
-            <li key={item.title}>
-              <div className={classes.certification}>
-                <h3>{item.title}</h3>
-                <div>
-                  <a href={item.verification_url}>{item.credential_id}</a>
-                </div>
-                <div>{item.issued_date}</div>
-
-                {item.children && (
-                  <div className={classes.children}>
-                    <CertificationSectionComponent items={item.children} />
-                  </div>
-                )}
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <CertificationListComponent meta={meta} items={config.items} />
     </>
   );
 };
 
-export default CertificationSectionComponent;
+export default CertificationsSectionComponent;

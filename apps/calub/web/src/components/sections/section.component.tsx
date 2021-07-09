@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Section,
   SectionType,
-  CertificationItem,
+  CertificationsConfig,
   WorkExperienceItem,
   DEFAULT_SECTION_META,
   HeaderConfig,
   DividerConfig,
   SectionMeta
 } from '../../models';
-import CertificationSectionComponent from './certifications/section.component';
+import CertificationsSectionComponent from './certifications/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 import DividerSectionComponent from './divider/section.component';
 
@@ -33,7 +33,7 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       content = <DividerSectionComponent config={section.ofValue as DividerConfig} />;
       break;
     case SectionType.CERTIFICATIONS:
-      content = <CertificationSectionComponent items={section.ofValue as CertificationItem[]} />;
+      content = <CertificationsSectionComponent config={section.ofValue as CertificationsConfig} />;
       break;
     case SectionType.WORK_EXPERIENCE:
       content = <WorkExperienceSectionComponent items={section.ofValue as WorkExperienceItem[]} />;
