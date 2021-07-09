@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GetStaticProps } from 'next';
 
-import getConfig from '../utils/get-config';
+import parseConfig from '../utils/parse-config';
 import { Section } from '../models';
 import SectionComponent from '../components/sections/section.component';
 
@@ -10,7 +10,7 @@ interface HomePageProps {
   sections: Section[];
 }
 
-const HomePage: React.FC<HomePageProps> = ({ sections }) => {
+const HomePage: React.FC<HomePageProps> = ({ sections = [] }) => {
   return (
     <>
       {sections.map((section) => (
@@ -21,11 +21,11 @@ const HomePage: React.FC<HomePageProps> = ({ sections }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (_context) => {
-  const config = getConfig();
+  const config = parseConfig();
 
   return {
     props: {
-      sections: config.sections
+      sections: config.sections || []
     }
   };
 };

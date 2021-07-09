@@ -1,0 +1,19 @@
+.container {
+  @apply flex items-start;
+}
+
+.iconContainer {
+  @apply mr-2;
+
+  .icon {
+    @apply text-gray-800;
+  }
+}
+
+.link {
+  @apply hover:text-blue-700 transition duration-150 ease-in-out;
+}
+
+.content {
+  @apply mt-1 text-sm;
+}

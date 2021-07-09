@@ -3,10 +3,10 @@ import yaml from 'js-yaml';
 
 import { Config } from '../models';
 
-const getConfig = (): Config => {
+const parseConfig = (): Config => {
   return yaml.load(fs.readFileSync('public/pro-file.yaml', 'utf8'), {
     schema: yaml.JSON_SCHEMA
   });
 };
 
-export default getConfig;
+export default parseConfig;

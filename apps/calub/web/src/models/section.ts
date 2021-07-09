@@ -1,24 +1,26 @@
-import { CertificationItem, WorkExperienceItem } from './sections';
+import { CertificationItem, WorkExperienceItem, InformationSnippetItem } from './sections';
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
 export enum SectionType {
+  INFORMATION_SNIPPETS = 'information-snippets',
   WORK_EXPERIENCE = 'work-experience',
   CERTIFICATIONS = 'certifications'
 }
 
-export type SectionContent = WorkExperienceItem[] | CertificationItem[];
+export type SectionContent = WorkExperienceItem[] | CertificationItem[] | InformationSnippetItem[];
 
 export interface Section {
-  name: string;
-  icon: IconLookup;
+  name?: string;
+  icon?: IconLookup;
+  meta?: SectionMeta;
   ofType: SectionType;
   ofValue: SectionContent;
 }
 
-export const isWorkExperience = (content: SectionContent): content is WorkExperienceItem[] => {
-  return true;
-};
+export interface SectionMeta {
+  displayHeader?: boolean;
+}
 
-export const isCertification = (content: SectionContent): content is CertificationItem[] => {
-  return true;
+export const DEFAULT_SECTION_META: SectionMeta = {
+  displayHeader: true
 };

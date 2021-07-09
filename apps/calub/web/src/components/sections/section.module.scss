@@ -1,17 +1,21 @@
 .container {
-  @apply flex items-center;
-}
-
-.iconContainer {
-  @apply mr-2;
-
-  .icon {
-    @apply text-gray-600;
-  }
+  @apply pb-3;
 }
 
 .header {
-  @apply uppercase font-bold;
+  @apply flex items-center;
+
+  .iconContainer {
+    @apply mr-2;
+
+    .icon {
+      @apply text-gray-600;
+    }
+  }
+
+  .title {
+    @apply uppercase font-bold;
+  }
 }
 
 .content {
