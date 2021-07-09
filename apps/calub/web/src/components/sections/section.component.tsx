@@ -9,6 +9,7 @@ import {
   WorkExperienceItem,
   InformationSnippetItem,
   DEFAULT_SECTION_META,
+  HeaderConfig,
   SectionMeta
 } from '../../models';
 import InformationSnippetsSectionComponent from './information-snippets/section.component';
@@ -16,6 +17,7 @@ import CertificationSectionComponent from './certifications/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 
 import classes from './section.module.scss';
+import HeaderSectionComponent from './header/section.component';
 
 interface SectionComponentProps {
   section: Section;
@@ -24,6 +26,9 @@ interface SectionComponentProps {
 const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
   let content: JSX.Element;
   switch (section.ofType) {
+    case SectionType.HEADER:
+      content = <HeaderSectionComponent config={section.ofValue as HeaderConfig} />;
+      break;
     case SectionType.INFORMATION_SNIPPETS:
       content = (
         <InformationSnippetsSectionComponent items={section.ofValue as InformationSnippetItem[]} />

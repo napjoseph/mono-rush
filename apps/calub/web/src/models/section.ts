@@ -1,13 +1,23 @@
-import { CertificationItem, WorkExperienceItem, InformationSnippetItem } from './sections';
+import {
+  CertificationItem,
+  WorkExperienceItem,
+  InformationSnippetItem,
+  HeaderConfig
+} from './sections';
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
 export enum SectionType {
+  HEADER = 'header',
   INFORMATION_SNIPPETS = 'information-snippets',
   WORK_EXPERIENCE = 'work-experience',
   CERTIFICATIONS = 'certifications'
 }
 
-export type SectionContent = WorkExperienceItem[] | CertificationItem[] | InformationSnippetItem[];
+export type SectionContent =
+  | HeaderConfig
+  | WorkExperienceItem[]
+  | CertificationItem[]
+  | InformationSnippetItem[];
 
 export interface Section {
   title?: string;

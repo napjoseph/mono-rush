@@ -1,4 +1,11 @@
 sections:
+  - title: 'Header'
+    meta:
+      displayHeader: false
+    ofType: 'header'
+    ofValue:
+      introText: 'Curriculum Vitae of'
+      fullName: 'Nap Joseph Calub'
   - title: 'Information Snippets'
     meta:
       displayHeader: false
