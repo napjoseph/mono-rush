@@ -23,20 +23,16 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
 
   return (
     <>
-      {image.show && imagePath !== '' && (
-        <div className={classes.imageContainer}>
-          <Image
-            className={classes.image}
-            src={imagePath}
-            alt={title}
-            title={title}
-            width={180}
-            height={180}
-            quality={100}
-            unoptimized={true}
-          />
-        </div>
-      )}
+      <Image
+        className={classes.image}
+        src={imagePath}
+        alt={title}
+        title={title}
+        width={300}
+        height={300}
+        quality={100}
+        unoptimized={true}
+      />
     </>
   );
 };

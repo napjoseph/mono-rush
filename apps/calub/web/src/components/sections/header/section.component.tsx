@@ -16,7 +16,11 @@ const HeaderSectionComponent: React.FC<HeaderSectionComponentProps> = ({ config 
   return (
     <>
       <div className={classes.container}>
-        <ImageComponent title={fullName} image={image} />
+        {image.show && (image.path || '') !== '' && (
+          <div className={classes.imageContainer}>
+            <ImageComponent title={fullName} image={image} />
+          </div>
+        )}
 
         <div className={classes.infoContainer}>
           {introText && <span className={classes.introText}>{introText}</span>}
