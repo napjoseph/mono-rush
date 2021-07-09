@@ -27,6 +27,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@tailwindcss/aspect-ratio",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@testing-library/react",
       "allowedCategories": [ "production", "prototypes" ]
     },
