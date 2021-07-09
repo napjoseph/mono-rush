@@ -1,0 +1,19 @@
+.container {
+  @apply relative;
+}
+
+.borderContainer {
+  @apply absolute inset-0 flex items-center;
+
+  .border {
+    @apply w-full border-t-2 border-gray-300;
+  }
+}
+
+.iconContainer {
+  @apply relative flex justify-center;
+
+  .icon {
+    @apply bg-white px-2 text-gray-500;
+  }
+}

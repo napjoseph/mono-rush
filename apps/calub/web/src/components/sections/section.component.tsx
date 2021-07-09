@@ -10,11 +10,13 @@ import {
   InformationSnippetItem,
   DEFAULT_SECTION_META,
   HeaderConfig,
+  DividerConfig,
   SectionMeta
 } from '../../models';
 import InformationSnippetsSectionComponent from './information-snippets/section.component';
 import CertificationSectionComponent from './certifications/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
+import DividerSectionComponent from './divider/section.component';
 
 import classes from './section.module.scss';
 import HeaderSectionComponent from './header/section.component';
@@ -33,6 +35,9 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       content = (
         <InformationSnippetsSectionComponent items={section.ofValue as InformationSnippetItem[]} />
       );
+      break;
+    case SectionType.DIVIDER:
+      content = <DividerSectionComponent config={section.ofValue as DividerConfig} />;
       break;
     case SectionType.CERTIFICATIONS:
       content = <CertificationSectionComponent items={section.ofValue as CertificationItem[]} />;

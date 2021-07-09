@@ -35,6 +35,10 @@ sections:
         icon:
           prefix: 'fas'
           iconName: 'map-marker-alt'
+  - title: 'Divider'
+    meta:
+      displayHeader: false
+    ofType: 'divider'
   - title: 'Work Experience'
     icon:
       prefix: 'fas'
