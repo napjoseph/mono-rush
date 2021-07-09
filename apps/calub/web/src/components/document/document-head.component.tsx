@@ -2,14 +2,13 @@ import React from 'react';
 
 import Head from 'next/head';
 
+import getPublicBasePath from '../../utils/get-public-base-path';
+
 /* eslint-disable-next-line */
 interface DocumentHeadProps {}
 
 const DocumentHead: React.FC<DocumentHeadProps> = (_props) => {
-  // For some reason, `import getConfig from 'next/config'` is not exposing the correct
-  // environment variables to this component.
-  // Using the NEXT_PUBLIC_* version instead.
-  const basePath = process.env.NEXT_PUBLIC_BASEPATH || '';
+  const basePath = getPublicBasePath();
 
   return (
     <>

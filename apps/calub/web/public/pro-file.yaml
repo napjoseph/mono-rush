@@ -6,6 +6,10 @@ sections:
     ofValue:
       introText: 'Curriculum Vitae of'
       fullName: 'Nap Joseph Calub'
+      image:
+        show: true
+        source: 'static'
+        path: '/profile-pictures/profile-300x300.jpg'
       links:
         - title: 'Website'
           value: 'napjose.ph'

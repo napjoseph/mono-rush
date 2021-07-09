@@ -1,11 +1,27 @@
-.introText {
-  @apply uppercase font-extralight text-sm;
+.container {
+  @apply flex items-center space-x-4 lg:space-x-6;
 }
 
-.title {
-  @apply text-5xl uppercase font-medium;
+.imageContainer {
+  @apply aspect-w-2 aspect-h-2;
+
+  .image {
+    @apply object-cover;
+  }
 }
 
-.links {
-  @apply mt-3;
+.infoContainer {
+  @apply flex-grow;
+
+  .introText {
+    @apply uppercase font-extralight text-sm;
+  }
+
+  .title {
+    @apply text-5xl uppercase font-medium;
+  }
+
+  .links {
+    @apply mt-3;
+  }
 }

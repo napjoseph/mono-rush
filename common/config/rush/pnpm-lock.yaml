@@ -892,6 +892,14 @@ packages:
       - supports-color
     dev: false
 
+  /@tailwindcss/aspect-ratio/0.2.1_tailwindcss@2.2.4:
+    resolution: {integrity: sha512-aDFi80aHQ3JM3symJ5iKU70lm151ugIGFCI0yRZGpyjgQSDS+Fbe93QwypC1tCEllQE8p0S7TUu20ih1b9IKLA==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0'
+    dependencies:
+      tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
+    dev: false
+
   /@testing-library/dom/7.31.2:
     resolution: {integrity: sha512-3UqjCpey6HiTZT92vODYLPxTBWlM8ZOOjr3LX5F37/VRipW2M1kX6I/Cm4VXzteZqfGfagg8yXywpcOgQBlNsQ==}
     engines: {node: '>=10'}
@@ -6579,7 +6587,7 @@ packages:
     dev: false
 
   file:projects/calub-web.tgz:
-    resolution: {integrity: sha512-hgM5Ujj0TojWGtUXpeuSYqbeRK5bsbBJ/JaHXMf3EzwqcGM/ankVU+n+9LOrFeMvwO334YQMwpY3Dbp59HNg/A==, tarball: file:projects/calub-web.tgz}
+    resolution: {integrity: sha512-fqOIOHLXe9ioAiAsx1Uz+E7XpA42a19pnwip+L4Grr96SFGb67WjZW2LkcB1ltuAF6657d1e9ehIQHR1mW+tGg==, tarball: file:projects/calub-web.tgz}
     name: '@rush-temp/calub-web'
     version: 0.0.0
     dependencies:
@@ -6589,6 +6597,7 @@ packages:
       '@fortawesome/free-regular-svg-icons': 5.15.3
       '@fortawesome/free-solid-svg-icons': 5.15.3
       '@fortawesome/react-fontawesome': 0.1.14_ec0af2bc0907a851e3e0afc4708fd0f0
+      '@tailwindcss/aspect-ratio': 0.2.1_tailwindcss@2.2.4
       '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
       '@types/fs-extra': 9.0.12
       '@types/jest': 26.0.24
