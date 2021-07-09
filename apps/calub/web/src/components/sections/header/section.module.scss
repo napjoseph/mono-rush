@@ -2,14 +2,6 @@
   @apply flex items-center space-x-4 lg:space-x-6;
 }
 
-.imageContainer {
-  @apply aspect-w-2 aspect-h-2;
-
-  .image {
-    @apply object-cover;
-  }
-}
-
 .infoContainer {
   @apply flex-grow;
 

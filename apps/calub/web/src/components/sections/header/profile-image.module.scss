@@ -1,0 +1,7 @@
+.imageContainer {
+  @apply aspect-w-2 aspect-h-2;
+
+  .image {
+    @apply object-cover;
+  }
+}
