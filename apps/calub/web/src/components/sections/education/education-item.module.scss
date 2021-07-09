@@ -1,0 +1,15 @@
+.title {
+  @apply font-medium;
+}
+
+.meta {
+  @apply text-gray-500 text-xs;
+
+  .from {
+    @apply font-semibold;
+  }
+
+  .divider {
+    @apply mx-1;
+  }
+}

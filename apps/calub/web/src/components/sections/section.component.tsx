@@ -10,10 +10,12 @@ import {
   DEFAULT_SECTION_META,
   HeaderConfig,
   DividerConfig,
+  EducationConfig,
   SectionMeta
 } from '../../models';
 import CertificationsSectionComponent from './certifications/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
+import EducationSectionComponent from './education/section.component';
 import DividerSectionComponent from './divider/section.component';
 
 import classes from './section.module.scss';
@@ -37,6 +39,9 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       break;
     case SectionType.WORK_EXPERIENCE:
       content = <WorkExperienceSectionComponent items={section.ofValue as WorkExperienceItem[]} />;
+      break;
+    case SectionType.EDUCATION:
+      content = <EducationSectionComponent config={section.ofValue as EducationConfig} />;
       break;
   }
 

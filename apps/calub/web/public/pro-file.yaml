@@ -111,6 +111,21 @@ sections:
             startDate: 'September 2013'
             endDate: 'January 2016'
             description: "I created web applications using Python (Django and Flask) and front-end frameworks like AngularJS, Chaplin.js, and Bootstrap. I also created and deployed cross-platform mobile applications using Appcelerator Titanium, which served thousands of daily users. As a way to give back to the community, I also facilitated the training of high school students to create web applications using Python/Django, to improve their school's current information systems."
+  - title: 'Educational Background'
+    icon:
+      prefix: 'fas'
+      iconName: 'graduation-cap'
+    ofType: 'education'
+    ofValue:
+      items:
+        - title: 'Bachelor of Science in Information Technology'
+          dates:
+            start: '2010-06'
+            end: '2014-03'
+          from:
+            name: 'Ateneo de Davao University'
+            address: 'E. Jacinto Street, 8016 Davao City, Philippines'
+            url: 'https://www.addu.edu.ph/'
   - title: 'Certifications'
     icon:
       prefix: 'fas'
