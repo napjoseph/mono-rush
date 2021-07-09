@@ -4,10 +4,10 @@
 
 .iconContainer {
   @apply mr-2;
-}
 
-.icon {
-  @apply text-gray-600 #{!important};
+  .icon {
+    @apply text-gray-600;
+  }
 }
 
 .header {

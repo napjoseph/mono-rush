@@ -5,46 +5,38 @@ import Image from 'next/image';
 import { WorkExperienceItem } from '../../../models';
 import RoleItemComponent from './role-item.component';
 
+import classes from './company-item.module.scss';
+
 interface CompanyItemComponentProps {
   item: WorkExperienceItem;
-  isLast: boolean;
+  isLast?: boolean;
 }
 
-const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLast }) => {
+const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLast = false }) => {
   const { title, url, address, logoSrc, logoAlt, roles } = item;
 
   return (
     <>
-      <div className="relative">
-        {!isLast && (
-          <span
-            className="absolute top-3 left-3 -ml-px h-full w-0.5 bg-gray-200"
-            aria-hidden="true"
-          ></span>
-        )}
-        <div className="relative flex items-start space-x-3">
-          <div className="relative">
-            <a href={url} className="font-medium text-gray-900">
-              <Image
-                className="h-6 w-6 bg-white flex items-center justify-center ring-8 ring-white object-contain"
-                src={logoSrc}
-                alt={logoAlt}
-                width={20}
-                height={20}
-              />
+      <div className={classes.wrapper}>
+        {!isLast && <span className={classes.line} aria-hidden="true"></span>}
+
+        <div className={classes.content}>
+          <div className={classes.logo}>
+            <a href={url} className={classes.link}>
+              <Image className={classes.image} src={logoSrc} alt={logoAlt} width={24} height={24} />
             </a>
           </div>
-          <div className="min-w-0 flex-1">
+          <div className={classes.description}>
             <div>
-              <div className="text-sm">
-                <a href={url} className="font-medium text-gray-900">
+              <div className={classes.title}>
+                <a href={url} className={classes.link}>
                   {title}
                 </a>
               </div>
-              <p className="mt-0.5 text-gray-500 text-xs">{address}</p>
+              <p className={classes.address}>{address}</p>
             </div>
-            <div className="mt-2 text-sm text-gray-700">
-              <ul className="list-square ml-4 pb-2">
+            <div className={classes.roles}>
+              <ul className={classes.list}>
                 {roles.map((role, index) => {
                   return (
                     <li key={index}>

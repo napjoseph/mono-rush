@@ -509,7 +509,8 @@ module.exports = {
     listStyleType: {
       none: 'none',
       disc: 'disc',
-      decimal: 'decimal'
+      decimal: 'decimal',
+      square: 'square'
     },
     margin: (theme, { negative }) => ({
       auto: 'auto',
