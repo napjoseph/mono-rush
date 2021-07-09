@@ -27,14 +27,8 @@ const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ item }) => {
   return (
     <>
       <div className={classes.container}>
-        <div className={classes.iconContainer}>
-          <FontAwesomeIcon
-            icon={icon}
-            size="xs"
-            fixedWidth
-            className={classes.icon}
-            title={title}
-          />
+        <div className={classes.iconContainer} title={title}>
+          <FontAwesomeIcon icon={icon} size="xs" fixedWidth className={classes.icon} />
         </div>
         <div>
           <span className={classes.content}>{content}</span>
