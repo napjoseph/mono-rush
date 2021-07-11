@@ -7,6 +7,7 @@ import {
   faCertificate,
   faGraduationCap
 } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 // This ensures that the icon CSS is loaded immediately before attempting to render icons.
@@ -20,3 +21,6 @@ library.add(faEnvelope, faBuilding);
 
 // @fortawesome/free-solid-svg-icons
 library.add(faMobileAlt, faGlobeAsia, faMapMarkerAlt, faBriefcase, faCertificate, faGraduationCap);
+
+// @fortawesome/free-brands-svg-icons
+library.add(faGithub);

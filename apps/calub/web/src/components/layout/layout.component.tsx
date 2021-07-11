@@ -1,6 +1,7 @@
 import React from 'react';
 
 import DocumentHead from '../document/document-head.component';
+import FooterComponent from './footer/footer.component';
 
 import classes from './layout.module.scss';
 
@@ -15,6 +16,8 @@ const LayoutComponent: React.FC<LayoutComponentProps> = (props) => {
       <div className={classes.app}>
         <main>{props.children}</main>
       </div>
+
+      <FooterComponent />
     </>
   );
 };
