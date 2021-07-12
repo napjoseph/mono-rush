@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { EducationItem } from '../../../models';
+import formatDate from '../../../utils/format-date';
 
 import classes from './education-item.module.scss';
 
@@ -27,9 +28,9 @@ const EducationItemComponent: React.FC<EducationItemComponentProps> = ({ item })
         <div className={classes.meta}>
           <span className={classes.dates}>
             <span className={classes.prefix}>{datesPrefix}</span>
-            <span className={classes.start}>{item.dates.start}</span>
+            <span className={classes.start}>{formatDate(item.dates.start)}</span>
             <span className={classes.to}>{datesTo}</span>
-            <span className={classes.end}>{item.dates.end}</span>
+            <span className={classes.end}>{formatDate(item.dates.end)}</span>
             <span className={classes.suffix}>{datesSuffix}</span>
           </span>
         </div>

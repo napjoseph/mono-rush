@@ -5,6 +5,7 @@ import {
   CertificationItem,
   DEFAULT_CERTIFICATIONS_META
 } from '../../../models';
+import formatDate from '../../../utils/format-date';
 
 import classes from './certification-list.module.scss';
 
@@ -90,7 +91,7 @@ const createSubHeaderItems = (meta: CertificationsMeta, item: CertificationItem)
         items.push(
           <span>
             <span className={classes.key}>Issued Date:</span>
-            <span className={classes.value}>{item.issuedDate}</span>
+            <span className={classes.value}>{formatDate(item.issuedDate, 'DDD')}</span>
           </span>
         );
         break;
