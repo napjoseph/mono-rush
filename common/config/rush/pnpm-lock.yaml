@@ -17,6 +17,7 @@ specifiers:
   '@types/react': ^17.0.1
   '@typescript-eslint/eslint-plugin': ^4.14.2
   '@typescript-eslint/parser': ^4.14.2
+  '@xstate/react': ~1.5.1
   autoprefixer: ~10.2.6
   babel-jest: ^27.0.2
   eslint: ^7.19.0
@@ -28,6 +29,7 @@ specifiers:
   jest: ^27.0.4
   jest-watch-typeahead: ^0.6.1
   js-yaml: ~4.1.0
+  luxon: ~2.0.1
   next: ^11.0.1
   postcss: ~8.3.5
   prettier: ^2.0.2
@@ -59,6 +61,7 @@ dependencies:
   '@types/react': 17.0.13
   '@typescript-eslint/eslint-plugin': 4.28.2_5031fffb45dfb7117e61c1d8ea1ef3ff
   '@typescript-eslint/parser': 4.28.2_eslint@7.30.0+typescript@4.3.5
+  '@xstate/react': 1.5.1_0cb4b13f789d26c4003a684d7973b56d
   autoprefixer: 10.2.6_postcss@8.3.5
   babel-jest: 27.0.6_@babel+core@7.14.6
   eslint: 7.30.0
@@ -70,6 +73,7 @@ dependencies:
   jest: 27.0.6
   jest-watch-typeahead: 0.6.4_jest@27.0.6
   js-yaml: 4.1.0
+  luxon: 2.0.1
   next: 11.0.1_8883d385509e392cb15b31185fe8b293
   postcss: 8.3.5
   prettier: 2.3.2
@@ -1006,6 +1010,10 @@ packages:
 
   /@types/json-schema/7.0.8:
     resolution: {integrity: sha512-YSBPTLTVm2e2OoQIDYx8HaeWJ5tTToLH67kXR7zYNGupXMEHa2++G8k+DczX2cFVgalypqtyZIcU19AFcmOpmg==}
+    dev: false
+
+  /@types/luxon/1.27.1:
+    resolution: {integrity: sha512-cPiXpOvPFDr2edMnOXlz3UBDApwUfR+cpizvxCy0n3vp9bz/qe8BWzHPIEFcy+ogUOyjKuCISgyq77ELZPmkkg==}
     dev: false
 
   /@types/mdast/3.0.4:
@@ -4274,6 +4282,10 @@ packages:
       yallist: 4.0.0
     dev: false
 
+  /luxon/2.0.1:
+    resolution: {integrity: sha512-8Eawf81c9ZlQj62W3eq4mp+C7SAIAnmaS7ZuEAiX503YMcn+0C1JnMQRtfaQj6B5qTZLgHv0F4H5WabBCvi1fw==}
+    dev: false
+
   /lz-string/1.4.4:
     resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=}
     hasBin: true
@@ -6628,7 +6640,7 @@ packages:
     dev: false
 
   file:projects/calub-web.tgz:
-    resolution: {integrity: sha512-zqH8VvMwQZ+G+/ZSudRG6xNTbEX6sLp+cTHZpixrj7MwFt80DABfeXKYI2/P+yJqq5O4sdVXzie6gZEbBLi6Lg==, tarball: file:projects/calub-web.tgz}
+    resolution: {integrity: sha512-Sc6XStq359gQhOJlZeCKinjDacFu6LlYbxwLrop9xqUH7zHXkj5xMdEJwvf+I35ufmDvPoiOioh/k3Zay0Yl3w==, tarball: file:projects/calub-web.tgz}
     name: '@rush-temp/calub-web'
     version: 0.0.0
     dependencies:
@@ -6642,6 +6654,7 @@ packages:
       '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
       '@types/fs-extra': 9.0.12
       '@types/jest': 26.0.24
+      '@types/luxon': 1.27.1
       '@types/node': 14.17.4
       '@types/react': 17.0.13
       '@typescript-eslint/eslint-plugin': 4.28.2_5031fffb45dfb7117e61c1d8ea1ef3ff
@@ -6658,6 +6671,7 @@ packages:
       jest: 27.0.6
       jest-watch-typeahead: 0.6.4_jest@27.0.6
       js-yaml: 4.1.0
+      luxon: 2.0.1
       next: 11.0.1_8883d385509e392cb15b31185fe8b293
       postcss: 8.3.5
       prettier: 2.3.2

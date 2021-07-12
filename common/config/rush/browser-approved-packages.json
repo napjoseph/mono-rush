@@ -91,6 +91,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "luxon",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "next",
       "allowedCategories": [ "production", "prototypes" ]
     },
