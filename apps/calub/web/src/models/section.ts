@@ -17,21 +17,17 @@ export enum SectionType {
   CHARACTER_REFERENCES = 'character-references'
 }
 
-export type SectionContent =
-  | HeaderConfig
-  | WorkExperienceConfig
-  | CertificationsConfig
-  | EducationConfig
-  | DividerConfig
-  | CharacterReferencesConfig
-  | null;
-
 export interface Section {
   title?: string;
   icon?: IconLookup;
   meta?: SectionMeta;
-  ofType: SectionType;
-  ofValue?: SectionContent;
+  content:
+    | { type: SectionType.HEADER; value: HeaderConfig }
+    | { type: SectionType.DIVIDER; value: DividerConfig }
+    | { type: SectionType.WORK_EXPERIENCE; value: WorkExperienceConfig }
+    | { type: SectionType.CERTIFICATIONS; value: CertificationsConfig }
+    | { type: SectionType.EDUCATION; value: EducationConfig }
+    | { type: SectionType.CHARACTER_REFERENCES; value: CharacterReferencesConfig };
 }
 
 export interface SectionMeta {

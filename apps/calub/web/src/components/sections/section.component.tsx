@@ -2,18 +2,7 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {
-  Section,
-  SectionType,
-  CertificationsConfig,
-  WorkExperienceConfig,
-  DEFAULT_SECTION_META,
-  HeaderConfig,
-  DividerConfig,
-  EducationConfig,
-  CharacterReferencesConfig,
-  SectionMeta
-} from '../../models';
+import { Section, SectionType, DEFAULT_SECTION_META, SectionMeta } from '../../models';
 import CertificationsSectionComponent from './certifications/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 import EducationSectionComponent from './education/section.component';
@@ -28,31 +17,7 @@ interface SectionComponentProps {
 }
 
 const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
-  let content: JSX.Element;
-  switch (section.ofType) {
-    case SectionType.HEADER:
-      content = <HeaderSectionComponent config={section.ofValue as HeaderConfig} />;
-      break;
-    case SectionType.DIVIDER:
-      content = <DividerSectionComponent config={section.ofValue as DividerConfig} />;
-      break;
-    case SectionType.CERTIFICATIONS:
-      content = <CertificationsSectionComponent config={section.ofValue as CertificationsConfig} />;
-      break;
-    case SectionType.WORK_EXPERIENCE:
-      content = <WorkExperienceSectionComponent config={section.ofValue as WorkExperienceConfig} />;
-      break;
-    case SectionType.EDUCATION:
-      content = <EducationSectionComponent config={section.ofValue as EducationConfig} />;
-      break;
-    case SectionType.CHARACTER_REFERENCES:
-      content = (
-        <CharacterReferencesSectionComponent
-          config={section.ofValue as CharacterReferencesConfig}
-        />
-      );
-      break;
-  }
+  const content = selectContent(section);
 
   // Just display the content if there are no headers.
   const meta: SectionMeta = { ...DEFAULT_SECTION_META, ...section.meta };
@@ -78,6 +43,23 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       <div className={classes.content}>{content && content}</div>
     </div>
   );
+};
+
+const selectContent = (section: Section): JSX.Element => {
+  switch (section.content.type) {
+    case SectionType.HEADER:
+      return <HeaderSectionComponent config={section.content.value} />;
+    case SectionType.DIVIDER:
+      return <DividerSectionComponent config={section.content.value} />;
+    case SectionType.CERTIFICATIONS:
+      return <CertificationsSectionComponent config={section.content.value} />;
+    case SectionType.WORK_EXPERIENCE:
+      return <WorkExperienceSectionComponent config={section.content.value} />;
+    case SectionType.EDUCATION:
+      return <EducationSectionComponent config={section.content.value} />;
+    case SectionType.CHARACTER_REFERENCES:
+      return <CharacterReferencesSectionComponent config={section.content.value} />;
+  }
 };
 
 export default SectionComponent;
