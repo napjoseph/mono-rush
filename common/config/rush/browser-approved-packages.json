@@ -43,6 +43,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "@xstate/react",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "autoprefixer",
       "allowedCategories": [ "production", "prototypes" ]
     },
@@ -133,6 +137,10 @@
     {
       "name": "typescript",
       "allowedCategories": [ "production", "prototypes" ]
+    },
+    {
+      "name": "xstate",
+      "allowedCategories": [ "production" ]
     }
   ]
 }

@@ -1,3 +1,11 @@
+meta:
+  footer:
+    links:
+      - title: 'View source at GitHub'
+        url: 'https://github.com/napjoseph/mono-rush/blob/main/apps/calub/web/'
+        icon:
+          prefix: 'fab'
+          iconName: 'github'
 sections:
   - title: 'Header'
     meta:

@@ -9,6 +9,7 @@ specifiers:
   '@fortawesome/react-fontawesome': ~0.1.14
   '@rush-temp/calub-web': file:./projects/calub-web.tgz
   '@rush-temp/starters-nextjs': file:./projects/starters-nextjs.tgz
+  '@tailwindcss/aspect-ratio': ~0.2.1
   '@testing-library/react': ^11.2.5
   '@types/fs-extra': ~9.0.12
   '@types/jest': ^26.0.23
@@ -39,6 +40,7 @@ specifiers:
   stylelint-prettier: ~1.2.0
   tailwindcss: ~2.2.4
   typescript: ^4.1.3
+  xstate: ~4.22.0
 
 dependencies:
   '@babel/core': 7.14.6
@@ -49,6 +51,7 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.1.14_ec0af2bc0907a851e3e0afc4708fd0f0
   '@rush-temp/calub-web': file:projects/calub-web.tgz
   '@rush-temp/starters-nextjs': file:projects/starters-nextjs.tgz
+  '@tailwindcss/aspect-ratio': 0.2.1_tailwindcss@2.2.4
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@types/fs-extra': 9.0.12
   '@types/jest': 26.0.24
@@ -79,6 +82,7 @@ dependencies:
   stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
   tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
   typescript: 4.3.5
+  xstate: 4.22.0
 
 packages:
 
@@ -1173,6 +1177,26 @@ packages:
     dependencies:
       '@typescript-eslint/types': 4.28.2
       eslint-visitor-keys: 2.1.0
+    dev: false
+
+  /@xstate/react/1.5.1_0cb4b13f789d26c4003a684d7973b56d:
+    resolution: {integrity: sha512-DJHDqDlZHus08X98uMJw4KR17FRWBXLHMQ02YRxx0DMm5VLn75VwGyt4tXdlNZHQWjyk++C5c9Ichq3PdmM3og==}
+    peerDependencies:
+      '@xstate/fsm': ^1.0.0
+      react: ^16.8.0 || ^17.0.0
+      xstate: ^4.11.0
+    peerDependenciesMeta:
+      '@xstate/fsm':
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 17.0.2
+      use-isomorphic-layout-effect: 1.1.1_43559efe81628b42e1e465743e6a3ffa
+      use-subscription: 1.5.1_react@17.0.2
+      xstate: 4.22.0
+    transitivePeerDependencies:
+      - '@types/react'
     dev: false
 
   /abab/2.0.5:
@@ -6310,6 +6334,19 @@ packages:
       querystring: 0.2.0
     dev: false
 
+  /use-isomorphic-layout-effect/1.1.1_43559efe81628b42e1e465743e6a3ffa:
+    resolution: {integrity: sha512-L7Evj8FGcwo/wpbv/qvSfrkHFtOpCzvM5yl2KVyDJoylVuSvzphiiasmjgQPttIGBAy2WKiBNR98q8w7PiNgKQ==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@types/react': 17.0.13
+      react: 17.0.2
+    dev: false
+
   /use-subscription/1.5.1_react@17.0.2:
     resolution: {integrity: sha512-Xv2a1P/yReAjAbhylMfFplFKj9GssgTwN7RlcTxBujFQcloStWNDQdc4g4NRWH9xS4i/FDk04vQBptAXoF3VcA==}
     peerDependencies:
@@ -6540,6 +6577,10 @@ packages:
     resolution: {integrity: sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==}
     dev: false
 
+  /xstate/4.22.0:
+    resolution: {integrity: sha512-WBQS/XxmjCH6789fx5JXjct2pWA0ZI0a1Kx8PJMurzgytkJH3vC2+QganHWzK38vG9PyXHefyVG54UN5q6YVSw==}
+    dev: false
+
   /xtend/4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
@@ -6587,7 +6628,7 @@ packages:
     dev: false
 
   file:projects/calub-web.tgz:
-    resolution: {integrity: sha512-fqOIOHLXe9ioAiAsx1Uz+E7XpA42a19pnwip+L4Grr96SFGb67WjZW2LkcB1ltuAF6657d1e9ehIQHR1mW+tGg==, tarball: file:projects/calub-web.tgz}
+    resolution: {integrity: sha512-zqH8VvMwQZ+G+/ZSudRG6xNTbEX6sLp+cTHZpixrj7MwFt80DABfeXKYI2/P+yJqq5O4sdVXzie6gZEbBLi6Lg==, tarball: file:projects/calub-web.tgz}
     name: '@rush-temp/calub-web'
     version: 0.0.0
     dependencies:
@@ -6605,6 +6646,7 @@ packages:
       '@types/react': 17.0.13
       '@typescript-eslint/eslint-plugin': 4.28.2_5031fffb45dfb7117e61c1d8ea1ef3ff
       '@typescript-eslint/parser': 4.28.2_eslint@7.30.0+typescript@4.3.5
+      '@xstate/react': 1.5.1_0cb4b13f789d26c4003a684d7973b56d
       autoprefixer: 10.2.6_postcss@8.3.5
       babel-jest: 27.0.6_@babel+core@7.14.6
       eslint: 7.30.0
@@ -6628,7 +6670,9 @@ packages:
       stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
       tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
       typescript: 4.3.5
+      xstate: 4.22.0
     transitivePeerDependencies:
+      - '@xstate/fsm'
       - bufferutil
       - canvas
       - fibers
