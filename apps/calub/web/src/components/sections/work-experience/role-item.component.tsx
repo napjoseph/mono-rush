@@ -13,9 +13,9 @@ const RoleItemComponent: React.FC<RoleItemComponentProps> = ({ item }) => {
 
   return (
     <>
-      <h6 className={classes.title} title={title}>
+      <h4 className={classes.title} title={title}>
         {canadaClassification || title}
-      </h6>
+      </h4>
       <p className={classes.dates}>
         <span className={classes.start}>{startDate}</span>–
         <span className={classes.end}>{endDate}</span>

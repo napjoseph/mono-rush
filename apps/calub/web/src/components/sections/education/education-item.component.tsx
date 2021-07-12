@@ -16,7 +16,7 @@ const EducationItemComponent: React.FC<EducationItemComponentProps> = ({ item })
   return (
     <>
       <div>
-        <h4 className={classes.title}>{item.title}</h4>
+        <h3 className={classes.title}>{item.title}</h3>
         <div className={classes.meta}>
           <span className={classes.from}>
             <a href={item.from.url}>{item.from.name}</a>

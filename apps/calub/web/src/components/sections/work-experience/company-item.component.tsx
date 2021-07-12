@@ -43,11 +43,11 @@ const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLas
           </div>
           <div className={classes.description}>
             <div>
-              <div className={classes.title}>
+              <h3 className={classes.title}>
                 <a href={url} className={classes.link}>
                   {title}
                 </a>
-              </div>
+              </h3>
               <p className={classes.address}>{address}</p>
             </div>
             <div className={classes.roles}>

@@ -16,7 +16,7 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
   return (
     <>
       <div className={classes.container}>
-        <h4 className={classes.title}>{title}</h4>
+        <h3 className={classes.title}>{title}</h3>
         <div className={classes.company}>
           <span>{company.url ? <a href={company.url}>{company.text}</a> : company.text}</span>
         </div>
