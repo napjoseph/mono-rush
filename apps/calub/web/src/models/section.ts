@@ -1,10 +1,11 @@
 import {
   CertificationsConfig,
-  WorkExperienceConfig,
-  HeaderConfig,
+  CharacterReferencesConfig,
   DividerConfig,
   EducationConfig,
-  CharacterReferencesConfig
+  HeaderConfig,
+  OrganizationsConfig,
+  WorkExperienceConfig
 } from './sections';
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
@@ -14,7 +15,8 @@ export enum SectionType {
   WORK_EXPERIENCE = 'work-experience',
   CERTIFICATIONS = 'certifications',
   EDUCATION = 'education',
-  CHARACTER_REFERENCES = 'character-references'
+  CHARACTER_REFERENCES = 'character-references',
+  ORGANIZATIONS = 'organizations'
 }
 
 export interface Section {
@@ -27,7 +29,8 @@ export interface Section {
     | { type: SectionType.WORK_EXPERIENCE; value: WorkExperienceConfig }
     | { type: SectionType.CERTIFICATIONS; value: CertificationsConfig }
     | { type: SectionType.EDUCATION; value: EducationConfig }
-    | { type: SectionType.CHARACTER_REFERENCES; value: CharacterReferencesConfig };
+    | { type: SectionType.CHARACTER_REFERENCES; value: CharacterReferencesConfig }
+    | { type: SectionType.ORGANIZATIONS; value: OrganizationsConfig };
 }
 
 export interface SectionMeta {

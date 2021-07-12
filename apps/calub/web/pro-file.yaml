@@ -373,6 +373,69 @@ sections:
                 verificationUrl: 'https://coursera.org/verify/YG594ATAFYRZ'
                 issuedDate: '2020-11-01'
                 gradeAchieved: '100.00%'
+  - title: 'Volunteer Work / Organizations'
+    icon:
+      prefix: 'fas'
+      iconName: 'people-carry'
+    content:
+      type: 'organizations'
+      value:
+        items:
+          - title: 'Davao Graphic Designers Community'
+            url: 'https://www.facebook.com/DGDCommunity/'
+            roles:
+              - title: 'Core Group Member'
+                dates:
+                  start: '2015-06'
+                  end: '2016-01'
+          - title: 'Developers Connect Philippines'
+            url: 'https://www.facebook.com/devcondavao'
+            roles:
+              - title: 'Volunteer, Mindanao Chapter'
+                dates:
+                  start: '2014-02'
+                  end: '2016-01'
+          - title: 'AIESEC in Davao'
+            url: 'https://www.facebook.com/AIESECinDavao'
+            roles:
+              - title: 'Director for Information Systems, Marketing and Communications Department'
+                dates:
+                  start: '2012-06'
+                  end: '2014-04'
+              - title: 'Logistics Manager and Exchange Participant Director'
+                dates:
+                  start: '2012-06'
+                  end: '2012-11'
+              - title: 'Team Member, Talent Management Department'
+                dates:
+                  start: '2011-04'
+                  end: '2012-04'
+          - title: 'Ateneo Circle of Computer Studies Students'
+            url: 'https://www.facebook.com/AteneoCircleOfComputerStudiesStudents'
+            roles:
+              - title: 'External Vice President'
+                dates:
+                  start: '2013-04'
+                  end: '2014-04'
+              - title: 'Treasurer'
+                dates:
+                  start: '2012-04'
+                  end: '2013-04'
+              - title: 'Member'
+                dates:
+                  start: '2011-04'
+                  end: '2012-04'
+          - title: 'Arrupe Office of Social Formation'
+            url: 'https://www.facebook.com/AdDUArrupe'
+            roles:
+              - title: 'Arrupe Volunteer'
+                dates:
+                  start: '2012-08'
+                  end: '2014-04'
+              - title: 'NSTP Volunteer'
+                dates:
+                  start: '2013-11'
+                  end: '2014-03'
   - title: 'References'
     icon:
       prefix: 'fas'

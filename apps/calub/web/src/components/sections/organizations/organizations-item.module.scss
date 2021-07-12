@@ -1,0 +1,29 @@
+.container {
+  .title {
+    @apply font-medium text-gray-900;
+  }
+
+  .link {
+    @apply color-link;
+  }
+
+  .roles {
+    @apply ml-4;
+
+    .list {
+      @apply list-square ml-4 mt-1;
+
+      .role {
+        @apply pb-1;
+
+        .name {
+          @apply font-medium;
+        }
+
+        .dates {
+          @apply italic text-gray-500 text-xs ml-1;
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,8 @@ import {
   faBriefcase,
   faCertificate,
   faGraduationCap,
-  faUsers
+  faUsers,
+  faPeopleCarry
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -28,7 +29,8 @@ library.add(
   faBriefcase,
   faCertificate,
   faGraduationCap,
-  faUsers
+  faUsers,
+  faPeopleCarry
 );
 
 // @fortawesome/free-brands-svg-icons

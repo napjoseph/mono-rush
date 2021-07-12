@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Section, SectionType, DEFAULT_SECTION_META, SectionMeta } from '../../models';
 import CertificationsSectionComponent from './certifications/section.component';
-import WorkExperienceSectionComponent from './work-experience/section.component';
-import EducationSectionComponent from './education/section.component';
-import DividerSectionComponent from './divider/section.component';
 import CharacterReferencesSectionComponent from './character-references/section.component';
+import DividerSectionComponent from './divider/section.component';
+import EducationSectionComponent from './education/section.component';
+import OrganizationsSectionComponent from './organizations/section.component';
+import WorkExperienceSectionComponent from './work-experience/section.component';
 
 import classes from './section.module.scss';
 import HeaderSectionComponent from './header/section.component';
@@ -18,6 +19,9 @@ interface SectionComponentProps {
 
 const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
   const content = selectContent(section);
+  if (!content) {
+    return null;
+  }
 
   // Just display the content if there are no headers.
   const meta: SectionMeta = { ...DEFAULT_SECTION_META, ...section.meta };
@@ -45,7 +49,7 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
   );
 };
 
-const selectContent = (section: Section): JSX.Element => {
+const selectContent = (section: Section): JSX.Element | null => {
   switch (section.content.type) {
     case SectionType.HEADER:
       return <HeaderSectionComponent config={section.content.value} />;
@@ -59,6 +63,10 @@ const selectContent = (section: Section): JSX.Element => {
       return <EducationSectionComponent config={section.content.value} />;
     case SectionType.CHARACTER_REFERENCES:
       return <CharacterReferencesSectionComponent config={section.content.value} />;
+    case SectionType.ORGANIZATIONS:
+      return <OrganizationsSectionComponent config={section.content.value} />;
+    default:
+      return null;
   }
 };
 
