@@ -6,7 +6,7 @@ import {
   Section,
   SectionType,
   CertificationsConfig,
-  WorkExperienceItem,
+  WorkExperienceConfig,
   DEFAULT_SECTION_META,
   HeaderConfig,
   DividerConfig,
@@ -40,7 +40,7 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       content = <CertificationsSectionComponent config={section.ofValue as CertificationsConfig} />;
       break;
     case SectionType.WORK_EXPERIENCE:
-      content = <WorkExperienceSectionComponent items={section.ofValue as WorkExperienceItem[]} />;
+      content = <WorkExperienceSectionComponent config={section.ofValue as WorkExperienceConfig} />;
       break;
     case SectionType.EDUCATION:
       content = <EducationSectionComponent config={section.ofValue as EducationConfig} />;

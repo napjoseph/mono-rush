@@ -1,6 +1,6 @@
 import {
   CertificationsConfig,
-  WorkExperienceItem,
+  WorkExperienceConfig,
   HeaderConfig,
   DividerConfig,
   EducationConfig,
@@ -19,7 +19,7 @@ export enum SectionType {
 
 export type SectionContent =
   | HeaderConfig
-  | WorkExperienceItem[]
+  | WorkExperienceConfig
   | CertificationsConfig
   | EducationConfig
   | DividerConfig

@@ -1,23 +1,31 @@
 import React from 'react';
 
-import { WorkExperienceItem } from '../../../models';
+import { WorkExperienceConfig } from '../../../models';
 import CompanyItemComponent from './company-item.component';
 
 interface WorkExperienceComponentProps {
-  items?: WorkExperienceItem[];
+  config: WorkExperienceConfig;
 }
 
-const WorkExperienceComponent: React.FC<WorkExperienceComponentProps> = ({ items }) => {
+const WorkExperienceComponent: React.FC<WorkExperienceComponentProps> = ({ config }) => {
+  const { items = [] } = config;
+
   return (
     <>
       <ul>
-        {items.map((item, index) => {
-          return (
-            <li key={item.title}>
-              <CompanyItemComponent item={item} isLast={index === items.length - 1} />
-            </li>
-          );
-        })}
+        {items
+          .filter((item) => {
+            if (!item.meta || item.meta.show === undefined) return true;
+
+            return !!item.meta.show;
+          })
+          .map((item, index) => {
+            return (
+              <li key={item.title}>
+                <CompanyItemComponent item={item} isLast={index === items.length - 1} />
+              </li>
+            );
+          })}
       </ul>
     </>
   );
