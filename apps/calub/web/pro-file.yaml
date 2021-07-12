@@ -395,6 +395,13 @@ sections:
                 dates:
                   start: '2014-02'
                   end: '2016-01'
+          - title: 'Hackademy'
+            url: 'https://www.facebook.com/hackademyPH/'
+            roles:
+              - title: 'Teacher'
+                dates:
+                  start: '2015-06'
+                  end: '2015-07'
           - title: 'AIESEC in Davao'
             url: 'https://www.facebook.com/AIESECinDavao'
             roles:
@@ -402,7 +409,7 @@ sections:
                 dates:
                   start: '2012-06'
                   end: '2014-04'
-              - title: 'Logistics Manager and Exchange Participant Director'
+              - title: 'Logistics Manager and Exchange Participant Director, Project R.A.I.N.'
                 dates:
                   start: '2012-06'
                   end: '2012-11'
