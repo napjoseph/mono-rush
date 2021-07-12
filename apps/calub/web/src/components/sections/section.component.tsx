@@ -11,12 +11,14 @@ import {
   HeaderConfig,
   DividerConfig,
   EducationConfig,
+  CharacterReferencesConfig,
   SectionMeta
 } from '../../models';
 import CertificationsSectionComponent from './certifications/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 import EducationSectionComponent from './education/section.component';
 import DividerSectionComponent from './divider/section.component';
+import CharacterReferencesSectionComponent from './character-references/section.component';
 
 import classes from './section.module.scss';
 import HeaderSectionComponent from './header/section.component';
@@ -42,6 +44,13 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       break;
     case SectionType.EDUCATION:
       content = <EducationSectionComponent config={section.ofValue as EducationConfig} />;
+      break;
+    case SectionType.CHARACTER_REFERENCES:
+      content = (
+        <CharacterReferencesSectionComponent
+          config={section.ofValue as CharacterReferencesConfig}
+        />
+      );
       break;
   }
 

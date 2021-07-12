@@ -367,3 +367,98 @@ sections:
               verificationUrl: 'https://coursera.org/verify/YG594ATAFYRZ'
               issuedDate: '2020-11-01'
               gradeAchieved: '100.00%'
+  - title: 'References'
+    icon:
+      prefix: 'fas'
+      iconName: 'users'
+    ofType: 'character-references'
+    ofValue:
+      items:
+        - title: 'Daryl Ronquillo'
+          meta:
+            show: true
+          role: 'Software Engineer'
+          company:
+            text: 'Willis Towers Watson'
+            url: 'https://www.willistowerswatson.com/'
+          email:
+            text: 'daryl.ronquillo@willistowerswatson.com'
+          mobile:
+            text: '+63 926 658 4446'
+        - title: 'Michelle Ybañez'
+          meta:
+            show: true
+          role: 'Ad Operations Officer'
+          company:
+            text: 'ABS-CBN Corporation'
+            url: 'https://www.abs-cbn.com/'
+          email:
+            text: 'ymichelle1992@hotmail.com'
+          mobile:
+            text: '+63 939 921 5278'
+        - title: 'Gianina Juanga'
+          meta:
+            show: true
+          role: 'Senior Python Engineer'
+          company:
+            text: 'Yondu, Inc'
+            url: 'https://www.yondu.com/'
+          email:
+            text: 'gianina.juanga@gmail.com'
+          mobile:
+            text: '+63 917 510 0057'
+        - title: 'Ray Marc Marcellones'
+          meta:
+            show: true
+          role: 'Software Engineer'
+          company:
+            text: 'XTREME-D Inc'
+            url: 'https://xtreme-d.net/en/'
+          email:
+            text: 'raymarc.marcellones@gmail.com'
+          mobile:
+            text: '+81 704 010 8869'
+        - title: 'Tomjan Salavia'
+          meta:
+            show: true
+          role: 'Nihongo-skilled Project Coordinator/Bridge SE'
+          company:
+            text: 'WeServ Systems International Inc.'
+            url: 'http://www.weserv.com/'
+          email:
+            text: 'tjasalavia@gmail.com'
+          mobile:
+            text: '+63 967 288 2935'
+        - title: 'Jefford Ray Mamacus'
+          meta:
+            show: true
+          role: 'Head of Research and Training'
+          company:
+            text: 'Ingenuity Global Consulting'
+            url: 'https://ingenuity.ph'
+          email:
+            text: 'jefford@ingenuity.ph'
+          mobile:
+            text: '+63 927 794 0377'
+        - title: 'Nerissa Narvaez-Siman'
+          meta:
+            show: true
+          role: 'Senior Manager, Business Transformation Office'
+          company:
+            text: 'Smart Communications, Inc.'
+            url: 'https://smart.com.ph'
+          email:
+            text: 'nnsiman@smart.com.ph'
+          mobile:
+            text: '+63 939 918 9201'
+        - title: 'Michelle P. Banawan, Ph.D.'
+          meta:
+            show: true
+          role: 'Academic Vice President'
+          company:
+            text: 'Ateneo de Davao University'
+            url: 'https://addu.edu.ph'
+          email:
+            text: 'mpbanawan@addu.edu.ph'
+          mobile:
+            text: '+63 908 524 4402'

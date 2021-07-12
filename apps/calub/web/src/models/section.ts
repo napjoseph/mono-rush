@@ -3,7 +3,8 @@ import {
   WorkExperienceItem,
   HeaderConfig,
   DividerConfig,
-  EducationConfig
+  EducationConfig,
+  CharacterReferencesConfig
 } from './sections';
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
@@ -12,7 +13,8 @@ export enum SectionType {
   DIVIDER = 'divider',
   WORK_EXPERIENCE = 'work-experience',
   CERTIFICATIONS = 'certifications',
-  EDUCATION = 'education'
+  EDUCATION = 'education',
+  CHARACTER_REFERENCES = 'character-references'
 }
 
 export type SectionContent =
@@ -21,6 +23,7 @@ export type SectionContent =
   | CertificationsConfig
   | EducationConfig
   | DividerConfig
+  | CharacterReferencesConfig
   | null;
 
 export interface Section {

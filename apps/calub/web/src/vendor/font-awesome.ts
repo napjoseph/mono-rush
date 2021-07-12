@@ -5,7 +5,8 @@ import {
   faMapMarkerAlt,
   faBriefcase,
   faCertificate,
-  faGraduationCap
+  faGraduationCap,
+  faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -20,7 +21,15 @@ config.autoAddCss = false;
 library.add(faEnvelope, faBuilding);
 
 // @fortawesome/free-solid-svg-icons
-library.add(faMobileAlt, faGlobeAsia, faMapMarkerAlt, faBriefcase, faCertificate, faGraduationCap);
+library.add(
+  faMobileAlt,
+  faGlobeAsia,
+  faMapMarkerAlt,
+  faBriefcase,
+  faCertificate,
+  faGraduationCap,
+  faUsers
+);
 
 // @fortawesome/free-brands-svg-icons
 library.add(faGithub);

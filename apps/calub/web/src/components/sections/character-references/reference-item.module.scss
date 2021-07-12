@@ -1,0 +1,13 @@
+.container {
+  .title {
+    @apply font-medium text-gray-900;
+  }
+
+  .company {
+    @apply text-gray-500 text-xs font-medium;
+  }
+
+  .role {
+    @apply text-gray-500 text-xs italic;
+  }
+}
