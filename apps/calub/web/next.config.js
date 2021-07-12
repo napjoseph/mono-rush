@@ -19,6 +19,6 @@ module.exports = {
     loader: process.env.NEXT_IMAGES_LOADER || 'default',
     path: process.env.NEXT_IMAGES_PATH === '<empty>' ? '' : '/_next/image',
     // NOTE: Must update when adding external URLs to next/image.
-    domains: ['i.imgur.com']
+    domains: []
   }
 };

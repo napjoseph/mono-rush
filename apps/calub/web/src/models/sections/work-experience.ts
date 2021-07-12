@@ -10,7 +10,12 @@ export interface WorkExperienceItem {
   title: string;
   url: string;
   address: string;
-  logoSrc: string;
-  logoAlt: string;
+  image: WorkExperienceItemImage;
   roles: WorkExperienceRole[];
+}
+
+export interface WorkExperienceItemImage {
+  source?: 'static' | 'external';
+  path: string;
+  title: string;
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import { WorkExperienceItem } from '../../../models';
+import getPublicBasePath from '../../../utils/get-public-base-path';
 import RoleItemComponent from './role-item.component';
 
 import classes from './company-item.module.scss';
@@ -13,7 +14,12 @@ interface CompanyItemComponentProps {
 }
 
 const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLast = false }) => {
-  const { title, url, address, logoSrc, logoAlt, roles } = item;
+  const { title, url, address, image, roles } = item;
+
+  let imagePath = image.path || '';
+  if (image.source === 'static') {
+    imagePath = `${getPublicBasePath()}${image.path}`;
+  }
 
   return (
     <>
@@ -23,7 +29,16 @@ const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLas
         <div className={classes.content}>
           <div className={classes.logo}>
             <a href={url} className={classes.link}>
-              <Image className={classes.image} src={logoSrc} alt={logoAlt} width={24} height={24} />
+              <Image
+                className={classes.image}
+                src={imagePath}
+                alt={image.title}
+                title={image.title}
+                width={24}
+                height={24}
+                quality={100}
+                unoptimized={true}
+              />
             </a>
           </div>
           <div className={classes.description}>

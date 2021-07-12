@@ -3,7 +3,7 @@ name: (calub-web) deploy to github pages
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build-and-deploy:
@@ -37,7 +37,7 @@ jobs:
           deploy_key: ${{ secrets.CV_DEPLOY_KEY }}
           external_repository: napjoseph/calub
           publish_dir: ./apps/calub/web/out
-          publish_branch: export--mono-rush
+          publish_branch: export--mono-rush--dev
           keep_files: false
           allow_empty_commit: true
           user_name: 'github-actions[bot]'

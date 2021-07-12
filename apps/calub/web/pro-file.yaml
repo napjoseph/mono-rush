@@ -56,8 +56,10 @@ sections:
       - title: 'Concentrix'
         url: 'https://www.concentrix.com/'
         address: 'Tera Tower, Bridgetowne, C5, Eulogio Rodriguez Jr. Ave, Quezon City, Metro Manila, Philippines 1110'
-        logoSrc: 'https://i.imgur.com/Arwaz2v.png'
-        logoAlt: 'Concentrix Logo'
+        image:
+          source: 'static'
+          path: '/company-logos/concentrix.png'
+          title: 'Concentrix Logo'
         roles:
           - title: 'Business Apps Developer'
             canadaClassification: '2 - 21 - 217 - 2173 - Software engineers and designers'
@@ -67,8 +69,10 @@ sections:
       - title: 'Cognizant'
         url: 'https://www.cognizant.com/'
         address: '8/10 Upper McKinley Bldg, Fort Bonifacio, Taguig City, Metro Manila, Philippines 1635'
-        logoSrc: 'https://i.imgur.com/fNjTk1e.png'
-        logoAlt: 'Cognizant Logo'
+        image:
+          source: 'static'
+          path: '/company-logos/cognizant.png'
+          title: 'Cognizant Logo'
         roles:
           - title: 'Senior Process Executive'
             canadaClassification: '2 - 22 - 228 - 2282 - User support technicians'
@@ -78,8 +82,10 @@ sections:
       - title: 'Bell Telecommunication Phils, Inc.'
         url: 'http://www.belltel.ph/'
         address: '3F 808 Bldg, Meralco Ave cor. Gen. Lim St., Brgy. San Antonio, Pasig City, Metro Manila, Philippines 1603'
-        logoSrc: 'https://i.imgur.com/VlwUlBJ.jpeg'
-        logoAlt: 'Bell Telecommunication Phils, Inc. Logo'
+        image:
+          source: 'static'
+          path: '/company-logos/belltel.jpg'
+          title: 'Bell Telecommunication Phils, Inc. Logo'
         roles:
           - title: 'Database Administrator'
             canadaClassification: '2 - 21 - 217 - 2172 - Database analysts and data administrators'
@@ -89,8 +95,10 @@ sections:
       - title: 'Self-Employed'
         url: 'https://napjose.ph/'
         address: '513 Yakal St, Mt View Subd, Brgy 3, Tanauan City, Batangas, Philippines 4232'
-        logoSrc: 'https://i.imgur.com/sSZu8hw.png'
-        logoAlt: 'Nap Joseph Logo'
+        image:
+          source: 'static'
+          path: '/company-logos/napjoseph.png'
+          title: 'Nap Joseph Logo'
         roles:
           - title: 'Freelance IT Consultant'
             canadaClassification: '2 - 21 - 217 - 2171 - Information systems analysts and consultants'
@@ -100,8 +108,10 @@ sections:
       - title: 'Ateneo de Davao University'
         url: 'https://www.addu.edu.ph/'
         address: 'E. Jacinto Street, Davao City, Davao del Sure, Philippines 8016'
-        logoSrc: 'https://i.imgur.com/W9h6BIy.jpeg'
-        logoAlt: 'Ateneo de Davao University Seal'
+        image:
+          source: 'static'
+          path: '/company-logos/addu.png'
+          title: 'Ateneo de Davao University Seal'
         roles:
           - title: 'Instructor, Information Systems Department'
             canadaClassification: '4 - 40 - 401 - 4011 - University professors and lecturers'
@@ -111,8 +121,10 @@ sections:
       - title: 'Ingenuity Global Consulting'
         url: 'https://ingenuity.ph/'
         address: '3F, 1.18 Centron Building, Elpidio Quirino Ave, Davao City, Davao del Sur, Philippines 8000'
-        logoSrc: 'https://i.imgur.com/9M3t4oY.png'
-        logoAlt: 'Ingenuity Logo'
+        image:
+          source: 'static'
+          path: '/company-logos/ingenuity.png'
+          title: 'Ingenuity Logo'
         roles:
           - title: 'Software Developer'
             canadaClassification: '2 - 21 - 217 - 2174 - Computer programmers and interactive media developers'
