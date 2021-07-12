@@ -1,12 +1,10 @@
 # calub-web
 
-A starter project using [NextJS](http://nextjs.org/).
+![napjoseph/mono-rush](https://github.com/napjoseph/mono-rush/actions/workflows/main--calub-web--deploy-to-github-pages.yml/badge.svg)
 
-Also includes configuration for:
+The Curriculum Vitae of Nap Joseph Calub.
 
-- [tailwindcss](https://tailwindcss.com/)
-- [eslint](https://eslint.org/)
-- [jest](https://jestjs.io/)
+A project using [NextJS](http://nextjs.org/).
 
 ## Local Development
 
@@ -35,3 +33,12 @@ rushx --help
 # adding new dependencies
 rush add --dev --package <package-name>
 ```
+
+## Links
+
+| description                               | link                                                                                                                                                |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **source code**                           | [napjoseph/mono-rush](https://github.com/napjoseph/mono-rush/tree/main/apps/calub/web)                                                              |
+| **github actions for deploying the site** | [main--calub-web--deploy-to-github-pages.yml](https://github.com/napjoseph/mono-rush/actions/workflows/main--calub-web--deploy-to-github-pages.yml) |
+| **repository for the build artifacts**    | [napjoseph/calub@export--mono-rush](https://github.com/napjoseph/calub/tree/export--mono-rush)                                                      |
+| **live site via github pages**            | [napjose.ph/calub](https://napjose.ph/calub)                                                                                                        |
