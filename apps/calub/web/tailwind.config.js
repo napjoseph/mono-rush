@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   purge: [
@@ -982,7 +983,7 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     // add page break utilities as a plugin
     // https://github.com/tailwindlabs/tailwindcss/discussions/3754
-    function ({ addUtilities }) {
+    plugin(function ({ addUtilities }) {
       addUtilities(
         {
           '.avoid-page-break-before': { 'page-break-before': 'avoid' },
@@ -990,6 +991,14 @@ module.exports = {
         },
         ['responsive']
       );
-    }
+    }),
+    // change color of links on hover
+    plugin(function ({ addComponents }) {
+      addComponents({
+        '.color-link': {
+          '@apply hover:text-blue-700 transition duration-150 ease-in-out': {}
+        }
+      });
+    })
   ]
 };

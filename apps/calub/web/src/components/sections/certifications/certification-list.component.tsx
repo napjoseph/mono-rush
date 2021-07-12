@@ -27,7 +27,9 @@ const CertificationListComponent: React.FC<CertificationListComponentProps> = ({
             if (item.credentialUrl && item.credentialUrl !== '') {
               title = (
                 <h3 className={classes.title}>
-                  <a href={item.credentialUrl}>{item.title}</a>
+                  <a className={classes.link} href={item.credentialUrl}>
+                    {item.title}
+                  </a>
                 </h3>
               );
             }
@@ -72,7 +74,7 @@ const createSubHeaderItems = (meta: CertificationsMeta, item: CertificationItem)
           <span>
             <span className={classes.key}>Credential ID:</span>
             <span className={classes.value}>
-              <a href={item.verificationUrl} className={classes.url}>
+              <a href={item.verificationUrl} className={classes.link}>
                 {item.credentialId}
               </a>
             </span>
@@ -147,7 +149,9 @@ const mapIssuingOrganizationValue = (
   if (mapping.url) {
     return (
       <>
-        <a href={mapping.url}>{mapping.displayName}</a>
+        <a className={classes.link} href={mapping.url}>
+          {mapping.displayName}
+        </a>
       </>
     );
   }

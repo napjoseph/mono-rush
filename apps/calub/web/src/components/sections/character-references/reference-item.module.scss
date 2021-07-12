@@ -3,6 +3,10 @@
     @apply font-medium text-gray-900;
   }
 
+  .link {
+    @apply color-link;
+  }
+
   .company {
     @apply text-gray-500 text-xs font-medium;
   }

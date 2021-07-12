@@ -20,7 +20,9 @@ const EducationItemComponent: React.FC<EducationItemComponentProps> = ({ item })
         <h3 className={classes.title}>{item.title}</h3>
         <div className={classes.meta}>
           <span className={classes.from}>
-            <a href={item.from.url}>{item.from.name}</a>
+            <a className={classes.link} href={item.from.url}>
+              {item.from.name}
+            </a>
           </span>
           <span className={classes.divider}>|</span>
           <span>{item.from.address}</span>

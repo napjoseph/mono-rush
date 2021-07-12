@@ -7,6 +7,10 @@
 
   .from {
     @apply font-semibold;
+
+    .link {
+      @apply color-link;
+    }
   }
 
   .divider {
