@@ -1,17 +1,20 @@
 import { Section } from './section';
-import { FooterConfig } from './footer';
+import { FooterConfig, DEFAULT_FOOTER_CONFIG } from './footer';
 
 export interface Config {
   meta?: ConfigMeta;
   sections: Section[];
 }
 
-export const DEFAULT_CONFIG: Config = {
-  sections: []
-};
-
 export interface ConfigMeta {
   footer?: FooterConfig;
 }
 
-export const DEFAULT_CONFIG_META: ConfigMeta = {};
+export const DEFAULT_CONFIG_META: ConfigMeta = {
+  footer: DEFAULT_FOOTER_CONFIG
+};
+
+export const DEFAULT_CONFIG: Config = {
+  meta: DEFAULT_CONFIG_META,
+  sections: []
+};

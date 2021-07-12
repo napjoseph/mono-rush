@@ -1,12 +1,27 @@
 import fs from 'fs-extra';
+import path from 'path';
 import yaml from 'js-yaml';
 
-import { Config } from '../models';
+import { Config, DEFAULT_CONFIG } from '../models';
+
+const CONFIG_PATH = path.resolve('pro-file.yaml');
 
 const parseConfig = (): Config => {
-  return yaml.load(fs.readFileSync('public/pro-file.yaml', 'utf8'), {
-    schema: yaml.JSON_SCHEMA
-  });
+  let data: Config;
+  try {
+    data = yaml.load(fs.readFileSync(CONFIG_PATH, 'utf8'), {
+      schema: yaml.JSON_SCHEMA
+    });
+  } catch (error) {
+    data = DEFAULT_CONFIG;
+  }
+
+  const config: Config = {
+    ...DEFAULT_CONFIG,
+    ...data
+  };
+
+  return config;
 };
 
 export default parseConfig;

@@ -1,20 +1,18 @@
 import React, { useContext } from 'react';
 
+import { StateContext } from '../../../providers';
+
 import LinkItemComponent from './link-item.component';
-import { StateContext } from '../../../providers/state';
 
 import classes from './footer.module.scss';
 
-/* eslint-disable-next-line */
-interface FooterComponentProps {}
-
-// TODO: Move values to pro-file.yaml and update using context.
-const FooterComponent: React.FC<FooterComponentProps> = (_props) => {
+const FooterComponent: React.FC = (_props) => {
   const stateContext = useContext(StateContext);
-  const links = stateContext.services.footerLinkList.state.context.content;
+  const config = stateContext.configService.state.context.content;
+  const links = config.meta.footer.links;
 
   if (!links) {
-    return <></>;
+    return null;
   }
 
   return (

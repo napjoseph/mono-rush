@@ -3,7 +3,6 @@ import React from 'react';
 import { AppProps } from 'next/app';
 
 import Layout from '../components/layout/layout.component';
-
 import { StateProvider } from '../providers/state';
 
 import '../vendor/font-awesome';
