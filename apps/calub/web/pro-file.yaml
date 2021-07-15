@@ -580,10 +580,9 @@ sections:
               show: true
             role: 'Software Engineer'
             company:
-              text: 'Willis Towers Watson'
-              url: 'https://www.willistowerswatson.com/'
+              text: 'Company Confidential'
             email:
-              text: 'daryl.ronquillo@willistowerswatson.com'
+              text: 'darylron@gmail.com'
             mobile:
               text: '+63 926 658 4446'
           - title: 'Michelle Ybañez'
