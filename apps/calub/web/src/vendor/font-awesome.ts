@@ -1,4 +1,4 @@
-import { faEnvelope, faBuilding } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelope, faBuilding, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 import {
   faMobileAlt,
   faGlobeAsia,
@@ -19,7 +19,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 
 // @fortawesome/free-regular-svg-icons
-library.add(faEnvelope, faBuilding);
+library.add(faEnvelope, faBuilding, faCalendarAlt);
 
 // @fortawesome/free-solid-svg-icons
 library.add(
