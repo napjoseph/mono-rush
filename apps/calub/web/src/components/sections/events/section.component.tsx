@@ -11,12 +11,21 @@ interface EventsSectionComponentProps {
 
 const EventsSectionComponent: React.FC<EventsSectionComponentProps> = ({ config }) => {
   const { items } = config;
+  const sorted = items.sort((a, b) => {
+    if (a.dates.start > b.dates.start) {
+      return -1;
+    }
+    if (a.dates.start < b.dates.start) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <>
       <div className={classes.container}>
         <ul className={classes.list}>
-          {items.map((item, index) => {
+          {sorted.map((item, index) => {
             return (
               <li key={index}>
                 <EventsItemComponent item={item} />
