@@ -7,6 +7,7 @@ import CertificationsSectionComponent from './certifications/section.component';
 import CharacterReferencesSectionComponent from './character-references/section.component';
 import DividerSectionComponent from './divider/section.component';
 import EducationSectionComponent from './education/section.component';
+import EventsSectionComponent from './events/section.component';
 import OrganizationsSectionComponent from './organizations/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 
@@ -65,6 +66,8 @@ const selectContent = (section: Section): JSX.Element | null => {
       return <CharacterReferencesSectionComponent config={section.content.value} />;
     case SectionType.ORGANIZATIONS:
       return <OrganizationsSectionComponent config={section.content.value} />;
+    case SectionType.EVENTS:
+      return <EventsSectionComponent config={section.content.value} />;
     default:
       return null;
   }

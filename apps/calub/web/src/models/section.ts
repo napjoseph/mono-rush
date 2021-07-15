@@ -3,6 +3,7 @@ import {
   CharacterReferencesConfig,
   DividerConfig,
   EducationConfig,
+  EventsConfig,
   HeaderConfig,
   OrganizationsConfig,
   WorkExperienceConfig
@@ -16,7 +17,8 @@ export enum SectionType {
   CERTIFICATIONS = 'certifications',
   EDUCATION = 'education',
   CHARACTER_REFERENCES = 'character-references',
-  ORGANIZATIONS = 'organizations'
+  ORGANIZATIONS = 'organizations',
+  EVENTS = 'events'
 }
 
 export interface Section {
@@ -30,7 +32,8 @@ export interface Section {
     | { type: SectionType.CERTIFICATIONS; value: CertificationsConfig }
     | { type: SectionType.EDUCATION; value: EducationConfig }
     | { type: SectionType.CHARACTER_REFERENCES; value: CharacterReferencesConfig }
-    | { type: SectionType.ORGANIZATIONS; value: OrganizationsConfig };
+    | { type: SectionType.ORGANIZATIONS; value: OrganizationsConfig }
+    | { type: SectionType.EVENTS; value: EventsConfig };
 }
 
 export interface SectionMeta {

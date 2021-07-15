@@ -373,7 +373,7 @@ sections:
                 verificationUrl: 'https://coursera.org/verify/YG594ATAFYRZ'
                 issuedDate: '2020-11-01'
                 gradeAchieved: '100.00%'
-  - title: 'Workshops, Seminars, and Conferences Attended'
+  - title: 'Events Attended or Participated On'
     icon:
       prefix: 'far'
       iconName: 'calendar-alt'
@@ -383,121 +383,121 @@ sections:
         items:
           - title: 'UX+'
             role: 'Participant'
-            location: 'SMX Convention Center Aura, SM Aura, BGC, Taguig City, Philippines'
+            address: 'SMX Convention Center Aura, SM Aura, BGC, Taguig City, Philippines'
             dates:
               start: '2019-08'
           - title: 'Graphika Manila 2019'
             role: 'Participant'
-            location: 'SMX Convention Center, Mall of Asia Complex, Pasay, Philippines'
+            address: 'SMX Convention Center, Mall of Asia Complex, Pasay, Philippines'
             dates:
               start: '2019-02'
           - title: 'PyCon Philippines 2018'
             role: 'Participant'
-            location: 'iACADEMY, H.V. Dela Costa, Makati, Metro Manila, Philippines'
+            address: 'iACADEMY, H.V. Dela Costa, Makati, Metro Manila, Philippines'
             dates:
               start: '2018-02'
           - title: 'Cryptors Cybersecurity: Web Hacking Seminar'
             role: 'Participant'
-            location: 'Cryptors Cybersecurity, Rakso One, 6F, Ricogen Bldg, 112 Aguirre St, Legaspi Village, Makati City, Philippines'
+            address: 'Cryptors Cybersecurity, Rakso One, 6F, Ricogen Bldg, 112 Aguirre St, Legaspi Village, Makati City, Philippines'
             dates:
               start: '2017-10'
           - title: '4th Startup Weekend Davao'
             role: 'Organizer'
-            location: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
+            address: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
             dates:
               start: '2015-11'
           - title: 'DTI and PSITE (Philippine Society of Information Technology Educators) Region XI Idea Pitching Competition'
             role: 'Judge'
-            location: '2015-10'
+            address: 'Apo View Hotel, Davao City 8000, Philippines'
             dates:
-              start: 'Apo View Hotel, Davao City 8000, Philippines'
+              start: '2015-10'
           - title: "Campus Devcon during the IT Festival of the BSIT Program of the Philippine Women's College of Davao"
             role: 'Resource Speaker'
-            location: "Philippine Women's College of Davao, University Avenue, Juna Subdivision, 8000 Davao City, Philippines"
+            address: "Philippine Women's College of Davao, University Avenue, Juna Subdivision, 8000 Davao City, Philippines"
             dates:
               start: '2015-10'
           - title: '7th PSITS (Philippine Society of Information Technology Students) Region XII Convention'
             role: 'Resource Speaker'
-            location: 'J. Catolico Sr. Avenue, General Santos City, Jose Catolico Sr. Ave, General Santos City, South Cotabato, Philippines'
+            address: 'J. Catolico Sr. Avenue, General Santos City, Jose Catolico Sr. Ave, General Santos City, South Cotabato, Philippines'
             dates:
               start: '2015-09'
           - title: 'AngelHack Davao 2015'
             role: 'Organizer'
-            location: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
+            address: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
             dates:
               start: '2015-08'
           - title: 'GraphiCon Davao 4'
             role: 'Organizer'
-            location: 'SMX Convention Center, SM City Lanang, Davao City 8000, Philippines'
+            address: 'SMX Convention Center, SM City Lanang, Davao City 8000, Philippines'
             dates:
               start: '2015-07'
           - title: '1st Philippine Startup Challenge National Finals'
             role: 'Coach'
-            location: '4F, The Linden Suites, 37 San Miguel Ave, Ortigas Center, Pasig, 1600 Metro Manila, Philippines'
+            address: '4F, The Linden Suites, 37 San Miguel Ave, Ortigas Center, Pasig, 1600 Metro Manila, Philippines'
             dates:
               start: '2014-12'
           - title: 'GraphiCon Davao 3'
             role: 'Participant'
-            location: 'Cinema 4, Gaisano Mall of Davao, Davao City 8000, Philippines'
+            address: 'Cinema 4, Gaisano Mall of Davao, Davao City 8000, Philippines'
             dates:
               start: '2014-12'
           - title: 'GDG DevFest 2014 (Google Developers Group – Davao)'
             role: 'Resource Speaker'
-            location: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
+            address: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
             dates:
               start: '2014-11'
           - title: '3rd Startup Weekend Davao'
             role: 'Organizer'
-            location: 'F213, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
+            address: 'F213, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
             dates:
               start: '2014-08'
           - title: 'Multimedia and Mobile Technologies Boot Camp'
             role: 'Resource Speaker'
-            location: 'F613 Laboratories, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
+            address: 'F613 Laboratories, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
             dates:
               start: '2014-04'
           - title: 'Conference in Computing Research and Software Engineering Projects'
             role: 'Participant'
-            location: '6th Floor, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
+            address: '6th Floor, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
             dates:
               start: '2014-04'
           - title: 'First Ateneo Campus DevCon'
             role: 'Organizer'
-            location: 'F213, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
+            address: 'F213, Finster Building, Ateneo de Davao University, Davao City 8000, Philippines'
             dates:
               start: '2014-01'
           - title: 'AngelHack Davao: #Hack2Help'
             role: 'Participant'
-            location: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
+            address: 'PLDT-Smart Regional Office, Ponciano St, Davao City 8000, Philippines'
             dates:
               start: '2013-11'
           - title: 'National Leadership Development Conference 2013'
             role: 'Participant'
-            location: 'Island Cove Hotel and Leisure Park, Binakayan, 4104 Kawit, Cavite, Philippines'
+            address: 'Island Cove Hotel and Leisure Park, Binakayan, 4104 Kawit, Cavite, Philippines'
             dates:
               start: '2013-10'
           - title: 'Y2B Youth To Business Forum'
             role: 'Participant'
-            location: 'Ateneo de Manila University, Katipunan Ave, Quezon City, 1108 Metro Manila, Philippines'
+            address: 'Ateneo de Manila University, Katipunan Ave, Quezon City, 1108 Metro Manila, Philippines'
             dates:
               start: '2013-10'
           - title: '2nd Startup Weekend Davao'
             role: '2nd runner-up, PLYM'
-            location: 'F, 1.18 Centron Building, Elpidio Quirino Ave, Davao City, 8000, Davao del Sur, Philippines'
+            address: 'F, 1.18 Centron Building, Elpidio Quirino Ave, Davao City, 8000, Davao del Sur, Philippines'
             dates:
               start: '2013-08'
           - title: 'Illumedia WordPress Theme Creation Workshop'
             role: 'Participant'
-            location: '3F, HIJ Building, GSIS Matina, Davao City 8000, Philippines'
+            address: '3F, HIJ Building, GSIS Matina, Davao City 8000, Philippines'
             dates:
               start: '2013-07'
               end: '2013-08'
           - title: 'GraphiCon Davao 2'
             role: 'Participant'
-            location: 'CAP Auditorium, Anda St, Davao City 8000, Philippines'
+            address: 'CAP Auditorium, Anda St, Davao City 8000, Philippines'
             dates:
               start: '2012-12'
-  - title: 'Volunteer Work / Organizations'
+  - title: 'Volunteer Work and Organizations'
     icon:
       prefix: 'fas'
       iconName: 'people-carry'
