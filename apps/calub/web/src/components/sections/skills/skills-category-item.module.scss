@@ -1,4 +1,6 @@
 .container {
+  @apply print:avoid-page-break-inside;
+
   .title {
     @apply uppercase font-medium;
   }
