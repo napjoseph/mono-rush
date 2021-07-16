@@ -135,6 +135,217 @@ sections:
                 startDate: '2013-09'
                 endDate: '2016-01'
                 description: "I created web applications using Python (Django and Flask) and front-end frameworks like AngularJS, Chaplin.js, and Bootstrap. I also created and deployed cross-platform mobile applications using Appcelerator Titanium, which served thousands of daily users. As a way to give back to the community, I also facilitated the training of high school students to create web applications using Python/Django, to improve their school's current information systems."
+  - title: 'Projects'
+    icon:
+      prefix: 'fas'
+      iconName: 'tasks'
+    content:
+      type: 'projects'
+      value:
+        items:
+          - title: 'Network Tools and Dashboards'
+            meta:
+              show: true
+            dates:
+              start: '2019-07'
+              end: '2021-05'
+            tags:
+              - 'Go'
+              - 'Google Cloud Platform'
+              - 'Cloud SQL'
+              - 'BigQuery'
+              - 'Data Studio'
+              - 'Apps Script'
+              - 'Bazel'
+              - 'Protocol Buffers'
+            roles:
+              - 'I developed tools using Go to send email alerts for non-compliant network devices.'
+              - 'I designed dashboards using Data Studio to visualize all the devices of the network taken from BigQuery, Cloud SQL, and sometimes Google Sheets.'
+          - title: 'Lifecycle Management Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2018-05'
+              end: '2019-07'
+            tags:
+              - 'Go'
+              - 'TypeScript'
+              - 'Angular'
+              - 'Google Cloud Platform'
+              - 'Cloud SQL'
+              - 'BigQuery'
+              - 'Google Chart API'
+              - 'Bazel'
+              - 'Python'
+            roles:
+              - "I maintained a legacy dashboard for visualizing and managing the lifecycle of devices in our client's enterprise network."
+              - 'I refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
+              - 'I upgraded the old task runners using Python to use Go App Engine Cron and Cloud Tasks.'
+          - title: 'Assets Handover Management Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2017-01'
+              end: '2017-09'
+            tags:
+              - 'Python'
+              - 'Django'
+              - 'Django Allauth'
+              - 'PostgreSQL'
+              - 'Google Maps API'
+              - 'django-excel'
+              - 'django-excel'
+              - 'django-import-export'
+              - 'editpyxl'
+              - 'openpyxl'
+              - 'Bootstrap'
+            roles:
+              - 'I developed a web application for handling the splitting, handing over, and disposal program of telecommunication assets to external shareholders.'
+              - 'I created a utility tool to import, clean, and process huge XLSX files to manage the list of assets information.'
+          - title: 'Allstars Infosys'
+            meta:
+              show: true
+            dates:
+              start: '2016-02'
+              end: '2016-05'
+            tags:
+              - 'Python'
+              - 'Django'
+              - 'Django REST Framework'
+              - 'Django Allauth'
+              - 'Django MPTT'
+              - 'Recaptcha2'
+              - 'PostgreSQL'
+              - 'Bootstrap'
+            roles:
+              - 'I developed and deployed a members information system for a local networking group.'
+              - "I used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
+          - title: 'Engage - Employee Recognition Platform'
+            meta:
+              show: true
+            dates:
+              start: '2015-09'
+              end: '2016-01'
+            tags:
+              - 'Python'
+              - 'Django'
+              - 'Django REST Framework'
+              - 'Django OAuth Toolkit'
+              - 'AngularJS'
+              - 'Sentry'
+              - 'Jenkins'
+            roles:
+              - 'I managed a team to refactor and redesign the internal version of the web application for commercial use.'
+              - 'I worked directly with the project manager and product owners regarding the project requirements and specifications.'
+          - title: 'Hybrid Mobile Applications'
+            meta:
+              show: true
+            dates:
+              start: '2015-03'
+              end: '2015-10'
+            tags:
+              - 'Python'
+              - 'Django'
+              - 'Django REST Framework'
+              - 'Titanium'
+              - 'Redis'
+              - 'Redis Cluster'
+              - 'Instagram API'
+              - 'Google API'
+              - 'Twitter API'
+            roles:
+              - 'I worked with a team to create iOS and Android applications to buy Twitter, Instagram, and YouTube followers.'
+              - 'I refactored the REST API servers, integrated various social APIs to the mobile apps, and used Redis/Redis Clusters for managing the followers set.'
+          - title: 'Amber'
+            meta:
+              show: true
+            dates:
+              start: '2015-07'
+              end: '2015-10'
+            tags:
+              - 'Python'
+              - 'Django'
+              - 'Django REST Framework'
+              - 'Parse'
+              - 'Redis'
+              - 'Instagram API'
+              - 'Google API'
+              - 'Twitter API'
+              - 'Titanium'
+            roles:
+              - 'I helped fix bugs on the Django backend and created new views for a mobile RSS feed reader.'
+          - title: 'Various Web Development Projects II'
+            meta:
+              show: true
+            dates:
+              start: '2014-10'
+              end: '2014-11'
+            tags:
+              - 'Semantic UI'
+              - 'NodeJS'
+              - 'Python'
+              - 'Django'
+              - 'openpyxl'
+              - 'django-import-export'
+            roles:
+              - 'I used NodeJS for sending real-time push notifications to connected clients.'
+              - 'I implemented an importer automatically fetch and clean the map data from the World Bank API to show different color ranges to an interactive map.'
+          - title: 'Not In My Country'
+            meta:
+              show: true
+            dates:
+              start: '2014-10'
+              end: '2014-11'
+            tags:
+              - 'Python'
+              - 'Django'
+              - 'openpyxl'
+              - 'django-import-export'
+            roles:
+              - 'Implemented map data showing different color ranges based on existing data from the World Bank API.'
+          - title: 'F45 Playoffs'
+            meta:
+              show: true
+            dates:
+              start: '2014-09'
+              end: '2015-01'
+            tags:
+              - 'Facebook API'
+              - 'Parse.com API'
+              - 'Titanium'
+            roles:
+              - 'I used Titanium to create a HIIT circuit training application for iOS and Android.'
+              - 'I used parse.com for storing user data and managing authentication.'
+          - title: 'Various Web Development Projects'
+            meta:
+              show: true
+            dates:
+              start: '2014-04'
+              end: '2014-09'
+            tags:
+              - 'Django'
+              - 'Flask'
+              - 'ChaplinJS'
+              - 'AngularJS'
+              - 'PostgreSQL'
+              - 'MongoDB'
+              - 'Git'
+              - 'Mercurial'
+            roles:
+              - 'I migrated a legacy system using Django 1.4 to the latest supported version.'
+              - 'I implemented the formatting of chapters to an original story/fanfic publication site.'
+              - 'I implemented the login/registration and timeline features for a digital sports network.'
+          - title: 'JPLAUREL AIS'
+            meta:
+              show: true
+            dates:
+              start: '2012-06'
+              end: '2013-03'
+            tags:
+              - 'Visual C#'
+              - 'MySQL'
+            roles:
+              - 'I worked with a team to create an Academic Information System (AIS) for the Jose P. Laurel Sr. Elementary School.'
   - title: 'Educational Background'
     icon:
       prefix: 'fas'

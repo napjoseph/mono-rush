@@ -1,13 +1,14 @@
-import { faEnvelope, faBuilding, faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import { faBuilding, faCalendarAlt, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
-  faMobileAlt,
-  faGlobeAsia,
-  faMapMarkerAlt,
   faBriefcase,
   faCertificate,
+  faGlobeAsia,
   faGraduationCap,
-  faUsers,
-  faPeopleCarry
+  faMapMarkerAlt,
+  faMobileAlt,
+  faPeopleCarry,
+  faTasks,
+  faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -19,18 +20,19 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 
 // @fortawesome/free-regular-svg-icons
-library.add(faEnvelope, faBuilding, faCalendarAlt);
+library.add(faBuilding, faCalendarAlt, faEnvelope);
 
 // @fortawesome/free-solid-svg-icons
 library.add(
-  faMobileAlt,
-  faGlobeAsia,
-  faMapMarkerAlt,
   faBriefcase,
   faCertificate,
+  faGlobeAsia,
   faGraduationCap,
-  faUsers,
-  faPeopleCarry
+  faMapMarkerAlt,
+  faMobileAlt,
+  faPeopleCarry,
+  faTasks,
+  faUsers
 );
 
 // @fortawesome/free-brands-svg-icons
