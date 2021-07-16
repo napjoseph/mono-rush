@@ -15,7 +15,7 @@ const CertificationsSectionComponent: React.FC<CertificationsSectionComponentPro
 
   return (
     <>
-      <CertificationListComponent meta={meta} items={config.items} />
+      <CertificationListComponent meta={meta} items={config.items} firstLevel={true} />
     </>
   );
 };

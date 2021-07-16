@@ -12,21 +12,26 @@ import classes from './certification-list.module.scss';
 interface CertificationListComponentProps {
   meta: CertificationsMeta;
   items: CertificationItem[];
+  firstLevel?: boolean;
 }
 
 const CertificationListComponent: React.FC<CertificationListComponentProps> = ({
   meta = DEFAULT_CERTIFICATIONS_META,
-  items = []
+  items = [],
+  firstLevel = false
 }) => {
+  // Use a smaller font size when the list has a parent.
+  const titleClass = firstLevel ? classes.title : classes.titleChildren;
+
   return (
     <>
       <div className={classes.container}>
         <ul className={classes.list}>
           {items.map((item) => {
-            let title = <h3 className={classes.title}>{item.title}</h3>;
+            let title = <h3 className={titleClass}>{item.title}</h3>;
             if (item.credentialUrl && item.credentialUrl !== '') {
               title = (
-                <h3 className={classes.title}>
+                <h3 className={titleClass}>
                   <a className={classes.link} href={item.credentialUrl}>
                     {item.title}
                   </a>
