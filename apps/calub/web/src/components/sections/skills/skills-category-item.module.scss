@@ -1,0 +1,9 @@
+.container {
+  .title {
+    @apply uppercase font-medium;
+  }
+
+  .list {
+    @apply mt-1 ml-4;
+  }
+}

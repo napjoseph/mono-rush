@@ -10,6 +10,7 @@ import EducationSectionComponent from './education/section.component';
 import EventsSectionComponent from './events/section.component';
 import OrganizationsSectionComponent from './organizations/section.component';
 import ProjectsSectionComponent from './projects/section.component';
+import SkillsSectionComponent from './skills/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 
 import classes from './section.module.scss';
@@ -69,6 +70,8 @@ const selectContent = (section: Section): JSX.Element | null => {
       return <OrganizationsSectionComponent config={section.content.value} />;
     case SectionType.PROJECTS:
       return <ProjectsSectionComponent config={section.content.value} />;
+    case SectionType.SKILLS:
+      return <SkillsSectionComponent config={section.content.value} />;
     case SectionType.WORK_EXPERIENCE:
       return <WorkExperienceSectionComponent config={section.content.value} />;
     default:

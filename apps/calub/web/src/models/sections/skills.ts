@@ -1,9 +1,15 @@
 export interface SkillsConfigMeta {
-  maxRating?: number;
+  defaults?: {
+    maxRating?: number;
+  };
 }
 
+export const DEFAULT_SKILLS_MAX_RATING = 10;
+
 export const DEFAULT_SKILLS_CONFIG_META: SkillsConfigMeta = {
-  maxRating: 10
+  defaults: {
+    maxRating: DEFAULT_SKILLS_MAX_RATING
+  }
 };
 
 export interface SkillsConfig {
@@ -30,16 +36,24 @@ export const DEFAULT_SKILLS_CATEGORY_META: SkillsCategoryMeta = {
   show: true
 };
 
-export interface SkillsItem {
-  title: string;
-  rating: number;
-  meta?: SkillsItemMeta;
-}
-
 export interface SkillsItemMeta {
   show?: boolean;
 }
 
 export const DEFAULT_SKILLS_ITEM_META: SkillsItemMeta = {
   show: true
+};
+
+export interface SkillsItem {
+  title: string;
+  rating: number;
+  maxRating?: number;
+  meta?: SkillsItemMeta;
+}
+
+export const DEFAULT_SKILLS_ITEM: SkillsItem = {
+  title: '',
+  rating: 0,
+  maxRating: DEFAULT_SKILLS_MAX_RATING,
+  meta: DEFAULT_SKILLS_ITEM_META
 };
