@@ -951,6 +951,17 @@ sections:
       type: 'character-references'
       value:
         items:
+          - title: 'Kyle Gabriel Oreta'
+            meta:
+              show: true
+            role: 'Software Engineer'
+            company:
+              text: 'The Dairy Farm Company, Limited-ROHQ'
+              url: 'https://www.dairyfarmgroup.com/'
+            email:
+              text: 'kyleoreta11@gmail.com'
+            mobile:
+              text: '+63 908 863 9688'
           - title: 'Daryl Ronquillo'
             meta:
               show: true
@@ -963,7 +974,7 @@ sections:
               text: '+63 926 658 4446'
           - title: 'Michelle Ybañez'
             meta:
-              show: true
+              show: false
             role: 'Ad Operations Officer'
             company:
               text: 'ABS-CBN Corporation'
