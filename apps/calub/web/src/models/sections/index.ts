@@ -6,4 +6,5 @@ export * from './events';
 export * from './header';
 export * from './organizations';
 export * from './projects';
+export * from './skills';
 export * from './work-experience';
