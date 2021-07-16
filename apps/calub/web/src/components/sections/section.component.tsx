@@ -26,14 +26,21 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
     return null;
   }
 
-  // Just display the content if there are no headers.
   const meta: SectionMeta = { ...DEFAULT_SECTION_META, ...section.meta };
+
+  // Use appropriate class if avoidPageBreak is selected.
+  let containerClass = classes.container;
+  if (meta.avoidPageBreak) {
+    containerClass = classes.containerAvoidPageBreak;
+  }
+
+  // Just display the content if there are no headers.
   if (!meta.displayHeader) {
-    return <div className={classes.container}>{content && content}</div>;
+    return <div className={containerClass}>{content && content}</div>;
   }
 
   return (
-    <div className={classes.container}>
+    <div className={containerClass}>
       <div className={classes.header}>
         {section.icon && (
           <div className={classes.iconContainer}>

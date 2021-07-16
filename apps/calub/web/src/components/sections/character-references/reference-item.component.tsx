@@ -33,7 +33,7 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
         </div>
         <div>
           {email && (
-            <div>
+            <div className={classes.email}>
               {email.url ? (
                 <a className={classes.link} href={email.url}>
                   {email.text}
@@ -46,7 +46,7 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
             </div>
           )}
           {mobile && (
-            <div>
+            <div className={classes.mobile}>
               {mobile.url ? (
                 <a className={classes.link} href={mobile.url}>
                   {mobile.text}

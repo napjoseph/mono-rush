@@ -1,5 +1,9 @@
 .container {
   @apply pb-3;
+
+  &AvoidPageBreak {
+    @apply avoid-page-break-inside;
+  }
 }
 
 .header {

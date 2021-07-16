@@ -44,8 +44,10 @@ export interface Section {
 
 export interface SectionMeta {
   displayHeader?: boolean;
+  avoidPageBreak?: boolean;
 }
 
 export const DEFAULT_SECTION_META: SectionMeta = {
-  displayHeader: true
+  displayHeader: true,
+  avoidPageBreak: false
 };

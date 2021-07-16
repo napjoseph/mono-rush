@@ -8,7 +8,7 @@
   }
 
   .roles {
-    @apply ml-4;
+    @apply ml-4 text-xs;
 
     .list {
       @apply list-square ml-4 mt-1;
@@ -21,7 +21,7 @@
         }
 
         .dates {
-          @apply text-gray-500 text-xs ml-1;
+          @apply text-gray-500 ml-1;
         }
       }
     }

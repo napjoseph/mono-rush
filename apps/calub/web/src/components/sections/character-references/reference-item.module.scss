@@ -14,4 +14,9 @@
   .role {
     @apply text-gray-500 text-xs italic;
   }
+
+  .email,
+  .mobile {
+    @apply text-xs;
+  }
 }
