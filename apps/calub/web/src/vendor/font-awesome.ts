@@ -4,11 +4,11 @@ import {
   faCertificate,
   faGlobeAsia,
   faGraduationCap,
+  faHeart,
   faLayerGroup,
   faMapMarkerAlt,
   faMobileAlt,
   faPeopleCarry,
-  faTasks,
   faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -29,11 +29,11 @@ library.add(
   faCertificate,
   faGlobeAsia,
   faGraduationCap,
+  faHeart,
   faLayerGroup,
   faMapMarkerAlt,
   faMobileAlt,
   faPeopleCarry,
-  faTasks,
   faUsers
 );
 

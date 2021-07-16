@@ -297,7 +297,7 @@ sections:
   - title: 'Projects'
     icon:
       prefix: 'fas'
-      iconName: 'tasks'
+      iconName: 'heart'
     content:
       type: 'projects'
       value:
