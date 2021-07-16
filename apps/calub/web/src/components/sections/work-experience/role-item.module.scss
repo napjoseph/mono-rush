@@ -1,16 +1,22 @@
-.title {
-  @apply font-medium;
-}
-
-.dates {
-  @apply text-xs;
-
-  .start,
-  .end {
-    @apply italic;
+.container {
+  .title {
+    @apply text-xs font-medium;
   }
-}
 
-.description {
-  @apply text-xs mt-2;
+  .canadaClassification {
+    @apply text-xs font-medium text-gray-600;
+  }
+
+  .dates {
+    @apply text-xs;
+
+    .start,
+    .end {
+      @apply italic;
+    }
+  }
+
+  .description {
+    @apply text-xs mt-2;
+  }
 }

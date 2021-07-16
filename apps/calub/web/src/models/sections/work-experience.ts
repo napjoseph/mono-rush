@@ -17,7 +17,7 @@ export interface WorkExperienceItemMeta {
 
 export interface WorkExperienceRole {
   title: string;
-  canadaClassification: string;
+  canadaClassification?: string;
   startDate: string;
   endDate: string;
   description: string;

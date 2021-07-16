@@ -14,16 +14,21 @@ const RoleItemComponent: React.FC<RoleItemComponentProps> = ({ item }) => {
   const { title, canadaClassification, startDate, endDate, description } = item;
 
   return (
-    <>
+    <div className={classes.container}>
       <h4 className={classes.title} title={title}>
-        {canadaClassification || title}
+        {title}
       </h4>
-      <p className={classes.dates} title={calculateDateDuration(startDate, endDate)}>
-        <span className={classes.start}>{formatDate(startDate)}</span>–
-        <span className={classes.end}>{formatDate(endDate)}</span>
-      </p>
-      <p className={classes.description}>{description}</p>
-    </>
+      <div>
+        {canadaClassification && (
+          <div className={classes.canadaClassification}>{canadaClassification}</div>
+        )}
+        <div className={classes.dates} title={calculateDateDuration(startDate, endDate)}>
+          <span className={classes.start}>{formatDate(startDate)}</span>–
+          <span className={classes.end}>{formatDate(endDate)}</span>
+        </div>
+      </div>
+      <div className={classes.description}>{description}</div>
+    </div>
   );
 };
 
