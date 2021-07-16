@@ -9,6 +9,7 @@ import DividerSectionComponent from './divider/section.component';
 import EducationSectionComponent from './education/section.component';
 import EventsSectionComponent from './events/section.component';
 import OrganizationsSectionComponent from './organizations/section.component';
+import ProjectsSectionComponent from './projects/section.component';
 import WorkExperienceSectionComponent from './work-experience/section.component';
 
 import classes from './section.module.scss';
@@ -52,22 +53,24 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
 
 const selectContent = (section: Section): JSX.Element | null => {
   switch (section.content.type) {
-    case SectionType.HEADER:
-      return <HeaderSectionComponent config={section.content.value} />;
-    case SectionType.DIVIDER:
-      return <DividerSectionComponent config={section.content.value} />;
     case SectionType.CERTIFICATIONS:
       return <CertificationsSectionComponent config={section.content.value} />;
-    case SectionType.WORK_EXPERIENCE:
-      return <WorkExperienceSectionComponent config={section.content.value} />;
-    case SectionType.EDUCATION:
-      return <EducationSectionComponent config={section.content.value} />;
     case SectionType.CHARACTER_REFERENCES:
       return <CharacterReferencesSectionComponent config={section.content.value} />;
-    case SectionType.ORGANIZATIONS:
-      return <OrganizationsSectionComponent config={section.content.value} />;
+    case SectionType.DIVIDER:
+      return <DividerSectionComponent config={section.content.value} />;
+    case SectionType.EDUCATION:
+      return <EducationSectionComponent config={section.content.value} />;
     case SectionType.EVENTS:
       return <EventsSectionComponent config={section.content.value} />;
+    case SectionType.HEADER:
+      return <HeaderSectionComponent config={section.content.value} />;
+    case SectionType.ORGANIZATIONS:
+      return <OrganizationsSectionComponent config={section.content.value} />;
+    case SectionType.PROJECTS:
+      return <ProjectsSectionComponent config={section.content.value} />;
+    case SectionType.WORK_EXPERIENCE:
+      return <WorkExperienceSectionComponent config={section.content.value} />;
     default:
       return null;
   }

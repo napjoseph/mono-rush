@@ -1,0 +1,45 @@
+.container {
+  @apply mt-1;
+
+  .title {
+    @apply font-medium text-gray-900;
+  }
+
+  .meta {
+    @apply text-gray-500 text-xs;
+
+    .tags {
+      @apply inline;
+
+      .tag {
+        @apply inline;
+
+        .content {
+          @apply cursor-pointer;
+          @apply hover:font-semibold;
+          @apply transition duration-150 ease-in-out;
+        }
+
+        .comma {
+          @apply mr-1;
+        }
+      }
+    }
+
+    .divider {
+      @apply mx-1;
+    }
+  }
+
+  .roles {
+    @apply text-xs;
+
+    .list {
+      @apply list-square ml-8 mt-1;
+
+      .role {
+        @apply mb-1;
+      }
+    }
+  }
+}
