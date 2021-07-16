@@ -41,6 +41,7 @@ export interface CredentialTypeMapping {
 
 export interface CertificationItem {
   title: string;
+  meta?: CertificationItemMeta;
   credentialType?: string;
   credentialId?: string;
   credentialUrl?: string;
@@ -49,4 +50,8 @@ export interface CertificationItem {
   issuedDate?: string;
   gradeAchieved?: string;
   children?: CertificationItem[];
+}
+
+export interface CertificationItemMeta {
+  show?: boolean;
 }

@@ -28,6 +28,11 @@ const CertificationListComponent: React.FC<CertificationListComponentProps> = ({
       <div className={classes.container}>
         <ul className={classes.list}>
           {items
+            .filter((item) => {
+              if (!item.meta || item.meta.show === undefined) return true;
+
+              return !!item.meta.show;
+            })
             .sort((a, b) => {
               if (a.issuedDate > b.issuedDate) {
                 return -1;
