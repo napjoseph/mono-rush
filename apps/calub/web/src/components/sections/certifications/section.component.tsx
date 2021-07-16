@@ -12,10 +12,11 @@ const CertificationsSectionComponent: React.FC<CertificationsSectionComponentPro
   config
 }) => {
   const meta = config.meta || DEFAULT_CERTIFICATIONS_META;
+  const items = config.items || [];
 
   return (
     <>
-      <CertificationListComponent meta={meta} items={config.items} firstLevel={true} />
+      <CertificationListComponent meta={meta} items={items} firstLevel={true} />
     </>
   );
 };

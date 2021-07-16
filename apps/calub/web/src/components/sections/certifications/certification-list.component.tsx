@@ -27,35 +27,45 @@ const CertificationListComponent: React.FC<CertificationListComponentProps> = ({
     <>
       <div className={classes.container}>
         <ul className={classes.list}>
-          {items.map((item) => {
-            let title = <h3 className={titleClass}>{item.title}</h3>;
-            if (item.credentialUrl && item.credentialUrl !== '') {
-              title = (
-                <h3 className={titleClass}>
-                  <a className={classes.link} href={item.credentialUrl}>
-                    {item.title}
-                  </a>
-                </h3>
-              );
-            }
+          {items
+            .sort((a, b) => {
+              if (a.issuedDate > b.issuedDate) {
+                return -1;
+              }
+              if (a.issuedDate < b.issuedDate) {
+                return 1;
+              }
+              return 0;
+            })
+            .map((item) => {
+              let title = <h3 className={titleClass}>{item.title}</h3>;
+              if (item.credentialUrl && item.credentialUrl !== '') {
+                title = (
+                  <h3 className={titleClass}>
+                    <a className={classes.link} href={item.credentialUrl}>
+                      {item.title}
+                    </a>
+                  </h3>
+                );
+              }
 
-            return (
-              <li key={item.title}>
-                <div className={classes.certification}>
-                  <div className={classes.content}>
-                    {title}
-                    <div className={classes.meta}>{createSubHeaderItems(meta, item)}</div>
-                  </div>
-
-                  {item.children && (
-                    <div className={classes.children}>
-                      <CertificationListComponent meta={meta} items={item.children} />
+              return (
+                <li key={item.title}>
+                  <div className={classes.certification}>
+                    <div className={classes.content}>
+                      {title}
+                      <div className={classes.meta}>{createSubHeaderItems(meta, item)}</div>
                     </div>
-                  )}
-                </div>
-              </li>
-            );
-          })}
+
+                    {item.children && (
+                      <div className={classes.children}>
+                        <CertificationListComponent meta={meta} items={item.children} />
+                      </div>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
         </ul>
       </div>
     </>
