@@ -449,6 +449,11 @@
     //   "reviewCategory": "tools"
     // }
     {
+      "packageName": "napjoseph",
+      "projectFolder": "personal/napjoseph",
+      "reviewCategory": "production"
+    },
+    {
       "packageName": "calub-web",
       "projectFolder": "apps/calub/web",
       "reviewCategory": "production"

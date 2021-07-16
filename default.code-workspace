@@ -5,6 +5,10 @@
       "path": "."
     },
     {
+      "name": "personal/napjoseph",
+      "path": "personal/napjoseph"
+    },
+    {
       "name": "apps/calub/web",
       "path": "apps/calub/web"
     },

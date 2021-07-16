@@ -46,6 +46,10 @@
     ],
     "scopes": [
       {
+        "name": "napjoseph",
+        "message": "anything related to the napjoseph project"
+      },
+      {
         "name": "calub-web",
         "message": "anything related to the calub-web project"
       },
