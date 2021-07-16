@@ -986,10 +986,10 @@ sections:
           - title: 'Gianina Juanga'
             meta:
               show: true
-            role: 'Senior Python Engineer'
+            role: 'Security Software Engineer'
             company:
-              text: 'Yondu, Inc'
-              url: 'https://www.yondu.com/'
+              text: 'AirAsia'
+              url: 'https://www.airasia.com/'
             email:
               text: 'gianina.juanga@gmail.com'
             mobile:
