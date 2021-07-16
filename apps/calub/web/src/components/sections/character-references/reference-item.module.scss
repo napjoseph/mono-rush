@@ -19,4 +19,12 @@
   .mobile {
     @apply text-xs;
   }
+
+  .masked {
+    @apply block print:hidden;
+  }
+
+  .unmasked {
+    @apply hidden print:block;
+  }
 }

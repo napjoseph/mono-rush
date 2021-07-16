@@ -40,7 +40,8 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
                 </a>
               ) : (
                 <a className={classes.link} href={`mailto:${removeSpaces(email.text)}`}>
-                  {email.text}
+                  <span className={classes.masked}>{maskEmail(email.text)}</span>
+                  <span className={classes.unmasked}>{email.text}</span>
                 </a>
               )}
             </div>
@@ -53,7 +54,8 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
                 </a>
               ) : (
                 <a className={classes.link} href={`callto:${removeSpaces(mobile.text)}`}>
-                  {mobile.text}
+                  <span className={classes.masked}>{maskMobile(mobile.text)}</span>
+                  <span className={classes.unmasked}>{mobile.text}</span>
                 </a>
               )}
             </div>
@@ -66,6 +68,42 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
 
 const removeSpaces = (text: string): string => {
   return text.replace(/\s/g, '');
+};
+
+const maskEmail = (text: string): string => {
+  const showChars = 2;
+
+  const [username, domain] = text.split('@');
+  const masked = `${username.substring(0, showChars)}${'*'.repeat(username.length - showChars)}`;
+
+  return [masked, domain].join('@');
+};
+
+const maskMobile = (text: string): string => {
+  const values = text.split(' ');
+
+  // If the mobile number provided has no spaces, only show the first 4 characters.
+  if (values.length <= 1) {
+    return `${text.substring(0, 4)}${'*'.repeat(text.length - 4)}`;
+  }
+
+  const masked = values.map((value, index) => {
+    // Show country code.
+    if (index === 0) {
+      return value;
+    }
+
+    // Show just a glimpse of mobile number.
+    if (index === 1) {
+      const showChars = 1;
+      return `${value.substring(0, showChars)}${'*'.repeat(value.length - showChars)}`;
+    }
+
+    // Mask the rest completely.
+    return '*'.repeat(value.length);
+  });
+
+  return masked.join(' ');
 };
 
 export default CharacterReferencesItemComponent;
