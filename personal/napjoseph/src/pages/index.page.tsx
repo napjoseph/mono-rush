@@ -1,12 +1,18 @@
 import React from 'react';
 
-import classes from './index.module.scss';
+import Head from 'next/head';
 
 /* eslint-disable-next-line */
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = (_props) => {
-  return <div className={classes.container}>Hello</div>;
+  return (
+    <>
+      <Head>
+        <title>Nap Joseph Calub</title>
+      </Head>
+    </>
+  );
 };
 
 export default HomePage;
