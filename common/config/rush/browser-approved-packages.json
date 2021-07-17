@@ -27,14 +27,6 @@
       "allowedCategories": [ "production" ]
     },
     {
-      "name": "@mdx-js/mdx",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "@mdx-js/react",
-      "allowedCategories": [ "production" ]
-    },
-    {
       "name": "@tailwindcss/aspect-ratio",
       "allowedCategories": [ "production" ]
     },
@@ -59,10 +51,6 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
-      "name": "babel-eslint",
-      "allowedCategories": [ "production" ]
-    },
-    {
       "name": "babel-jest",
       "allowedCategories": [ "production", "prototypes" ]
     },
@@ -84,54 +72,6 @@
     },
     {
       "name": "fs-extra",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-google-analytics",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-image",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-manifest",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-mdx",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-pnpm",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-react-helmet",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-sass",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-sharp",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-plugin-sitemap",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-source-filesystem",
-      "allowedCategories": [ "production" ]
-    },
-    {
-      "name": "gatsby-transformer-sharp",
       "allowedCategories": [ "production" ]
     },
     {
@@ -175,10 +115,6 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
-      "name": "react-helmet",
-      "allowedCategories": [ "production" ]
-    },
-    {
       "name": "sass",
       "allowedCategories": [ "production", "prototypes" ]
     },
@@ -205,10 +141,6 @@
     {
       "name": "typescript",
       "allowedCategories": [ "production", "prototypes" ]
-    },
-    {
-      "name": "webpack",
-      "allowedCategories": [ "production" ]
     },
     {
       "name": "xstate",

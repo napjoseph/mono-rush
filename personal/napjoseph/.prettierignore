@@ -1,4 +1,7 @@
 node_modules
-.cache
+.next
 out
-public
+dist
+
+# snapshots
+**/__snapshots__/*.snap

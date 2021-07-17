@@ -1,0 +1,13 @@
+[build.environment]
+  NODE_VERSION = "14.17.2"
+
+[build]
+  command = '''
+  cd ../.. && \
+  node common/scripts/install-run-rush.js install && \
+  node common/scripts/install-run-rush.js export --verbose --to napjoseph
+  '''
+  publish = "out"
+
+[context.production.environment]
+  NODE_ENV = "production"

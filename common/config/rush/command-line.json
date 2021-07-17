@@ -201,10 +201,24 @@
       "incremental": true
     },
 
+    // napjoseph
+    {
+      "name": "napjoseph:start",
+      "summary": "Starts the napjoseph project",
+      "commandKind": "global",
+      "shellCommand": "(cd personal/napjoseph && node ../../common/scripts/install-run-rushx.js start)"
+    },
+    {
+      "name": "napjoseph:docker:build",
+      "summary": "Creates the docker image for the napjoseph project",
+      "commandKind": "global",
+      "shellCommand": "docker build --build-arg NODE_VERSION=$(cat .nvmrc | tr -cd [:digit:].) -f ./personal/napjoseph/Dockerfile -t napjoseph/mono-rush/calub-web ."
+    },
+
     // calub-web
     {
       "name": "calub-web:start",
-      "summary": "Creates the docker image for the calub-web project",
+      "summary": "Starts the calub-web project",
       "commandKind": "global",
       "shellCommand": "(cd personal/calub && node ../../common/scripts/install-run-rushx.js start)"
     },

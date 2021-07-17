@@ -2,7 +2,7 @@
 
 The website of Nap Joseph Calub.
 
-A project using [Gatsby](https://www.gatsbyjs.com/).
+A project using [NextJS](http://nextjs.org/).
 
 ## Local Development
 
