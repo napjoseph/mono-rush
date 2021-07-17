@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/njncalub
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://napjose.ph
+  * I am njncalub (https://keybase.io/njncalub) on keybase.
+  * I have a public key with fingerprint A3D8 04AA 0C8E 0A9C 8CF6  5383 C52C 45AB D0FD 5D8D
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201a526585e61f3d211ef22349f344b7bd0cf27dd518c4c3bc22ea37e41647f9a00a",
+      "fingerprint": "a3d804aa0c8e0a9c8cf65383c52c45abd0fd5d8d",
+      "host": "keybase.io",
+      "key_id": "c52c45abd0fd5d8d",
+      "kid": "0101575ac889a118fb8a1b6579ffe418bd3a0928db6705c443077fd6c4d9a06884130a",
+      "uid": "70c9fd2ce34acfdc445d761e94dd0b19",
+      "username": "njncalub"
+    },
+    "merkle_root": {
+      "ctime": 1583063567,
+      "hash_meta": "ba999dccf9dc46cfce1f761d4ff6bf34a2563b71ac9a7f053ddb371bdd68a1db",
+      "seqno": 14858951
+    },
+    "revoke": {
+      "sig_ids": [
+        "4f67f3d2fbd735488212f44b90d821a1eeae3d0a81a502a24cce01fa02eca7a60f"
+      ]
+    },
+    "service": {
+      "hostname": "napjose.ph",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1583063572,
+  "expire_in": 157680000,
+  "prev": "4e1aa0996290748738dc434cd117fa631aaa1d15e2386112418ff4d04cd8cf22",
+  "seqno": 21,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMQEAnicbVNrbBVFFL4tDwGhbXhZgQRdHsWmoTuzs7uzVwuE0BZCIY2oVWh7mZ1H
+e7m9dy/3USilGoFASW0BabQGW6H8IRCgVCwpEKgVqIgQICIGQaQopWBooIJRCzq3
+kZgY98fs7sx3vvOd75w5MWKAa1jcybTMPecfF1THnWmPRl2FSxpHlyu2w8oUd7ni
+4/0vXsJ4OOLxeZniVlQAVUB0aOhY5wYQGoMAcAGhhiyhIWSbNlOpgCZjOsAUUc2m
+EHKimRwBA5nCIqpKlDRFeANFPBQMeQMRSUs0hlVEiEoxV4lFMRWGrmGN6pAinUhO
+wXSGmQwsdsKxCCnOJmE+3evIPfnj6Zf3P/inulWgmzqhGFsEACxsTIBt6KYlhFSG
+baYR1YKY2Yap6hQhTTVNwQyKmFRsYIyA1q872k9nqtQSDFKuIUIFk3idmQbgFmJM
+tYEVA4Z5KED8XKIDywKUlERtpSJN8fOQr4R7Qo4TiZlLI94YBOhYUw1NN0xZIAkX
+e/w8QmSkTSzLYpQKuSCDCsqBkHkYEsKwpd8E6oZmm4BQi5hC1TXGbM0ENmOGrI/Z
+UkeYLw84MgPCOrZ0ICWEeKnj47HsYW+R9C2suJcoSBhmrJvCZqamI4whgEL201KZ
+/CSAc8I1phIsu69CAhGlXAWCqJBTYhJDFUpBRSxbqNRL+8ljjXpqAAkuc2SzgsVS
+UDDkRBzqlMj94kgkGHbHbImUBWPAFdz2/EPhsb0BJodERpTyUNjrBGQREvkfx0yY
+pvCVQW+Ie7wxhG4aWJVPLA8vlZSIAzlXlmVASzURNjUsrdQQZQCYghiaPJVOAZ1D
+DRsAQDkMQiCmSoScQgj/tRACqZMUSU7pW4BEoiGuVLR/nj/QFTfMNXhQfOz2uIYN
+TXp6p1pSE/+KLqp+bzxdcPLdQ+nffrwqh0356atRfc3rp+9b3Nx45ZPdd+/YI7uv
+GTi7tW50y+zJrTVx6M2cdTQz/rR/Ucu9Z1Du8mx3d2GW8/WWrh2rt72+dML+iQbK
+TqrteDKybGu5b8u4mrbOP0dlBYdvX//shS1xhY1dbZ0fNW2eZd5p6NGV6n0nrK6M
+lNqbrlNvzW4aMvZqS2W2c/zuxUM5jTO2z2usPlf34tymaW181uQlE5blVYnuS3PO
+tR8d+nJG+V7ac3T/pGvptxPnpqx/7N+01JpbJDqK8uvw1Kmpy0u04xWXRu1q3vjr
+kVPp68adz1v0YeUXDyaMvRuuTT41cXrLj8+ltF3JH/PL/W1w47qxWQ/Tdrzx4MSt
+uNEzE4asxt0r/N+1Zc8sLbiQe3l34iP3gZu54c6ta5pIH8wcF18AO2vKyop8g9/e
+Wdjqb7+39rfebav3Nh+Inry28dW+q/49PdcH/5D1/Q1G2vMvPGo6Vn8mdd5rq1ad
+Rnnjh2YMP3t273i+lj1o+Dm5evagi9s7jnYtXPDQqU8gVUkHew/urH3Y92V+T1lf
+T/f7nyYlZB6cdvOD+71zdkfGJKf/cbu6KmVK4gvPL75x66WRxw4PXHN4km/h5fmV
+lUlLkwtHrAlf3NS7EjYkDIm2dmy4et61+ezw1EmfGb+vbZjxzpRdA745Mj8vp4qV
+urOvb3hlXt2Troz6wvje8sq/AfN2At4=
+=0Sam
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/njncalub
+
+==================================================================
