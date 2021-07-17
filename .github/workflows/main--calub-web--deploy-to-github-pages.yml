@@ -36,7 +36,7 @@ jobs:
         with:
           deploy_key: ${{ secrets.CV_DEPLOY_KEY }}
           external_repository: napjoseph/calub
-          publish_dir: ./apps/calub/web/out
+          publish_dir: ./personal/calub/out
           publish_branch: export--mono-rush
           keep_files: false
           allow_empty_commit: true

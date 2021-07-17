@@ -455,7 +455,7 @@
     },
     {
       "packageName": "calub-web",
-      "projectFolder": "apps/calub/web",
+      "projectFolder": "personal/calub",
       "reviewCategory": "production"
     },
     {

@@ -206,13 +206,13 @@
       "name": "calub-web:start",
       "summary": "Creates the docker image for the calub-web project",
       "commandKind": "global",
-      "shellCommand": "(cd apps/calub/web && node ../../../common/scripts/install-run-rushx.js start)"
+      "shellCommand": "(cd personal/calub && node ../../common/scripts/install-run-rushx.js start)"
     },
     {
       "name": "calub-web:docker:build",
       "summary": "Creates the docker image for the calub-web project",
       "commandKind": "global",
-      "shellCommand": "docker build --build-arg NODE_VERSION=$(cat .nvmrc | tr -cd [:digit:].) -f ./apps/calub/web/Dockerfile -t napjoseph/mono-rush/calub-web ."
+      "shellCommand": "docker build --build-arg NODE_VERSION=$(cat .nvmrc | tr -cd [:digit:].) -f ./personal/calub/Dockerfile -t napjoseph/mono-rush/calub-web ."
     }
   ],
 

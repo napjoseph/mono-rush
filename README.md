@@ -74,7 +74,7 @@ rush update
 | package | folder | category |
 | ------- | ------ | -------- |
 | `napjoseph` | [personal/napjoseph](./personal/napjoseph) | `production` |
-| `calub-web` | [apps/calub/web](./apps/calub/web) | `production` |
+| `calub-web` | [personal/calub](./personal/calub) | `production` |
 | `starters-nextjs` | [apps/starters/nextjs](./apps/starters/nextjs) | `prototypes` |
 
 ## Contributing
