@@ -53,7 +53,7 @@ specifiers:
   react: ^17.0.2
   react-dom: ^17.0.2
   react-helmet: ^6.1.0
-  sass: ~1.35.1
+  sass: ~1.35.2
   stylelint: ~13.13.1
   stylelint-config-prettier: ~8.0.2
   stylelint-config-recommended: ~5.0.0
@@ -17801,7 +17801,7 @@ packages:
     dev: false
 
   file:projects/calub-web.tgz_webpack@5.45.1:
-    resolution: {integrity: sha512-Sc6XStq359gQhOJlZeCKinjDacFu6LlYbxwLrop9xqUH7zHXkj5xMdEJwvf+I35ufmDvPoiOioh/k3Zay0Yl3w==, tarball: file:projects/calub-web.tgz}
+    resolution: {integrity: sha512-wbLUj9tbrcWcgu0BpkUIFkg91PHoRUmI8CcBAEMZS2OrGCIL5Csh87niBH5y7pOuWJZmiv4V5g034X/Y5kYSyg==, tarball: file:projects/calub-web.tgz}
     id: file:projects/calub-web.tgz
     name: '@rush-temp/calub-web'
     version: 0.0.0
@@ -17861,7 +17861,7 @@ packages:
     dev: false
 
   file:projects/napjoseph.tgz_a8b49d891113449e5974d6b18cf89996:
-    resolution: {integrity: sha512-QL4+padO3jcFZTUGTJX4XMowYigu4nTHjcU/7w01uzjElTP4ZChswrcclSPmycevosU4il+bbfdJoIt7UQqXQg==, tarball: file:projects/napjoseph.tgz}
+    resolution: {integrity: sha512-8AKulThY9EAe0HumQngXGMdTMCr2CRT9Gq0EY/QIVAkqU232rDSwAwTqk5BY/HZnu6yFj/UnVstgoXZwSYl0rQ==, tarball: file:projects/napjoseph.tgz}
     id: file:projects/napjoseph.tgz
     name: '@rush-temp/napjoseph'
     version: 0.0.0
@@ -17909,7 +17909,7 @@ packages:
     dev: false
 
   file:projects/starters-nextjs.tgz_webpack@5.45.1:
-    resolution: {integrity: sha512-gTndugtjLp1baqQQ90hUZyGiGZGbx7OQjT2R81HMcyaTTtNYcx8W8Jl48PY70k5JN5HeW5Rce6wN1rn2R4YJvQ==, tarball: file:projects/starters-nextjs.tgz}
+    resolution: {integrity: sha512-bTE2Wv6Db6jf71g2niNrCEfKyjnsgJROciFAAu08NFXsR/lMxKmUNIxEqXvcYN4AyJ3HO7b2J4Qqbux3fxbCJw==, tarball: file:projects/starters-nextjs.tgz}
     id: file:projects/starters-nextjs.tgz
     name: '@rush-temp/starters-nextjs'
     version: 0.0.0
