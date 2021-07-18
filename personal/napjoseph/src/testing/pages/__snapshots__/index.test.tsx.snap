@@ -5,7 +5,269 @@ exports[`Home page matches snapshot 1`] = `
   <div
     class="container"
   >
-    Hello
+    <header
+      class="container"
+    >
+      <div
+        class="content"
+      >
+        <div
+          class="inner"
+        >
+          <a
+            class="title"
+            href="/"
+          >
+            <h1>
+              Nap Joseph Calub
+            </h1>
+          </a>
+          <p
+            class="description"
+          >
+            not only working software, but also well-crafted software
+          </p>
+          <div
+            class="navigation"
+          >
+            <div
+              class="container"
+            >
+              <div
+                class="content"
+              >
+                <nav>
+                  <a
+                    class="link"
+                    href="/"
+                  >
+                    Home
+                  </a>
+                  <a
+                    class="link"
+                    href="/posts"
+                  >
+                    Posts
+                  </a>
+                  <a
+                    class="link"
+                    href="https://napjose.ph/calub"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    View Curriculum Vitae
+                  </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main
+      class="container"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="content"
+        >
+          <div>
+            <h2
+              class="title"
+            >
+              Recent Posts
+            </h2>
+            <p
+              class="description"
+            >
+              Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.
+            </p>
+          </div>
+          <div
+            class="posts"
+          >
+            <div
+              class="container"
+            >
+              <a
+                class="link"
+                href="/posts/metus-dictum-at-tempor-commodo"
+              >
+                <span
+                  class="title"
+                >
+                  Metus dictum at tempor commodo
+                </span>
+              </a>
+              <div
+                class="tags"
+              >
+                <a
+                  class="tag"
+                  href="/#"
+                >
+                  <span
+                    class="bg-indigo-100 text-indigo-800 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60"
+                  >
+                    Lacus
+                  </span>
+                </a>
+              </div>
+              <p
+                class="snippet"
+              >
+                Faucibus purus in massa tempor nec feugiat nisl. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Commodo elit at imperdiet dui.
+              </p>
+            </div>
+            <div
+              class="container"
+            >
+              <a
+                class="link"
+                href="/posts/eleifend-mi-in-nulla"
+              >
+                <span
+                  class="title"
+                >
+                  Eleifend mi in nulla
+                </span>
+              </a>
+              <div
+                class="tags"
+              >
+                <a
+                  class="tag"
+                  href="/#"
+                >
+                  <span
+                    class="bg-pink-100 text-pink-800 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60"
+                  >
+                    Enim Gravida
+                  </span>
+                </a>
+              </div>
+              <p
+                class="snippet"
+              >
+                Metus dictum at tempor commodo ullamcorper a lacus vestibulum. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada.
+              </p>
+            </div>
+            <div
+              class="container"
+            >
+              <a
+                class="link"
+                href="/posts/diam-vulputate-ut-pharetra"
+              >
+                <span
+                  class="title"
+                >
+                  Diam vulputate ut pharetra
+                </span>
+              </a>
+              <div
+                class="tags"
+              >
+                <a
+                  class="tag"
+                  href="/#"
+                >
+                  <span
+                    class="bg-green-100 text-green-800 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60"
+                  >
+                    Ultrices
+                  </span>
+                </a>
+              </div>
+              <p
+                class="snippet"
+              >
+                Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      aria-labelledby="footer-heading"
+      class="container"
+    >
+      <h2
+        class="sr-only"
+        id="footer-heading"
+      >
+        Footer
+      </h2>
+      <div
+        class="content"
+      >
+        <p
+          class="text-base text-gray-400 text-left"
+        >
+          © 2021 
+          <a
+            class="name"
+            href="/"
+          >
+            Nap Joseph Calub
+          </a>
+          . All rights reserved.
+        </p>
+        <div
+          class="my-4 flex justify-left space-x-6"
+        >
+          <nav
+            class="container"
+          >
+            <a
+              class="link"
+              href="https://github.com/njncalub"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="iconWrapper"
+              >
+                <i
+                  class="icon fa-mocked"
+                />
+              </div>
+            </a>
+            <a
+              class="link"
+              href="https://keybase.io/njncalub"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="iconWrapper"
+              >
+                <i
+                  class="icon fa-mocked"
+                />
+              </div>
+            </a>
+            <a
+              class="link"
+              href="https://linkedin.com/in/njncalub"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div
+                class="iconWrapper"
+              >
+                <i
+                  class="icon fa-mocked"
+                />
+              </div>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
   </div>
 </DocumentFragment>
 `;
