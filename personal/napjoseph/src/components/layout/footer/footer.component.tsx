@@ -46,7 +46,7 @@ const Footer: React.FC<FooterProps> = (_props) => {
         Footer
       </h2>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <p className="text-base text-gray-400 text-center">
+        <p className="text-base text-gray-400 text-left">
           &copy; {year}{' '}
           <Link href="/">
             <a className={classes.name}>{name}</a>
@@ -54,7 +54,7 @@ const Footer: React.FC<FooterProps> = (_props) => {
           . All rights reserved.
         </p>
         {socialLinks && (
-          <div className="my-4 flex justify-center space-x-6">
+          <div className="my-4 flex justify-left space-x-6">
             <SocialLinks socialLinks={socialLinks} />
           </div>
         )}
