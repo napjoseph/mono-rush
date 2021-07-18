@@ -29,6 +29,14 @@ const Footer: React.FC<FooterProps> = (_props) => {
         prefix: 'fab',
         iconName: 'keybase'
       }
+    },
+    {
+      name: 'LinkedIn',
+      href: 'https://linkedin.com/in/njncalub',
+      icon: {
+        prefix: 'fab',
+        iconName: 'linkedin'
+      }
     }
   ];
 

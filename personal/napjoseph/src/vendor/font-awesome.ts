@@ -1,4 +1,4 @@
-import { faGithub, faKeybase } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faKeybase, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 // This ensures that the icon CSS is loaded immediately before attempting to render icons.
@@ -12,4 +12,4 @@ config.autoAddCss = false;
 // @fortawesome/free-solid-svg-icons
 
 // @fortawesome/free-brands-svg-icons
-library.add(faGithub, faKeybase);
+library.add(faGithub, faKeybase, faLinkedin);
