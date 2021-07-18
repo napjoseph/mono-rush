@@ -18,7 +18,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ socialLinks = [] }) => {
     <nav className={classes.container}>
       {socialLinks.map((link, index) => {
         return (
-          <a key={index} href={link.href} className={classes.link}>
+          <a key={index} href={link.href} className={classes.link} target="_blank" rel="noreferrer">
             <div className={classes.iconWrapper}>
               <FontAwesomeIcon icon={link.icon} fixedWidth className={classes.icon} />
             </div>

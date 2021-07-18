@@ -1,0 +1,11 @@
+.container {
+  @apply block;
+
+  .content {
+    @apply block;
+
+    .link {
+      @apply uppercase text-sm font-bold text-gray-600 main-link-hover mr-3;
+    }
+  }
+}

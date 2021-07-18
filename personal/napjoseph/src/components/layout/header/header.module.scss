@@ -1,11 +1,19 @@
 .container {
   @apply bg-white;
 
+  .content {
+    @apply max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:flex lg:justify-between;
+  }
+
   .title {
     @apply main-link-hover text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl;
   }
 
   .description {
     @apply mt-5 text-gray-500 text-xl;
+  }
+
+  .navigation {
+    @apply mt-5;
   }
 }
