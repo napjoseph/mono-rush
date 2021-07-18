@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import { SiteNavigationLinkItem } from '../../../models';
 
 import classes from './site-navigation.module.scss';
@@ -10,6 +12,9 @@ interface SiteNavigationProps {
 }
 
 const SiteNavigation: React.FC<SiteNavigationProps> = ({ links = [] }) => {
+  const router = useRouter();
+  const pathname = router ? router.pathname : '';
+
   if (!links) return null;
 
   return (
@@ -17,7 +22,7 @@ const SiteNavigation: React.FC<SiteNavigationProps> = ({ links = [] }) => {
       <div className={classes.content}>
         <nav>
           {links.map((link) => (
-            <SiteNavigationItem key={link.name} link={link} />
+            <SiteNavigationItem key={link.name} link={link} isActive={pathname === link.href} />
           ))}
         </nav>
       </div>
@@ -27,9 +32,10 @@ const SiteNavigation: React.FC<SiteNavigationProps> = ({ links = [] }) => {
 
 interface SiteNavigationItemProps {
   link: SiteNavigationLinkItem;
+  isActive?: boolean;
 }
 
-const SiteNavigationItem: React.FC<SiteNavigationItemProps> = ({ link }) => {
+const SiteNavigationItem: React.FC<SiteNavigationItemProps> = ({ link, isActive = false }) => {
   if (link.external !== undefined && link.external) {
     return (
       <a href={link.href} className={classes.link} target="_blank" rel="noreferrer">
@@ -40,7 +46,7 @@ const SiteNavigationItem: React.FC<SiteNavigationItemProps> = ({ link }) => {
 
   return (
     <Link href={link.href}>
-      <a className={classes.link}>{link.name}</a>
+      <a className={isActive ? classes.linkActive : classes.link}>{link.name}</a>
     </Link>
   );
 };

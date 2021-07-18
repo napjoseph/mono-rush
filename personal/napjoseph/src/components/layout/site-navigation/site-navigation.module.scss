@@ -3,9 +3,16 @@
 
   .content {
     @apply block;
+  }
+}
 
-    .link {
-      @apply uppercase text-sm font-bold text-gray-600 main-link-hover mr-3;
-    }
+.link {
+  @apply uppercase text-sm font-bold text-gray-500 main-link-hover mr-3;
+
+  &Active {
+    @apply uppercase text-sm font-bold text-gray-500 main-link-hover mr-3;
+
+    // Only change it a little.
+    @apply text-gray-700;
   }
 }

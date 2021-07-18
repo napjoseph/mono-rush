@@ -19,6 +19,10 @@ const Header: React.FC<HeaderProps> = (_props) => {
       href: '/'
     },
     {
+      name: 'Posts',
+      href: '/posts'
+    },
+    {
       name: 'View Curriculum Vitae',
       href: 'https://napjose.ph/calub',
       external: true
