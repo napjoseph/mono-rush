@@ -11,6 +11,7 @@ const HomePage: React.FC<HomePageProps> = (_props) => {
       <Head>
         <title>Nap Joseph Calub</title>
       </Head>
+      <div>This is the home page.</div>
     </>
   );
 };
