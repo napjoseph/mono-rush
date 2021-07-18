@@ -1,0 +1,23 @@
+.container {
+  @apply block;
+
+  .content {
+    @apply relative max-w-lg mx-auto lg:max-w-7xl;
+
+    .title {
+      @apply text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl;
+    }
+
+    .description {
+      @apply mt-3 text-xl text-gray-500 sm:mt-4;
+    }
+
+    .posts {
+      @apply mt-12 grid gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12;
+
+      .empty {
+        @apply text-gray-600 text-sm;
+      }
+    }
+  }
+}
