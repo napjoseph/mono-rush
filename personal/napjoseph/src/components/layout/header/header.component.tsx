@@ -9,7 +9,7 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = (_props) => {
   const title = 'Nap Joseph Calub';
-  const description = 'a byte-sized grimoire on software black magic & open-sourcery';
+  const description = 'not only working software, but also well-crafted software';
 
   return (
     <header className={classes.container}>
