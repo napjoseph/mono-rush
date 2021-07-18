@@ -1,5 +1,6 @@
 export interface Post {
   title: string;
+  slug: string;
   href: string;
   tags: PostTag[];
   snippet: string;
