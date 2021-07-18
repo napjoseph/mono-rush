@@ -1,0 +1,16 @@
+.container {
+  @apply bg-white;
+
+  .link {
+    @apply inline-block text-gray-400;
+    @apply main-link-hover;
+  }
+
+  .iconWrapper {
+    @apply mx-1;
+
+    .icon {
+      @apply text-lg;
+    }
+  }
+}

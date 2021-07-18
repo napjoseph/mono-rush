@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   purge: [
@@ -971,5 +972,14 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus']
   },
-  plugins: []
+  plugins: [
+    // change color of links on hover
+    plugin(function ({ addComponents }) {
+      addComponents({
+        '.main-link-hover': {
+          '@apply hover:text-blue-700 transition duration-150 ease-in-out': {}
+        }
+      });
+    })
+  ]
 };

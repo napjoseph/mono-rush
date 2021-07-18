@@ -1,3 +1,8 @@
 .container {
   @apply bg-white;
+
+  .name {
+    @apply font-bold;
+    @apply main-link-hover;
+  }
 }

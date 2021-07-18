@@ -3,6 +3,7 @@
 
   .title {
     @apply text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl;
+    @apply main-link-hover;
   }
 
   .description {
