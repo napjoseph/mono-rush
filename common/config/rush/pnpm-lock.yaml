@@ -6612,6 +6612,16 @@ packages:
       which-typed-array: 1.1.4
     dev: false
 
+  /utterances-react-component/1.0.0_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-ouHYHpFtAzGBTm4imUK23dwbuSg7//XsR+lcZ3F9xFm7kBNb0FsKRHTfC+FKUQCWPdIbbgfFsygYWKsbdq1OVA==}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /v8-compile-cache/2.3.0:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: false
@@ -6916,7 +6926,7 @@ packages:
     dev: false
 
   file:projects/napjoseph.tgz:
-    resolution: {integrity: sha512-0K38RtAW87c9ESedp0QG3qgS7J6rMcpHJ+a+uqC1RqCxJAiaGB/WsjgajFnloIAM2IhGiOvUqV8jasgpEN+phA==, tarball: file:projects/napjoseph.tgz}
+    resolution: {integrity: sha512-2BL414JEZqFae+Bq2FTPh3wxukuT6S3mI0isRI5o0EKzXSUw1DL+NgoC+LvyCWXy1a4VRLKV7mpIVURwQ+os1w==, tarball: file:projects/napjoseph.tgz}
     name: '@rush-temp/napjoseph'
     version: 0.0.0
     dependencies:
@@ -6963,6 +6973,7 @@ packages:
       stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
       tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
       typescript: 4.3.5
+      utterances-react-component: 1.0.0_react-dom@17.0.2+react@17.0.2
       xstate: 4.22.0
     transitivePeerDependencies:
       - '@xstate/fsm'

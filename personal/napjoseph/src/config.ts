@@ -57,5 +57,13 @@ export const SITE_CONFIG: SiteConfig = {
         }
       ]
     }
+  },
+  comments: {
+    using: 'utterances',
+    props: {
+      repo: 'napjoseph/napjoseph-comments',
+      theme: 'preferred-color-scheme',
+      issueTerm: 'pathname'
+    }
   }
 };

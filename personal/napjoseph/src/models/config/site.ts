@@ -1,3 +1,5 @@
+import { UtterancesProps } from 'utterances-react-component';
+
 import { SiteNavigationLinkItem } from './site-navigation-links';
 import { SocialLinkItem } from './social-links';
 
@@ -16,4 +18,12 @@ export interface SiteConfig {
       links: SocialLinkItem[];
     };
   };
+  comments?:
+    | {
+        using: 'none';
+      }
+    | {
+        using: 'utterances';
+        props: UtterancesProps;
+      };
 }

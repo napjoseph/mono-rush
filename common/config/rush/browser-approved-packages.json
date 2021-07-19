@@ -155,6 +155,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "utterances-react-component",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "xstate",
       "allowedCategories": [ "production" ]
     }

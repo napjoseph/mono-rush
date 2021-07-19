@@ -8,6 +8,7 @@ import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
 import PostBody from '../../components/posts/post-body.component';
 import PostHeader from '../../components/posts/post-header.component';
 import { SITE_CONFIG } from '../../config';
+import PostComments from '../../components/posts/post-comments.component';
 
 interface PostPageProps {
   post?: Post;
@@ -29,6 +30,7 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
       <article className="text-gray-700">
         <PostHeader post={post} />
         <PostBody post={post} />
+        <PostComments post={post} />
       </article>
     </>
   );

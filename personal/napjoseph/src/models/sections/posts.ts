@@ -7,6 +7,7 @@ export interface Post {
   publishedDate?: string;
   readingTime?: string;
   content?: string;
+  disableComments?: boolean;
 }
 
 export interface PostTag {
