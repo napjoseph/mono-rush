@@ -1,6 +1,6 @@
 ---
 title: 'Deploy Hugo Site Using GitHub Actions'
-publishedDate: '2020-07-31T03:02:37+08:00'
+publishedDate: '2020-06-28T03:02:37+08:00'
 tags:
   - 'Hugo'
   - 'GitHub Actions'

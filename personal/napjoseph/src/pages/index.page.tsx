@@ -21,12 +21,7 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
         <title>{siteTitle}</title>
       </Head>
 
-      <PostCardList
-        title="Recent Posts"
-        description="Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu."
-        posts={posts}
-        hideIfEmpty={false}
-      />
+      <PostCardList title="Recent Posts" posts={posts} hideIfEmpty={false} />
     </>
   );
 };

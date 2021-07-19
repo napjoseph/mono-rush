@@ -10,12 +10,8 @@ export const SITE_CONFIG: SiteConfig = {
         href: '/'
       },
       {
-        name: 'Posts',
+        name: 'All Posts',
         href: '/posts'
-      },
-      {
-        name: 'Tags',
-        href: '/tags'
       },
       {
         name: 'View Curriculum Vitae',
