@@ -28,7 +28,10 @@
     "fs-extra": "~10.0.0",
     "xstate": "~4.22.0",
     "@xstate/react": "~1.5.1",
-    "luxon": "~2.0.1"
+    "luxon": "~2.0.1",
+    "gray-matter": "~4.0.3",
+    "remark": "~13.0.0",
+    "remark-html": "~13.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

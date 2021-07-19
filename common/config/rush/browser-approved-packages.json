@@ -75,6 +75,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "gray-matter",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "identity-obj-proxy",
       "allowedCategories": [ "production", "prototypes" ]
     },
@@ -113,6 +117,14 @@
     {
       "name": "react-dom",
       "allowedCategories": [ "production", "prototypes" ]
+    },
+    {
+      "name": "remark",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "remark-html",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "sass",
