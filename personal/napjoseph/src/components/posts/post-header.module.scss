@@ -1,17 +1,31 @@
 .container {
+  @apply flex flex-col gap-2;
+
   .title {
     @apply text-4xl;
   }
+
+  .publishedDate {
+    @apply text-gray-400;
+
+    .date {
+      @apply font-medium;
+    }
+  }
+}
+
+.card {
+  @apply gap-1.5 #{!important};
 
   .link {
     @apply block;
 
     .title {
-      @apply text-xl font-semibold text-gray-900 main-link-hover;
+      @apply text-2xl text-gray-900 main-link-hover;
     }
   }
 
   .publishedDate {
-    @apply text-gray-400;
+    @apply text-xs;
   }
 }
