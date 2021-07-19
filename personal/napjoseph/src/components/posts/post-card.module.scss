@@ -1,27 +1,6 @@
 .container {
   @apply hover:shadow-xl hover:rounded-xl p-3;
 
-  .link {
-    @apply block mb-2;
-
-    .title {
-      @apply text-xl font-semibold text-gray-900 main-link-hover;
-    }
-  }
-
-  .tags {
-    .tag {
-      @apply inline-block mr-2 hover:shadow-sm;
-
-      .inner {
-        @apply inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60;
-
-        // TODO: Create a utility for this.
-        @apply bg-indigo-100 text-indigo-800;
-      }
-    }
-  }
-
   .excerpt {
     @apply mt-3 text-base text-gray-500;
   }

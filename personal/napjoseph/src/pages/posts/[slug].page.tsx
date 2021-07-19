@@ -23,7 +23,7 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
       </Head>
 
       <div className="text-gray-700">
-        <PostHeader title={post.title} publishedDate={post.publishedDate} />
+        <PostHeader post={post} />
         <PostBody content={post.content} />
       </div>
     </>
