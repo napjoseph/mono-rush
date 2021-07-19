@@ -16,23 +16,29 @@ const PostBody: React.FC<PostBodyProps> = ({ post }) => {
   if (!post) return null;
 
   const customRenderers: Components = {
-    p(paragraph) {
-      return <p>{paragraph.children}</p>;
+    p({ children }) {
+      return <p>{children}</p>;
     },
 
-    code({ className = '', children }) {
-      const match = /language-(\w+)/.exec(className);
-      const props = {
-        language: match !== null ? match[1] : ''
-      };
-
-      return (
-        <>
+    code({ inline, className, children, ...props }) {
+      const match = /language-(\w+)/.exec(className || '');
+      if (!inline && match) {
+        return (
           <div className={classes.padding}>
-            <CodeBlock {...props}>{String(children).replace(/\n$/, '')}</CodeBlock>
+            <CodeBlock language={match[1]} {...props}>
+              {String(children).replace(/\n$/, '')}
+            </CodeBlock>
           </div>
-        </>
-      );
+        );
+      } else {
+        return (
+          <div className={classes.inlineCode}>
+            <code className={className} {...props}>
+              {children}
+            </code>
+          </div>
+        );
+      }
     }
   };
 

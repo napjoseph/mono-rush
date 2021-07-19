@@ -84,5 +84,5 @@ jobs:
 
 ### Deployment
 
-After merging your pull requests to the **stable** branch, it should automatically
-deploy to the **master** branch.
+After merging your pull requests to the `stable` branch, it should automatically
+deploy to the `master` branch.

@@ -13,6 +13,14 @@
     @apply text-sm;
   }
 
+  .inlineCode {
+    @apply inline;
+
+    code {
+      @apply bg-gray-100 text-gray-700 p-1.5 break-words shadow-inner;
+    }
+  }
+
   h1,
   h2,
   h3,
