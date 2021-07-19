@@ -1,0 +1,9 @@
+.container {
+  .title {
+    @apply text-4xl;
+  }
+
+  .publishedDate {
+    @apply text-gray-400;
+  }
+}

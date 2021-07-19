@@ -4,7 +4,10 @@ import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Post } from '../../models';
-import { getAllPosts } from '../../lib/api/posts';
+import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
+import markdownToHtml from '../../lib/utils/markdown-to-html';
+import PostBody from '../../components/posts/post-body.component';
+import PostHeader from '../../components/posts/post-header.component';
 
 interface PostPageProps {
   post?: Post;
@@ -20,19 +23,23 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
       </Head>
 
       <div className="text-gray-700">
-        <h2 className="text-3xl font-bold">{post.title}</h2>
-        <p className="mt-3">{post.snippet}</p>
+        <PostHeader title={post.title} publishedDate={post.publishedDate} />
+        <PostBody content={post.content} />
       </div>
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
-  const found = getAllPosts().filter((post) => post.slug === params.slug);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const post = getPostBySlug(params.slug);
+  const content = await markdownToHtml(post.content || '');
 
   return {
     props: {
-      post: found[0] || null
+      post: {
+        ...post,
+        content
+      }
     }
   };
 };

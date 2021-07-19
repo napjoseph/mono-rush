@@ -88,105 +88,11 @@ exports[`Home page matches snapshot 1`] = `
           <div
             class="posts"
           >
-            <div
-              class="container"
+            <p
+              class="empty"
             >
-              <a
-                class="link"
-                href="/posts/metus-dictum-at-tempor-commodo"
-              >
-                <span
-                  class="title"
-                >
-                  Metus dictum at tempor commodo
-                </span>
-              </a>
-              <div
-                class="tags"
-              >
-                <a
-                  class="tag"
-                  href="/#"
-                >
-                  <span
-                    class="bg-indigo-100 text-indigo-800 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60"
-                  >
-                    Lacus
-                  </span>
-                </a>
-              </div>
-              <p
-                class="snippet"
-              >
-                Faucibus purus in massa tempor nec feugiat nisl. Habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Commodo elit at imperdiet dui.
-              </p>
-            </div>
-            <div
-              class="container"
-            >
-              <a
-                class="link"
-                href="/posts/eleifend-mi-in-nulla"
-              >
-                <span
-                  class="title"
-                >
-                  Eleifend mi in nulla
-                </span>
-              </a>
-              <div
-                class="tags"
-              >
-                <a
-                  class="tag"
-                  href="/#"
-                >
-                  <span
-                    class="bg-pink-100 text-pink-800 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60"
-                  >
-                    Enim Gravida
-                  </span>
-                </a>
-              </div>
-              <p
-                class="snippet"
-              >
-                Metus dictum at tempor commodo ullamcorper a lacus vestibulum. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada.
-              </p>
-            </div>
-            <div
-              class="container"
-            >
-              <a
-                class="link"
-                href="/posts/diam-vulputate-ut-pharetra"
-              >
-                <span
-                  class="title"
-                >
-                  Diam vulputate ut pharetra
-                </span>
-              </a>
-              <div
-                class="tags"
-              >
-                <a
-                  class="tag"
-                  href="/#"
-                >
-                  <span
-                    class="bg-green-100 text-green-800 inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60"
-                  >
-                    Ultrices
-                  </span>
-                </a>
-              </div>
-              <p
-                class="snippet"
-              >
-                Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus.
-              </p>
-            </div>
+              It looks a little empty right now. Please check back later.
+            </p>
           </div>
         </div>
       </div>

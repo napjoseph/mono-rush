@@ -1,17 +1,17 @@
 import React from 'react';
 
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 
 import PostsCardsList from '../../components/sections/posts/posts-cards-list.component';
 import { Post } from '../../models';
 import { getAllPosts } from '../../lib/api/posts';
 
-/* eslint-disable-next-line */
-interface PostsPageProps {}
+interface PostsPageProps {
+  posts: Post[];
+}
 
-const PostsPage: React.FC<PostsPageProps> = (_props) => {
-  const recentPosts: Post[] = getAllPosts();
-
+const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
   return (
     <>
       <Head>
@@ -21,11 +21,21 @@ const PostsPage: React.FC<PostsPageProps> = (_props) => {
       <PostsCardsList
         title="Posts"
         description="Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu."
-        posts={recentPosts}
+        posts={posts}
         hideIfEmpty={false}
       />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (_context) => {
+  const posts = getAllPosts();
+
+  return {
+    props: {
+      posts
+    }
+  };
 };
 
 export default PostsPage;

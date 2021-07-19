@@ -12,10 +12,17 @@
   .tags {
     .tag {
       @apply inline-block mr-2 hover:shadow-sm;
+
+      .inner {
+        @apply inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60;
+
+        // TODO: Create a utility for this.
+        @apply bg-indigo-100 text-indigo-800;
+      }
     }
   }
 
-  .snippet {
+  .excerpt {
     @apply mt-3 text-base text-gray-500;
   }
 }

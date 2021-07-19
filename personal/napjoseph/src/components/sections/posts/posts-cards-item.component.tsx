@@ -21,28 +21,17 @@ const PostsCardsItem: React.FC<PostsCardsItemProps> = ({ post }) => {
 
       <div className={classes.tags}>
         {post.tags.map((tag) => (
-          <Link key={tag.name} href={tag.href}>
+          <Link key={tag} href="#">
             <a className={classes.tag}>
-              <span
-                className={classNames(
-                  tag.color,
-                  'inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium hover:bg-opacity-60'
-                )}
-              >
-                {tag.name}
-              </span>
+              <span className={classes.inner}>{tag}</span>
             </a>
           </Link>
         ))}
       </div>
 
-      <p className={classes.snippet}>{post.snippet}</p>
+      <p className={classes.excerpt}>{post.excerpt}</p>
     </div>
   );
-};
-
-const classNames = (...classes: string[]): string => {
-  return classes.filter(Boolean).join(' ');
 };
 
 export default PostsCardsItem;
