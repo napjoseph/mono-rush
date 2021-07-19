@@ -119,11 +119,11 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
-      "name": "remark",
+      "name": "react-markdown",
       "allowedCategories": [ "production" ]
     },
     {
-      "name": "remark-html",
+      "name": "react-syntax-highlighter",
       "allowedCategories": [ "production" ]
     },
     {

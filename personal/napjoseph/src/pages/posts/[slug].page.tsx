@@ -5,7 +5,6 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Post } from '../../models';
 import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
-import markdownToHtml from '../../lib/utils/markdown-to-html';
 import PostBody from '../../components/posts/post-body.component';
 import PostHeader from '../../components/posts/post-header.component';
 import { SITE_CONFIG } from '../../config';
@@ -27,24 +26,20 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
         </title>
       </Head>
 
-      <div className="text-gray-700">
+      <article className="text-gray-700">
         <PostHeader post={post} />
-        <PostBody content={post.content} />
-      </div>
+        <PostBody post={post} />
+      </article>
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = ({ params }) => {
   const post = getPostBySlug(params.slug.toString());
-  const content = await markdownToHtml(post.content || '');
 
   return {
     props: {
-      post: {
-        ...post,
-        content
-      }
+      post
     }
   };
 };
