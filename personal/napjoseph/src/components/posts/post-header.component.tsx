@@ -7,6 +7,7 @@ import { Post } from '../../models';
 import TagPill from '../tags/tag-pill.component';
 
 import classes from './post-header.module.scss';
+import convertToPostTag from '../../lib/utils/convert-to-post-tag';
 
 interface PostHeaderProps {
   post: Post;
@@ -38,7 +39,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post, forCard = false }) => {
         {tags && tags.length !== 0 && (
           <div className={classes.tags}>
             {tags.map((tag) => (
-              <TagPill key={tag} tag={tag} />
+              <TagPill key={tag} tag={convertToPostTag(tag)} />
             ))}
           </div>
         )}

@@ -1,0 +1,23 @@
+.container {
+  @apply block;
+
+  .content {
+    @apply relative max-w-7xl mx-auto;
+
+    .title {
+      @apply text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl;
+    }
+
+    .description {
+      @apply mt-3 text-xl text-gray-500 sm:mt-4;
+    }
+
+    .tags {
+      @apply mt-12;
+
+      .empty {
+        @apply text-gray-600 text-sm;
+      }
+    }
+  }
+}

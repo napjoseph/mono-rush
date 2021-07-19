@@ -51,6 +51,12 @@ exports[`Home page matches snapshot 1`] = `
                   </a>
                   <a
                     class="link"
+                    href="/tags"
+                  >
+                    Tags
+                  </a>
+                  <a
+                    class="link"
                     href="https://napjose.ph/calub"
                     rel="noreferrer"
                     target="_blank"

@@ -7,16 +7,17 @@ import { PostTag } from '../../models';
 import classes from './tag-pill.module.scss';
 
 interface TagPillProps {
-  tag: string;
-  postTag?: PostTag;
+  tag?: PostTag;
 }
 
 const TagPill: React.FC<TagPillProps> = ({ tag }) => {
+  if (!tag) return null;
+
   return (
     <div className={classes.container}>
-      <Link href="#">
+      <Link href={`/tags/${tag.slug}`}>
         <a className={classes.tag}>
-          <span className={classes.inner}>{tag}</span>
+          <span className={classes.inner}>{tag.name}</span>
         </a>
       </Link>
     </div>

@@ -9,9 +9,9 @@ export interface Post {
   content?: string;
 }
 
-// TODO: Create a different configuration for this and the categories.
 export interface PostTag {
   name: string;
-  href: string;
-  color: string;
+  description?: string;
+  slug?: string;
+  color?: string;
 }

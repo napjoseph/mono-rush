@@ -31,7 +31,7 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug.toString());
   const content = await markdownToHtml(post.content || '');
 
   return {
