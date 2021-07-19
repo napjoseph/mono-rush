@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - dev
+    paths:
+      - 'personal/calub/**'
 
 jobs:
   build-and-deploy:
