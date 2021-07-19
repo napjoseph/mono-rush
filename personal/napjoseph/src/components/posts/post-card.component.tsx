@@ -2,15 +2,15 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { Post } from '../../../models';
+import { Post } from '../../models';
 
-import classes from './posts-cards-item.module.scss';
+import classes from './post-card.module.scss';
 
-interface PostsCardsItemProps {
+interface PostCardProps {
   post: Post;
 }
 
-const PostsCardsItem: React.FC<PostsCardsItemProps> = ({ post }) => {
+const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return (
     <div className={classes.container}>
       <Link href={`/posts/${post.slug}`}>
@@ -34,4 +34,4 @@ const PostsCardsItem: React.FC<PostsCardsItemProps> = ({ post }) => {
   );
 };
 
-export default PostsCardsItem;
+export default PostCard;

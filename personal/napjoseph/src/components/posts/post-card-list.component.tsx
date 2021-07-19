@@ -1,17 +1,18 @@
 import React from 'react';
-import { Post } from '../../../models';
-import PostsCardsItem from './posts-cards-item.component';
 
-import classes from './posts-cards-list.module.scss';
+import { Post } from '../../models';
+import PostCard from './post-card.component';
 
-interface PostsCardsListProps {
+import classes from './post-card-list.module.scss';
+
+interface PostCardListProps {
   title: string;
   description?: string;
   posts: Post[];
   hideIfEmpty?: boolean;
 }
 
-const PostsCardsList: React.FC<PostsCardsListProps> = ({
+const PostCardList: React.FC<PostCardListProps> = ({
   title = 'Posts',
   description,
   posts = [],
@@ -28,7 +29,7 @@ const PostsCardsList: React.FC<PostsCardsListProps> = ({
         </div>
         <div className={classes.posts}>
           {posts.length ? (
-            posts.map((post) => <PostsCardsItem key={post.title} post={post} />)
+            posts.map((post) => <PostCard key={post.title} post={post} />)
           ) : (
             <p className={classes.empty}>
               It looks a little empty right now. Please check back later.
@@ -40,4 +41,4 @@ const PostsCardsList: React.FC<PostsCardsListProps> = ({
   );
 };
 
-export default PostsCardsList;
+export default PostCardList;
