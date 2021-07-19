@@ -1,0 +1,9 @@
+.container {
+  .article {
+    @apply text-gray-700 rounded-xl shadow-xl p-5;
+  }
+
+  .comments {
+    @apply mt-12;
+  }
+}

@@ -10,6 +10,8 @@ import PostHeader from '../../components/posts/post-header.component';
 import { SITE_CONFIG } from '../../config';
 import PostComments from '../../components/posts/post-comments.component';
 
+import classes from './[slug].module.scss';
+
 interface PostPageProps {
   post?: Post;
 }
@@ -27,11 +29,16 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
         </title>
       </Head>
 
-      <article className="text-gray-700">
-        <PostHeader post={post} />
-        <PostBody post={post} />
-        <PostComments post={post} />
-      </article>
+      <div className={classes.container}>
+        <article className={classes.article}>
+          <PostHeader post={post} />
+          <PostBody post={post} />
+        </article>
+
+        <div className={classes.comments}>
+          <PostComments post={post} />
+        </div>
+      </div>
     </>
   );
 };
