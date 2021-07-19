@@ -3,10 +3,8 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Components } from 'react-markdown/src/ast-to-react';
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-
 import { Post } from '../../models';
+import CodeBlock from '../ui/blocks/code-block.component';
 
 import classes from './post-body.module.scss';
 
@@ -22,21 +20,16 @@ const PostBody: React.FC<PostBodyProps> = ({ post }) => {
       return <p>{paragraph.children}</p>;
     },
 
-    code(code) {
-      const { className = '', children } = code;
-      const language = className === '' ? className : className.split('-')[1];
-      const showLineNumbers = !['', 'bash'].includes(language);
+    code({ className = '', children }) {
+      const match = /language-(\w+)/.exec(className);
+      const props = {
+        language: match !== null ? match[1] : ''
+      };
 
       return (
         <>
           <div className={classes.padding}>
-            <SyntaxHighlighter
-              style={atomDark}
-              language={language}
-              showLineNumbers={showLineNumbers}
-            >
-              {children}
-            </SyntaxHighlighter>
+            <CodeBlock {...props}>{String(children).replace(/\n$/, '')}</CodeBlock>
           </div>
         </>
       );

@@ -19,7 +19,7 @@ Since this is an
 [Organization Pages-type repository](https://docs.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites),
 we will be using following branches for our workflow:
 
-```
+```bash
 $ git branch
 master           # the branch that GitHub pages will serve the files from
 stable           # the main development branch where all pull requests will be merged to
@@ -42,7 +42,7 @@ $ mkdir -p .github/workflows
 $ touch .github/workflows/deploy.yml
 ```
 
-```yaml
+```yaml | file:hello.yaml
 # file: .github/workflows/deploy.yml
 
 name: deploy-to-master
