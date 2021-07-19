@@ -7,6 +7,7 @@ import { Post, PostTag } from '../../models';
 import { getAllPostsByTagSlug } from '../../lib/api/posts';
 import PostCardList from '../../components/posts/post-card-list.component';
 import { getAllPostTags, getTagBySlug } from '../../lib/api/tags';
+import { SITE_CONFIG } from '../../config';
 
 interface TagPageProps {
   tag?: PostTag;
@@ -16,10 +17,14 @@ interface TagPageProps {
 const TagPage: React.FC<TagPageProps> = ({ tag, posts }) => {
   if (!tag) return null;
 
+  const siteTitle = SITE_CONFIG.title || '';
+
   return (
     <>
       <Head>
-        <title>{tag.name} | Nap Joseph Calub</title>
+        <title>
+          {tag.name} | {siteTitle}
+        </title>
       </Head>
 
       <div className="text-gray-700">

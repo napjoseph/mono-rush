@@ -8,6 +8,7 @@ import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
 import markdownToHtml from '../../lib/utils/markdown-to-html';
 import PostBody from '../../components/posts/post-body.component';
 import PostHeader from '../../components/posts/post-header.component';
+import { SITE_CONFIG } from '../../config';
 
 interface PostPageProps {
   post?: Post;
@@ -16,10 +17,14 @@ interface PostPageProps {
 const PostPage: React.FC<PostPageProps> = ({ post }) => {
   if (!post) return null;
 
+  const siteTitle = SITE_CONFIG.title || '';
+
   return (
     <>
       <Head>
-        <title>{post.title} | Nap Joseph Calub</title>
+        <title>
+          {post.title} | {siteTitle}
+        </title>
       </Head>
 
       <div className="text-gray-700">

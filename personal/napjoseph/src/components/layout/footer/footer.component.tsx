@@ -2,8 +2,8 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { SocialLinkItem } from '../../../models';
 import SocialLinks from '../social-links/social-links.component';
+import { SITE_CONFIG } from '../../../config';
 
 import classes from './footer.module.scss';
 
@@ -11,34 +11,9 @@ import classes from './footer.module.scss';
 interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = (_props) => {
-  const year = '2021';
-  const name = 'Nap Joseph Calub';
-  const socialLinks: SocialLinkItem[] = [
-    {
-      name: 'GitHub',
-      href: 'https://github.com/njncalub',
-      icon: {
-        prefix: 'fab',
-        iconName: 'github'
-      }
-    },
-    {
-      name: 'Keybase',
-      href: 'https://keybase.io/njncalub',
-      icon: {
-        prefix: 'fab',
-        iconName: 'keybase'
-      }
-    },
-    {
-      name: 'LinkedIn',
-      href: 'https://linkedin.com/in/njncalub',
-      icon: {
-        prefix: 'fab',
-        iconName: 'linkedin'
-      }
-    }
-  ];
+  const year = SITE_CONFIG.footer.copyright.year || '';
+  const name = SITE_CONFIG.footer.copyright.name || '';
+  const socialLinks = SITE_CONFIG.footer.social.links || [];
 
   return (
     <footer className={classes.container} aria-labelledby="footer-heading">

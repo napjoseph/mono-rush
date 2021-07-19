@@ -6,16 +6,19 @@ import { GetStaticProps } from 'next';
 import TagCardList from '../../components/tags/tag-card-list.component';
 import { PostTag } from '../../models';
 import { getAllPostTags } from '../../lib/api/tags';
+import { SITE_CONFIG } from '../../config';
 
 interface TagsPageProps {
   tags: PostTag[];
 }
 
 const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
+  const siteTitle = SITE_CONFIG.title || '';
+
   return (
     <>
       <Head>
-        <title>Tags | Nap Joseph Calub</title>
+        <title>Tags | {siteTitle}</title>
       </Head>
 
       <TagCardList

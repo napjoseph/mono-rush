@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import SiteNavigation from '../site-navigation/site-navigation.component';
-import { SiteNavigationLinkItem } from '../../../models';
+import { SITE_CONFIG } from '../../../config';
 
 import classes from './header.module.scss';
 
@@ -11,27 +11,9 @@ import classes from './header.module.scss';
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = (_props) => {
-  const title = 'Nap Joseph Calub';
-  const description = 'not only working software, but also well-crafted software';
-  const siteNavigationLinks: SiteNavigationLinkItem[] = [
-    {
-      name: 'Home',
-      href: '/'
-    },
-    {
-      name: 'Posts',
-      href: '/posts'
-    },
-    {
-      name: 'Tags',
-      href: '/tags'
-    },
-    {
-      name: 'View Curriculum Vitae',
-      href: 'https://napjose.ph/calub',
-      external: true
-    }
-  ];
+  const title = SITE_CONFIG.title;
+  const description = SITE_CONFIG.description || '';
+  const siteNavigationLinks = SITE_CONFIG.navbar.links || [];
 
   return (
     <header className={classes.container}>
@@ -43,7 +25,7 @@ const Header: React.FC<HeaderProps> = (_props) => {
             </a>
           </Link>
 
-          <p className={classes.description}>{description}</p>
+          {description !== '' && <p className={classes.description}>{description}</p>}
 
           {siteNavigationLinks && (
             <div className={classes.navigation}>

@@ -6,16 +6,19 @@ import { GetStaticProps } from 'next';
 import PostCardList from '../components/posts/post-card-list.component';
 import { Post } from '../models';
 import { getAllPosts } from '../lib/api/posts';
+import { SITE_CONFIG } from '../config';
 
 interface HomePageProps {
   posts: Post[];
 }
 
 const HomePage: React.FC<HomePageProps> = ({ posts }) => {
+  const siteTitle = SITE_CONFIG.title || '';
+
   return (
     <>
       <Head>
-        <title>Nap Joseph Calub</title>
+        <title>{siteTitle}</title>
       </Head>
 
       <PostCardList
