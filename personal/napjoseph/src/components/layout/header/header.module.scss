@@ -4,14 +4,14 @@
   }
 
   .branding {
-    @apply flex flex-row gap-2;
+    @apply flex flex-row gap-2 content-center;
 
     .logo {
-      @apply main-link-hover;
+      @apply main-link-hover flex items-center;
     }
 
     .title {
-      @apply main-link-hover text-5xl font-extrabold text-gray-900;
+      @apply main-link-hover text-3xl sm:text-5xl font-extrabold text-gray-900 flex items-center;
     }
   }
 

@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = (_props) => {
         <div className={classes.inner}>
           <div className={classes.branding}>
             <Link href="/">
-              <a className={classes.logo}>
+              <a className={classes.logo} title={title}>
                 <motion.div
                   initial="hidden"
                   animate="visible"
@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = (_props) => {
               </a>
             </Link>
             <Link href="/">
-              <a className={classes.title}>
+              <a className={classes.title} title={title}>
                 <h1 className={classes.value}>{title}</h1>
               </a>
             </Link>
