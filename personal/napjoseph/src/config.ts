@@ -20,6 +20,11 @@ export const SITE_CONFIG: SiteConfig = {
       }
     ]
   },
+  posts: {
+    excerpt: {
+      maxLength: 300
+    }
+  },
   footer: {
     copyright: {
       year: '2021',

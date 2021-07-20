@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 
 import { Post } from '../../models';
 import slugify from '../utils/slugify';
+import getExcerpt from '../utils/get-excerpt';
 
 const POSTS_DIRECTORY = join(process.cwd(), 'src/_content/posts');
 
@@ -20,14 +21,15 @@ export const getPostBySlug = (slug: string): Post => {
   const fullPath = join(POSTS_DIRECTORY, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
+  const cleanedContent = (content || '').trim();
 
   return {
     title: data['title'] || '',
     slug: slug || '',
     tags: data['tags'] || [],
     publishedDate: data['publishedDate'] || '',
-    content: content || '',
-    excerpt: content.substring(0, 300) || ''
+    content: cleanedContent,
+    excerpt: data['excerpt'] || getExcerpt(cleanedContent)
   };
 };
 

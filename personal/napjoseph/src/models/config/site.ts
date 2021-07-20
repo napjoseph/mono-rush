@@ -9,6 +9,11 @@ export interface SiteConfig {
   navbar?: {
     links?: SiteNavigationLinkItem[];
   };
+  posts?: {
+    excerpt?: {
+      maxLength?: number;
+    };
+  };
   footer?: {
     copyright: {
       year?: string;
