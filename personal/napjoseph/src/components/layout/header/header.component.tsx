@@ -21,46 +21,53 @@ const Header: React.FC<HeaderProps> = (_props) => {
     <header className={classes.container}>
       <div className={classes.content}>
         <div className={classes.inner}>
-          <div className={classes.branding}>
-            <Link href="/">
-              <a className={classes.logo} title={title}>
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  whileHover="hover"
-                  variants={{
-                    hidden: {
-                      rotate: 0,
-                      opacity: 0
-                    },
-                    visible: {
-                      rotate: 180,
-                      opacity: 1,
-                      transition: {
-                        duration: 0.3
+          <div className={classes.site}>
+            <div className={classes.branding}>
+              <Link href="/">
+                <a className={classes.logo} title={title}>
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    whileHover="hover"
+                    variants={{
+                      hidden: {
+                        rotate: 0,
+                        opacity: 0
+                      },
+                      visible: {
+                        rotate: 180,
+                        opacity: 1,
+                        transition: {
+                          duration: 0.3
+                        }
+                      },
+                      hover: {
+                        rotate: 0,
+                        scale: 1.2,
+                        transition: {
+                          duration: 0.3
+                        }
                       }
-                    },
-                    hover: {
-                      rotate: 0,
-                      scale: 1.2,
-                      transition: {
-                        duration: 0.3
-                      }
-                    }
-                  }}
-                >
-                  <SiteLogo height={'50'} width={'50'} fill={'#1d4ed8'} />
-                </motion.div>
-              </a>
-            </Link>
-            <Link href="/">
-              <a className={classes.title} title={title}>
-                <h1 className={classes.value}>{title}</h1>
-              </a>
-            </Link>
-          </div>
+                    }}
+                  >
+                    <div className={classes.big}>
+                      <SiteLogo height={'50'} width={'50'} fill={'#1d4ed8'} />
+                    </div>
+                    <div className={classes.small}>
+                      <SiteLogo height={'30'} width={'30'} fill={'#1d4ed8'} />
+                    </div>
+                  </motion.div>
+                </a>
+              </Link>
+              <Link href="/">
+                <a className={classes.title} title={title}>
+                  <h1 className={classes.value}>{title}</h1>
+                </a>
+              </Link>
+            </div>
 
-          {description !== '' && <p className={classes.description}>{description}</p>}
+            {description !== '' && <p className={classes.description}>{description}</p>}
+          </div>
 
           {siteNavigationLinks && (
             <div className={classes.navigation}>

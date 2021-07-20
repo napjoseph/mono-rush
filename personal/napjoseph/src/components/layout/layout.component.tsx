@@ -2,7 +2,7 @@ import React from 'react';
 
 import Footer from './footer/footer.component';
 import Header from './header/header.component';
-import Content from './content/content.component';
+import ContentWrapper from './content/content-wrapper.component';
 
 import classes from './layout.module.scss';
 import StaticHead from '../document/static-head.component';
@@ -15,13 +15,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <StaticHead />
 
-      <div className={classes.container}>
-        <Header />
-
-        <Content>{children}</Content>
-
-        <Footer />
-      </div>
+      <ContentWrapper>
+        <div className={classes.container}>
+          <Header />
+          <main className={classes.main}>{children}</main>
+          <Footer />
+        </div>
+      </ContentWrapper>
     </>
   );
 };
