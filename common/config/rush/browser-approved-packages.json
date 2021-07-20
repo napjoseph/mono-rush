@@ -71,6 +71,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "framer-motion",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "fs-extra",
       "allowedCategories": [ "production" ]
     },

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { PostTag } from '../../models';
 
@@ -14,13 +15,13 @@ const TagPill: React.FC<TagPillProps> = ({ tag }) => {
   if (!tag) return null;
 
   return (
-    <div className={classes.container}>
+    <motion.div className={classes.container} whileHover={{ scale: 1.1 }}>
       <Link href={`/tags/${tag.slug}`}>
         <a className={classes.tag}>
           <span className={classes.inner}>{tag.name}</span>
         </a>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 
