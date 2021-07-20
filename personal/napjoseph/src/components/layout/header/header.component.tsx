@@ -51,10 +51,10 @@ const Header: React.FC<HeaderProps> = (_props) => {
                     }}
                   >
                     <div className={classes.big}>
-                      <SiteLogo height={'50'} width={'50'} fill={'#1d4ed8'} />
+                      <SiteLogo height={'120'} width={'120'} fill={'#1d4ed8'} />
                     </div>
                     <div className={classes.small}>
-                      <SiteLogo height={'30'} width={'30'} fill={'#1d4ed8'} />
+                      <SiteLogo height={'50'} width={'50'} fill={'#1d4ed8'} />
                     </div>
                   </motion.div>
                 </a>

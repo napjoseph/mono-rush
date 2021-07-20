@@ -2,7 +2,7 @@
   .content {
     .nav {
       .links {
-        @apply flex flex-col sm:flex-row gap-1 sm:gap-2;
+        @apply flex flex-col sm:flex-row gap-1 sm:gap-2 justify-center;
       }
     }
   }

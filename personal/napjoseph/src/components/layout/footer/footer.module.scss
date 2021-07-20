@@ -1,10 +1,19 @@
 .container {
-  .content {
-    @apply py-10 sm:py-14;
-  }
+  @apply text-center;
 
-  .name {
-    @apply font-bold;
-    @apply main-link-hover;
+  .content {
+    @apply py-10 sm:py-14 flex flex-col gap-4 justify-center;
+
+    .copyright {
+      @apply text-base text-gray-400;
+
+      .name {
+        @apply font-bold main-link-hover;
+      }
+    }
+
+    .socialLinks {
+      @apply flex justify-center space-x-6;
+    }
   }
 }

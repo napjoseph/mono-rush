@@ -2,7 +2,7 @@ import { SiteConfig } from './models';
 
 export const SITE_CONFIG: SiteConfig = {
   title: 'Nap Joseph Calub',
-  description: 'not only working software, but also well-crafted software',
+  description: 'Software Engineer using Go and TypeScript',
   navbar: {
     links: [
       {
@@ -10,7 +10,7 @@ export const SITE_CONFIG: SiteConfig = {
         href: '/'
       },
       {
-        name: 'All Posts',
+        name: 'Posts',
         href: '/posts'
       },
       {

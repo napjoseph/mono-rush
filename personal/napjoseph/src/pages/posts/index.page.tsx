@@ -19,11 +19,11 @@ const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>All Posts | {siteTitle}</title>
+        <title>Posts | {siteTitle}</title>
       </Head>
 
       <PostCardList
-        title="All Posts"
+        title="Posts"
         description={`Showing a total of ${posts.length} ${pluralize(posts.length, 'post')}.`}
         posts={posts}
         hideIfEmpty={false}
