@@ -8,7 +8,6 @@ import { getAllPostsByTagSlug } from '../../lib/api/posts';
 import PostCardList from '../../components/posts/post-card-list.component';
 import { getAllPostTags, getTagBySlug } from '../../lib/api/tags';
 import { SITE_CONFIG } from '../../config';
-import pluralize from '../../lib/utils/pluralize';
 
 interface TagPageProps {
   tag?: PostTag;
@@ -19,21 +18,18 @@ const TagPage: React.FC<TagPageProps> = ({ tag, posts }) => {
   if (!tag) return null;
 
   const siteTitle = SITE_CONFIG.title || '';
+  const pageTitle = `Posts with the "${tag.name}" tag`;
 
   return (
     <>
       <Head>
         <title>
-          {tag.name} | {siteTitle}
+          {pageTitle} | {siteTitle}
         </title>
       </Head>
 
       <div className="text-gray-700">
-        <PostCardList
-          title={`Posts with the "${tag.name}" tag`}
-          description={`Showing a total of ${posts.length} ${pluralize(posts.length, 'post')}.`}
-          posts={posts}
-        />
+        <PostCardList title={pageTitle} showTotal={true} posts={posts} />
       </div>
     </>
   );

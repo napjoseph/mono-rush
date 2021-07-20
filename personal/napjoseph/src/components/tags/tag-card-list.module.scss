@@ -4,12 +4,20 @@
   .content {
     @apply relative;
 
-    .title {
-      @apply text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl;
-    }
+    .information {
+      @apply flex flex-col gap-4;
 
-    .description {
-      @apply mt-3 text-xl text-gray-500 sm:mt-4;
+      .title {
+        @apply text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl;
+      }
+
+      .description {
+        @apply text-xl text-gray-500;
+      }
+
+      .total {
+        @apply text-gray-500;
+      }
     }
 
     .tags {

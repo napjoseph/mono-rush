@@ -4,18 +4,21 @@ import { PostTag } from '../../models';
 import TagCard from './tag-card.component';
 
 import classes from './tag-card-list.module.scss';
+import TotalResults from '../snippets/total-results/total-results.component';
 
 interface TagCardListProps {
   title: string;
-  description?: string;
   tags: PostTag[];
+  description?: string;
+  showTotal?: boolean;
   hideIfEmpty?: boolean;
 }
 
 const TagCardList: React.FC<TagCardListProps> = ({
   title = 'Tags',
-  description,
   tags = [],
+  description,
+  showTotal = false,
   hideIfEmpty = true
 }) => {
   if (hideIfEmpty && !tags.length) return null;
@@ -23,9 +26,14 @@ const TagCardList: React.FC<TagCardListProps> = ({
   return (
     <div className={classes.container}>
       <div className={classes.content}>
-        <div>
+        <div className={classes.information}>
           <h2 className={classes.title}>{title}</h2>
           {description && <p className={classes.description}>{description}</p>}
+          {showTotal && (
+            <div className={classes.total}>
+              <TotalResults total={tags.length} unit="tag" />
+            </div>
+          )}
         </div>
         <div className={classes.tags}>
           {tags.length ? (

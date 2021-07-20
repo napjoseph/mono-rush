@@ -7,7 +7,6 @@ import PostCardList from '../../components/posts/post-card-list.component';
 import { Post } from '../../models';
 import { getAllPosts } from '../../lib/api/posts';
 import { SITE_CONFIG } from '../../config';
-import pluralize from '../../lib/utils/pluralize';
 
 interface PostsPageProps {
   posts: Post[];
@@ -22,12 +21,7 @@ const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
         <title>Posts | {siteTitle}</title>
       </Head>
 
-      <PostCardList
-        title="Posts"
-        description={`Showing a total of ${posts.length} ${pluralize(posts.length, 'post')}.`}
-        posts={posts}
-        hideIfEmpty={false}
-      />
+      <PostCardList title="Posts" posts={posts} showTotal={true} hideIfEmpty={false} />
     </>
   );
 };

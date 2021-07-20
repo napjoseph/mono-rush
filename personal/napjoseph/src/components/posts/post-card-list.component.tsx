@@ -4,18 +4,21 @@ import { Post } from '../../models';
 import PostCard from './post-card.component';
 
 import classes from './post-card-list.module.scss';
+import TotalResults from '../snippets/total-results/total-results.component';
 
 interface PostCardListProps {
   title: string;
-  description?: string;
   posts: Post[];
+  description?: string;
+  showTotal?: boolean;
   hideIfEmpty?: boolean;
 }
 
 const PostCardList: React.FC<PostCardListProps> = ({
   title = 'Posts',
-  description,
   posts = [],
+  description,
+  showTotal = false,
   hideIfEmpty = true
 }) => {
   if (hideIfEmpty && !posts.length) return null;
@@ -23,9 +26,14 @@ const PostCardList: React.FC<PostCardListProps> = ({
   return (
     <div className={classes.container}>
       <div className={classes.content}>
-        <div>
+        <div className={classes.information}>
           <h2 className={classes.title}>{title}</h2>
           {description && <p className={classes.description}>{description}</p>}
+          {showTotal && (
+            <div className={classes.total}>
+              <TotalResults total={posts.length} unit="post" />
+            </div>
+          )}
         </div>
         <div className={classes.posts}>
           {posts.length ? (

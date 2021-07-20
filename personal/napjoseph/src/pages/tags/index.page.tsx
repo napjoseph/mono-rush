@@ -7,7 +7,6 @@ import TagCardList from '../../components/tags/tag-card-list.component';
 import { PostTag } from '../../models';
 import { getAllPostTags } from '../../lib/api/tags';
 import { SITE_CONFIG } from '../../config';
-import pluralize from '../../lib/utils/pluralize';
 
 interface TagsPageProps {
   tags: PostTag[];
@@ -22,12 +21,7 @@ const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
         <title>Tags | {siteTitle}</title>
       </Head>
 
-      <TagCardList
-        title="Tags"
-        description={`Showing a total of ${tags.length} ${pluralize(tags.length, 'tag')}.`}
-        tags={tags}
-        hideIfEmpty={false}
-      />
+      <TagCardList title="Tags" tags={tags} showTotal={true} hideIfEmpty={false} />
     </>
   );
 };
