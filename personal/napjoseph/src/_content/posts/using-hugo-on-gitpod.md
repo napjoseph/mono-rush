@@ -6,7 +6,7 @@ tags:
   - 'Gitpod'
 ---
 
-Create the necessary Gitpod files on the root of your repository.
+Create the necessary [Gitpod](https://www.gitpod.io/) files on the root of your repository.
 
 ```bash
 $ touch .gitpod.Dockerfile
@@ -39,7 +39,7 @@ ports:
 
 After commiting and merging your code, you can then go to `https://gitpod.io/#https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>` to start your Gitpod workspace.
 
-Optionally, you can also add a Gitpod badge on your README file:
+Optionally, you can also add a Gitpod badge on your `README` file:
 
 ```markdown
 <!-- file: README.md -->

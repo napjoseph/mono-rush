@@ -11,7 +11,7 @@
     }
 
     .title {
-      @apply main-link-hover text-3xl sm:text-5xl font-extrabold text-gray-900 flex items-center;
+      @apply text-3xl sm:text-5xl font-extrabold text-gray-700 flex items-center main-link-hover;
     }
   }
 

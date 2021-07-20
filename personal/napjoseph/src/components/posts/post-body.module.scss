@@ -1,13 +1,5 @@
 .container {
-  @apply text-base text-gray-700 leading-relaxed;
-
-  p,
-  ul,
-  ol,
-  blockquote,
-  .padding {
-    @apply my-4;
-  }
+  @apply text-base text-gray-700 leading-relaxed flex flex-col gap-1;
 
   code {
     @apply text-sm;
@@ -27,34 +19,34 @@
   h4,
   h5,
   h6 {
-    @apply font-bold leading-snug;
+    @apply my-4 font-sans font-content-header;
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-5xl;
   }
 
   h2 {
-    @apply text-3xl;
+    @apply text-4xl;
   }
 
   h3 {
-    @apply text-2xl;
+    @apply text-3xl;
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-2xl;
   }
 
   h5 {
-    @apply text-lg;
+    @apply text-xl;
   }
 
   h6 {
-    @apply text-base;
+    @apply text-lg;
   }
 
   a {
-    @apply font-semibold underline main-link-hover;
+    @apply main-transition font-semibold text-blue-700 hover:text-indigo-700;
   }
 }

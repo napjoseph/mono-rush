@@ -245,12 +245,12 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Roboto',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
-        'Roboto',
         '"Helvetica Neue"',
         'Arial',
         '"Noto Sans"',
@@ -270,7 +270,8 @@ module.exports = {
         '"Liberation Mono"',
         '"Courier New"',
         'monospace'
-      ]
+      ],
+      'content-header': ['Roboto', 'sans-serif']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -976,8 +977,11 @@ module.exports = {
     // change color of links on hover
     plugin(function ({ addComponents }) {
       addComponents({
+        '.main-transition': {
+          '@apply transition duration-300 ease-in-out': {}
+        },
         '.main-link-hover': {
-          '@apply hover:text-blue-700 transition duration-150 ease-in-out': {}
+          '@apply hover:text-blue-700 main-transition': {}
         }
       });
     })
