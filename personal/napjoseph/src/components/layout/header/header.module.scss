@@ -3,8 +3,16 @@
     @apply max-w-7xl mx-auto py-16 sm:py-24 px-4 sm:px-6 lg:px-8 lg:flex lg:justify-between;
   }
 
-  .title {
-    @apply main-link-hover text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl;
+  .branding {
+    @apply flex flex-row gap-2;
+
+    .logo {
+      @apply main-link-hover;
+    }
+
+    .title {
+      @apply main-link-hover text-5xl font-extrabold text-gray-900;
+    }
   }
 
   .description {
