@@ -1,0 +1,38 @@
+.container {
+  @apply flex flex-col gap-10 text-gray-700;
+
+  .meta {
+    @apply text-center flex flex-col gap-2;
+
+    .title {
+      @apply text-4xl font-bold;
+    }
+
+    .description {
+      .emphasis {
+        @apply font-semibold italic;
+      }
+    }
+  }
+
+  .body {
+    @apply flex flex-col sm:flex-row-reverse gap-7 sm:gap-2 justify-center sm:place-items-start;
+
+    .message {
+      @apply flex flex-col gap-4 items-center justify-center content-center text-center;
+      @apply p-4 shadow-lg cursor-pointer;
+
+      .header {
+        @apply text-sm md:text-xl font-bold;
+      }
+
+      .content {
+        @apply text-xs md:text-lg;
+      }
+    }
+
+    .picture {
+      @apply w-full sm:w-5/12 rounded-full;
+    }
+  }
+}
