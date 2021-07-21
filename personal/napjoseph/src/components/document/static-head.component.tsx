@@ -2,7 +2,6 @@ import React from 'react';
 
 import Head from 'next/head';
 
-/* eslint-disable-next-line */
 interface StaticHeadProps {
   crossOrigin?: string;
 }

@@ -3,6 +3,14 @@ import { SiteConfig } from './models';
 export const SITE_CONFIG: SiteConfig = {
   title: 'Nap Joseph Calub',
   description: 'Software Engineer using Go and TypeScript',
+  metadata: {
+    defaultOpenGraph: {
+      ogImage: 'https://napjose.ph/open-graph.png',
+      ogLocale: 'en_US',
+      ogType: 'website',
+      ogSiteName: 'Nap Joseph Calub'
+    }
+  },
   navbar: {
     links: [
       {

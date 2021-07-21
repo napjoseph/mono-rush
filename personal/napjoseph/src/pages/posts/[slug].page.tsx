@@ -7,8 +7,10 @@ import { Post } from '../../models';
 import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
 import PostBody from '../../components/posts/post-body.component';
 import PostHeader from '../../components/posts/post-header.component';
-import { SITE_CONFIG } from '../../config';
 import PostComments from '../../components/posts/post-comments.component';
+import { generateSiteDescription, generateSiteTitle } from '../../lib/utils/metadata';
+import OpenGraph from '../../components/document/metadata/open-graph.component';
+import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 
 import classes from './[slug].module.scss';
 
@@ -19,15 +21,24 @@ interface PostPageProps {
 const PostPage: React.FC<PostPageProps> = ({ post }) => {
   if (!post) return null;
 
-  const siteTitle = SITE_CONFIG.title || '';
+  const pageTitle = post.title;
+  const siteTitle = generateSiteTitle(pageTitle);
+  const siteDescription = generateSiteDescription();
+
+  const ogData = createOpenGraphData({
+    ogTitle: siteTitle,
+    ogDescription: siteDescription,
+    ogType: 'article'
+  });
 
   return (
     <>
       <Head>
-        <title>
-          {post.title} | {siteTitle}
-        </title>
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
       </Head>
+
+      <OpenGraph data={ogData} />
 
       <div className={classes.container}>
         <article className={classes.article}>

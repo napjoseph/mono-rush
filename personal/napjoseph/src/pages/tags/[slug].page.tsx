@@ -7,7 +7,9 @@ import { Post, PostTag } from '../../models';
 import { getAllPostsByTagSlug } from '../../lib/api/posts';
 import PostCardList from '../../components/posts/post-card-list.component';
 import { getAllPostTags, getTagBySlug } from '../../lib/api/tags';
-import { SITE_CONFIG } from '../../config';
+import { generateSiteDescription, generateSiteTitle } from '../../lib/utils/metadata';
+import OpenGraph from '../../components/document/metadata/open-graph.component';
+import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 
 interface TagPageProps {
   tag?: PostTag;
@@ -17,20 +19,25 @@ interface TagPageProps {
 const TagPage: React.FC<TagPageProps> = ({ tag, posts }) => {
   if (!tag) return null;
 
-  const siteTitle = SITE_CONFIG.title || '';
   const pageTitle = `Posts with the "${tag.name}" tag`;
+  const siteTitle = generateSiteTitle(pageTitle);
+  const siteDescription = generateSiteDescription();
+
+  const ogData = createOpenGraphData({
+    ogTitle: siteTitle,
+    ogDescription: siteDescription
+  });
 
   return (
     <>
       <Head>
-        <title>
-          {pageTitle} | {siteTitle}
-        </title>
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
       </Head>
 
-      <div className="text-gray-700">
-        <PostCardList title={pageTitle} showTotal={true} posts={posts} />
-      </div>
+      <OpenGraph data={ogData} />
+
+      <PostCardList title={pageTitle} showTotal={true} posts={posts} />
     </>
   );
 };
