@@ -1,16 +1,15 @@
 .container {
-  @apply text-center self-center;
+  @apply flex flex-col justify-center items-stretch;
 
   .content {
     @apply py-10 sm:py-14;
-    @apply lg:flex lg:justify-between;
   }
 
   .inner {
     @apply flex flex-col gap-14;
 
     .site {
-      @apply flex flex-col gap-1 sm:gap-3;
+      @apply flex flex-col gap-1 sm:gap-3 text-center;
 
       .branding {
         @apply flex flex-col gap-1 sm:gap-2 justify-center items-center;
