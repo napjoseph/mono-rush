@@ -10,7 +10,7 @@ interface TotalResultsProps {
 }
 
 const TotalResults: React.FC<TotalResultsProps> = ({ total = 0, unit = 'item', unitPlural }) => {
-  const plural = !unitPlural ? 'items' : `${unit}s`;
+  const plural = !unitPlural ? `${unit}s` : unitPlural;
 
   return (
     <div className={classes.container}>
