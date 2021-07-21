@@ -20,11 +20,11 @@ interface NotFoundPageProps {}
 
 const NotFoundPage: React.FC<NotFoundPageProps> = (_props) => {
   const siteTitle = SITE_CONFIG.title || '';
-  const pageTitle = 'Page Not Found';
+  const pageTitle = <>Unfortunately, that specific page can&apos;t be found.</>;
   const pageDescription = (
-    <span>
-      Well, at least, you found <span className={classes.emphasis}>me</span>.
-    </span>
+    <p>
+      But hey, at least you found <span className={classes.emphasis}>me</span>.
+    </p>
   );
 
   const inFilipino: Message = {
@@ -55,15 +55,13 @@ const NotFoundPage: React.FC<NotFoundPageProps> = (_props) => {
   return (
     <>
       <Head>
-        <title>
-          {pageTitle} | {siteTitle}
-        </title>
+        <title>Page Not Found | {siteTitle}</title>
       </Head>
 
       <div className={classes.container}>
         <div className={classes.meta}>
           <h1 className={classes.title}>{pageTitle}</h1>
-          <p className={classes.description}>{pageDescription}</p>
+          <div className={classes.description}>{pageDescription}</div>
         </div>
 
         <div className={classes.body}>
