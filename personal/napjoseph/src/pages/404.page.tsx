@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import { SITE_CONFIG } from '../config';
 import profilePicture from '../../public/img/me/ws1.jpg';
-
 import classes from './404.module.scss';
+import { createHeadData, generateSiteDescription, generateSiteTitle } from '../lib/utils/head-data';
+import { createOpenGraphData } from '../lib/utils/open-graph-data';
+import OpenGraph from '../components/document/open-graph.component';
+import DynamicHead from '../components/document/dynamic-head.component';
 
 interface Message {
   language: 'english' | 'filipino';
@@ -19,8 +20,20 @@ interface Message {
 interface NotFoundPageProps {}
 
 const NotFoundPage: React.FC<NotFoundPageProps> = (_props) => {
-  const siteTitle = SITE_CONFIG.title || '';
-  const pageTitle = <>Unfortunately, that specific page can&apos;t be found.</>;
+  const pageTitle = 'Page Not Found';
+  const siteTitle = generateSiteTitle(pageTitle);
+  const siteDescription = generateSiteDescription();
+
+  const headData = createHeadData({
+    description: siteDescription
+  });
+
+  const ogData = createOpenGraphData({
+    ogTitle: siteTitle,
+    ogDescription: siteDescription
+  });
+
+  const pageHeader = <>Unfortunately, that specific page can&apos;t be found.</>;
   const pageDescription = (
     <p>
       But hey, at least you found <span className={classes.emphasis}>me</span>.
@@ -54,13 +67,12 @@ const NotFoundPage: React.FC<NotFoundPageProps> = (_props) => {
 
   return (
     <>
-      <Head>
-        <title>Page Not Found | {siteTitle}</title>
-      </Head>
+      <DynamicHead data={headData} />
+      <OpenGraph data={ogData} />
 
       <div className={classes.container}>
         <div className={classes.meta}>
-          <h1 className={classes.title}>{pageTitle}</h1>
+          <h1 className={classes.title}>{pageHeader}</h1>
           <div className={classes.description}>{pageDescription}</div>
         </div>
 

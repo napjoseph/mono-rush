@@ -4,6 +4,11 @@ export const SITE_CONFIG: SiteConfig = {
   title: 'Nap Joseph Calub',
   description: 'Software Engineer using Go and TypeScript',
   metadata: {
+    defaultHeadData: {
+      charSet: 'UTF-8',
+      keywords: 'web development, software engineering, blog, go, typescript',
+      author: 'Nap Joseph Calub'
+    },
     defaultOpenGraph: {
       ogImage: 'https://napjose.ph/open-graph.png',
       ogLocale: 'en_US',

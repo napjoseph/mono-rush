@@ -1,13 +1,17 @@
 import React from 'react';
 
-import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
 import PostCardList from '../../components/posts/post-card-list.component';
 import { Post } from '../../models';
 import { getAllPosts } from '../../lib/api/posts';
-import { generateSiteDescription, generateSiteTitle } from '../../lib/utils/metadata';
-import OpenGraph from '../../components/document/metadata/open-graph.component';
+import {
+  createHeadData,
+  generateSiteDescription,
+  generateSiteTitle
+} from '../../lib/utils/head-data';
+import DynamicHead from '../../components/document/dynamic-head.component';
+import OpenGraph from '../../components/document/open-graph.component';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 
 interface PostsPageProps {
@@ -19,6 +23,11 @@ const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
   const siteTitle = generateSiteTitle(pageTitle);
   const siteDescription = generateSiteDescription();
 
+  const headData = createHeadData({
+    title: siteTitle,
+    description: siteDescription
+  });
+
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
     ogDescription: siteDescription
@@ -26,11 +35,7 @@ const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={siteDescription} />
-      </Head>
-
+      <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
       <PostCardList title={pageTitle} posts={posts} showTotal={true} hideIfEmpty={false} />

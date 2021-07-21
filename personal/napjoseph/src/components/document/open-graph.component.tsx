@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import { OpenGraphData } from '../../../models/open-graph/open-graph-data';
+import { OpenGraphData } from '../../models/open-graph/open-graph-data';
 
 // See description from: https://ogp.me/
 

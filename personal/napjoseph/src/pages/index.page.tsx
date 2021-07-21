@@ -1,25 +1,37 @@
 import React from 'react';
 
-import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
 import PostCardList from '../components/posts/post-card-list.component';
 import { Post } from '../models';
 import { getAllPosts } from '../lib/api/posts';
-import { SITE_CONFIG } from '../config';
+import { createHeadData, generateSiteDescription, generateSiteTitle } from '../lib/utils/head-data';
+import { createOpenGraphData } from '../lib/utils/open-graph-data';
+import OpenGraph from '../components/document/open-graph.component';
+import DynamicHead from '../components/document/dynamic-head.component';
 
 interface HomePageProps {
   posts: Post[];
 }
 
 const HomePage: React.FC<HomePageProps> = ({ posts }) => {
-  const siteTitle = SITE_CONFIG.title || '';
+  const siteTitle = generateSiteTitle();
+  const siteDescription = generateSiteDescription();
+
+  const headData = createHeadData({
+    title: siteTitle,
+    description: siteDescription
+  });
+
+  const ogData = createOpenGraphData({
+    ogTitle: siteTitle,
+    ogDescription: siteDescription
+  });
 
   return (
     <>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      <DynamicHead data={headData} />
+      <OpenGraph data={ogData} />
 
       <PostCardList title="Recent Posts" posts={posts} hideIfEmpty={false} />
     </>

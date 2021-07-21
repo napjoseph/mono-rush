@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Post } from '../../models';
@@ -8,9 +7,14 @@ import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
 import PostBody from '../../components/posts/post-body.component';
 import PostHeader from '../../components/posts/post-header.component';
 import PostComments from '../../components/posts/post-comments.component';
-import { generateSiteDescription, generateSiteTitle } from '../../lib/utils/metadata';
-import OpenGraph from '../../components/document/metadata/open-graph.component';
+import {
+  createHeadData,
+  generateSiteDescription,
+  generateSiteTitle
+} from '../../lib/utils/head-data';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
+import DynamicHead from '../../components/document/dynamic-head.component';
+import OpenGraph from '../../components/document/open-graph.component';
 
 import classes from './[slug].module.scss';
 
@@ -23,7 +27,12 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
 
   const pageTitle = post.title;
   const siteTitle = generateSiteTitle(pageTitle);
-  const siteDescription = generateSiteDescription();
+  const siteDescription = generateSiteDescription(post.excerpt);
+
+  const headData = createHeadData({
+    title: siteTitle,
+    description: siteDescription
+  });
 
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
@@ -33,11 +42,7 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
 
   return (
     <>
-      <Head>
-        <title>{siteTitle}</title>
-        <meta name="description" content={siteDescription} />
-      </Head>
-
+      <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
       <div className={classes.container}>

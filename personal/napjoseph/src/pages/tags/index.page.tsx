@@ -1,14 +1,18 @@
 import React from 'react';
 
-import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
 import TagCardList from '../../components/tags/tag-card-list.component';
 import { PostTag } from '../../models';
 import { getAllPostTags } from '../../lib/api/tags';
-import OpenGraph from '../../components/document/metadata/open-graph.component';
-import { generateSiteDescription, generateSiteTitle } from '../../lib/utils/metadata';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
+import {
+  createHeadData,
+  generateSiteDescription,
+  generateSiteTitle
+} from '../../lib/utils/head-data';
+import OpenGraph from '../../components/document/open-graph.component';
+import DynamicHead from '../../components/document/dynamic-head.component';
 
 interface TagsPageProps {
   tags: PostTag[];
@@ -19,6 +23,11 @@ const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
   const siteTitle = generateSiteTitle(pageTitle);
   const siteDescription = generateSiteDescription();
 
+  const headData = createHeadData({
+    title: siteTitle,
+    description: siteDescription
+  });
+
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
     ogDescription: siteDescription
@@ -26,11 +35,7 @@ const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
 
   return (
     <>
-      <Head>
-        <title>{siteTitle}</title>
-        <meta name="description" content={siteDescription} />
-      </Head>
-
+      <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
       <TagCardList title={pageTitle} tags={tags} showTotal={true} hideIfEmpty={false} />
