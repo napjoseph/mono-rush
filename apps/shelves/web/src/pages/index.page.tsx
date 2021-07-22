@@ -1,10 +1,10 @@
 import React from 'react';
-
 import { GetStaticProps } from 'next';
+import axios from 'axios';
 
 import BookList from '../components/items/books/book-list.component';
 import { Book } from '../models';
-import { getBooks } from '../lib/api/books';
+import localEndpoint from '../lib/utils/local-endpoint';
 
 import classes from './index.module.scss';
 
@@ -20,12 +20,26 @@ const HomePage: React.FC<HomePageProps> = ({ books = [] }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = (_context) => {
-  const books = getBooks();
+const getBooksData = async (): Promise<Book[]> => {
+  let books: Book[];
+  try {
+    const { data } = await axios.get(localEndpoint('/api/items/books/search'));
+    books = data.results || [];
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      books = [];
+    } else {
+      books = [];
+    }
+  }
 
+  return books;
+};
+
+export const getStaticProps: GetStaticProps = async (_context) => {
   return {
     props: {
-      books
+      books: await getBooksData()
     }
   };
 };
