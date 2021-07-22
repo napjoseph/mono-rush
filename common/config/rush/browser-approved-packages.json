@@ -151,6 +151,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "swr",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "tailwindcss",
       "allowedCategories": [ "production", "prototypes" ]
     },

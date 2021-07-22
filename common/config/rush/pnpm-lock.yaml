@@ -2208,6 +2208,11 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /dequal/2.0.2:
+    resolution: {integrity: sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==}
+    engines: {node: '>=6'}
+    dev: false
+
   /des.js/1.0.1:
     resolution: {integrity: sha512-Q0I4pfFrv2VPd34/vfLrFOoRmlYj3OV50i7fskps1jZWK1kApMWWT9G6RRUeYedLcBDIhnSDaUvJMb3AhUlaEA==}
     dependencies:
@@ -6282,6 +6287,15 @@ packages:
     resolution: {integrity: sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=}
     dev: false
 
+  /swr/0.5.6_react@17.0.2:
+    resolution: {integrity: sha512-Bmx3L4geMZjYT5S2Z6EE6/5Cx6v1Ka0LhqZKq8d6WL2eu9y6gHWz3dUzfIK/ymZVHVfwT/EweFXiYGgfifei3w==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0
+    dependencies:
+      dequal: 2.0.2
+      react: 17.0.2
+    dev: false
+
   /symbol-tree/3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
     dev: false
@@ -7064,7 +7078,7 @@ packages:
     dev: false
 
   file:projects/shelves-web.tgz:
-    resolution: {integrity: sha512-iF9f2X+5mBDDxPaYJLSWWgWvcl7QORRU5mAib98Dzbhyo3M2tE4soRl8T95QqYZEJsj+KhOD/qdveShNuIOZbw==, tarball: file:projects/shelves-web.tgz}
+    resolution: {integrity: sha512-kxLSTWl2LZNZjLw9LgyMgIqeYP0GyjPpJf5Cg6FfNMEuJGRxWOpf1INthcYNuuyleLqRoIAcOhaiuJHRAsdRNw==, tarball: file:projects/shelves-web.tgz}
     name: '@rush-temp/shelves-web'
     version: 0.0.0
     dependencies:
@@ -7094,6 +7108,7 @@ packages:
       stylelint-config-prettier: 8.0.2_stylelint@13.13.1
       stylelint-config-recommended: 5.0.0_stylelint@13.13.1
       stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
+      swr: 0.5.6_react@17.0.2
       tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
       typescript: 4.3.5
     transitivePeerDependencies:
