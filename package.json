@@ -54,6 +54,10 @@
         "message": "anything related to the calub-web project"
       },
       {
+        "name": "shelves-web",
+        "message": "anything related to the shelves-web project"
+      },
+      {
         "name": "starters-nextjs",
         "message": "anything related to the starters-nextjs project"
       },

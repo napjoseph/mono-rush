@@ -227,6 +227,14 @@
       "summary": "Creates the docker image for the calub-web project",
       "commandKind": "global",
       "shellCommand": "docker build --build-arg NODE_VERSION=$(cat .nvmrc | tr -cd [:digit:].) -f ./personal/calub/Dockerfile -t napjoseph/mono-rush/calub-web ."
+    },
+
+    // shelves
+    {
+      "name": "shelves-web:start",
+      "summary": "Starts the shelves-web project",
+      "commandKind": "global",
+      "shellCommand": "(cd apps/shelves && node ../../common/scripts/install-run-rushx.js start)"
     }
   ],
 
