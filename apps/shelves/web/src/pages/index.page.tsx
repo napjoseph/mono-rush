@@ -1,16 +1,33 @@
 import React from 'react';
 
+import { GetStaticProps } from 'next';
+
+import BookList from '../components/items/books/book-list.component';
+import { Book } from '../models';
+import { getBooks } from '../lib/api/books';
+
 import classes from './index.module.scss';
 
-/* eslint-disable-next-line */
-interface HomePageProps {}
+interface HomePageProps {
+  books?: Book[];
+}
 
-const HomePage: React.FC<HomePageProps> = (_props) => {
+const HomePage: React.FC<HomePageProps> = ({ books = [] }) => {
   return (
-    <>
-      <h1 className={classes.title}>Home Page</h1>
-    </>
+    <div className={classes.container}>
+      <BookList books={books} />
+    </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = (_context) => {
+  const books = getBooks();
+
+  return {
+    props: {
+      books
+    }
+  };
 };
 
 export default HomePage;

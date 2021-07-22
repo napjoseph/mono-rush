@@ -12,7 +12,7 @@ const DocumentHead: React.FC<DocumentHeadProps> = (_props) => {
         <meta charSet="utf-8" />
         <title>shelves</title>
 
-        <meta name="description" content="starter template for nextjs" />
+        <meta name="description" content="Shelves for your stuff." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="manifest" href="/manifest.json" />
