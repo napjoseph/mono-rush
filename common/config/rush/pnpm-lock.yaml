@@ -48,6 +48,7 @@ specifiers:
   stylelint-config-prettier: ~8.0.2
   stylelint-config-recommended: ~5.0.0
   stylelint-prettier: ~1.2.0
+  swr: ~0.5.6
   tailwindcss: ~2.2.4
   typescript: ^4.1.3
   utterances-react-component: ~1.0.0
@@ -101,6 +102,7 @@ dependencies:
   stylelint-config-prettier: 8.0.2_stylelint@13.13.1
   stylelint-config-recommended: 5.0.0_stylelint@13.13.1
   stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
+  swr: 0.5.6_react@17.0.2
   tailwindcss: 2.2.4_72be89de93206f86f2d67dd5290ec14d
   typescript: 4.3.5
   utterances-react-component: 1.0.0_react-dom@17.0.2+react@17.0.2
@@ -1512,6 +1514,14 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
+  /axios/0.21.1:
+    resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
+    dependencies:
+      follow-redirects: 1.14.1
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /axobject-query/2.2.0:
     resolution: {integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==}
     dev: false
@@ -2894,6 +2904,16 @@ packages:
 
   /flatted/3.2.1:
     resolution: {integrity: sha512-OMQjaErSFHmHqZe+PSidH5n8j3O0F2DdnVh8JB4j4eUQ2k6KvB0qGfrKIhapvez5JerBbmWkaLYUYWISaESoXg==}
+    dev: false
+
+  /follow-redirects/1.14.1:
+    resolution: {integrity: sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /foreach/2.0.5:
@@ -7078,7 +7098,7 @@ packages:
     dev: false
 
   file:projects/shelves-web.tgz:
-    resolution: {integrity: sha512-kxLSTWl2LZNZjLw9LgyMgIqeYP0GyjPpJf5Cg6FfNMEuJGRxWOpf1INthcYNuuyleLqRoIAcOhaiuJHRAsdRNw==, tarball: file:projects/shelves-web.tgz}
+    resolution: {integrity: sha512-uvnq659vBrdDSePAENo1GNnQbMKx0FlXAh9dDke/9E3oB74fb3Nvyq2ETSahgrMhcVC9ON5EzkeBvYdpMPm0Ew==, tarball: file:projects/shelves-web.tgz}
     name: '@rush-temp/shelves-web'
     version: 0.0.0
     dependencies:
@@ -7090,6 +7110,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 4.28.3_8d80150af46925e6d182e1bd373160e8
       '@typescript-eslint/parser': 4.28.3_eslint@7.31.0+typescript@4.3.5
       autoprefixer: 10.2.6_postcss@8.3.5
+      axios: 0.21.1
       babel-jest: 27.0.6_@babel+core@7.14.6
       eslint: 7.31.0
       eslint-config-next: 11.0.1_e9bd7c215b1c76b8938b8446225cb7ea
@@ -7114,6 +7135,7 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - canvas
+      - debug
       - fibers
       - node-notifier
       - node-sass

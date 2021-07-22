@@ -51,6 +51,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "axios",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "babel-jest",
       "allowedCategories": [ "production", "prototypes" ]
     },
