@@ -3,21 +3,21 @@ import React from 'react';
 import { Utterances } from 'utterances-react-component';
 
 import { SITE_CONFIG } from '../../config';
-import { Post } from '../../models';
+import { Article } from '../../models';
 
-import classes from './post-comments.module.scss';
+import classes from './article-comments.module.scss';
 
-interface PostCommentsProps {
-  post?: Post;
+interface ArticleCommentsProps {
+  article?: Article;
 }
 
-const PostComments: React.FC<PostCommentsProps> = ({ post }) => {
+const ArticleComments: React.FC<ArticleCommentsProps> = ({ article }) => {
   if (SITE_CONFIG.comments === undefined || SITE_CONFIG.comments.using === 'none') {
     return null;
   }
 
   let commentsSection: JSX.Element = null;
-  if (post.disableComments !== undefined && post.disableComments) {
+  if (article.frontMatter.disableComments !== undefined && article.frontMatter.disableComments) {
     commentsSection = <p className={classes.disabled}>Comments are disabled.</p>;
   }
   if (SITE_CONFIG.comments.using === 'utterances') {
@@ -31,4 +31,4 @@ const PostComments: React.FC<PostCommentsProps> = ({ post }) => {
   );
 };
 
-export default PostComments;
+export default ArticleComments;

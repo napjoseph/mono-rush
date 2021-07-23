@@ -2,10 +2,8 @@ import React from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-import { Post, PostTag } from '../../models';
-import { getAllPostsByTagSlug } from '../../lib/api/posts';
-import PostCardList from '../../components/posts/post-card-list.component';
-import { getAllPostTags, getTagBySlug } from '../../lib/api/tags';
+import { Article, ArticleTag } from '../../models';
+import { getArticleTags, getArticleTagBySlug } from '../../lib/api/tags';
 import {
   createHeadData,
   generateSiteDescription,
@@ -14,13 +12,15 @@ import {
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 import DynamicHead from '../../components/document/dynamic-head.component';
 import OpenGraph from '../../components/document/open-graph.component';
+import ArticleCardList from '../../components/articles/article-card-list.component';
+import { getArticlesByTagSlug } from '../../lib/api/articles';
 
 interface TagPageProps {
-  tag?: PostTag;
-  posts?: Post[];
+  tag?: ArticleTag;
+  articles?: Article[];
 }
 
-const TagPage: React.FC<TagPageProps> = ({ tag, posts }) => {
+const TagPage: React.FC<TagPageProps> = ({ tag, articles }) => {
   if (!tag) return null;
 
   const pageTitle = `Posts with the "${tag.name}" tag`;
@@ -42,26 +42,26 @@ const TagPage: React.FC<TagPageProps> = ({ tag, posts }) => {
       <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
-      <PostCardList title={pageTitle} showTotal={true} posts={posts} />
+      <ArticleCardList title={pageTitle} showTotal={true} articles={articles} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params.slug.toString();
-  const tag = getTagBySlug(slug);
-  const posts = getAllPostsByTagSlug(slug);
+  const tag = await getArticleTagBySlug('posts', slug);
+  const articles = await getArticlesByTagSlug('posts', slug);
 
   return {
     props: {
       tag,
-      posts
+      articles
     }
   };
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const tags = getAllPostTags();
+export const getStaticPaths: GetStaticPaths = async () => {
+  const tags = await getArticleTags('posts');
 
   return {
     paths: tags.map((tag) => {

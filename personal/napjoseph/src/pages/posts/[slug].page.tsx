@@ -2,11 +2,11 @@ import React from 'react';
 
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-import { Post } from '../../models';
-import { getAllPosts, getPostBySlug } from '../../lib/api/posts';
-import PostBody from '../../components/posts/post-body.component';
-import PostHeader from '../../components/posts/post-header.component';
-import PostComments from '../../components/posts/post-comments.component';
+import { Article } from '../../models';
+import { getArticles, getArticleBySlug } from '../../lib/api/articles';
+import ArticleBody from '../../components/articles/article-body.component';
+import ArticleHeader from '../../components/articles/article-header.component';
+import ArticleComments from '../../components/articles/article-comments.component';
 import {
   createHeadData,
   generateSiteDescription,
@@ -18,16 +18,16 @@ import OpenGraph from '../../components/document/open-graph.component';
 
 import classes from './[slug].module.scss';
 
-interface PostPageProps {
-  post?: Post;
+interface ArticlePageProps {
+  article?: Article;
 }
 
-const PostPage: React.FC<PostPageProps> = ({ post }) => {
-  if (!post) return null;
+const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
+  if (!article) return null;
 
-  const pageTitle = post.title;
+  const pageTitle = article.title;
   const siteTitle = generateSiteTitle(pageTitle);
-  const siteDescription = generateSiteDescription(post.excerpt);
+  const siteDescription = generateSiteDescription(article.excerpt);
 
   const headData = createHeadData({
     title: siteTitle,
@@ -47,36 +47,36 @@ const PostPage: React.FC<PostPageProps> = ({ post }) => {
 
       <div className={classes.container}>
         <article className={classes.article}>
-          <PostHeader post={post} />
-          <PostBody post={post} />
+          <ArticleHeader article={article} />
+          <ArticleBody article={article} />
         </article>
 
         <div className={classes.comments}>
-          <PostComments post={post} />
+          <ArticleComments article={article} />
         </div>
       </div>
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
-  const post = getPostBySlug(params.slug.toString());
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const article = await getArticleBySlug('posts', params.slug.toString());
 
   return {
     props: {
-      post
+      article
     }
   };
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const posts = getAllPosts();
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = await getArticles('posts');
 
   return {
-    paths: posts.map((post) => {
+    paths: articles.map((article) => {
       return {
         params: {
-          slug: post.slug
+          slug: article.slug
         }
       };
     }),
@@ -84,4 +84,4 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-export default PostPage;
+export default ArticlePage;

@@ -3,12 +3,12 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-import { PostTag } from '../../models';
+import { ArticleTag } from '../../models';
 
 import classes from './tag-pill.module.scss';
 
 interface TagPillProps {
-  tag?: PostTag;
+  tag?: ArticleTag;
 }
 
 const TagPill: React.FC<TagPillProps> = ({ tag }) => {

@@ -3,8 +3,8 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 
 import TagCardList from '../../components/tags/tag-card-list.component';
-import { PostTag } from '../../models';
-import { getAllPostTags } from '../../lib/api/tags';
+import { ArticleTag } from '../../models';
+import { getArticleTags } from '../../lib/api/tags';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 import {
   createHeadData,
@@ -15,7 +15,7 @@ import OpenGraph from '../../components/document/open-graph.component';
 import DynamicHead from '../../components/document/dynamic-head.component';
 
 interface TagsPageProps {
-  tags: PostTag[];
+  tags: ArticleTag[];
 }
 
 const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
@@ -44,7 +44,7 @@ const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (_context) => {
-  const tags = getAllPostTags();
+  const tags = getArticleTags('posts');
 
   return {
     props: {

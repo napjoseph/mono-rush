@@ -2,19 +2,19 @@ import React from 'react';
 
 import { GetStaticProps } from 'next';
 
-import PostCardList from '../components/posts/post-card-list.component';
-import { Post } from '../models';
-import { getAllPosts } from '../lib/api/posts';
+import { Article } from '../models';
 import { createHeadData, generateSiteDescription, generateSiteTitle } from '../lib/utils/head-data';
 import { createOpenGraphData } from '../lib/utils/open-graph-data';
 import OpenGraph from '../components/document/open-graph.component';
 import DynamicHead from '../components/document/dynamic-head.component';
+import { getArticles } from '../lib/api/articles';
+import ArticleCardList from '../components/articles/article-card-list.component';
 
 interface HomePageProps {
-  posts: Post[];
+  articles?: Article[];
 }
 
-const HomePage: React.FC<HomePageProps> = ({ posts }) => {
+const HomePage: React.FC<HomePageProps> = ({ articles = [] }) => {
   const siteTitle = generateSiteTitle();
   const siteDescription = generateSiteDescription();
 
@@ -33,17 +33,17 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
       <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
-      <PostCardList title="Recent Posts" posts={posts} hideIfEmpty={false} />
+      <ArticleCardList title="Recent Posts" articles={articles} hideIfEmpty={false} />
     </>
   );
 };
 
-export const getStaticProps: GetStaticProps = (_context) => {
-  const recentPosts = getAllPosts().slice(0, 3);
+export const getStaticProps: GetStaticProps = async (_context) => {
+  const posts = await getArticles('posts');
 
   return {
     props: {
-      posts: recentPosts || []
+      articles: (posts || []).slice(0, 3)
     }
   };
 };

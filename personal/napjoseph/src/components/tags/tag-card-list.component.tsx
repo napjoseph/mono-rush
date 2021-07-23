@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PostTag } from '../../models';
+import { ArticleTag } from '../../models';
 import TagCard from './tag-card.component';
 
 import classes from './tag-card-list.module.scss';
@@ -8,7 +8,7 @@ import TotalResults from '../snippets/total-results/total-results.component';
 
 interface TagCardListProps {
   title: string;
-  tags: PostTag[];
+  tags: ArticleTag[];
   description?: string;
   showTotal?: boolean;
   hideIfEmpty?: boolean;

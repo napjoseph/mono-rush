@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { PostTag } from '../../models';
+import { ArticleTag } from '../../models';
 
 import TagPill from './tag-pill.component';
 import classes from './tag-card.module.scss';
 
 interface TagCardProps {
-  tag: PostTag;
+  tag: ArticleTag;
 }
 
 const TagCard: React.FC<TagCardProps> = ({ tag }) => {

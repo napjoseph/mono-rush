@@ -13,9 +13,7 @@ $ touch .gitpod.Dockerfile
 $ touch .gitpod.yml
 ```
 
-```Dockerfile
-# file: .gitpod.Dockerfile
-
+```Dockerfile filename=.gitpod.Dockerfile
 FROM gitpod/workspace-full
 
 USER root
@@ -23,9 +21,7 @@ USER root
 RUN apt-get update && apt-get install -yq hugo
 ```
 
-```yaml
-# file: .gitpod.yml
-
+```yaml filename=.gitpod.yml
 image:
   file: .gitpod.Dockerfile
 
@@ -41,9 +37,7 @@ After commiting and merging your code, you can then go to `https://gitpod.io/#ht
 
 Optionally, you can also add a Gitpod badge on your `README` file:
 
-```markdown
-<!-- file: README.md -->
-
+```markdown filename=README.md
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>)
 ```
 

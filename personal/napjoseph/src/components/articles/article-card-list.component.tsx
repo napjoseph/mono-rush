@@ -1,27 +1,27 @@
 import React from 'react';
 
-import { Post } from '../../models';
-import PostCard from './post-card.component';
-
-import classes from './post-card-list.module.scss';
+import { Article } from '../../models';
+import ArticleCard from './article-card.component';
 import TotalResults from '../snippets/total-results/total-results.component';
 
-interface PostCardListProps {
+import classes from './article-card-list.module.scss';
+
+interface ArticleCardListProps {
   title: string;
-  posts: Post[];
+  articles: Article[];
   description?: string;
   showTotal?: boolean;
   hideIfEmpty?: boolean;
 }
 
-const PostCardList: React.FC<PostCardListProps> = ({
-  title = 'Posts',
-  posts = [],
+const ArticleCardList: React.FC<ArticleCardListProps> = ({
+  title = 'Articles',
+  articles = [],
   description,
   showTotal = false,
   hideIfEmpty = true
 }) => {
-  if (hideIfEmpty && !posts.length) return null;
+  if (hideIfEmpty && !articles.length) return null;
 
   return (
     <div className={classes.container}>
@@ -31,13 +31,13 @@ const PostCardList: React.FC<PostCardListProps> = ({
           {description && <p className={classes.description}>{description}</p>}
           {showTotal && (
             <div className={classes.total}>
-              <TotalResults total={posts.length} unit="post" />
+              <TotalResults total={articles.length} unit="article" />
             </div>
           )}
         </div>
-        <div className={classes.posts}>
-          {posts.length ? (
-            posts.map((post) => <PostCard key={post.title} post={post} />)
+        <div className={classes.articles}>
+          {articles.length ? (
+            articles.map((article) => <ArticleCard key={article.title} article={article} />)
           ) : (
             <p className={classes.empty}>
               It looks a little empty right now. Please check back later.
@@ -49,4 +49,4 @@ const PostCardList: React.FC<PostCardListProps> = ({
   );
 };
 
-export default PostCardList;
+export default ArticleCardList;

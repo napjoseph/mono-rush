@@ -1,7 +1,7 @@
-import { PostTag } from '../../models';
+import { ArticleTag } from '../../models';
 import slugify from './slugify';
 
-const convertToPostTag = (tagName: string): PostTag => {
+const convertToArticleTag = (tagName: string): ArticleTag => {
   return {
     name: tagName,
     slug: slugify(tagName)
@@ -10,4 +10,4 @@ const convertToPostTag = (tagName: string): PostTag => {
   };
 };
 
-export default convertToPostTag;
+export default convertToArticleTag;

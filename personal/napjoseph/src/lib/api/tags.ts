@@ -1,18 +1,18 @@
-import { PostTag } from '../../models';
+import { ArticleTag } from '../../models';
 import slugify from '../utils/slugify';
-import { getAllPosts } from './posts';
+import { getArticles } from './articles';
 
-export const getAllPostTags = (): PostTag[] => {
-  const posts = getAllPosts();
+export const getArticleTags = async (layout: string): Promise<ArticleTag[]> => {
+  const posts = await getArticles(layout);
 
   const tagsSet = new Set<string>();
   (posts || []).forEach((post) => {
-    (post.tags || []).forEach((tag) => {
+    (post.frontMatter.tags || []).forEach((tag) => {
       tagsSet.add(tag);
     });
   });
 
-  const tags: PostTag[] = [];
+  const tags: ArticleTag[] = [];
   tagsSet.forEach((tag) => {
     tags.push({
       name: tag,
@@ -25,8 +25,12 @@ export const getAllPostTags = (): PostTag[] => {
   return tags;
 };
 
-export const getTagBySlug = (tagSlug: string): PostTag | null => {
-  const tags = getAllPostTags().filter((tag) => tag.slug === tagSlug);
+export const getArticleTagBySlug = async (
+  layout: string,
+  tagSlug: string
+): Promise<ArticleTag | null> => {
+  const tags = await getArticleTags(layout);
+  const filtered = tags.filter((tag) => tag.slug === tagSlug);
 
-  return tags.length >= 0 ? tags[0] : null;
+  return filtered.length >= 0 ? filtered[0] : null;
 };

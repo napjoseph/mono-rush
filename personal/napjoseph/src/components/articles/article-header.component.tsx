@@ -3,22 +3,23 @@ import React from 'react';
 import Link from 'next/link';
 
 import formatDate from '../../lib/utils/format-date';
-import { Post } from '../../models';
+import { Article } from '../../models';
 import TagPill from '../tags/tag-pill.component';
-import convertToPostTag from '../../lib/utils/convert-to-post-tag';
+import convertToArticleTag from '../../lib/utils/convert-to-article-tag';
 import joinClassNames from '../../lib/utils/join-class-names';
 
-import classes from './post-header.module.scss';
+import classes from './article-header.module.scss';
 
-interface PostHeaderProps {
-  post: Post;
+interface ArticleHeaderProps {
+  article: Article;
 
-  // When set to true, it uses a smaller header with a link to the post.
+  // When set to true, it uses a smaller header with a link to the article.
   forCard?: boolean;
 }
 
-const PostHeader: React.FC<PostHeaderProps> = ({ post, forCard = false }) => {
-  const { title = '', publishedDate = '', tags = [] } = post;
+const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false }) => {
+  const { title = '', frontMatter } = article;
+  const { publishedDate = '', tags = [] } = frontMatter;
 
   const publishedDateSection = publishedDate !== '' && (
     <p className={classes.publishedDate}>
@@ -32,7 +33,7 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post, forCard = false }) => {
   const tagsSection = tags && tags.length !== 0 && (
     <div className={classes.tags}>
       {tags.map((tag) => (
-        <TagPill key={tag} tag={convertToPostTag(tag)} />
+        <TagPill key={tag} tag={convertToArticleTag(tag)} />
       ))}
     </div>
   );
@@ -40,9 +41,9 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post, forCard = false }) => {
   if (forCard) {
     return (
       <div className={joinClassNames(classes.container, classes.card)}>
-        <Link href={`/posts/${post.slug}`}>
+        <Link href={`/posts/${article.slug}`}>
           <a className={classes.link}>
-            <span className={classes.title}>{post.title}</span>
+            <span className={classes.title}>{article.title}</span>
           </a>
         </Link>
 
@@ -62,4 +63,4 @@ const PostHeader: React.FC<PostHeaderProps> = ({ post, forCard = false }) => {
   );
 };
 
-export default PostHeader;
+export default ArticleHeader;
