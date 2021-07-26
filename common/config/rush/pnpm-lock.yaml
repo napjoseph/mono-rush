@@ -2,9 +2,13 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/core': ^7.14.6
-  '@chakra-ui/react': ~1.6.5
-  '@emotion/react': ~11.4.0
-  '@emotion/styled': ~11.3.0
+  '@chakra-ui/layout': ^1.4.7
+  '@chakra-ui/react': ^1.6.5
+  '@chakra-ui/system': ^1.7.1
+  '@chakra-ui/theme-tools': ^1.1.8
+  '@chakra-ui/utils': ^1.8.1
+  '@emotion/react': ^11.4.0
+  '@emotion/styled': ^11.3.0
   '@fortawesome/fontawesome-svg-core': ~1.2.35
   '@fortawesome/free-brands-svg-icons': ~5.15.3
   '@fortawesome/free-regular-svg-icons': ~5.15.3
@@ -46,6 +50,7 @@ specifiers:
   prism-react-renderer: 1.2.0
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-icons: ^4.2.0
   remark-autolink-headings: 6.0.1
   remark-code-titles: 0.1.2
   remark-slug: 6.1.0
@@ -62,7 +67,11 @@ specifiers:
 
 dependencies:
   '@babel/core': 7.14.8
+  '@chakra-ui/layout': 1.4.7_f83ab07dbf33058351684eb913819748
   '@chakra-ui/react': 1.6.5_e0ee5788c57240be202ec6c536c38194
+  '@chakra-ui/system': 1.7.1_7874f5fd290ce587db5f5f81e8a37ea9
+  '@chakra-ui/theme-tools': 1.1.8_@chakra-ui+system@1.7.1
+  '@chakra-ui/utils': 1.8.1
   '@emotion/react': 11.4.0_fe3438944b1b40b909f746c1015ed4cc
   '@emotion/styled': 11.3.0_10723a8ed514deb56574a12458f204d1
   '@fortawesome/fontawesome-svg-core': 1.2.35
@@ -106,6 +115,7 @@ dependencies:
   prism-react-renderer: 1.2.0_react@17.0.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-icons: 4.2.0_react@17.0.2
   remark-autolink-headings: 6.0.1
   remark-code-titles: 0.1.2
   remark-slug: 6.1.0
@@ -6807,6 +6817,14 @@ packages:
       - '@types/react'
     dev: false
 
+  /react-icons/4.2.0_react@17.0.2:
+    resolution: {integrity: sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 17.0.2
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -8516,13 +8534,17 @@ packages:
     dev: false
 
   file:projects/napjoseph.tgz_xstate@4.22.0:
-    resolution: {integrity: sha512-9AOF/koDQg86PwcqpKAgpzQ/QsLx3oKM4fY24zr6EC2F+H68JxdJgxIhT5i285R1vpCPOmHSjbcSYqJ563imLw==, tarball: file:projects/napjoseph.tgz}
+    resolution: {integrity: sha512-fZYENBcyPu/Y6qGFD/66sM+Myvli8dAvX3RQxHX/LuBwBIkYc+G2zSkyOrhMBWP4FpltCd/pAMwI9Xv1KICIlA==, tarball: file:projects/napjoseph.tgz}
     id: file:projects/napjoseph.tgz
     name: '@rush-temp/napjoseph'
     version: 0.0.0
     dependencies:
       '@babel/core': 7.14.8
+      '@chakra-ui/layout': 1.4.7_f83ab07dbf33058351684eb913819748
       '@chakra-ui/react': 1.6.5_e0ee5788c57240be202ec6c536c38194
+      '@chakra-ui/system': 1.7.1_7874f5fd290ce587db5f5f81e8a37ea9
+      '@chakra-ui/theme-tools': 1.1.8_@chakra-ui+system@1.7.1
+      '@chakra-ui/utils': 1.8.1
       '@emotion/react': 11.4.0_fe3438944b1b40b909f746c1015ed4cc
       '@emotion/styled': 11.3.0_10723a8ed514deb56574a12458f204d1
       '@fortawesome/fontawesome-svg-core': 1.2.35
@@ -8561,6 +8583,7 @@ packages:
       prism-react-renderer: 1.2.0_react@17.0.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      react-icons: 4.2.0_react@17.0.2
       remark-autolink-headings: 6.0.1
       remark-code-titles: 0.1.2
       remark-slug: 6.1.0

@@ -7,7 +7,23 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "@chakra-ui/layout",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@chakra-ui/react",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@chakra-ui/system",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@chakra-ui/theme-tools",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@chakra-ui/utils",
       "allowedCategories": [ "production" ]
     },
     {
@@ -145,6 +161,10 @@
     {
       "name": "react-dom",
       "allowedCategories": [ "production", "prototypes" ]
+    },
+    {
+      "name": "react-icons",
+      "allowedCategories": [ "production" ]
     },
     {
       "name": "remark-autolink-headings",
