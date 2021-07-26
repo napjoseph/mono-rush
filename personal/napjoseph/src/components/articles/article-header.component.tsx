@@ -8,8 +8,6 @@ import TagPill from '../tags/tag-pill.component';
 import convertToArticleTag from '../../lib/utils/convert-to-article-tag';
 import joinClassNames from '../../lib/utils/join-class-names';
 
-import classes from './article-header.module.scss';
-
 interface ArticleHeaderProps {
   article: Article;
 
@@ -22,16 +20,16 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false 
   const { publishedDate = '', tags = [] } = frontMatter;
 
   const publishedDateSection = publishedDate !== '' && (
-    <p className={classes.publishedDate}>
+    <p className="text-gray-400">
       Published on{' '}
-      <span className={classes.date} title={publishedDate}>
+      <span className="font-medium" title={publishedDate}>
         {formatDate(publishedDate, 'DDD')}
       </span>
     </p>
   );
 
   const tagsSection = tags && tags.length !== 0 && (
-    <div className={classes.tags}>
+    <div>
       {tags.map((tag) => (
         <TagPill key={tag} tag={convertToArticleTag(tag)} />
       ))}
@@ -40,10 +38,10 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false 
 
   if (forCard) {
     return (
-      <div className={joinClassNames(classes.container, classes.card)}>
+      <div className={joinClassNames('flex flex-col gap-2', 'gap-1.5')}>
         <Link href={`/posts/${article.slug}`}>
-          <a className={classes.link}>
-            <span className={classes.title}>{article.title}</span>
+          <a className="block">
+            <span className="text-2xl text-gray-900 main-link-hover">{article.title}</span>
           </a>
         </Link>
 
@@ -54,8 +52,8 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false 
   }
 
   return (
-    <div className={classes.container}>
-      <h2 className={classes.title}>{title}</h2>
+    <div className="flex flex-col gap-2">
+      <h2 className="text-4xl">{title}</h2>
 
       {publishedDateSection}
       {tagsSection}

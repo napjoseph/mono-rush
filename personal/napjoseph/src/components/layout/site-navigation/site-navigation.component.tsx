@@ -1,12 +1,10 @@
 import React from 'react';
-
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 
 import { SiteNavigationLinkItem } from '../../../models';
-
-import classes from './site-navigation.module.scss';
+import joinClassNames from '../../../lib/utils/join-class-names';
 
 interface SiteNavigationProps {
   links: SiteNavigationLinkItem[];
@@ -19,12 +17,12 @@ const SiteNavigation: React.FC<SiteNavigationProps> = ({ links = [] }) => {
   if (!links) return null;
 
   return (
-    <div className={classes.container}>
-      <div className={classes.content}>
-        <nav className={classes.nav}>
-          <ul className={classes.links}>
+    <div>
+      <div>
+        <nav>
+          <ul className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-center">
             {links.map((link) => (
-              <li key={link.name} className={classes.item}>
+              <li key={link.name}>
                 <SiteNavigationItem link={link} isActive={pathname === link.href} />
               </li>
             ))}
@@ -43,16 +41,25 @@ interface SiteNavigationItemProps {
 const SiteNavigationItem: React.FC<SiteNavigationItemProps> = ({ link, isActive = false }) => {
   let linkEl: JSX.Element;
 
+  const regularLink =
+    'block text-center py-1.5 sm:py-1 sm:px-4 uppercase text-2xs sm:text-xs font-bold bg-gray-500 text-gray-100 hover:bg-blue-700 main-transition';
+
   if (link.external !== undefined && link.external) {
     linkEl = (
-      <a href={link.href} className={classes.link} target="_blank" rel="noreferrer">
+      <a href={link.href} className={regularLink} target="_blank" rel="noreferrer">
         {link.name}
       </a>
     );
   } else {
     linkEl = (
       <Link href={link.href}>
-        <a className={isActive ? classes.linkActive : classes.link}>{link.name}</a>
+        <a
+          className={
+            isActive ? joinClassNames(regularLink, 'bg-gray-700 text-gray-100') : regularLink
+          }
+        >
+          {link.name}
+        </a>
       </Link>
     );
   }

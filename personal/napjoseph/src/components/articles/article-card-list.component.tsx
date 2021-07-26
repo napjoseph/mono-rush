@@ -4,8 +4,6 @@ import { Article } from '../../models';
 import ArticleCard from './article-card.component';
 import TotalResults from '../snippets/total-results/total-results.component';
 
-import classes from './article-card-list.module.scss';
-
 interface ArticleCardListProps {
   title: string;
   articles: Article[];
@@ -24,22 +22,24 @@ const ArticleCardList: React.FC<ArticleCardListProps> = ({
   if (hideIfEmpty && !articles.length) return null;
 
   return (
-    <div className={classes.container}>
-      <div className={classes.content}>
-        <div className={classes.information}>
-          <h2 className={classes.title}>{title}</h2>
-          {description && <p className={classes.description}>{description}</p>}
+    <div>
+      <div className="relative">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+            {title}
+          </h2>
+          {description && <p className="text-xl text-gray-500">{description}</p>}
           {showTotal && (
-            <div className={classes.total}>
+            <div className="text-gray-500">
               <TotalResults total={articles.length} unit="article" />
             </div>
           )}
         </div>
-        <div className={classes.articles}>
+        <div className="mt-12 grid gap-6 lg:gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
           {articles.length ? (
             articles.map((article) => <ArticleCard key={article.title} article={article} />)
           ) : (
-            <p className={classes.empty}>
+            <p className="text-gray-600 text-sm">
               It looks a little empty right now. Please check back later.
             </p>
           )}

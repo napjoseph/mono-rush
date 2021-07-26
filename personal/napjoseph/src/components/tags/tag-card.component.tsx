@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { ArticleTag } from '../../models';
-
 import TagPill from './tag-pill.component';
-import classes from './tag-card.module.scss';
 
 interface TagCardProps {
   tag: ArticleTag;
@@ -11,7 +9,7 @@ interface TagCardProps {
 
 const TagCard: React.FC<TagCardProps> = ({ tag }) => {
   return (
-    <div className={classes.container}>
+    <div className="inline-block">
       <TagPill tag={tag} />
     </div>
   );

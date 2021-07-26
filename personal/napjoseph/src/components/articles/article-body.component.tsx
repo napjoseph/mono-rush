@@ -4,8 +4,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import { Article } from '../../models';
 import CustomComponents from './custom-components/index.component';
 
-import classes from './article-body.module.scss';
-
 interface ArticleBodyProps {
   article?: Article;
 }
@@ -14,7 +12,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ article }) => {
   if (!article) return null;
 
   return (
-    <div className={classes.container}>
+    <div className="text-base text-gray-700 leading-relaxed flex flex-col gap-3">
       <MDXRemote {...article.serializedContent} components={CustomComponents} />
     </div>
   );

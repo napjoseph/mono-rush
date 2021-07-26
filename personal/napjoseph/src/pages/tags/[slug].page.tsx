@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Article, ArticleTag } from '../../models';

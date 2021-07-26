@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Article } from '../../models';
@@ -15,8 +14,6 @@ import {
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 import DynamicHead from '../../components/document/dynamic-head.component';
 import OpenGraph from '../../components/document/open-graph.component';
-
-import classes from './[slug].module.scss';
 
 interface ArticlePageProps {
   article?: Article;
@@ -45,13 +42,13 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
       <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
-      <div className={classes.container}>
-        <article className={classes.article}>
+      <div className="flex flex-col gap-12">
+        <article className="text-gray-700 flex flex-col gap-8">
           <ArticleHeader article={article} />
           <ArticleBody article={article} />
         </article>
 
-        <div className={classes.comments}>
+        <div>
           <ArticleComments article={article} />
         </div>
       </div>

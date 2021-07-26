@@ -3,8 +3,6 @@ import React from 'react';
 import Footer from './footer/footer.component';
 import Header from './header/header.component';
 import ContentWrapper from './content/content-wrapper.component';
-
-import classes from './layout.module.scss';
 import StaticHead from '../document/static-head.component';
 
 /* eslint-disable-next-line */
@@ -16,9 +14,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <StaticHead />
 
       <ContentWrapper>
-        <div className={classes.container}>
+        <div className="flex flex-col gap-5">
           <Header />
-          <main className={classes.main}>{children}</main>
+
+          <main>{children}</main>
+
           <Footer />
         </div>
       </ContentWrapper>

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { GetStaticProps } from 'next';
 
 import TagCardList from '../../components/tags/tag-card-list.component';
