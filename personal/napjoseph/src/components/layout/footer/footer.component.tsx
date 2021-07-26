@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import SocialLinks from '../social-links/social-links.component';
 import { SITE_CONFIG } from '../../../config';
+import ThemeSwitcher from '../theme-switcher/theme-switcher.component';
 
 /* eslint-disable-next-line */
 interface FooterProps {}
@@ -30,6 +31,7 @@ const Footer: React.FC<FooterProps> = (_props) => {
             <SocialLinks socialLinks={socialLinks} />
           </div>
         )}
+        <ThemeSwitcher />
       </div>
     </footer>
   );
