@@ -1,10 +1,20 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
 
-/* eslint-disable-next-line */
-interface ContentWrapperProps {}
-
-const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
-  return <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>;
+const ContentWrapper: React.FC = ({ children }) => {
+  return (
+    <Box
+      maxW="4xl"
+      mx="auto"
+      px={{
+        base: '4',
+        sm: '6',
+        lg: '8'
+      }}
+    >
+      {children}
+    </Box>
+  );
 };
 
 export default ContentWrapper;

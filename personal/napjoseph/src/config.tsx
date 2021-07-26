@@ -1,3 +1,5 @@
+import { FaGithub, FaKeybase, FaLinkedin } from 'react-icons/fa';
+
 import { SiteConfig } from './models';
 
 export const SITE_CONFIG: SiteConfig = {
@@ -48,26 +50,17 @@ export const SITE_CONFIG: SiteConfig = {
         {
           name: 'GitHub',
           href: 'https://github.com/njncalub',
-          icon: {
-            prefix: 'fab',
-            iconName: 'github'
-          }
+          icon: <FaGithub />
         },
         {
           name: 'Keybase',
           href: 'https://keybase.io/njncalub',
-          icon: {
-            prefix: 'fab',
-            iconName: 'keybase'
-          }
+          icon: <FaKeybase />
         },
         {
           name: 'LinkedIn',
           href: 'https://linkedin.com/in/njncalub',
-          icon: {
-            prefix: 'fab',
-            iconName: 'linkedin'
-          }
+          icon: <FaLinkedin />
         }
       ]
     }

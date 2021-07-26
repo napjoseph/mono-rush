@@ -1,26 +1,22 @@
 import React from 'react';
+import { Box, VStack } from '@chakra-ui/react';
 
 import Footer from './footer/footer.component';
 import Header from './header/header.component';
 import ContentWrapper from './content/content-wrapper.component';
 import StaticHead from '../document/static-head.component';
 
-/* eslint-disable-next-line */
-interface LayoutProps {}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <>
       <StaticHead />
 
       <ContentWrapper>
-        <div className="flex flex-col gap-5">
+        <VStack spacing="5">
           <Header />
-
-          <main>{children}</main>
-
+          <Box as="main">{children}</Box>
           <Footer />
-        </div>
+        </VStack>
       </ContentWrapper>
     </>
   );
