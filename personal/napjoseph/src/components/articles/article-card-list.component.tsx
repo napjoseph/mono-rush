@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Flex, Heading, Text, SimpleGrid, useColorModeValue as mode } from '@chakra-ui/react';
 
 import { Article } from '../../models';
 import ArticleCard from './article-card.component';
@@ -21,31 +22,30 @@ const ArticleCardList: React.FC<ArticleCardListProps> = ({
 }) => {
   if (hideIfEmpty && !articles.length) return null;
 
+  const headingColor = mode('gray.900', 'gray.300');
+  const bodyColor = mode('gray.700', 'gray.400');
+
   return (
-    <div>
-      <div className="relative">
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-            {title}
-          </h2>
-          {description && <p className="text-xl text-gray-500">{description}</p>}
-          {showTotal && (
-            <div className="text-gray-500">
-              <TotalResults total={articles.length} unit="article" />
-            </div>
-          )}
-        </div>
-        <div className="mt-12 grid gap-6 lg:gap-16 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-          {articles.length ? (
-            articles.map((article) => <ArticleCard key={article.title} article={article} />)
-          ) : (
-            <p className="text-gray-600 text-sm">
-              It looks a little empty right now. Please check back later.
-            </p>
-          )}
-        </div>
-      </div>
-    </div>
+    <Flex direction="column" gridGap={4}>
+      <Flex direction="column" gridGap={4}>
+        <Heading textColor={headingColor}>{title}</Heading>
+        {description && <Text textColor={bodyColor}>{description}</Text>}
+        {showTotal && (
+          <Box textColor={bodyColor}>
+            <TotalResults total={articles.length} unit="article" />
+          </Box>
+        )}
+      </Flex>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={{ base: 6, md: 3 }}>
+        {articles.length ? (
+          articles.map((article) => <ArticleCard key={article.title} article={article} />)
+        ) : (
+          <Text textColor={bodyColor}>
+            It looks a little empty right now. Please check back later.
+          </Text>
+        )}
+      </SimpleGrid>
+    </Flex>
   );
 };
 
