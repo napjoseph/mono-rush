@@ -32,9 +32,22 @@ const colors = {
 // - Border width and border color
 // - Box shadow
 // - Opacity
+//
+// If you want to specifically update a property in dark mode, you can:
+// use `'.chakra-ui-[light|dark] &': { textColor: 'red.300' }` as per:
+// https://github.com/chakra-ui/chakra-ui/issues/2231#issuecomment-771531813
+// Note that you should also add a similar one if you want to target it when
+// hovered, etc, because of CSS specificity.
 const layerStyles = {
   muted: {
-    fontColor: 'gray.400'
+    textColor: 'gray.400'
+  },
+  links: {
+    textColor: 'gray.500'
+  },
+  linksHover: {
+    textColor: 'blue.600',
+    textDecoration: 'none'
   }
 };
 
