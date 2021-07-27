@@ -54,6 +54,7 @@ const Header: React.FC = (_props) => {
       gridGap={14}
       justify="center"
       alignItems="stretch"
+      w="full"
       py={{ base: 10, sm: 14 }}
     >
       <Flex direction="column" textAlign="center">
@@ -66,8 +67,8 @@ const Header: React.FC = (_props) => {
             fontSize={{ base: '3xl', sm: '5xl' }}
             fontWeight="extrabold"
             title={title}
-            layerStyle="siteTitle"
-            _hover={{ layerStyle: 'siteTitleHover' }}
+            layerStyle="site-title"
+            _hover={{ layerStyle: 'site-title-hover' }}
           >
             <Text as="h1">{title}</Text>
           </NextChakraLink>

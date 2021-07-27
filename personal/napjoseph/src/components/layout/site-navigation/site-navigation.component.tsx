@@ -1,10 +1,10 @@
 import React from 'react';
-import Link from 'next/link';
+import { Box, List, ListItem } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
 
 import { SiteNavigationLinkItem } from '../../../models';
-import joinClassNames from '../../../lib/utils/join-class-names';
+import { MotionBox } from '../../primitives/motion-box';
+import { NextChakraLink } from '../../primitives/next-chakra-link';
 
 interface SiteNavigationProps {
   links: SiteNavigationLinkItem[];
@@ -17,19 +17,20 @@ const SiteNavigation: React.FC<SiteNavigationProps> = ({ links = [] }) => {
   if (!links) return null;
 
   return (
-    <div>
-      <div>
-        <nav>
-          <ul className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-center">
-            {links.map((link) => (
-              <li key={link.name}>
-                <SiteNavigationItem link={link} isActive={pathname === link.href} />
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <Box as="nav">
+      <List
+        display="flex"
+        flexDirection={{ base: 'column', sm: 'row' }}
+        gridGap={{ base: 1, sm: 2 }}
+        justifyContent="center"
+      >
+        {links.map((link) => (
+          <ListItem key={link.name}>
+            <SiteNavigationItem link={link} isActive={pathname === link.href} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   );
 };
 
@@ -39,32 +40,25 @@ interface SiteNavigationItemProps {
 }
 
 const SiteNavigationItem: React.FC<SiteNavigationItemProps> = ({ link, isActive = false }) => {
-  let linkEl: JSX.Element;
-
-  const regularLink =
-    'block text-center py-1.5 sm:py-1 sm:px-4 uppercase text-2xs sm:text-xs font-bold bg-gray-500 text-gray-100 hover:bg-blue-700 main-transition';
-
-  if (link.external !== undefined && link.external) {
-    linkEl = (
-      <a href={link.href} className={regularLink} target="_blank" rel="noreferrer">
+  return (
+    <MotionBox whileHover={{ scale: 1.1 }}>
+      <NextChakraLink
+        href={link.href}
+        isExternal={link.external}
+        py={1}
+        px={4}
+        display="block"
+        textAlign="center"
+        textStyle="site-navigation"
+        layerStyle={isActive ? 'site-navigation-active' : 'site-navigation'}
+        _hover={{
+          layerStyle: 'site-navigation-hover'
+        }}
+      >
         {link.name}
-      </a>
-    );
-  } else {
-    linkEl = (
-      <Link href={link.href}>
-        <a
-          className={
-            isActive ? joinClassNames(regularLink, 'bg-gray-700 text-gray-100') : regularLink
-          }
-        >
-          {link.name}
-        </a>
-      </Link>
-    );
-  }
-
-  return <motion.div whileHover={{ scale: 1.1 }}>{linkEl}</motion.div>;
+      </NextChakraLink>
+    </MotionBox>
+  );
 };
 
 export default SiteNavigation;

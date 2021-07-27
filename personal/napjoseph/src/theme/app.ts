@@ -49,7 +49,7 @@ const layerStyles = {
   muted: {
     textColor: 'gray.400'
   },
-  siteTitle: {
+  'site-title': {
     '.chakra-ui-light &': {
       textColor: 'gray.700'
     },
@@ -57,7 +57,7 @@ const layerStyles = {
       textColor: 'gray.200'
     }
   },
-  siteTitleHover: {
+  'site-title-hover': {
     textDecoration: 'none',
     '.chakra-ui-light &': {
       textColor: 'brand.600'
@@ -74,7 +74,7 @@ const layerStyles = {
       textColor: 'gray.200'
     }
   },
-  linksHover: {
+  'links-hover': {
     textDecoration: 'none',
     '.chakra-ui-light &': {
       textColor: 'brand.600'
@@ -82,6 +82,18 @@ const layerStyles = {
     '.chakra-ui-dark &': {
       textColor: 'brand.500'
     }
+  },
+  'site-navigation': {
+    bg: 'gray.500',
+    textColor: 'gray.100'
+  },
+  'site-navigation-active': {
+    bg: 'gray.700',
+    textColor: 'gray.100'
+  },
+  'site-navigation-hover': {
+    bg: 'brand.600',
+    textColor: 'gray.100'
   }
 };
 
@@ -96,6 +108,11 @@ const textStyles = {
   'site-title': {
     fontSize: '4xl',
     fontWeight: 'black'
+  },
+  'site-navigation': {
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+    fontSize: 'xs'
   }
 };
 
