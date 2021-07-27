@@ -19,9 +19,16 @@ const breakpoints = createBreakpoints({
 // https://chakra-ui.com/docs/theming/theme#colors
 const colors = {
   brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac'
+    900: '#06102d',
+    800: '#0c205a',
+    700: '#123187',
+    600: '#1841b4',
+    500: '#1e51e1',
+    400: '#4770e6',
+    300: '#6f90ec',
+    200: '#98aff1',
+    100: '#c0cef7',
+    50: '#e9eefc'
   }
 };
 
@@ -42,12 +49,39 @@ const layerStyles = {
   muted: {
     textColor: 'gray.400'
   },
+  siteTitle: {
+    '.chakra-ui-light &': {
+      textColor: 'gray.700'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'gray.200'
+    }
+  },
+  siteTitleHover: {
+    textDecoration: 'none',
+    '.chakra-ui-light &': {
+      textColor: 'brand.600'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'brand.500'
+    }
+  },
   links: {
-    textColor: 'gray.500'
+    '.chakra-ui-light &': {
+      textColor: 'gray.500'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'gray.200'
+    }
   },
   linksHover: {
-    textColor: 'blue.600',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    '.chakra-ui-light &': {
+      textColor: 'brand.600'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'brand.500'
+    }
   }
 };
 
