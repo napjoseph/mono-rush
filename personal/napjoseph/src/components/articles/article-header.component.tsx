@@ -1,12 +1,11 @@
 import React from 'react';
-
-import Link from 'next/link';
+import { Text, Flex, Heading } from '@chakra-ui/react';
 
 import formatDate from '../../lib/utils/format-date';
 import { Article } from '../../models';
 import TagPill from '../tags/tag-pill.component';
 import convertToArticleTag from '../../lib/utils/convert-to-article-tag';
-import joinClassNames from '../../lib/utils/join-class-names';
+import { NextChakraLink } from '../primitives/next-chakra-link';
 
 interface ArticleHeaderProps {
   article: Article;
@@ -19,45 +18,48 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false 
   const { title = '', frontMatter } = article;
   const { publishedDate = '', tags = [] } = frontMatter;
 
-  const publishedDateSection = publishedDate !== '' && (
-    <p className="text-gray-400">
-      Published on{' '}
-      <span className="font-medium" title={publishedDate}>
-        {formatDate(publishedDate, 'DDD')}
-      </span>
-    </p>
-  );
-
-  const tagsSection = tags && tags.length !== 0 && (
-    <div>
-      {tags.map((tag) => (
-        <TagPill key={tag} tag={convertToArticleTag(tag)} />
-      ))}
-    </div>
-  );
-
+  let postTitle: JSX.Element;
   if (forCard) {
-    return (
-      <div className={joinClassNames('flex flex-col gap-2', 'gap-1.5')}>
-        <Link href={`/posts/${article.slug}`}>
-          <a className="block">
-            <span className="text-2xl text-gray-900 main-link-hover">{article.title}</span>
-          </a>
-        </Link>
-
-        {publishedDateSection}
-        {tagsSection}
-      </div>
+    postTitle = (
+      <NextChakraLink
+        href={`/posts/${article.slug}`}
+        textStyle="post-title-card"
+        layerStyle="post-title"
+      >
+        {article.title}
+      </NextChakraLink>
+    );
+  } else {
+    postTitle = (
+      <Heading textStyle="post-title" layerStyle="post-title">
+        {title}
+      </Heading>
     );
   }
 
-  return (
-    <div className="flex flex-col gap-2">
-      <h2 className="text-4xl">{title}</h2>
+  const publishedDateSection = publishedDate !== '' && (
+    <Text fontSize="small" layerStyle="metadata">
+      Published on{' '}
+      <Text as="span" fontWeight="semibold" title={publishedDate}>
+        {formatDate(publishedDate, 'DDD')}
+      </Text>
+    </Text>
+  );
 
+  const tagsSection = tags && tags.length !== 0 && (
+    <Flex>
+      {tags.map((tag) => (
+        <TagPill key={tag} tag={convertToArticleTag(tag)} />
+      ))}
+    </Flex>
+  );
+
+  return (
+    <Flex direction="column" gridGap={1}>
+      {postTitle}
       {publishedDateSection}
       {tagsSection}
-    </div>
+    </Flex>
   );
 };
 

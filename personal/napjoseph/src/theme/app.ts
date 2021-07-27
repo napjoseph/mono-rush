@@ -49,6 +49,14 @@ const layerStyles = {
   muted: {
     textColor: 'gray.400'
   },
+  metadata: {
+    '.chakra-ui-light &': {
+      textColor: 'gray.500'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'gray.600'
+    }
+  },
   'site-title': {
     '.chakra-ui-light &': {
       textColor: 'gray.700'
@@ -94,6 +102,14 @@ const layerStyles = {
   'site-navigation-hover': {
     bg: 'brand.600',
     textColor: 'gray.100'
+  },
+  'post-title': {
+    '.chakra-ui-light &': {
+      textColor: 'gray.800'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'gray.200'
+    }
   }
 };
 
@@ -113,6 +129,12 @@ const textStyles = {
     textTransform: 'uppercase',
     fontWeight: 'bold',
     fontSize: 'xs'
+  },
+  'post-title': {
+    fontSize: '4xl'
+  },
+  'post-title-card': {
+    fontSize: '2xl'
   }
 };
 
