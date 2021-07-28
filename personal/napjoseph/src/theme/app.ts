@@ -117,6 +117,22 @@ const layerStyles = {
     '.chakra-ui-dark &': {
       textColor: 'gray.200'
     }
+  },
+  'social-link': {
+    textColor: 'gray.300'
+  },
+  'social-link-hover': {
+    '.chakra-ui-light &': {
+      textColor: 'brand.600'
+    },
+    '.chakra-ui-dark &': {
+      bg: 'brand.500',
+      textColor: 'gray.300'
+    }
+  },
+  'social-link-focus': {
+    textColor: 'gray.600',
+    bg: 'gray.100'
   }
 };
 
