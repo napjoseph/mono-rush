@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
 
 interface TotalResultsProps {
   total: number;
@@ -10,10 +11,13 @@ const TotalResults: React.FC<TotalResultsProps> = ({ total = 0, unit = 'item', u
   const plural = !unitPlural ? `${unit}s` : unitPlural;
 
   return (
-    <div className="block">
-      Showing a total of <span className="font-semibold">{total}</span>{' '}
+    <Box>
+      Showing a total of{' '}
+      <Text as="span" fontWeight="semibold">
+        {total}
+      </Text>{' '}
       {total === 0 || total > 1 ? plural : unit}.
-    </div>
+    </Box>
   );
 };
 
