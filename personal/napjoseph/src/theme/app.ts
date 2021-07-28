@@ -159,6 +159,8 @@ const layerStyles = {
   },
   'article-link-focus': {
     boxShadow: 'outline',
+    textDecorationColor: 'brand.600',
+    border: 'none',
     '.chakra-ui-light &': {
       textColor: 'brand.600'
     },
@@ -200,4 +202,10 @@ const textStyles = {
   }
 };
 
-export const theme = extendTheme({ fonts, colors, layerStyles, textStyles, breakpoints });
+export const theme = extendTheme({
+  fonts,
+  colors,
+  layerStyles,
+  textStyles,
+  breakpoints
+});
