@@ -1,7 +1,8 @@
 import React from 'react';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsDark';
-import { Box, Code, Text } from '@chakra-ui/react';
+import lightTheme from 'prism-react-renderer/themes/vsLight';
+import darkTheme from 'prism-react-renderer/themes/vsDark';
+import { Box, Code, Text, useColorModeValue as mode } from '@chakra-ui/react';
 
 // https://mdxjs.com/guides/syntax-highlighting#build-a-codeblock-component
 
@@ -27,18 +28,31 @@ const CustomCodeBlock: React.FC<CustomCodeBlockProps> = ({
   const codeString = String(children).replace(/\n$/, '');
 
   // Matches value in `theme`.
-  const bgColor = 'rgb(30, 30, 30)';
+  const bgColor = mode('#ffffff', '#1e1e1e');
 
   return (
-    <Box className={className} bg={bgColor} my="3">
+    <Box className={className} bg={bgColor} m="3" shadow="lg">
       {filename && (
-        <Text textAlign="center" bg="gray.300" fontSize="xs" py="2" px="5" overflow="auto">
+        <Text
+          textAlign="center"
+          bg={mode('gray.300', 'gray.700')}
+          textColor={mode('gray.600', 'gray.300')}
+          fontSize="xs"
+          py="2"
+          px="5"
+          overflow="auto"
+        >
           {filename}
         </Text>
       )}
 
       <Box overflow="auto">
-        <Highlight {...defaultProps} theme={theme} code={codeString} language={language}>
+        <Highlight
+          {...defaultProps}
+          theme={mode(lightTheme, darkTheme)}
+          code={codeString}
+          language={language}
+        >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <Code className={className} p="3" style={{ ...style }}>
               {tokens.map((line, i) => (
