@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Box, Text } from '@chakra-ui/react';
 import { Utterances } from 'utterances-react-component';
 
 import { SITE_CONFIG } from '../../config';
@@ -16,17 +16,13 @@ const ArticleComments: React.FC<ArticleCommentsProps> = ({ article }) => {
 
   let commentsSection: JSX.Element = null;
   if (article.frontMatter.disableComments !== undefined && article.frontMatter.disableComments) {
-    commentsSection = <p>Comments are disabled.</p>;
+    commentsSection = <Text>Comments are disabled.</Text>;
   }
   if (SITE_CONFIG.comments.using === 'utterances') {
     commentsSection = <Utterances {...SITE_CONFIG.comments.props} />;
   }
 
-  return (
-    <>
-      <div className="block">{commentsSection}</div>
-    </>
-  );
+  return <Box>{commentsSection}</Box>;
 };
 
 export default ArticleComments;
