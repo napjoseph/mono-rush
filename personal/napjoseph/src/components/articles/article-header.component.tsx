@@ -25,6 +25,7 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false 
         href={`/posts/${article.slug}`}
         textStyle="post-title-card"
         layerStyle="post-title"
+        fontFamily="heading"
       >
         {article.title}
       </NextChakraLink>

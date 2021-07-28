@@ -29,8 +29,8 @@ const CustomHeading: React.FC<HeadingProps> = (props) => {
           <Box
             aria-label="anchor"
             as="a"
-            color="blue.500"
-            fontWeight="normal"
+            color="brand.600"
+            fontWeight="bold"
             outline="none"
             _focus={{
               opacity: 1,

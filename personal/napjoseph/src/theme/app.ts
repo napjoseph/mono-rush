@@ -1,6 +1,13 @@
 import { extendTheme } from '@chakra-ui/react';
 import { createBreakpoints } from '@chakra-ui/theme-tools';
 
+const fonts = {
+  body: "'Roboto', 'Helvetica Neue', 'Arial',  ui-sans-serif, system-ui, sans-serif",
+  heading: "'Inter', 'Helvetica Neue', 'Arial',  ui-sans-serif, system-ui, sans-serif",
+  serif: "'Georgia', 'Cambria', 'Times New Roman', 'Times', serif",
+  mono: "'Fira Code', 'Consolas', 'Liberation Mono', 'Courier New', monospace"
+};
+
 // https://chakra-ui.com/docs/features/responsive-styles#customizing-breakpoints
 //
 // - sm - 30em
@@ -165,4 +172,4 @@ const textStyles = {
   }
 };
 
-export const theme = extendTheme({ colors, layerStyles, textStyles, breakpoints });
+export const theme = extendTheme({ fonts, colors, layerStyles, textStyles, breakpoints });

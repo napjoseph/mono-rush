@@ -6,8 +6,8 @@ import NextLink from 'next/link';
 const CustomLink: React.FC<React.HTMLProps<HTMLAnchorElement>> = (props) => {
   const { colorMode } = useColorMode();
   const color = {
-    light: 'blue.500',
-    dark: 'blue.500'
+    light: 'brand.600',
+    dark: 'brand.500'
   };
 
   const href = props.href;
@@ -16,13 +16,15 @@ const CustomLink: React.FC<React.HTMLProps<HTMLAnchorElement>> = (props) => {
   if (isInternalLink) {
     return (
       <NextLink href={href} passHref>
-        <Link color={color[colorMode]}>{props.children}</Link>
+        <Link color={color[colorMode]} fontWeight="semibold">
+          {props.children}
+        </Link>
       </NextLink>
     );
   }
 
   return (
-    <Link color={color[colorMode]} isExternal>
+    <Link color={color[colorMode]} fontWeight="semibold" isExternal>
       {props.children}
     </Link>
   );
