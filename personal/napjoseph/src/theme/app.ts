@@ -103,6 +103,13 @@ const layerStyles = {
     bg: 'brand.600',
     textColor: 'gray.100'
   },
+  'post-tag': {
+    bg: 'brand.500',
+    textColor: 'gray.100'
+  },
+  'post-tag-hover': {
+    bg: 'brand.600'
+  },
   'post-title': {
     '.chakra-ui-light &': {
       textColor: 'gray.800'
@@ -135,6 +142,10 @@ const textStyles = {
   },
   'post-title-card': {
     fontSize: '2xl'
+  },
+  'post-tag': {
+    fontSize: 'xs',
+    fontWeight: 'medium'
   }
 };
 

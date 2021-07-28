@@ -47,7 +47,7 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article, forCard = false 
   );
 
   const tagsSection = tags && tags.length !== 0 && (
-    <Flex>
+    <Flex gridGap={1.5}>
       {tags.map((tag) => (
         <TagPill key={tag} tag={convertToArticleTag(tag)} />
       ))}
