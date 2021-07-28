@@ -1,8 +1,8 @@
 import React from 'react';
-
-import { motion } from 'framer-motion';
+import { Text, Flex } from '@chakra-ui/react';
 
 import { Article } from '../../models';
+import { MotionBox } from '../primitives/motion-box';
 import ArticleHeader from './article-header.component';
 
 interface ArticleCardProps {
@@ -11,11 +11,15 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
-    <motion.div whileHover={{ scale: 1.05 }}>
-      <ArticleHeader article={article} forCard={true} />
+    <MotionBox whileHover={{ scale: 1.05 }}>
+      <Flex direction="column" gridGap={2}>
+        <ArticleHeader article={article} forCard={true} />
 
-      <p className="mt-3 text-sm text-gray-500">{article.excerpt}</p>
-    </motion.div>
+        <Text fontSize="xs" layerStyle="metadata" noOfLines={5}>
+          {article.excerpt}
+        </Text>
+      </Flex>
+    </MotionBox>
   );
 };
 
