@@ -1,8 +1,9 @@
 import React from 'react';
+import { Box, Flex, Heading, Text, useColorModeValue as mode } from '@chakra-ui/react';
 
 import { ArticleTag } from '../../models';
-import TagCard from './tag-card.component';
 import TotalResults from '../snippets/total-results/total-results.component';
+import TagPill from './tag-pill.component';
 
 interface TagCardListProps {
   title: string;
@@ -21,31 +22,30 @@ const TagCardList: React.FC<TagCardListProps> = ({
 }) => {
   if (hideIfEmpty && !tags.length) return null;
 
+  const headingColor = mode('gray.900', 'gray.300');
+  const bodyColor = mode('gray.700', 'gray.400');
+
   return (
-    <div className="block">
-      <div className="relative">
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-            {title}
-          </h2>
-          {description && <p className="text-xl text-gray-500">{description}</p>}
-          {showTotal && (
-            <div className="text-gray-500">
-              <TotalResults total={tags.length} unit="tag" />
-            </div>
-          )}
-        </div>
-        <div className="mt-12">
-          {tags.length ? (
-            tags.map((tag) => <TagCard key={tag.name} tag={tag} />)
-          ) : (
-            <p className="text-gray-600 text-sm">
-              It looks a little empty right now. Please check back later.
-            </p>
-          )}
-        </div>
-      </div>
-    </div>
+    <Flex direction="column" gridGap={4}>
+      <Flex direction="column" gridGap={4}>
+        <Heading textColor={headingColor}>{title}</Heading>
+        {description && <Text textColor={bodyColor}>{description}</Text>}
+        {showTotal && (
+          <Box textColor={bodyColor}>
+            <TotalResults total={tags.length} unit="tag" />
+          </Box>
+        )}
+      </Flex>
+      <Flex gridGap={1.5}>
+        {tags.length ? (
+          tags.map((tag) => <TagPill key={tag.name} tag={tag} />)
+        ) : (
+          <Text textColor={bodyColor}>
+            It looks a little empty right now. Please check back later.
+          </Text>
+        )}
+      </Flex>
+    </Flex>
   );
 };
 

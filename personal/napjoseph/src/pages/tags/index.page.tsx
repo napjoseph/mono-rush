@@ -43,7 +43,7 @@ const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (_context) => {
-  const tags = getArticleTags('posts');
+  const tags = await getArticleTags('posts');
 
   return {
     props: {
