@@ -140,6 +140,31 @@ const layerStyles = {
   'social-link-focus': {
     textColor: 'gray.600',
     bg: 'gray.100'
+  },
+  'article-link': {
+    '.chakra-ui-light &': {
+      textColor: 'brand.600'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'brand.400'
+    }
+  },
+  'article-link-hover': {
+    '.chakra-ui-light &': {
+      textColor: 'brand.700'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'brand.300'
+    }
+  },
+  'article-link-focus': {
+    boxShadow: 'outline',
+    '.chakra-ui-light &': {
+      textColor: 'brand.600'
+    },
+    '.chakra-ui-dark &': {
+      textColor: 'brand.400'
+    }
   }
 };
 
@@ -169,6 +194,9 @@ const textStyles = {
   'post-tag': {
     fontSize: 'xs',
     fontWeight: 'medium'
+  },
+  'article-link': {
+    fontWeight: 'semibold'
   }
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, HeadingProps } from '@chakra-ui/react';
+import { Box, Heading, HeadingProps, useColorModeValue as mode } from '@chakra-ui/react';
 
 const CustomHeading: React.FC<HeadingProps> = (props) => {
   return (
@@ -29,12 +29,10 @@ const CustomHeading: React.FC<HeadingProps> = (props) => {
           <Box
             aria-label="anchor"
             as="a"
-            color="brand.600"
-            fontWeight="bold"
-            outline="none"
+            textStyle="article-link"
+            layerStyle="article-link"
             _focus={{
-              opacity: 1,
-              boxShadow: 'outline'
+              layerStyle: 'article-link-focus'
             }}
             opacity="0"
             ml="0.375rem"
