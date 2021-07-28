@@ -1,4 +1,5 @@
 import React from 'react';
+import { Flex } from '@chakra-ui/react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Article } from '../../models';
@@ -42,16 +43,14 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
       <DynamicHead data={headData} />
       <OpenGraph data={ogData} />
 
-      <div className="flex flex-col gap-12">
-        <article className="text-gray-700 flex flex-col gap-8">
+      <Flex direction="column" gridGap={12}>
+        <Flex as="article" direction="column" gridGap={8}>
           <ArticleHeader article={article} />
           <ArticleBody article={article} />
-        </article>
+        </Flex>
 
-        <div>
-          <ArticleComments article={article} />
-        </div>
-      </div>
+        <ArticleComments article={article} />
+      </Flex>
     </>
   );
 };
