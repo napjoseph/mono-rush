@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, VStack } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 import Footer from './footer/footer.component';
 import Header from './header/header.component';
@@ -12,11 +12,11 @@ const Layout: React.FC = ({ children }) => {
       <StaticHead />
 
       <ContentWrapper>
-        <VStack spacing="5">
+        <Flex direction="column" gridGap={5}>
           <Header />
           <Box as="main">{children}</Box>
           <Footer />
-        </VStack>
+        </Flex>
       </ContentWrapper>
     </>
   );
