@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkAutolinkHeadings from 'remark-autolink-headings';
 import remarkSlug from 'remark-slug';
-// import remarkCodeTitles from 'remark-code-titles';
 
 import { Article } from '../../models';
 import parseFrontMatter from '../utils/parse-front-matter';
@@ -22,13 +21,7 @@ export const getArticleBySlug = async (layout: string, slug = ''): Promise<Artic
   const frontMatter = parseFrontMatter(data);
   const serializedContent = await serialize(content, {
     mdxOptions: {
-      remarkPlugins: [
-        remarkAutolinkHeadings,
-        remarkSlug
-        // TODO: Create a custom plugin since this creates a separate element
-        // than the actual code.
-        // remarkCodeTitles
-      ]
+      remarkPlugins: [remarkAutolinkHeadings, remarkSlug]
     }
   });
 
