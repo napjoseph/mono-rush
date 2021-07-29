@@ -12,6 +12,6 @@ module.exports = {
   ],
   images: {
     // NOTE: Must update when adding external URLs to next/image.
-    domains: ['images.unsplash.com']
+    domains: ['images.unsplash.com', 'via.placeholder.com']
   }
 };

@@ -8581,7 +8581,7 @@ packages:
     dev: false
 
   file:projects/shelves-web.tgz:
-    resolution: {integrity: sha512-H+TGoqAOgTNv42UdXZILmyT63SAk/R+M49IHw7OlsCO7xlaPE5NQ6d1czYPKoKSrLLJhxoDs1nvUs8jlAfK1xA==, tarball: file:projects/shelves-web.tgz}
+    resolution: {integrity: sha512-7I5f2ac6iYfReGjZrBDnS+176nCVR5GPqjdgUc/tS+xA3bysMJuWEcuhRHdhM4wck9Qwhk5Mjat6SsDZiPXltw==, tarball: file:projects/shelves-web.tgz}
     name: '@rush-temp/shelves-web'
     version: 0.0.0
     dependencies:
@@ -8595,6 +8595,7 @@ packages:
       '@emotion/styled': 11.3.0_e1fc3b6b83410dd1ee541b3d752a1b4f
       '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
       '@types/jest': 26.0.24
+      '@types/luxon': 1.27.1
       '@types/node': 14.17.6
       '@types/react': 17.0.15
       '@typescript-eslint/eslint-plugin': 4.28.5_514553717ff968e20f6d1c6e521f8616
@@ -8609,6 +8610,7 @@ packages:
       identity-obj-proxy: 3.0.0
       jest: 27.0.6
       jest-watch-typeahead: 0.6.4_jest@27.0.6
+      luxon: 2.0.1
       next: 11.0.1_f14f4a1115575f7d598b350caa6c0011
       prettier: 2.3.2
       react: 17.0.2
