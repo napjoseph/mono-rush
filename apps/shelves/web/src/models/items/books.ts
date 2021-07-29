@@ -17,8 +17,8 @@ export interface Book {
 }
 
 export interface BookIndustryIdentifier {
-  type: string;
-  identifier: string;
+  type?: string;
+  identifier?: string;
 }
 
 export interface BookMetaLinks {

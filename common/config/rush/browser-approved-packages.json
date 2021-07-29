@@ -215,6 +215,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "valtio",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "xstate",
       "allowedCategories": [ "production" ]
     }

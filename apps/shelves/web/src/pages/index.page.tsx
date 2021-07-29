@@ -1,45 +1,16 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
-import axios from 'axios';
+import { Flex } from '@chakra-ui/react';
 
-import BookList from '../components/items/books/book-list.component';
-import { Book } from '../models';
-import localEndpoint from '../lib/utils/local-endpoint';
+import SearchBar from '../components/items/search/search-bar.component';
+import SearchResults from '../components/items/search/search-results.component';
 
-interface HomePageProps {
-  books?: Book[];
-}
-
-const HomePage: React.FC<HomePageProps> = ({ books = [] }) => {
+const HomePage: React.FC = (_props) => {
   return (
-    <div>
-      <BookList books={books} />
-    </div>
+    <Flex direction="column" gridGap={4} maxW="4xl" mx="auto" my={5}>
+      <SearchBar />
+      <SearchResults />
+    </Flex>
   );
-};
-
-const getBooksData = async (): Promise<Book[]> => {
-  let books: Book[];
-  try {
-    const { data } = await axios.get(localEndpoint('/api/items/books/search'));
-    books = data.results || [];
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      books = [];
-    } else {
-      books = [];
-    }
-  }
-
-  return books;
-};
-
-export const getStaticProps: GetStaticProps = async (_context) => {
-  return {
-    props: {
-      books: await getBooksData()
-    }
-  };
 };
 
 export default HomePage;
