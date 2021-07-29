@@ -30,6 +30,7 @@ jobs:
       - name: build and export
         run: node common/scripts/install-run-rush.js export --verbose --to napjoseph
         env:
+          NEXT_PUBLIC_GA_ID: 'UA-107992935-1'
           NEXT_IMAGES_LOADER: 'imgix'
           NEXT_IMAGES_PATH: '<empty>'
       - name: add cname
