@@ -1,8 +1,7 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 import DocumentHead from '../document/document-head.component';
-
-import classes from './layout.module.scss';
 
 /* eslint-disable-next-line */
 interface LayoutProps {}
@@ -12,9 +11,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
     <>
       <DocumentHead />
 
-      <div className={classes.app}>
-        <main>{props.children}</main>
-      </div>
+      <Box>
+        <Box as="main">{props.children}</Box>
+      </Box>
     </>
   );
 };

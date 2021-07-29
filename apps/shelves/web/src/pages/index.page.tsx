@@ -6,15 +6,13 @@ import BookList from '../components/items/books/book-list.component';
 import { Book } from '../models';
 import localEndpoint from '../lib/utils/local-endpoint';
 
-import classes from './index.module.scss';
-
 interface HomePageProps {
   books?: Book[];
 }
 
 const HomePage: React.FC<HomePageProps> = ({ books = [] }) => {
   return (
-    <div className={classes.container}>
+    <div>
       <BookList books={books} />
     </div>
   );

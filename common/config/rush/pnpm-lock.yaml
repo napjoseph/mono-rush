@@ -52,7 +52,6 @@ specifiers:
   react-dom: ^17.0.2
   react-icons: ^4.2.0
   remark-autolink-headings: 6.0.1
-  remark-code-titles: 0.1.2
   remark-slug: 6.1.0
   sass: ~1.35.2
   stylelint: ~13.13.1
@@ -117,7 +116,6 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.2.0_react@17.0.2
   remark-autolink-headings: 6.0.1
-  remark-code-titles: 0.1.2
   remark-slug: 6.1.0
   sass: 1.35.2
   stylelint: 13.13.1
@@ -2806,7 +2804,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001248
       colorette: 1.2.2
-      electron-to-chromium: 1.3.789
+      electron-to-chromium: 1.3.790
       escalade: 3.1.1
       node-releases: 1.1.73
     dev: false
@@ -3472,8 +3470,8 @@ packages:
       domelementtype: 1.3.1
     dev: false
 
-  /electron-to-chromium/1.3.789:
-    resolution: {integrity: sha512-lK4xn6C6ZF1kgLaC/EhOtC1MSKENExj3rMwGVnBTfHW81Z/Hb1Rge5YaWawN/YOXy3xCaESuE4KWSD50kOZ9rQ==}
+  /electron-to-chromium/1.3.790:
+    resolution: {integrity: sha512-epMH/S2MkhBv+Y0+nHK8dC7bzmOaPwcmiYqt+VwxSUJLgPzkqZnGUEQ8eVhy5zGmgWm9tDDdXkHDzOEsVU979A==}
     dev: false
 
   /elliptic/6.5.4:
@@ -4045,12 +4043,12 @@ packages:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
-      flatted: 3.2.1
+      flatted: 3.2.2
       rimraf: 3.0.2
     dev: false
 
-  /flatted/3.2.1:
-    resolution: {integrity: sha512-OMQjaErSFHmHqZe+PSidH5n8j3O0F2DdnVh8JB4j4eUQ2k6KvB0qGfrKIhapvez5JerBbmWkaLYUYWISaESoXg==}
+  /flatted/3.2.2:
+    resolution: {integrity: sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA==}
     dev: false
 
   /focus-lock/0.8.1:
@@ -7008,12 +7006,6 @@ packages:
       unist-util-visit: 2.0.3
     dev: false
 
-  /remark-code-titles/0.1.2:
-    resolution: {integrity: sha512-KsHQbaI4FX8Ozxqk7YErxwmBiveUqloKuVqyPG2YPLHojpgomodWgRfG4B+bOtmn/5bfJ8khw4rR0lvgVFl2Uw==}
-    dependencies:
-      unist-util-visit: 1.4.1
-    dev: false
-
   /remark-footnotes/2.0.0:
     resolution: {integrity: sha512-3Clt8ZMH75Ayjp9q4CorNeyjwIxHFcTkaektplKGl2A1jNGEUey8cKL0ZC5vJwfcD5GFGsNLImLG/NGzWIzoMQ==}
     dev: false
@@ -8047,10 +8039,6 @@ packages:
     resolution: {integrity: sha512-cln2Mm1/CZzN5ttGK7vkoGw+RZ8VcUH6BtGbq98DDtRGquAAOXig1mrBQYelOwMXYS8rK+vZDyyojSjp7JX+Lg==}
     dev: false
 
-  /unist-util-is/3.0.0:
-    resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
-    dev: false
-
   /unist-util-is/4.1.0:
     resolution: {integrity: sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg==}
     dev: false
@@ -8077,23 +8065,11 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
-  /unist-util-visit-parents/2.1.2:
-    resolution: {integrity: sha512-DyN5vD4NE3aSeB+PXYNKxzGsfocxp6asDc2XXE3b0ekO2BaRUpBicbbUygfSvYfUz1IkmjFR1YF7dPklraMZ2g==}
-    dependencies:
-      unist-util-is: 3.0.0
-    dev: false
-
   /unist-util-visit-parents/3.1.1:
     resolution: {integrity: sha512-1KROIZWo6bcMrZEwiH2UrXDyalAa0uqzWCxCJj6lPOvTve2WkfgCytoDTPaMnodXh1WrXOq0haVYHj99ynJlsg==}
     dependencies:
       '@types/unist': 2.0.6
       unist-util-is: 4.1.0
-    dev: false
-
-  /unist-util-visit/1.4.1:
-    resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
-    dependencies:
-      unist-util-visit-parents: 2.1.2
     dev: false
 
   /unist-util-visit/2.0.3:
@@ -8534,7 +8510,7 @@ packages:
     dev: false
 
   file:projects/napjoseph.tgz_sass@1.35.2+xstate@4.22.0:
-    resolution: {integrity: sha512-Z+bSuIddOSCEOLlD1CmxZeaD1HJ7mkzGNHdrlhtNwx1K+5Jol8l0iD24/uxuEIkNuMdYHWlstqY0Kn5irgI3Ww==, tarball: file:projects/napjoseph.tgz}
+    resolution: {integrity: sha512-Sd72Z0c1/tqNnv0SCxDVGqTZoturE8KUON1FEqTboJZAcidCp43hHFD5h2iCFBv/7WnnHzfbjPu77dI+fmbmLQ==, tarball: file:projects/napjoseph.tgz}
     id: file:projects/napjoseph.tgz
     name: '@rush-temp/napjoseph'
     version: 0.0.0
@@ -8582,7 +8558,6 @@ packages:
       react-dom: 17.0.2_react@17.0.2
       react-icons: 4.2.0_react@17.0.2
       remark-autolink-headings: 6.0.1
-      remark-code-titles: 0.1.2
       remark-slug: 6.1.0
       stylelint: 13.13.1
       stylelint-config-prettier: 8.0.2_stylelint@13.13.1
@@ -8606,29 +8581,35 @@ packages:
     dev: false
 
   file:projects/shelves-web.tgz:
-    resolution: {integrity: sha512-uvnq659vBrdDSePAENo1GNnQbMKx0FlXAh9dDke/9E3oB74fb3Nvyq2ETSahgrMhcVC9ON5EzkeBvYdpMPm0Ew==, tarball: file:projects/shelves-web.tgz}
+    resolution: {integrity: sha512-H+TGoqAOgTNv42UdXZILmyT63SAk/R+M49IHw7OlsCO7xlaPE5NQ6d1czYPKoKSrLLJhxoDs1nvUs8jlAfK1xA==, tarball: file:projects/shelves-web.tgz}
     name: '@rush-temp/shelves-web'
     version: 0.0.0
     dependencies:
       '@babel/core': 7.14.8
+      '@chakra-ui/layout': 1.4.7_f83ab07dbf33058351684eb913819748
+      '@chakra-ui/react': 1.6.5_95a30b17d23bad9bb6adfab2ef70ffe7
+      '@chakra-ui/system': 1.7.1_7874f5fd290ce587db5f5f81e8a37ea9
+      '@chakra-ui/theme-tools': 1.1.8_@chakra-ui+system@1.7.1
+      '@chakra-ui/utils': 1.8.1
+      '@emotion/react': 11.4.0_855cb6279d77fcb2dbaf8ba90629e70c
+      '@emotion/styled': 11.3.0_e1fc3b6b83410dd1ee541b3d752a1b4f
       '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
       '@types/jest': 26.0.24
       '@types/node': 14.17.6
       '@types/react': 17.0.15
       '@typescript-eslint/eslint-plugin': 4.28.5_514553717ff968e20f6d1c6e521f8616
       '@typescript-eslint/parser': 4.28.5_eslint@7.31.0+typescript@4.3.5
-      autoprefixer: 10.2.6_postcss@8.3.6
       axios: 0.21.1
       babel-jest: 27.0.6_@babel+core@7.14.8
       eslint: 7.31.0
       eslint-config-next: 11.0.1_e9bd7c215b1c76b8938b8446225cb7ea
       eslint-config-prettier: 7.2.0_eslint@7.31.0
       eslint-plugin-react: 7.24.0_eslint@7.31.0
+      framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
       identity-obj-proxy: 3.0.0
       jest: 27.0.6
       jest-watch-typeahead: 0.6.4_jest@27.0.6
       next: 11.0.1_f14f4a1115575f7d598b350caa6c0011
-      postcss: 8.3.6
       prettier: 2.3.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -8638,7 +8619,6 @@ packages:
       stylelint-config-recommended: 5.0.0_stylelint@13.13.1
       stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
       swr: 0.5.6_react@17.0.2
-      tailwindcss: 2.2.7_332e4ea0493f013a8b549b1918985ad0
       typescript: 4.3.5
     transitivePeerDependencies:
       - bufferutil

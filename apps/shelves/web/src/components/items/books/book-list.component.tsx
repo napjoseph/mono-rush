@@ -1,9 +1,8 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 import { Book } from '../../../models';
 import BookItem from './book-item.component';
-
-import classes from './book-list.module.scss';
 
 interface BookListProps {
   books?: Book[];
@@ -11,11 +10,11 @@ interface BookListProps {
 
 const BookList: React.FC<BookListProps> = ({ books = [] }) => {
   return (
-    <div className={classes.classes}>
+    <Box>
       {books.map((book, index) => (
         <BookItem key={index} book={book} />
       ))}
-    </div>
+    </Box>
   );
 };
 
