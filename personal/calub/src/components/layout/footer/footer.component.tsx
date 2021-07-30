@@ -4,8 +4,6 @@ import { useSnapshot } from 'valtio';
 import LinkItemComponent from './link-item.component';
 import { configStore } from '../../../store';
 
-import classes from './footer.module.scss';
-
 const FooterComponent: React.FC = (_props) => {
   const snap = useSnapshot(configStore);
   if (
@@ -18,7 +16,7 @@ const FooterComponent: React.FC = (_props) => {
 
   return (
     <>
-      <footer className={classes.footer}>
+      <footer className="text-center lg:mt-5 md:mt-3 hidden md:block">
         {links.map((link, index) => {
           return <LinkItemComponent key={index} link={link} />;
         })}

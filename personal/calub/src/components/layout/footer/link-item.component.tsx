@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { FooterLink } from '../../../models';
-
-import classes from './link-item.module.scss';
 
 interface LinkItemComponentProps {
   link: FooterLink;
@@ -15,7 +12,12 @@ const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ link }) => {
     <>
       <span title={link.title}>
         <a href={link.url} target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={link.icon} size="lg" fixedWidth className={classes.icon} />
+          <FontAwesomeIcon
+            icon={link.icon}
+            size="lg"
+            fixedWidth
+            className="text-gray-600 hover:text-gray-300 transition duration-150 ease-in-out"
+          />
         </a>
       </span>
     </>

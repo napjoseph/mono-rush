@@ -3,8 +3,6 @@ import React from 'react';
 import DocumentHead from '../document/document-head.component';
 import FooterComponent from './footer/footer.component';
 
-import classes from './layout.module.scss';
-
 /* eslint-disable-next-line */
 interface LayoutComponentProps {}
 
@@ -13,7 +11,7 @@ const LayoutComponent: React.FC<LayoutComponentProps> = (props) => {
     <>
       <DocumentHead />
 
-      <div className={classes.app}>
+      <div className="bg-white max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 shadow-lg print:shadow-none">
         <main>{props.children}</main>
       </div>
 
