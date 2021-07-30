@@ -4,8 +4,6 @@ import { OrganizationsItem } from '../../../models';
 import formatDate from '../../../utils/format-date';
 import calculateDateDuration from '../../../utils/calculate-date-duration';
 
-import classes from './organizations-item.module.scss';
-
 interface OrganizationsItemComponentProps {
   item: OrganizationsItem;
 }
@@ -17,27 +15,27 @@ const OrganizationsItemComponent: React.FC<OrganizationsItemComponentProps> = ({
 
   return (
     <>
-      <div className={classes.container}>
-        <h3 className={classes.title}>
-          <a className={classes.link} href={item.url}>
+      <div>
+        <h3 className="font-medium text-gray-900">
+          <a className="color-link" href={item.url}>
             {item.title}
           </a>
         </h3>
-        <div className={classes.roles}>
-          <ul className={classes.list}>
+        <div className="ml-4 text-xs">
+          <ul className="list-square ml-4 mt-1">
             {item.roles.map((role, index) => {
               return (
-                <li className={classes.role} key={index}>
-                  <span className={classes.name}>{role.title}</span>
+                <li className="pb-1" key={index}>
+                  <span className="font-medium">{role.title}</span>
                   <span
-                    className={classes.dates}
+                    className="text-gray-500 ml-1"
                     title={calculateDateDuration(role.dates.start, role.dates.end)}
                   >
-                    <span className={classes.prefix}>{datesPrefix}</span>
-                    <span className={classes.start}>{formatDate(role.dates.start)}</span>
-                    <span className={classes.to}>{datesTo}</span>
-                    <span className={classes.end}>{formatDate(role.dates.end)}</span>
-                    <span className={classes.suffix}>{datesSuffix}</span>
+                    <span>{datesPrefix}</span>
+                    <span>{formatDate(role.dates.start)}</span>
+                    <span>{datesTo}</span>
+                    <span>{formatDate(role.dates.end)}</span>
+                    <span>{datesSuffix}</span>
                   </span>
                 </li>
               );
