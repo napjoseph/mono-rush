@@ -5,7 +5,7 @@ import { NextChakraLink } from '../../primitives/next-chakra-link';
 
 const CustomHeading: React.FC<HeadingProps> = (props) => {
   return (
-    <Heading pointerEvents="none" {...props}>
+    <Heading pointerEvents="none" my={2} {...props}>
       <Flex pointerEvents="auto" gridGap={1}>
         {props.id && (
           <NextChakraLink

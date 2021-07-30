@@ -13,7 +13,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ article }) => {
   if (!article) return null;
 
   return (
-    <Flex direction="column" gridGap={3} overflow="auto">
+    <Flex direction="column" gridGap={5} overflow="auto">
       <MDXRemote {...article.serializedContent} components={CustomComponents} />
     </Flex>
   );

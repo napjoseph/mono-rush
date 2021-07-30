@@ -3,17 +3,15 @@ import { Alert, useColorMode } from '@chakra-ui/react';
 
 export interface CustomQuoteProps extends React.HTMLProps<HTMLQuoteElement> {}
 
-const CustomQuote: React.FC<CustomQuoteProps> = (_props) => {
+const CustomQuote: React.FC<CustomQuoteProps> = ({ children }) => {
   const { colorMode } = useColorMode();
   const bgColor = {
-    light: 'blue.50',
-    dark: 'blue.900'
+    light: 'brand.50',
+    dark: 'brand.900'
   };
 
   return (
     <Alert
-      mt={4}
-      w="98%"
       bg={bgColor[colorMode]}
       variant="left-accent"
       status="info"
@@ -23,7 +21,9 @@ const CustomQuote: React.FC<CustomQuoteProps> = (_props) => {
           marginLeft: 8
         }
       }}
-    />
+    >
+      {children}
+    </Alert>
   );
 };
 
