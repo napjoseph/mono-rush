@@ -249,7 +249,7 @@ m-390 -323 c20 -13 82 -50 137 -82 55 -32 144 -84 197 -115 53 -32 111 -65
           >
             <button
               aria-label="GitHub"
-              class="chakra-button css-1yg1liy"
+              class="chakra-button css-41ok7s"
               title="GitHub"
               type="button"
             >
@@ -271,7 +271,7 @@ m-390 -323 c20 -13 82 -50 137 -82 55 -32 144 -84 197 -115 53 -32 111 -65
             </button>
             <button
               aria-label="Keybase"
-              class="chakra-button css-1yg1liy"
+              class="chakra-button css-41ok7s"
               title="Keybase"
               type="button"
             >
@@ -293,7 +293,7 @@ m-390 -323 c20 -13 82 -50 137 -82 55 -32 144 -84 197 -115 53 -32 111 -65
             </button>
             <button
               aria-label="LinkedIn"
-              class="chakra-button css-1yg1liy"
+              class="chakra-button css-41ok7s"
               title="LinkedIn"
               type="button"
             >

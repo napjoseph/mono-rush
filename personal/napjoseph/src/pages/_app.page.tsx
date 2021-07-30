@@ -7,8 +7,6 @@ import * as gtag from '../lib/gtag';
 import Layout from '../components/layout/layout.component';
 import { theme } from '../theme/app';
 
-import '../vendor/font-awesome';
-
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
   useEffect(() => {
