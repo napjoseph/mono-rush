@@ -3,8 +3,6 @@ import React from 'react';
 import { EducationItem } from '../../../models';
 import formatDate from '../../../utils/format-date';
 
-import classes from './education-item.module.scss';
-
 interface EducationItemComponentProps {
   item: EducationItem;
 }
@@ -17,23 +15,23 @@ const EducationItemComponent: React.FC<EducationItemComponentProps> = ({ item })
   return (
     <>
       <div>
-        <h3 className={classes.title}>{item.title}</h3>
-        <div className={classes.meta}>
-          <span className={classes.from}>
-            <a className={classes.link} href={item.from.url}>
+        <h3 className="font-medium text-gray-900">{item.title}</h3>
+        <div className="text-gray-500 text-xs">
+          <span className="font-semibold">
+            <a className="color-link" href={item.from.url}>
               {item.from.name}
             </a>
           </span>
-          <span className={classes.divider}>|</span>
+          <span className="mx-1">|</span>
           <span>{item.from.address}</span>
         </div>
-        <div className={classes.meta}>
-          <span className={classes.dates}>
-            <span className={classes.prefix}>{datesPrefix}</span>
-            <span className={classes.start}>{formatDate(item.dates.start)}</span>
-            <span className={classes.to}>{datesTo}</span>
-            <span className={classes.end}>{formatDate(item.dates.end)}</span>
-            <span className={classes.suffix}>{datesSuffix}</span>
+        <div className="text-gray-500 text-xs">
+          <span>
+            <span>{datesPrefix}</span>
+            <span>{formatDate(item.dates.start)}</span>
+            <span>{datesTo}</span>
+            <span>{formatDate(item.dates.end)}</span>
+            <span>{datesSuffix}</span>
           </span>
         </div>
       </div>

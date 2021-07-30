@@ -3,8 +3,6 @@ import React from 'react';
 import { EducationConfig } from '../../../models';
 import EducationItemComponent from './education-item.component';
 
-import classes from './section.module.scss';
-
 interface EducationSectionComponentProps {
   config: EducationConfig;
 }
@@ -14,8 +12,8 @@ const EducationSectionComponent: React.FC<EducationSectionComponentProps> = ({ c
 
   return (
     <>
-      <div className={classes.container}>
-        <ul className={classes.list}>
+      <div className="text-sm text-gray-700">
+        <ul className="list-square ml-4">
           {items.map((item, index) => {
             return (
               <li key={index}>
