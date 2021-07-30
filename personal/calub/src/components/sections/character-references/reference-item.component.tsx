@@ -2,8 +2,6 @@ import React from 'react';
 
 import { CharacterReferencesItem } from '../../../models';
 
-import classes from './reference-item.module.scss';
-
 interface CharacterReferencesItemComponentProps {
   item: CharacterReferencesItem;
 }
@@ -15,12 +13,12 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
 
   return (
     <>
-      <div className={classes.container}>
-        <h3 className={classes.title}>{title}</h3>
-        <div className={classes.company}>
+      <div>
+        <h3 className="font-medium text-gray-900">{title}</h3>
+        <div className="text-gray-500 text-xs font-medium">
           <span>
             {company.url ? (
-              <a className={classes.link} href={company.url}>
+              <a className="color-link" href={company.url}>
                 {company.text}
               </a>
             ) : (
@@ -28,34 +26,34 @@ const CharacterReferencesItemComponent: React.FC<CharacterReferencesItemComponen
             )}
           </span>
         </div>
-        <div className={classes.role}>
+        <div className="text-gray-500 text-xs italic">
           <span>{role}</span>
         </div>
         <div>
           {email && (
-            <div className={classes.email}>
+            <div className="text-xs">
               {email.url ? (
-                <a className={classes.link} href={email.url}>
+                <a className="color-link" href={email.url}>
                   {email.text}
                 </a>
               ) : (
-                <a className={classes.link} href={`mailto:${removeSpaces(email.text)}`}>
-                  <span className={classes.masked}>{maskEmail(email.text)}</span>
-                  <span className={classes.unmasked}>{email.text}</span>
+                <a className="color-link" href={`mailto:${removeSpaces(email.text)}`}>
+                  <span className="block print:hidden">{maskEmail(email.text)}</span>
+                  <span className="hidden print:block">{email.text}</span>
                 </a>
               )}
             </div>
           )}
           {mobile && (
-            <div className={classes.mobile}>
+            <div className="text-xs">
               {mobile.url ? (
-                <a className={classes.link} href={mobile.url}>
+                <a className="color-link" href={mobile.url}>
                   {mobile.text}
                 </a>
               ) : (
-                <a className={classes.link} href={`callto:${removeSpaces(mobile.text)}`}>
-                  <span className={classes.masked}>{maskMobile(mobile.text)}</span>
-                  <span className={classes.unmasked}>{mobile.text}</span>
+                <a className="color-link" href={`callto:${removeSpaces(mobile.text)}`}>
+                  <span className="block print:hidden">{maskMobile(mobile.text)}</span>
+                  <span className="hidden print:block">{mobile.text}</span>
                 </a>
               )}
             </div>

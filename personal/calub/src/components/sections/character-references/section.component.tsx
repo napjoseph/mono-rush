@@ -3,8 +3,6 @@ import React from 'react';
 import { CharacterReferencesConfig } from '../../../models';
 import CharacterReferencesItemComponent from './reference-item.component';
 
-import classes from './section.module.scss';
-
 interface CharacterReferencesSectionComponentProps {
   config: CharacterReferencesConfig;
 }
@@ -16,8 +14,8 @@ const CharacterReferencesSectionComponent: React.FC<CharacterReferencesSectionCo
 
   return (
     <>
-      <div className={classes.container}>
-        <ul className={classes.list}>
+      <div className="text-sm text-gray-700">
+        <ul className="list-square ml-4 grid grid-cols-1 sm:grid-cols-2 gap-y-1 gap-x-2">
           {items
             .filter((item) => {
               if (!item.meta || item.meta.show === undefined) return true;
