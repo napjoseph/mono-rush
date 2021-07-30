@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import { GetStaticProps } from 'next';
 
 import parseConfig from '../utils/parse-config';
 import { Config } from '../models';
 import SectionComponent from '../components/sections/section.component';
-import { StateContext } from '../providers';
+import { configStore } from '../store';
 
 interface HomePageProps {
   config: Config;
@@ -14,8 +14,7 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = ({ config }) => {
   const { sections = [] } = config;
 
-  const stateContext = useContext(StateContext);
-  stateContext.configService.send({ type: 'SET_CONTENT', content: config });
+  configStore.updateConfig(config);
 
   return (
     <>

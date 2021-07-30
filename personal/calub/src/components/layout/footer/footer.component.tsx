@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
-
-import { StateContext } from '../../../providers';
+import React from 'react';
+import { useSnapshot } from 'valtio';
 
 import LinkItemComponent from './link-item.component';
+import { configStore } from '../../../store';
 
 import classes from './footer.module.scss';
 
 const FooterComponent: React.FC = (_props) => {
-  const stateContext = useContext(StateContext);
-  const config = stateContext.configService.state.context.content;
-  const links = config.meta.footer.links;
-
-  if (!links) {
+  const snap = useSnapshot(configStore);
+  if (
+    !(snap.config && snap.config.meta && snap.config.meta.footer && snap.config.meta.footer.links)
+  ) {
     return null;
   }
+
+  const links = snap.config.meta.footer.links;
 
   return (
     <>
