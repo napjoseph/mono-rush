@@ -3,8 +3,6 @@ import React from 'react';
 import { EventsConfig } from '../../../models';
 import EventsItemComponent from './events-item.component';
 
-import classes from './section.module.scss';
-
 interface EventsSectionComponentProps {
   config: EventsConfig;
 }
@@ -23,8 +21,8 @@ const EventsSectionComponent: React.FC<EventsSectionComponentProps> = ({ config 
 
   return (
     <>
-      <div className={classes.container}>
-        <ul className={classes.list}>
+      <div className="text-sm text-gray-700">
+        <ul className="list-square ml-4">
           {sorted.map((item, index) => {
             return (
               <li key={index}>

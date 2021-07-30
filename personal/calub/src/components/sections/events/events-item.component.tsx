@@ -3,8 +3,6 @@ import React from 'react';
 import { EventsItem } from '../../../models';
 import formatDate from '../../../utils/format-date';
 
-import classes from './events-item.module.scss';
-
 interface EventsItemComponentProps {
   item: EventsItem;
 }
@@ -14,24 +12,23 @@ const EventsItemComponent: React.FC<EventsItemComponentProps> = ({ item }) => {
 
   return (
     <>
-      <div className={classes.container}>
-        <h3 className={classes.title}>{item.title}</h3>
-        <div className={classes.meta}>
-          <span className={classes.role}>{item.role}</span>
-          <span className={classes.divider}>|</span>
-          <span className={classes.dates}>
-            <span className={classes.start}>{formatDate(item.dates.start)}</span>
+      <div className="pb-1">
+        <h3 className="font-medium text-gray-900">{item.title}</h3>
+        <div className="text-gray-500 text-xs">
+          <span className="italic">{item.role}</span>
+          <span className="mx-1">|</span>
+          <span>
+            <span>{formatDate(item.dates.start)}</span>
             {item.dates.end && (
               <>
-                <span className={classes.to}>{datesTo}</span>
-                <span className={classes.end}>{formatDate(item.dates.end)}</span>
+                <span>{datesTo}</span>
+                <span>{formatDate(item.dates.end)}</span>
               </>
             )}
           </span>
-          <span className={classes.divider}>|</span>
+          <span className="mx-1">|</span>
           <span>{item.address}</span>
         </div>
-        <div className={classes.meta}></div>
       </div>
     </>
   );
