@@ -3,8 +3,6 @@ import React from 'react';
 import { ProjectsItem } from '../../../models';
 import formatDate from '../../../utils/format-date';
 
-import classes from './projects-item.module.scss';
-
 interface ProjectsItemComponentProps {
   item: ProjectsItem;
 }
@@ -15,26 +13,28 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
 
   return (
     <>
-      <div className={classes.container}>
-        <h3 className={classes.title}>{item.title}</h3>
-        <div className={classes.meta}>
-          <span className={classes.dates}>
-            <span className={classes.start}>{formatDate(item.dates.start)}</span>
-            <span className={classes.to}>{datesTo}</span>
-            <span className={classes.end}>{formatDate(item.dates.end)}</span>
+      <div className="mt-1">
+        <h3 className="font-medium text-gray-900">{item.title}</h3>
+        <div className="text-gray-500 text-xs">
+          <span>
+            <span>{formatDate(item.dates.start)}</span>
+            <span>{datesTo}</span>
+            <span>{formatDate(item.dates.end)}</span>
           </span>
 
-          <span className={classes.divider}>|</span>
+          <span className="mx-1">|</span>
 
           {item.tags && (
             <>
               <span>{tagsPrefix}</span>
-              <ul className={classes.tags}>
+              <ul className="inline">
                 {item.tags.map((tag, index) => {
                   return (
-                    <li key={index} className={classes.tag}>
-                      <span className={classes.content}>{tag}</span>
-                      {index !== item.tags.length - 1 && <span className={classes.comma}>,</span>}
+                    <li key={index} className="inline">
+                      <span className="cursor-pointer hover:font-semibold transition duration-150 ease-in-out">
+                        {tag}
+                      </span>
+                      {index !== item.tags.length - 1 && <span className="mr-1">,</span>}
                     </li>
                   );
                 })}
@@ -43,11 +43,11 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
           )}
         </div>
         {item.roles && (
-          <div className={classes.roles}>
-            <ul className={classes.list}>
+          <div className="text-xs">
+            <ul className="list-square ml-8 mt-1">
               {item.roles.map((role, index) => {
                 return (
-                  <li key={index} className={classes.role}>
+                  <li key={index} className="mb-1">
                     <span>{role}</span>
                   </li>
                 );

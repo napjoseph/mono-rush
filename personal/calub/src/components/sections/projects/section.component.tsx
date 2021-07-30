@@ -3,8 +3,6 @@ import React from 'react';
 import { ProjectsConfig } from '../../../models';
 import ProjectsItemComponent from './projects-item.component';
 
-import classes from './section.module.scss';
-
 interface ProjectsSectionComponentProps {
   config: ProjectsConfig;
 }
@@ -14,8 +12,8 @@ const ProjectsSectionComponent: React.FC<ProjectsSectionComponentProps> = ({ con
 
   return (
     <>
-      <div className={classes.container}>
-        <ul className={classes.list}>
+      <div className="text-sm text-gray-700">
+        <ul className="list-square ml-4">
           {items.map((item, index) => {
             return (
               <li key={index}>
