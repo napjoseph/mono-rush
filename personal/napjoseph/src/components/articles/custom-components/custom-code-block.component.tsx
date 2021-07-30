@@ -6,9 +6,25 @@ import { Box, Code, Text, useColorModeValue as mode } from '@chakra-ui/react';
 
 // https://mdxjs.com/guides/syntax-highlighting#build-a-codeblock-component
 
+const DEFAULT_LANGUAGES_WITH_LINE_NUMBERS = [
+  'javascript',
+  'typescript',
+  'text',
+  'yaml',
+  'dockerfile',
+  'markdown'
+];
+
+const calcWidth = (length: number): number => {
+  const pixelsPerDigit = 10;
+  return `${length}`.length * pixelsPerDigit;
+};
+
 interface CustomCodeBlockProps {
   // The className will contain the language defined in the code block.
   className?: string;
+  // Set to true if you want to show the line numbers.
+  lineNumbers?: boolean;
   // The filename must be passed to encodeURI(s) in order to display spaces.
   filename?: string;
   // The note must be passed to encodeURI(s) in order to display spaces.
@@ -17,6 +33,7 @@ interface CustomCodeBlockProps {
 
 const CustomCodeBlock: React.FC<CustomCodeBlockProps> = ({
   className,
+  lineNumbers,
   filename = '',
   note = '',
   children
@@ -30,7 +47,10 @@ const CustomCodeBlock: React.FC<CustomCodeBlockProps> = ({
   const decodedFilename = decodeURI(filename.trim());
   const decodedNote = decodeURI(note.trim());
 
-  // TODO: Add check if need to show line numbers.
+  let showLineNumbers = DEFAULT_LANGUAGES_WITH_LINE_NUMBERS.includes(language);
+  if (lineNumbers !== undefined) {
+    showLineNumbers = lineNumbers;
+  }
 
   // Removes the trailing new line created.
   const codeString = String(children).replace(/\n$/, '');
@@ -77,8 +97,21 @@ const CustomCodeBlock: React.FC<CustomCodeBlockProps> = ({
               <Code className={className} p="3" style={{ ...style }}>
                 {tokens.map((line, i) => (
                   <div key={i} {...getLineProps({ line, key: i })}>
+                    {showLineNumbers && (
+                      <Text
+                        as="span"
+                        display="inline-block"
+                        userSelect="none"
+                        minWidth={`${calcWidth(tokens.length)}px`}
+                        mr={4}
+                        layerStyle="muted"
+                        textAlign="right"
+                      >
+                        {i + 1}
+                      </Text>
+                    )}
                     {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
+                      <Text as="span" key={key} {...getTokenProps({ token, key })} />
                     ))}
                   </div>
                 ))}
