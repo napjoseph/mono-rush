@@ -8,8 +8,6 @@ import {
   DEFAULT_DIVIDER_LOGO_CONFIG
 } from '../../../models';
 
-import classes from './section.module.scss';
-
 interface DividerSectionComponentProps {
   config?: DividerConfig;
 }
@@ -21,12 +19,12 @@ const DividerSectionComponent: React.FC<DividerSectionComponentProps> = ({
 
   return (
     <>
-      <div className={classes.container}>
-        <div className={classes.borderContainer} aria-hidden="true">
-          <div className={classes.border}></div>
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center" aria-hidden="true">
+          <div className="w-full border-t-2 border-gray-300"></div>
         </div>
-        <div className={classes.iconContainer}>
-          <span className={classes.icon}>
+        <div className="relative flex justify-center">
+          <span className="bg-white px-2 text-gray-500">
             <LogoComponent overrideClassName={logoConfig.className} fill={logoConfig.fill} />
           </span>
         </div>
