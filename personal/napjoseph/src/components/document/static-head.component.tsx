@@ -2,25 +2,27 @@ import React from 'react';
 
 import Head from 'next/head';
 
-interface StaticHeadProps {
-  crossOrigin?: string;
-}
-
 /* eslint-disable @next/next/no-page-custom-font */
-const StaticHead: React.FC<StaticHeadProps> = ({ crossOrigin = 'anonymous' }) => {
+const StaticHead: React.FC = (_props) => {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={crossOrigin} />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter&family=Inter&family=Fira+Code&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Code"
           rel="stylesheet"
         />
       </Head>
     </>
   );
 };
-/* eslint-enable */
+/* eslint-enable @next/next/no-page-custom-font */
 
 export default StaticHead;
