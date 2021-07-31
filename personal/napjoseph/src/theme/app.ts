@@ -110,6 +110,10 @@ const layerStyles = {
     bg: 'brand.600',
     textColor: 'gray.100'
   },
+  'post-status': {
+    bg: 'red.700',
+    textColor: 'gray.100'
+  },
   'post-tag': {
     bg: 'brand.500',
     textColor: 'gray.100'
@@ -192,6 +196,10 @@ const textStyles = {
   },
   'post-title-card': {
     fontSize: '2xl'
+  },
+  'post-status': {
+    fontSize: 'xs',
+    fontWeight: 'medium'
   },
   'post-tag': {
     fontSize: 'xs',

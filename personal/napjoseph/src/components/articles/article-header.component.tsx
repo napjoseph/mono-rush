@@ -5,6 +5,7 @@ import formatDate from '../../lib/utils/format-date';
 import { Article } from '../../models';
 import TagPill from '../tags/tag-pill.component';
 import convertToArticleTag from '../../lib/utils/convert-to-article-tag';
+import ArticleStatus from './article-status.component';
 
 interface ArticleHeaderProps {
   article: Article;
@@ -31,6 +32,8 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article }) => {
 
   const tagsSection = tags && tags.length !== 0 && (
     <Flex flexWrap="wrap" gridGap={1.5} justify="center">
+      {article.draft && <ArticleStatus status="Draft" />}
+
       {tags.map((tag) => (
         <TagPill key={tag} tag={convertToArticleTag(tag)} />
       ))}

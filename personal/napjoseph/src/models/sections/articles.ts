@@ -4,6 +4,7 @@ export interface Article {
   title: string;
   layout: string;
   slug: string;
+  draft?: boolean;
   rawContent?: string;
   frontMatter?: ArticleFrontMatter;
   serializedContent?: MDXRemoteSerializeResult;

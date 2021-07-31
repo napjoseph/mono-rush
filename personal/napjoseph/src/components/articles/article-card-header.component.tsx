@@ -6,6 +6,7 @@ import { Article } from '../../models';
 import TagPill from '../tags/tag-pill.component';
 import convertToArticleTag from '../../lib/utils/convert-to-article-tag';
 import { NextChakraLink } from '../primitives/next-chakra-link';
+import ArticleStatus from './article-status.component';
 
 interface ArticleCardHeaderProps {
   article: Article;
@@ -37,6 +38,8 @@ const ArticleCardHeader: React.FC<ArticleCardHeaderProps> = ({ article }) => {
 
   const tagsSection = tags && tags.length !== 0 && (
     <Flex flexWrap="wrap" gridGap={1.5}>
+      {article.draft && <ArticleStatus status="Draft" />}
+
       {tags.map((tag) => (
         <TagPill key={tag} tag={convertToArticleTag(tag)} />
       ))}
