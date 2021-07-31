@@ -29,6 +29,7 @@ export const getArticleBySlug = async (layout: string, slug = ''): Promise<Artic
     title: frontMatter.title || '',
     layout,
     slug,
+    draft: frontMatter.draft || false,
     frontMatter,
     rawContent: content,
     excerpt: getExcerpt(content),
@@ -43,7 +44,12 @@ const getAllArticleFileNames = (layout: string): string[] => {
 export const getArticles = async (layout: string): Promise<Article[]> => {
   const slugs = getAllArticleFileNames(layout).map((slug) => slug.replace(/\.mdx$/, ''));
   const articles = await Promise.all(slugs.map((slug) => getArticleBySlug(layout, slug)));
-  const sorted = articles.sort((a, b) =>
+
+  const filtered = articles.filter((article) => {
+    const showDrafts = process.env.NEXT_SHOW_DRAFT_ARTICLES === 'true';
+    return showDrafts || !article.draft;
+  });
+  const sorted = filtered.sort((a, b) =>
     a.frontMatter.publishedDate > b.frontMatter.publishedDate ? -1 : 1
   );
 

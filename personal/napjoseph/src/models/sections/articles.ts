@@ -17,6 +17,7 @@ export interface ArticleFrontMatter {
   tags?: string[];
   description?: string;
   disableComments?: boolean;
+  draft?: boolean;
 }
 
 export interface ArticleTag {
