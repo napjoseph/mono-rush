@@ -4,6 +4,8 @@ import axios from 'axios';
 import { DEFAULT_SEARCH_RESULTS, SearchResults } from '../models';
 import localEndpoint from '../lib/utils/local-endpoint';
 
+const BASE_URL = localEndpoint('/api/search');
+
 export interface SearchStore {
   previousSearchText: string;
   searchText: string;
@@ -18,7 +20,7 @@ export const searchStore = proxy<SearchStore>({
   search: () => {
     if (searchStore.searchText.trim() === '') return;
 
-    const url = localEndpoint(`/api/search?q=${searchStore.searchText}`);
+    const url = `${BASE_URL}?q=${searchStore.searchText}`;
     try {
       axios.get<SearchResults>(url).then((response) => {
         searchStore.results = response.data;

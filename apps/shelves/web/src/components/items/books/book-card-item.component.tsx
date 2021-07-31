@@ -5,6 +5,7 @@ import { Book } from '../../../models';
 import { getBookThumbnail } from '../../../lib/utils/books';
 import formatDate from '../../../lib/utils/format-date';
 import { MotionBox } from '../../primitives/motion-box';
+import { NextChakraLink } from '../../primitives/next-chakra-link';
 
 interface BookCardItemProps {
   book?: Book;
@@ -25,7 +26,9 @@ const BookCardItem: React.FC<BookCardItemProps> = ({ book }) => {
           draggable={false}
         />
         <Flex direction="column">
-          <Text fontSize="medium">{book.title}</Text>
+          <NextChakraLink href={`/books/${book.id}`} title={book.title}>
+            <Text fontSize="medium">{book.title}</Text>
+          </NextChakraLink>
 
           {book.subtitle && (
             <Text fontSize="sm" noOfLines={2}>
