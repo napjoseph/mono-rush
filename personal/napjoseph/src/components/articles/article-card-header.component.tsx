@@ -1,23 +1,29 @@
 import React from 'react';
-import { Text, Flex, Heading } from '@chakra-ui/react';
+import { Text, Flex } from '@chakra-ui/react';
 
 import formatDate from '../../lib/utils/format-date';
 import { Article } from '../../models';
 import TagPill from '../tags/tag-pill.component';
 import convertToArticleTag from '../../lib/utils/convert-to-article-tag';
+import { NextChakraLink } from '../primitives/next-chakra-link';
 
-interface ArticleHeaderProps {
+interface ArticleCardHeaderProps {
   article: Article;
 }
 
-const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article }) => {
-  const { title = '', frontMatter } = article;
+const ArticleCardHeader: React.FC<ArticleCardHeaderProps> = ({ article }) => {
+  const { slug = '', title = '', frontMatter } = article;
   const { publishedDate = '', tags = [] } = frontMatter;
 
   const postTitleSection = (
-    <Heading textStyle="post-title" layerStyle="post-title">
+    <NextChakraLink
+      href={`/posts/${slug}`}
+      textStyle="post-title-card"
+      layerStyle="post-title"
+      fontFamily="heading"
+    >
       {title}
-    </Heading>
+    </NextChakraLink>
   );
 
   const publishedDateSection = publishedDate !== '' && (
@@ -30,7 +36,7 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article }) => {
   );
 
   const tagsSection = tags && tags.length !== 0 && (
-    <Flex flexWrap="wrap" gridGap={1.5} justify="center">
+    <Flex flexWrap="wrap" gridGap={1.5}>
       {tags.map((tag) => (
         <TagPill key={tag} tag={convertToArticleTag(tag)} />
       ))}
@@ -38,7 +44,7 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article }) => {
   );
 
   return (
-    <Flex direction="column" gridGap={1} textAlign="center">
+    <Flex direction="column" gridGap={1}>
       {postTitleSection}
       {publishedDateSection}
       {tagsSection}
@@ -46,4 +52,4 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = ({ article }) => {
   );
 };
 
-export default ArticleHeader;
+export default ArticleCardHeader;

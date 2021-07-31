@@ -1,23 +1,23 @@
 import React from 'react';
-import { Text, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 import { Article } from '../../models';
 import { MotionBox } from '../primitives/motion-box';
-import ArticleHeader from './article-header.component';
+import ArticleCardHeader from './article-card-header.component';
+import ArticleCardBody from './article-card-body.component';
 
 interface ArticleCardProps {
-  article: Article;
+  article?: Article;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+  if (!article) return null;
+
   return (
     <MotionBox whileHover={{ scale: 1.05 }}>
       <Flex direction="column" gridGap={2}>
-        <ArticleHeader article={article} forCard={true} />
-
-        <Text fontSize="xs" layerStyle="metadata" noOfLines={5}>
-          {article.excerpt}
-        </Text>
+        <ArticleCardHeader article={article} />
+        <ArticleCardBody article={article} />
       </Flex>
     </MotionBox>
   );

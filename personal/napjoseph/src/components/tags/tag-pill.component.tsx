@@ -13,6 +13,7 @@ const TagPill: React.FC<TagPillProps> = ({ tag }) => {
   return (
     <MotionBox whileHover={{ scale: 1.1 }}>
       <NextChakraLink
+        display="inline-block"
         href={`/tags/${tag.slug}`}
         rounded="xl"
         textStyle="post-tag"
