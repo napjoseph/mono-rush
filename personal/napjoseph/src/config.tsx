@@ -4,7 +4,7 @@ import { SiteConfig } from './models';
 
 export const SITE_CONFIG: SiteConfig = {
   title: 'Nap Joseph Calub',
-  description: 'Software Engineer using Go and TypeScript',
+  description: 'Software Engineer and Open Source Enthusiast',
   metadata: {
     defaultHeadData: {
       charSet: 'UTF-8',
