@@ -27,7 +27,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
           {item.tags && (
             <>
               <span>{tagsPrefix}</span>
-              <ul className="inline">
+              <ul className="inline break-words">
                 {item.tags.map((tag, index) => {
                   return (
                     <li key={index} className="inline">

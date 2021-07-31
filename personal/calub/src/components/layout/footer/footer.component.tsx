@@ -16,7 +16,7 @@ const FooterComponent: React.FC = (_props) => {
 
   return (
     <>
-      <footer className="text-center lg:mt-5 md:mt-3 hidden md:block">
+      <footer className="text-center md:mt-3 lg:mt-5 hidden md:block">
         {links.map((link, index) => {
           return <LinkItemComponent key={index} link={link} />;
         })}
