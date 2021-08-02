@@ -9,6 +9,7 @@ class Document extends NextDocument {
           <div id="root" className="lg:my-5 md:my-3 sm:my-2 sm:mx-2">
             <Main />
             <NextScript />
+            <div id="portals"></div>
           </div>
         </body>
       </Html>
