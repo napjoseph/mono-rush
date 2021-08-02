@@ -22,13 +22,13 @@ const OrganizationsItemComponent: React.FC<OrganizationsItemComponentProps> = ({
           </a>
         </h3>
         <div className="ml-4 text-xs">
-          <ul className="list-square ml-4 mt-1">
+          <ul className="mt-1 ml-4 list-square">
             {item.roles.map((role, index) => {
               return (
                 <li className="pb-1" key={index}>
                   <span className="font-medium">{role.title}</span>
                   <span
-                    className="text-gray-500 ml-1"
+                    className="ml-1 text-gray-500"
                     title={calculateDateDuration(role.dates.start, role.dates.end)}
                   >
                     <span>{datesPrefix}</span>

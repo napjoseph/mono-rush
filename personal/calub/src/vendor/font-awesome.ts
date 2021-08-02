@@ -1,5 +1,6 @@
 import { faBuilding, faCalendarAlt, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
+  faBars,
   faBriefcase,
   faCertificate,
   faGlobeAsia,
@@ -8,6 +9,7 @@ import {
   faLayerGroup,
   faMapMarkerAlt,
   faMobileAlt,
+  faTimes,
   faPeopleCarry,
   faUsers
 } from '@fortawesome/free-solid-svg-icons';
@@ -25,6 +27,7 @@ library.add(faBuilding, faCalendarAlt, faEnvelope);
 
 // @fortawesome/free-solid-svg-icons
 library.add(
+  faBars,
   faBriefcase,
   faCertificate,
   faGlobeAsia,
@@ -33,6 +36,7 @@ library.add(
   faLayerGroup,
   faMapMarkerAlt,
   faMobileAlt,
+  faTimes,
   faPeopleCarry,
   faUsers
 );

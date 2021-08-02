@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 
 import { SkillsItem } from '../../../models';
+import { tagFiltersStore } from '../../../store';
 
 import classes from './skills-item.module.scss';
 
@@ -9,6 +11,8 @@ interface SkillsItemComponentProps {
 }
 
 const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
+  const tagFilters = useSnapshot(tagFiltersStore);
+
   const ratingMax = 10;
 
   const { title, rating } = item;
@@ -19,7 +23,12 @@ const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
     <>
       <div className={classes.container}>
         <div className={classes.progress}>
-          <div className={classes.bar} style={{ width }} title={titleText}>
+          <div
+            className={classes.bar}
+            style={{ width }}
+            title={titleText}
+            onClick={() => tagFilters.add(title)}
+          >
             {title}
           </div>
         </div>

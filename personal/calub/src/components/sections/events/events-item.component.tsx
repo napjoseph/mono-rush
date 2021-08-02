@@ -14,7 +14,7 @@ const EventsItemComponent: React.FC<EventsItemComponentProps> = ({ item }) => {
     <>
       <div className="pb-1">
         <h3 className="font-medium text-gray-900">{item.title}</h3>
-        <div className="text-gray-500 text-xs">
+        <div className="text-xs text-gray-500">
           <span className="italic">{item.role}</span>
           <span className="mx-1">|</span>
           <span>

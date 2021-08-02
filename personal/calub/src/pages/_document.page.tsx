@@ -6,7 +6,7 @@ class Document extends NextDocument {
       <Html lang="en">
         <Head />
         <body className="bg-gray-700 print:bg-white">
-          <div id="root" className="lg:my-5 md:my-3 sm:my-2 sm:mx-2">
+          <div>
             <Main />
             <NextScript />
             <div id="portals"></div>
