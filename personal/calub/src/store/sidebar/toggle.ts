@@ -8,7 +8,7 @@ export interface SidebarToggleStore {
 }
 
 export const sidebarToggleStore = proxy<SidebarToggleStore>({
-  show: true,
+  show: false,
   toggle: () => {
     sidebarToggleStore.show = !sidebarToggleStore.show;
   },

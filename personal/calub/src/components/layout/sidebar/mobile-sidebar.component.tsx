@@ -1,25 +1,32 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
-import joinClassNames from '../../../utils/join-class-names';
 
+import joinClassNames from '../../../utils/join-class-names';
 import { sidebarToggleStore } from '../../../store';
 import SidebarContentComponent from './sidebar-content.component';
 import SidebarToggleButtonComponent from './sidebar-toggle-button.component';
 
-const SidebarComponent: React.FC = (_props) => {
+const MobileSidebarComponent: React.FC = (_props) => {
   const sidebar = useSnapshot(sidebarToggleStore);
 
   return (
     <>
       <div
-        className={joinClassNames('print:hidden', 'fixed', 'inset-0', 'z-40', 'overflow-hidden')}
+        className={joinClassNames(
+          sidebar.show ? 'visible' : 'invisible',
+          'transition-all duration-100 ease-in-out',
+          'print:hidden',
+          'fixed',
+          'inset-0',
+          'z-40'
+        )}
       >
         <div
           className={joinClassNames(
-            sidebar.show
-              ? 'absolute inset-0 backdrop-filter backdrop-blur bg-gray-800 bg-opacity-10'
-              : '',
-            'transition-all duration-300 ease-in-out'
+            sidebar.show ? 'backdrop-filter backdrop-blur bg-gray-800 bg-opacity-10' : '',
+            'transition-all duration-100 ease-in-out',
+            'absolute',
+            'inset-0'
           )}
         >
           <div className={joinClassNames('fixed', 'bottom-4', 'right-4')}>
@@ -37,7 +44,7 @@ const SidebarComponent: React.FC = (_props) => {
           <div
             className={joinClassNames(
               sidebar.show ? 'flex-1' : 'flex-almost-gone',
-              'transition-all duration-300 ease-in-out',
+              'transition-all duration-100 ease-in-out',
               'max-w-sm',
               'min-w-0',
               'bg-gray-800',
@@ -48,7 +55,12 @@ const SidebarComponent: React.FC = (_props) => {
             <SidebarContentComponent />
           </div>
           <div
-            className={joinClassNames(sidebar.show ? '' : 'hidden', 'w-24', 'pointer-events-none')}
+            className={joinClassNames(
+              sidebar.show ? '' : 'hidden',
+              'transition-all duration-100 ease-in-out',
+              'w-24',
+              'pointer-events-none'
+            )}
           ></div>
         </div>
       </div>
@@ -56,4 +68,4 @@ const SidebarComponent: React.FC = (_props) => {
   );
 };
 
-export default SidebarComponent;
+export default MobileSidebarComponent;

@@ -4,21 +4,18 @@ import { useSnapshot } from 'valtio';
 import DocumentHead from '../document/document-head.component';
 import FooterComponent from './footer/footer.component';
 import joinClassNames from '../../utils/join-class-names';
-import SidebarComponent from './sidebar/sidebar.component';
+import MobileSidebarComponent from './sidebar/mobile-sidebar.component';
 import PortalComponent from './portal/portal.component';
 import SidebarToggleButtonComponent from './sidebar/sidebar-toggle-button.component';
 import { sidebarToggleStore } from '../../store';
 
 /**
- * When set to true, this shows the sidebar toggle button.
+ * When set to true, this shows the sidebar.
  * This is still experimental so this is turned off in production.
  */
-const SHOW_SIDEBAR_TOGGLE_BUTTON = false;
+const SHOW_SIDEBAR = process.env.NEXT_PUBLIC_SHOW_SIDEBAR === 'true';
 
-/* eslint-disable-next-line */
-interface LayoutComponentProps {}
-
-const LayoutComponent: React.FC<LayoutComponentProps> = (props) => {
+const LayoutComponent: React.FC = (props) => {
   const sidebar = useSnapshot(sidebarToggleStore);
 
   return (
@@ -43,11 +40,12 @@ const LayoutComponent: React.FC<LayoutComponentProps> = (props) => {
         <FooterComponent />
       </div>
 
-      {SHOW_SIDEBAR_TOGGLE_BUTTON ? (
-        <>
+      {SHOW_SIDEBAR ? (
+        <PortalComponent>
           <div
             className={joinClassNames(
-              sidebar.show ? 'hidden' : '',
+              sidebar.show ? 'hidden opacity-0' : 'opacity-100',
+              'transition-all duration-100 ease-in-out',
               'fixed',
               'bottom-4',
               'right-4',
@@ -61,8 +59,8 @@ const LayoutComponent: React.FC<LayoutComponentProps> = (props) => {
             />
           </div>
 
-          <PortalComponent>{sidebar.show ? <SidebarComponent /> : null}</PortalComponent>
-        </>
+          <MobileSidebarComponent />
+        </PortalComponent>
       ) : null}
     </>
   );
