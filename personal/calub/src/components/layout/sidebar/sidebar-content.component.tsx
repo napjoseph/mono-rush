@@ -12,7 +12,7 @@ const SidebarContentComponent: React.FC = (_props) => {
 
   return (
     <>
-      <div className="flex items-stretch p-5 overflow-hidden">
+      <div className="flex items-stretch p-5 overflow-hidden break-words">
         <div className="flex flex-col gap-1">
           <h3 className="font-semibold">Tags Selected</h3>
           <ul className="flex flex-col gap-1 list-inside list-square">
