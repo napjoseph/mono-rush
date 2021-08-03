@@ -9,6 +9,7 @@ import {
   faLayerGroup,
   faMapMarkerAlt,
   faMobileAlt,
+  faPrint,
   faTimes,
   faPeopleCarry,
   faUsers
@@ -36,6 +37,7 @@ library.add(
   faLayerGroup,
   faMapMarkerAlt,
   faMobileAlt,
+  faPrint,
   faTimes,
   faPeopleCarry,
   faUsers
