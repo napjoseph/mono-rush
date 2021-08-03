@@ -34,11 +34,10 @@ const LayoutComponent: React.FC = (props) => {
             'bg-gray-800',
             'text-gray-200',
             'max-w-sm',
-            'min-w-0',
-            'relative'
+            'min-w-0'
           )}
         >
-          <div className={joinClassNames(sidebar.show ? 'block' : 'hidden', 'fixed', 'inset-y-0')}>
+          <div className={joinClassNames(sidebar.show ? 'block' : 'hidden', 'sticky', 'top-0')}>
             <SidebarContentComponent />
           </div>
         </div>
