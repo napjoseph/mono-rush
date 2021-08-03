@@ -9,7 +9,7 @@ const PrintButtonComponent: React.FC = (_props) => {
       className={joinClassNames(
         'text-gray-100',
         'bg-blue-700',
-        'hover:bg-blue-800',
+        'hover:bg-blue-600',
         'w-full',
         'h-12',
         'p-2',
