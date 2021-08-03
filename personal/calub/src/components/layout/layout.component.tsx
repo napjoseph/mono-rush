@@ -37,7 +37,16 @@ const LayoutComponent: React.FC = (props) => {
             'min-w-0'
           )}
         >
-          <div className={joinClassNames(sidebar.show ? 'block' : 'hidden', 'sticky', 'top-0')}>
+          <div
+            className={joinClassNames(
+              sidebar.show ? 'block' : 'hidden',
+              'sticky',
+              'top-0',
+              'h-screen',
+              'overflow-auto',
+              'with-scrollbars'
+            )}
+          >
             <SidebarContentComponent />
           </div>
         </div>

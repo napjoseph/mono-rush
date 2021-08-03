@@ -203,6 +203,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "tailwind-scrollbar",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "tailwindcss",
       "allowedCategories": [ "production", "prototypes" ]
     },

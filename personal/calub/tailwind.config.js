@@ -954,6 +954,7 @@ module.exports = {
     rotate: ['responsive', 'hover', 'focus'],
     saturate: ['responsive'],
     scale: ['responsive', 'hover', 'focus'],
+    scrollbar: ['rounded'],
     sepia: ['responsive'],
     skew: ['responsive', 'hover', 'focus'],
     space: ['responsive'],
@@ -983,6 +984,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar'),
     // add page break utilities as a plugin
     // https://github.com/tailwindlabs/tailwindcss/discussions/3754
     plugin(function ({ addUtilities }) {
@@ -999,6 +1001,15 @@ module.exports = {
       addComponents({
         '.color-link': {
           '@apply hover:text-blue-700 transition duration-150 ease-in-out': {}
+        }
+      });
+    }),
+    // add scrollbars
+    plugin(function ({ addComponents }) {
+      addComponents({
+        '.with-scrollbars': {
+          '@apply scrollbar-thin hover:scrollbar-thumb-gray-600 scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar-track-rounded-full scrollbar-thumb-rounded-full':
+            {}
         }
       });
     })

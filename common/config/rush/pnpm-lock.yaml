@@ -60,6 +60,7 @@ specifiers:
   stylelint-config-recommended: ~5.0.0
   stylelint-prettier: ~1.2.0
   swr: ~0.5.6
+  tailwind-scrollbar: ^1.3.1
   tailwindcss: ~2.2.4
   typescript: ^4.1.3
   utterances-react-component: ~1.0.0
@@ -125,6 +126,7 @@ dependencies:
   stylelint-config-recommended: 5.0.0_stylelint@13.13.1
   stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
   swr: 0.5.6_react@17.0.2
+  tailwind-scrollbar: 1.3.1_332e4ea0493f013a8b549b1918985ad0
   tailwindcss: 2.2.7_332e4ea0493f013a8b549b1918985ad0
   typescript: 4.3.5
   utterances-react-component: 1.0.0_react-dom@17.0.2+react@17.0.2
@@ -7752,6 +7754,16 @@ packages:
       strip-ansi: 6.0.0
     dev: false
 
+  /tailwind-scrollbar/1.3.1_332e4ea0493f013a8b549b1918985ad0:
+    resolution: {integrity: sha512-FeYuLxLtCRMO4PmjPJCzm5wQouFro2BInZXKPxqg54DR/55NAHoS8uNYWMiRG5l6qsLkWBfVEM34gq2XAQUwVg==}
+    dependencies:
+      tailwindcss: 2.2.7_332e4ea0493f013a8b549b1918985ad0
+    transitivePeerDependencies:
+      - autoprefixer
+      - postcss
+      - ts-node
+    dev: false
+
   /tailwindcss/2.2.7_332e4ea0493f013a8b549b1918985ad0:
     resolution: {integrity: sha512-jv35rugP5j8PpzbXnsria7ZAry7Evh0KtQ4MZqNd+PhF+oIKPwJTVwe/rmfRx9cZw3W7iPZyzBmeoAoNwfJ1yg==}
     engines: {node: '>=12.13.0'}
@@ -8504,7 +8516,7 @@ packages:
     dev: false
 
   file:projects/calub-web.tgz:
-    resolution: {integrity: sha512-4/wFgzgwWFWwd4HRgAqFXrSWY6RzveONvY3/aORvX7i2LC9an7US7xo9KxWbQsj2eM9rKFDq4fqBXLLd1nluHw==, tarball: file:projects/calub-web.tgz}
+    resolution: {integrity: sha512-TrRP2VvSqPZ35cT8H0gPx2G/sN1pmRcDEBqT5uKU8AUH/azmsxwP2oFdYmdNrB6DkkyngmEQ5FmjgfDUJbhPIQ==, tarball: file:projects/calub-web.tgz}
     name: '@rush-temp/calub-web'
     version: 0.0.0
     dependencies:
@@ -8547,6 +8559,7 @@ packages:
       stylelint-config-prettier: 8.0.2_stylelint@13.13.1
       stylelint-config-recommended: 5.0.0_stylelint@13.13.1
       stylelint-prettier: 1.2.0_prettier@2.3.2+stylelint@13.13.1
+      tailwind-scrollbar: 1.3.1_332e4ea0493f013a8b549b1918985ad0
       tailwindcss: 2.2.7_332e4ea0493f013a8b549b1918985ad0
       typescript: 4.3.5
       valtio: 1.1.1_react@17.0.2
