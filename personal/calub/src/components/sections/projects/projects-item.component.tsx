@@ -1,13 +1,17 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 
-import { ProjectsItem } from '../../../models';
+import { ProjectsItem, TagFilterStatus } from '../../../models';
 import formatDate from '../../../utils/format-date';
+import { tagFiltersStore } from '../../../store';
 
 interface ProjectsItemComponentProps {
   item: ProjectsItem;
 }
 
 const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) => {
+  const tagFilters = useSnapshot(tagFiltersStore);
+
   const tagsPrefix = 'Technologies used: ';
   const datesTo = ' to ';
 
@@ -15,7 +19,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
     <>
       <div className="mt-1">
         <h3 className="font-medium text-gray-900">{item.title}</h3>
-        <div className="text-gray-500 text-xs">
+        <div className="text-xs text-gray-500">
           <span>
             <span>{formatDate(item.dates.start)}</span>
             <span>{datesTo}</span>
@@ -31,7 +35,10 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
                 {item.tags.map((tag, index) => {
                   return (
                     <li key={index} className="inline">
-                      <span className="cursor-pointer hover:font-semibold transition duration-150 ease-in-out">
+                      <span
+                        className="transition duration-150 ease-in-out cursor-pointer hover:font-semibold"
+                        onClick={() => tagFilters.update(tag, TagFilterStatus.ONLY_WITH)}
+                      >
                         {tag}
                       </span>
                       {index !== item.tags.length - 1 && <span className="mr-1">,</span>}
@@ -44,7 +51,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
         </div>
         {item.roles && (
           <div className="text-xs">
-            <ul className="list-square ml-8 mt-1">
+            <ul className="mt-1 ml-8 list-square">
               {item.roles.map((role, index) => {
                 return (
                   <li key={index} className="mb-1">

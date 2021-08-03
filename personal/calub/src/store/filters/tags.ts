@@ -1,22 +1,59 @@
-import { proxy } from 'valtio';
+import { proxyWithComputed } from 'valtio/utils';
 
-const removeTag = (tags: string[], value: string): string[] => tags.filter((tag) => tag !== value);
+import { TagFilter, TagFilterStatus } from '../../models';
 
-const addTag = (tags: string[], value: string): string[] =>
-  tags.indexOf(value) === -1 ? [...tags, value] : [...tags];
+const filterTags = (tags: TagFilter[], status: TagFilterStatus): string[] => {
+  return tags
+    .filter((tag) => tag.status === status)
+    .map((tag) => tag.value)
+    .sort();
+};
+
+const addTag = (tags: TagFilter[], value: string): TagFilter[] => {
+  const tag: TagFilter = { value: value, status: TagFilterStatus.DEFAULT };
+  return tags.map((tag) => tag.value).indexOf(value) === -1 ? [...tags, tag] : [...tags];
+};
+
+const removeTag = (tags: TagFilter[], value: string): TagFilter[] => {
+  return tags.filter((tag) => tag.value !== value);
+};
+
+const updateTag = (tags: TagFilter[], value: string, status: TagFilterStatus): TagFilter[] => {
+  return tags.map((tag) => ({
+    ...tag,
+    status: tag.value === value ? status : tag.status
+  }));
+};
 
 export interface TagFiltersStore {
-  included: string[];
-  add: (tag: string) => void;
-  remove: (tag: string) => void;
+  tags: TagFilter[];
+  add: (value: string) => void;
+  remove: (value: string) => void;
+  update: (value: string, status: TagFilterStatus) => void;
 }
 
-export const tagFiltersStore = proxy<TagFiltersStore>({
-  included: [],
-  add: (tag: string) => {
-    tagFiltersStore.included = addTag(tagFiltersStore.included, tag);
+export interface TagFiltersStoreComputed {
+  unusedTags?: string[];
+  onlyWithTags?: string[];
+  mustNotHaveTags?: string[];
+}
+
+export const tagFiltersStore = proxyWithComputed<TagFiltersStore, TagFiltersStoreComputed>(
+  {
+    tags: [],
+    add: (value: string) => {
+      tagFiltersStore.tags = addTag(tagFiltersStore.tags, value);
+    },
+    remove: (value: string) => {
+      tagFiltersStore.tags = removeTag(tagFiltersStore.tags, value);
+    },
+    update: (value: string, status: TagFilterStatus) => {
+      tagFiltersStore.tags = updateTag(tagFiltersStore.tags, value, status);
+    }
   },
-  remove: (tag: string) => {
-    tagFiltersStore.included = removeTag(tagFiltersStore.included, tag);
+  {
+    unusedTags: (snap) => filterTags(snap.tags, TagFilterStatus.DEFAULT),
+    onlyWithTags: (snap) => filterTags(snap.tags, TagFilterStatus.ONLY_WITH),
+    mustNotHaveTags: (snap) => filterTags(snap.tags, TagFilterStatus.MUST_NOT_HAVE)
   }
-});
+);

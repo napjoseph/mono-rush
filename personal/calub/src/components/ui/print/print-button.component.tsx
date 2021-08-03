@@ -20,7 +20,9 @@ const PrintButtonComponent: React.FC = (_props) => {
       )}
       aria-label="Print"
       title="Print"
-      onClick={window.print}
+      onClick={() => {
+        window !== undefined && window.print();
+      }}
     >
       <FontAwesomeIcon icon={{ prefix: 'fas', iconName: 'print' }} fixedWidth /> Print
     </button>

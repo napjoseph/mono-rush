@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 
-import { SkillsItem } from '../../../models';
+import { SkillsItem, TagFilterStatus } from '../../../models';
 import { tagFiltersStore } from '../../../store';
 
 import classes from './skills-item.module.scss';
@@ -27,7 +27,7 @@ const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
             className={classes.bar}
             style={{ width }}
             title={titleText}
-            onClick={() => tagFilters.add(title)}
+            onClick={() => tagFilters.update(title, TagFilterStatus.ONLY_WITH)}
           >
             {title}
           </div>
