@@ -3,8 +3,6 @@ import React from 'react';
 import { SkillsConfig } from '../../../models';
 import SkillsCategoryItemComponent from './skills-category-item.component';
 
-import classes from './section.module.scss';
-
 interface SkillsSectionComponentProps {
   config: SkillsConfig;
 }
@@ -20,8 +18,8 @@ const SkillsSectionComponent: React.FC<SkillsSectionComponentProps> = ({ config 
   });
 
   return (
-    <div className={classes.container}>
-      <ul className={classes.list}>
+    <div className="text-sm text-gray-700">
+      <ul className="flex flex-col gap-2">
         {list.map((item, index) => {
           return (
             <li key={index}>

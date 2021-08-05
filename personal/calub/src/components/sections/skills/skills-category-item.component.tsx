@@ -1,9 +1,8 @@
 import React from 'react';
 
 import { SkillsCategory } from '../../../models';
-import SkillsItemComponent from './skills-item.component';
-
-import classes from './skills-category-item.module.scss';
+import SkillsItemBarComponent from './skills-item-bar.component';
+import SkillsItemPillComponent from './skills-item-pill.component';
 
 interface SkillsCategoryItemComponentProps {
   category: SkillsCategory;
@@ -29,13 +28,22 @@ const SkillsCategoryItemComponent: React.FC<SkillsCategoryItemComponentProps> = 
 
   return (
     <>
-      <div className={classes.container}>
-        <h3 className={classes.title}>{title}</h3>
+      <div className="print:avoid-page-break-inside">
+        <h3 className="font-medium uppercase">{title}</h3>
 
         {list && (
-          <ul className={classes.list}>
+          <ul className="mt-1 ml-4 print:flex print:flex-wrap print:gap-1">
             {list.map((item, index) => {
-              return <SkillsItemComponent key={index} item={item}></SkillsItemComponent>;
+              return (
+                <li key={index}>
+                  <div className="print:hidden">
+                    <SkillsItemBarComponent item={item}></SkillsItemBarComponent>
+                  </div>
+                  <div className="hidden print:inline">
+                    <SkillsItemPillComponent item={item}></SkillsItemPillComponent>
+                  </div>
+                </li>
+              );
             })}
           </ul>
         )}
