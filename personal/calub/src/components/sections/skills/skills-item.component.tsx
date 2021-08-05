@@ -27,13 +27,31 @@ const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
         <div className={classes.progress}>
           <motion.div
             className={classes.bar}
-            style={{ width }}
             title={titleText}
             onClick={() => {
               !sidebar.isFirstToggleFinished && sidebar.firstToggle();
               tagFilters.update(title, TagFilterStatus.ONLY_WITH);
             }}
-            whileHover={{ scale: 1.02 }}
+            initial="initial"
+            animate="visible"
+            whileHover="hover"
+            variants={{
+              initial: {
+                rotate: 0,
+                width: '0%',
+                opacity: 0
+              },
+              visible: {
+                opacity: 1,
+                transition: {
+                  duration: 0.5
+                },
+                width
+              },
+              hover: {
+                scale: 1.02
+              }
+            }}
           >
             {title}
           </motion.div>
