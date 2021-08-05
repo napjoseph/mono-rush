@@ -7,7 +7,7 @@
     @apply shadow w-full bg-gray-300 rounded-xl mb-2 cursor-pointer;
 
     .bar {
-      @apply bg-blue-600 text-xs leading-none py-1 text-left pl-3 text-white rounded-xl hover:font-semibold;
+      @apply bg-blue-600 text-xs leading-none py-1 text-left pl-3 text-white rounded-xl;
     }
   }
 }

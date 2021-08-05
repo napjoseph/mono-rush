@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 
 import { tagFiltersStore } from '../../../store';
 import { TagFilterStatus } from '../../../models';
@@ -22,7 +23,10 @@ const TagFilterItem: React.FC<TagFilterItemProps> = ({
 
   return (
     <>
-      <div className="flex items-center gap-1 px-3 py-1 text-xs text-center text-gray-100 bg-blue-700 rounded-xl">
+      <motion.div
+        className="flex items-center gap-1 px-3 py-1 text-xs text-center text-gray-100 bg-blue-700 rounded-xl"
+        whileHover={{ scale: 1.1 }}
+      >
         <div className="flex items-center">
           {showRemoveButton && (
             <span title="Remove Filter">
@@ -56,7 +60,7 @@ const TagFilterItem: React.FC<TagFilterItemProps> = ({
           )}
         </div>
         <span>{title}</span>
-      </div>
+      </motion.div>
     </>
   );
 };

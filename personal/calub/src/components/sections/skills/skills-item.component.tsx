@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
+import { motion } from 'framer-motion';
 
 import { SkillsItem, TagFilterStatus } from '../../../models';
 import { sidebarToggleStore, tagFiltersStore } from '../../../store';
@@ -24,7 +25,7 @@ const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
     <>
       <div className={classes.container}>
         <div className={classes.progress}>
-          <div
+          <motion.div
             className={classes.bar}
             style={{ width }}
             title={titleText}
@@ -32,9 +33,10 @@ const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
               !sidebar.isFirstToggleFinished && sidebar.firstToggle();
               tagFilters.update(title, TagFilterStatus.ONLY_WITH);
             }}
+            whileHover={{ scale: 1.02 }}
           >
             {title}
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

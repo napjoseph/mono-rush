@@ -8516,7 +8516,7 @@ packages:
     dev: false
 
   file:projects/calub-web.tgz:
-    resolution: {integrity: sha512-TrRP2VvSqPZ35cT8H0gPx2G/sN1pmRcDEBqT5uKU8AUH/azmsxwP2oFdYmdNrB6DkkyngmEQ5FmjgfDUJbhPIQ==, tarball: file:projects/calub-web.tgz}
+    resolution: {integrity: sha512-EzNQXL9df2XRcRKwCll4f1Q6SmQ05WZkxcMdxjJ5ErVO16YCSb7EHtOI3fZ+00XtuF2yK1gQkc8cSDiOh1tg8g==, tarball: file:projects/calub-web.tgz}
     name: '@rush-temp/calub-web'
     version: 0.0.0
     dependencies:
@@ -8543,6 +8543,7 @@ packages:
       eslint-config-next: 11.0.1_e9bd7c215b1c76b8938b8446225cb7ea
       eslint-config-prettier: 7.2.0_eslint@7.31.0
       eslint-plugin-react: 7.24.0_eslint@7.31.0
+      framer-motion: 4.1.17_react-dom@17.0.2+react@17.0.2
       fs-extra: 10.0.0
       identity-obj-proxy: 3.0.0
       jest: 27.0.6
