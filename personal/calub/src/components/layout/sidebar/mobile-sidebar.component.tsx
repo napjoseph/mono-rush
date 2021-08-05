@@ -49,7 +49,9 @@ const MobileSidebarComponent: React.FC = (_props) => {
               'min-w-0',
               'bg-gray-800',
               'text-gray-200',
-              'pointer-events-auto'
+              'pointer-events-auto',
+              'overflow-auto',
+              'with-scrollbars'
             )}
           >
             <SidebarContentComponent />

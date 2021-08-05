@@ -25,11 +25,23 @@ const updateTag = (tags: TagFilter[], value: string, status: TagFilterStatus): T
   }));
 };
 
+export enum TagFilterType {
+  AVAILABLE = 'available',
+  INCLUDED = 'included',
+  EXCLUDED = 'excluded'
+}
+
 export interface TagFiltersStore {
   tags: TagFilter[];
   add: (value: string) => void;
   remove: (value: string) => void;
   update: (value: string, status: TagFilterStatus) => void;
+  isAvailableTagsExpanded: boolean;
+  isIncludedTagsExpanded: boolean;
+  isExcludedTagsExpanded: boolean;
+  toggleAvailableTagsExpanded: () => void;
+  toggleIncludedTagsExpanded: () => void;
+  toggleExcludedTagsExpanded: () => void;
 }
 
 export interface TagFiltersStoreComputed {
@@ -49,6 +61,18 @@ export const tagFiltersStore = proxyWithComputed<TagFiltersStore, TagFiltersStor
     },
     update: (value: string, status: TagFilterStatus) => {
       tagFiltersStore.tags = updateTag(tagFiltersStore.tags, value, status);
+    },
+    isAvailableTagsExpanded: false,
+    isIncludedTagsExpanded: false,
+    isExcludedTagsExpanded: false,
+    toggleAvailableTagsExpanded: () => {
+      tagFiltersStore.isAvailableTagsExpanded = !tagFiltersStore.isAvailableTagsExpanded;
+    },
+    toggleIncludedTagsExpanded: () => {
+      tagFiltersStore.isIncludedTagsExpanded = !tagFiltersStore.isIncludedTagsExpanded;
+    },
+    toggleExcludedTagsExpanded: () => {
+      tagFiltersStore.isExcludedTagsExpanded = !tagFiltersStore.isExcludedTagsExpanded;
     }
   },
   {

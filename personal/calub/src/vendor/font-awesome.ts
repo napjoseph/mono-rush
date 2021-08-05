@@ -2,16 +2,20 @@ import { faBuilding, faCalendarAlt, faEnvelope } from '@fortawesome/free-regular
 import {
   faBars,
   faBriefcase,
+  faCaretRight,
   faCertificate,
   faGlobeAsia,
   faGraduationCap,
   faHeart,
   faLayerGroup,
   faMapMarkerAlt,
+  faMinusCircle,
   faMobileAlt,
+  faPeopleCarry,
+  faPlusCircle,
   faPrint,
   faTimes,
-  faPeopleCarry,
+  faTimesCircle,
   faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -30,16 +34,20 @@ library.add(faBuilding, faCalendarAlt, faEnvelope);
 library.add(
   faBars,
   faBriefcase,
+  faCaretRight,
   faCertificate,
   faGlobeAsia,
   faGraduationCap,
   faHeart,
   faLayerGroup,
   faMapMarkerAlt,
+  faMinusCircle,
   faMobileAlt,
+  faPeopleCarry,
+  faPlusCircle,
   faPrint,
   faTimes,
-  faPeopleCarry,
+  faTimesCircle,
   faUsers
 );
 
