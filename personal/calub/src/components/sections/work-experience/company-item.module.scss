@@ -3,7 +3,7 @@
 }
 
 .line {
-  @apply absolute top-3 left-3 -ml-px h-full w-0.5 bg-gray-200;
+  @apply absolute top-3 left-3 -ml-px border-l-2 h-full border-gray-300;
 }
 
 .content {
