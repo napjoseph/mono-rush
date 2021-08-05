@@ -66,7 +66,8 @@ const LayoutComponent: React.FC = (props) => {
       <PortalComponent>
         <div
           className={joinClassNames(
-            'transition-all duration-100 ease-in-out',
+            sidebar.show ? 'invisible lg:visible' : '',
+            'transition duration-100 ease-in-out',
             'fixed',
             'bottom-4',
             'right-4',
