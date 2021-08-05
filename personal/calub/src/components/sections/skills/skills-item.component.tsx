@@ -2,7 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 
 import { SkillsItem, TagFilterStatus } from '../../../models';
-import { tagFiltersStore } from '../../../store';
+import { sidebarToggleStore, tagFiltersStore } from '../../../store';
 
 import classes from './skills-item.module.scss';
 
@@ -12,6 +12,7 @@ interface SkillsItemComponentProps {
 
 const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
   const tagFilters = useSnapshot(tagFiltersStore);
+  const sidebar = useSnapshot(sidebarToggleStore);
 
   const ratingMax = 10;
 
@@ -27,7 +28,10 @@ const SkillsItemComponent: React.FC<SkillsItemComponentProps> = ({ item }) => {
             className={classes.bar}
             style={{ width }}
             title={titleText}
-            onClick={() => tagFilters.update(title, TagFilterStatus.ONLY_WITH)}
+            onClick={() => {
+              !sidebar.isFirstToggleFinished && sidebar.firstToggle();
+              tagFilters.update(title, TagFilterStatus.ONLY_WITH);
+            }}
           >
             {title}
           </div>

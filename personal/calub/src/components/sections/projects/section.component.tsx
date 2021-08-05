@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 
-import { ProjectsConfig } from '../../../models';
+import { ProjectsConfig, ProjectsItem } from '../../../models';
+import { tagFiltersStore } from '../../../store';
+import hasAnyTag from '../../../utils/has-any-tag';
 import ProjectsItemComponent from './projects-item.component';
 
 interface ProjectsSectionComponentProps {
@@ -8,13 +11,23 @@ interface ProjectsSectionComponentProps {
 }
 
 const ProjectsSectionComponent: React.FC<ProjectsSectionComponentProps> = ({ config }) => {
+  const tagFilters = useSnapshot(tagFiltersStore);
+
   const { items } = config;
+
+  let projects: ProjectsItem[] = items;
+  if (tagFilters.mustNotHaveTags.length !== 0) {
+    projects = projects.filter((item) => !hasAnyTag(item.tags, tagFilters.mustNotHaveTags));
+  }
+  if (tagFilters.onlyWithTags.length !== 0) {
+    projects = items.filter((item) => hasAnyTag(item.tags, tagFilters.onlyWithTags));
+  }
 
   return (
     <>
       <div className="text-sm text-gray-700">
-        <ul className="list-square ml-4">
-          {items.map((item, index) => {
+        <ul className="ml-4 list-square">
+          {projects.map((item, index) => {
             return (
               <li key={index}>
                 <ProjectsItemComponent item={item} />

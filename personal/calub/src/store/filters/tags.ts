@@ -63,8 +63,8 @@ export const tagFiltersStore = proxyWithComputed<TagFiltersStore, TagFiltersStor
       tagFiltersStore.tags = updateTag(tagFiltersStore.tags, value, status);
     },
     isAvailableTagsExpanded: false,
-    isIncludedTagsExpanded: false,
-    isExcludedTagsExpanded: false,
+    isIncludedTagsExpanded: true,
+    isExcludedTagsExpanded: true,
     toggleAvailableTagsExpanded: () => {
       tagFiltersStore.isAvailableTagsExpanded = !tagFiltersStore.isAvailableTagsExpanded;
     },

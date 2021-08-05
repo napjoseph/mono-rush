@@ -8,7 +8,7 @@ interface TagFiltersSectionProps {
   title?: string;
 }
 
-const TagFiltersSection: React.FC<TagFiltersSectionProps> = ({ title = 'Tags' }) => {
+const TagFiltersSection: React.FC<TagFiltersSectionProps> = ({ title = 'Filter Tags' }) => {
   const tagFilters = useSnapshot(tagFiltersStore);
 
   return (

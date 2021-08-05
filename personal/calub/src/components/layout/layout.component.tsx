@@ -10,12 +10,6 @@ import SidebarToggleButtonComponent from './sidebar/sidebar-toggle-button.compon
 import { sidebarToggleStore } from '../../store';
 import SidebarContentComponent from './sidebar/sidebar-content.component';
 
-/**
- * When set to true, this shows the sidebar.
- * This is still experimental so this is turned off in production.
- */
-const SHOW_SIDEBAR = process.env.NEXT_PUBLIC_SHOW_SIDEBAR === 'true';
-
 const LayoutComponent: React.FC = (props) => {
   const sidebar = useSnapshot(sidebarToggleStore);
 
@@ -69,33 +63,31 @@ const LayoutComponent: React.FC = (props) => {
         </div>
       </div>
 
-      {SHOW_SIDEBAR ? (
-        <PortalComponent>
-          <div
-            className={joinClassNames(
-              'transition-all duration-100 ease-in-out',
-              'fixed',
-              'bottom-4',
-              'right-4',
-              'print:hidden'
-            )}
-          >
-            <SidebarToggleButtonComponent
-              icon={
-                sidebar.show
-                  ? { prefix: 'fas', iconName: 'times' }
-                  : { prefix: 'fas', iconName: 'bars' }
-              }
-              title={sidebar.show ? 'Close Sidebar' : 'Open Sidebar'}
-              onClick={sidebar.show ? sidebar.close : sidebar.open}
-            />
-          </div>
+      <PortalComponent>
+        <div
+          className={joinClassNames(
+            'transition-all duration-100 ease-in-out',
+            'fixed',
+            'bottom-4',
+            'right-4',
+            'print:hidden'
+          )}
+        >
+          <SidebarToggleButtonComponent
+            icon={
+              sidebar.show
+                ? { prefix: 'fas', iconName: 'times' }
+                : { prefix: 'fas', iconName: 'bars' }
+            }
+            title={sidebar.show ? 'Close Sidebar' : 'Open Sidebar'}
+            onClick={sidebar.show ? sidebar.close : sidebar.open}
+          />
+        </div>
 
-          <div className="lg:hidden">
-            <MobileSidebarComponent />
-          </div>
-        </PortalComponent>
-      ) : null}
+        <div className="lg:hidden">
+          <MobileSidebarComponent />
+        </div>
+      </PortalComponent>
     </>
   );
 };

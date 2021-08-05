@@ -5,6 +5,10 @@ export interface SidebarToggleStore {
   toggle: () => void;
   open: () => void;
   close: () => void;
+
+  // This creates a side-effect that opens the sidebar once per session.
+  isFirstToggleFinished: boolean;
+  firstToggle: () => void;
 }
 
 export const sidebarToggleStore = proxy<SidebarToggleStore>({
@@ -17,5 +21,11 @@ export const sidebarToggleStore = proxy<SidebarToggleStore>({
   },
   close: () => {
     sidebarToggleStore.show = false;
+  },
+  isFirstToggleFinished: false,
+  firstToggle: () => {
+    if (sidebarToggleStore.isFirstToggleFinished) return;
+    sidebarToggleStore.open();
+    sidebarToggleStore.isFirstToggleFinished = true;
   }
 });

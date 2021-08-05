@@ -198,10 +198,6 @@ sections:
                 rating: 6
                 meta:
                   show: true
-              - title: 'Angular JS'
-                rating: 4
-                meta:
-                  show: true
               - title: 'Angular'
                 rating: 8
                 meta:
@@ -250,7 +246,7 @@ sections:
                 rating: 9
                 meta:
                   show: true
-              - title: 'Google Cloud SQL'
+              - title: 'Cloud SQL'
                 rating: 9
                 meta:
                   show: true
@@ -313,8 +309,8 @@ sections:
               - 'Google Cloud Platform'
               - 'Cloud SQL'
               - 'BigQuery'
-              - 'Data Studio'
-              - 'Apps Script'
+              - 'Google Data Studio'
+              - 'Google Apps Script'
               - 'Bazel'
               - 'Protocol Buffers'
             roles:
