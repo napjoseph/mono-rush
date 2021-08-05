@@ -1,10 +1,10 @@
 export interface DividerLogoConfig {
-  className?: string;
   fill?: string;
+  link?: string;
+  linkTitle?: string;
 }
 
 export const DEFAULT_DIVIDER_LOGO_CONFIG: DividerLogoConfig = {
-  className: 'h-8 w-8 text-gray-500',
   fill: '#a8abaf'
 };
 

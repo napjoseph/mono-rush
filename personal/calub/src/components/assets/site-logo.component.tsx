@@ -1,33 +1,36 @@
 import React from 'react';
 
-import classes from './logo.module.scss';
-
-interface LogoComponentProps {
-  overrideClassName?: string;
+interface SiteLogoProps {
   fill?: string;
+  height?: string;
+  width?: string;
+  stroke?: string;
+  preserveAspectRatio?: string;
 }
 
-const LogoComponent: React.FC<LogoComponentProps> = ({
-  overrideClassName = classes.default,
-  fill = '#a8abaf'
+const SiteLogo: React.FC<SiteLogoProps> = ({
+  fill = '#a8abaf',
+  height = '100%',
+  width = '100%',
+  stroke = 'none',
+  preserveAspectRatio = 'xMidYMid meet'
 }) => {
   return (
     <>
       <svg
-        className={overrideClassName}
-        version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        height="437.000000pt"
+        version="1.1"
+        width={width}
+        height={height}
         viewBox="0 0 437.000000 437.000000"
-        preserveAspectRatio="xMidYMid meet"
+        preserveAspectRatio={preserveAspectRatio}
       >
         <g
           transform="translate(0.000000,437.000000) scale(0.100000,-0.100000)"
-          fill="none"
-          stroke="none"
+          fill={fill}
+          stroke={stroke}
         >
           <path
-            fill={fill}
             d="M2105 4060 c-125 -73 -266 -155 -440 -255 -241 -138 -482 -278 -655
 -378 -85 -49 -230 -132 -322 -185 l-168 -96 0 -962 0 -962 42 -25 c58 -32 350
 -201 471 -270 53 -32 140 -82 192 -112 52 -30 139 -80 193 -112 53 -31 153
@@ -64,4 +67,4 @@ m-390 -323 c20 -13 82 -50 137 -82 55 -32 144 -84 197 -115 53 -32 111 -65
   );
 };
 
-export default LogoComponent;
+export default SiteLogo;

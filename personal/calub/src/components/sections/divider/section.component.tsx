@@ -1,6 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-import LogoComponent from '../../assets/logo.component';
+import SiteLogoComponent from '../../assets/site-logo.component';
 import {
   DividerConfig,
   DEFAULT_DIVIDER_CONFIG,
@@ -24,9 +25,40 @@ const DividerSectionComponent: React.FC<DividerSectionComponentProps> = ({
           <div className="w-full border-t-2 border-gray-300"></div>
         </div>
         <div className="relative flex justify-center">
-          <span className="bg-white px-2 text-gray-500">
-            <LogoComponent overrideClassName={logoConfig.className} fill={logoConfig.fill} />
-          </span>
+          <a
+            href={logoConfig.link || ''}
+            title={logoConfig.linkTitle || ''}
+            className="px-2 bg-white"
+          >
+            <motion.div
+              className="px-2 text-gray-500 bg-white"
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+              variants={{
+                hidden: {
+                  rotate: 0,
+                  opacity: 0
+                },
+                visible: {
+                  rotate: 180,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.3
+                  }
+                },
+                hover: {
+                  rotate: 0,
+                  scale: 1.2,
+                  transition: {
+                    duration: 0.3
+                  }
+                }
+              }}
+            >
+              <SiteLogoComponent fill={logoConfig.fill} height="32" width="32" />
+            </motion.div>
+          </a>
         </div>
       </div>
     </>

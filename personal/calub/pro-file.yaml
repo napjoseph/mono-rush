@@ -49,6 +49,10 @@ sections:
       displayHeader: false
     content:
       type: 'divider'
+      value:
+        logo:
+          link: 'https://napjose.ph'
+          linkTitle: 'Go to personal site of Nap Joseph Calub'
   - title: 'Work Experience'
     icon:
       prefix: 'fas'
