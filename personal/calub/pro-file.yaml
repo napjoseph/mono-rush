@@ -334,6 +334,7 @@ sections:
               - 'Framer Motion'
               - 'Git'
               - 'GitHub Pages'
+              - 'js-yaml'
               - 'Next.js'
               - 'React'
               - 'Rush'
@@ -380,6 +381,7 @@ sections:
               - 'Google Apps Script'
               - 'Google Cloud Platform'
               - 'Google Data Studio'
+              - 'gRPC'
               - 'Mercurial'
               - 'MySQL'
               - 'PostgreSQL'
@@ -405,6 +407,7 @@ sections:
               - 'Go'
               - 'Google Chart API'
               - 'Google Cloud Platform'
+              - 'gRPC'
               - 'Material Design'
               - 'Mercurial'
               - 'MySQL'
@@ -418,6 +421,24 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
+          - title: 'diksiyonaryo-ph scraper'
+            linkTo: 'https://github.com/njncalub/diksiyonaryo-ph'
+            meta:
+              show: true
+            dates:
+              start: '2018-04'
+              end: '2018-05'
+            tags:
+              - 'apistar'
+              - 'docopt'
+              - 'gunicorn'
+              - 'Heroku'
+              - 'MongoDB'
+              - 'pipfile'
+              - 'Python'
+              - 'robobrowser'
+            roles:
+              - "I created a command-line utility to scrape and analyze the data from KWF's Diksiyonaryo (filipino dictionary) website and to enable more advanced search queries."
           - title: 'Assets Handover Management Dashboard'
             meta:
               show: true
