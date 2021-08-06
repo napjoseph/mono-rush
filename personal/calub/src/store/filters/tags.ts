@@ -6,7 +6,9 @@ const filterTags = (tags: TagFilter[], status: TagFilterStatus): string[] => {
   return tags
     .filter((tag) => tag.status === status)
     .map((tag) => tag.value)
-    .sort();
+    .sort((a, b) => {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
 };
 
 const addTag = (tags: TagFilter[], value: string): TagFilter[] => {

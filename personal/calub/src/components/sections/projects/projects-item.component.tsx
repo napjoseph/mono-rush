@@ -37,35 +37,39 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
             item.title
           )}
         </h3>
-        <div className="text-xs text-gray-500">
-          <span>
+        <div className="inline text-xs text-gray-500">
+          <span className="inline">
             <span>{formatDate(item.dates.start)}</span>
             <span>{datesTo}</span>
             <span>{formatDate(item.dates.end)}</span>
           </span>
 
-          <span className="mx-1">|</span>
+          <span className="inline mx-1">|</span>
 
           {item.tags && (
             <>
               <span>{tagsPrefix}</span>
-              <ul className="inline break-words">
-                {[...item.tags].sort().map((tag, index) => {
-                  return (
-                    <li key={index} className="inline">
-                      <span
-                        className="transition duration-150 ease-in-out cursor-pointer hover:font-semibold"
-                        onClick={() => {
-                          !sidebarToggle.isFirstToggleFinished && sidebarToggle.firstToggle();
-                          tagFilters.update(tag, TagFilterStatus.ONLY_WITH);
-                        }}
-                      >
-                        {tag}
-                      </span>
-                      {index !== item.tags.length - 1 && <span className="mr-1">,</span>}
-                    </li>
-                  );
-                })}
+              <ul className="inline">
+                {[...item.tags]
+                  .sort((a, b) => {
+                    return a.toLowerCase().localeCompare(b.toLowerCase());
+                  })
+                  .map((tag, index) => {
+                    return (
+                      <li key={index} className="inline-block">
+                        <span
+                          className="cursor-pointer color-link"
+                          onClick={() => {
+                            !sidebarToggle.isFirstToggleFinished && sidebarToggle.firstToggle();
+                            tagFilters.update(tag, TagFilterStatus.ONLY_WITH);
+                          }}
+                        >
+                          {tag}
+                        </span>
+                        {index !== item.tags.length - 1 && <span className="mr-1">,</span>}
+                      </li>
+                    );
+                  })}
               </ul>
             </>
           )}
