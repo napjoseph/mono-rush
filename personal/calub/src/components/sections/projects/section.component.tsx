@@ -36,15 +36,22 @@ const ProjectsSectionComponent: React.FC<ProjectsSectionComponentProps> = ({ con
   return (
     <>
       <div className="text-sm text-gray-700">
-        <ul className="ml-4 list-square">
-          {projects.map((item, index) => {
-            return (
-              <li key={index}>
-                <ProjectsItemComponent item={item} />
-              </li>
-            );
-          })}
-        </ul>
+        {projects.length === 0 && (
+          <span className="w-full text-xs">
+            No projects found. Please update the selected filters on the sidebar.{' '}
+          </span>
+        )}
+        {projects.length > 0 && (
+          <ul className="ml-4 list-square">
+            {projects.map((item, index) => {
+              return (
+                <li key={index}>
+                  <ProjectsItemComponent item={item} />
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
     </>
   );
