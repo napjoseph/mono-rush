@@ -7,6 +7,7 @@ export interface ProjectsConfig {
 export interface ProjectsItem {
   title: string;
   meta?: ProjectsItemMeta;
+  linkTo?: string;
   dates: {
     start: string;
     end: string;

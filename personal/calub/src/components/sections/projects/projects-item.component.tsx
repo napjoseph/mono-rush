@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 
 import { ProjectsItem, TagFilterStatus } from '../../../models';
 import formatDate from '../../../utils/format-date';
-import { tagFiltersStore } from '../../../store';
+import { sidebarToggleStore, tagFiltersStore } from '../../../store';
 import joinClassNames from '../../../utils/join-class-names';
 
 interface ProjectsItemComponentProps {
@@ -18,6 +18,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
   isRelatedProject = false
 }) => {
   const tagFilters = useSnapshot(tagFiltersStore);
+  const sidebarToggle = useSnapshot(sidebarToggleStore);
 
   const tagsPrefix = 'Technologies used: ';
   const datesTo = ' to ';
@@ -28,7 +29,13 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
         <h3
           className={joinClassNames('font-medium text-gray-900', isRelatedProject ? 'text-xs' : '')}
         >
-          {item.title}
+          {item.linkTo ? (
+            <a href={item.linkTo} className="color-link">
+              {item.title}
+            </a>
+          ) : (
+            item.title
+          )}
         </h3>
         <div className="text-xs text-gray-500">
           <span>
@@ -43,12 +50,15 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
             <>
               <span>{tagsPrefix}</span>
               <ul className="inline break-words">
-                {item.tags.map((tag, index) => {
+                {[...item.tags].sort().map((tag, index) => {
                   return (
                     <li key={index} className="inline">
                       <span
                         className="transition duration-150 ease-in-out cursor-pointer hover:font-semibold"
-                        onClick={() => tagFilters.update(tag, TagFilterStatus.ONLY_WITH)}
+                        onClick={() => {
+                          !sidebarToggle.isFirstToggleFinished && sidebarToggle.firstToggle();
+                          tagFilters.update(tag, TagFilterStatus.ONLY_WITH);
+                        }}
                       >
                         {tag}
                       </span>

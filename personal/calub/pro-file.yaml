@@ -206,6 +206,14 @@ sections:
                 rating: 8
                 meta:
                   show: true
+              - title: 'React'
+                rating: 8
+                meta:
+                  show: true
+              - title: 'NextJS'
+                rating: 8
+                meta:
+                  show: true
               - title: 'Sass'
                 rating: 8
                 meta:
@@ -230,7 +238,7 @@ sections:
                 rating: 2
                 meta:
                   show: true
-          - title: 'SCMS'
+          - title: 'Source Code Management'
             meta:
               show: true
             items:
@@ -240,6 +248,14 @@ sections:
                   show: true
               - title: 'Mercurial'
                 rating: 10
+                meta:
+                  show: true
+              - title: 'Bazel'
+                rating: 7
+                meta:
+                  show: true
+              - title: 'Rush'
+                rating: 7
                 meta:
                   show: true
           - title: 'Databases'
@@ -290,6 +306,10 @@ sections:
                 rating: 10
                 meta:
                   show: true
+              - title: 'Figma'
+                rating: 6
+                meta:
+                  show: true
               - title: 'Sketch'
                 rating: 4
                 meta:
@@ -302,6 +322,50 @@ sections:
       type: 'projects'
       value:
         items:
+          - title: 'pro-file'
+            linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/calub'
+            meta:
+              show: true
+            dates:
+              start: '2021-07'
+              end: '2021-08'
+            tags:
+              - 'Font Awesome'
+              - 'Framer Motion'
+              - 'Git'
+              - 'GitHub Pages'
+              - 'Next.js'
+              - 'React'
+              - 'Rush'
+              - 'Sass'
+              - 'Tailwind CSS'
+              - 'TypeScript'
+              - 'Valtio'
+            roles:
+              - 'I created a tool that can generate shareable and interactive online portfolios using Next.js and Tailwind CSS.'
+          - title: 'Personal Website'
+            linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/napjoseph'
+            meta:
+              show: true
+            dates:
+              start: '2021-07'
+              end: '2021-08'
+            tags:
+              - 'Chakra UI'
+              - 'Font Awesome'
+              - 'Framer Motion'
+              - 'Git'
+              - 'GitHub Pages'
+              - 'MDX'
+              - 'next-mdx-remote'
+              - 'Next.js'
+              - 'React'
+              - 'Remark'
+              - 'Rush'
+              - 'TypeScript'
+              - 'Utterances'
+            roles:
+              - 'I created my personal website using open-source tools such as Next.js and Chakra UI.'
           - title: 'Network Tools and Dashboards'
             meta:
               show: true
@@ -309,14 +373,18 @@ sections:
               start: '2019-07'
               end: '2021-05'
             tags:
-              - 'Go'
-              - 'Google Cloud Platform'
-              - 'Cloud SQL'
-              - 'BigQuery'
-              - 'Google Data Studio'
-              - 'Google Apps Script'
               - 'Bazel'
+              - 'BigQuery'
+              - 'Cloud SQL'
+              - 'Go'
+              - 'Google Apps Script'
+              - 'Google Cloud Platform'
+              - 'Google Data Studio'
+              - 'Mercurial'
+              - 'MySQL'
+              - 'PostgreSQL'
               - 'Protocol Buffers'
+              - 'Sass'
             roles:
               - 'I developed tools using Go to send email alerts for non-compliant network devices.'
               - 'I designed dashboards using Data Studio to visualize all the devices of the network taken from BigQuery, Cloud SQL, and sometimes Google Sheets.'
@@ -330,15 +398,19 @@ sections:
               start: '2018-05'
               end: '2019-07'
             tags:
-              - 'Go'
-              - 'TypeScript'
               - 'Angular'
-              - 'Google Cloud Platform'
-              - 'Cloud SQL'
-              - 'BigQuery'
-              - 'Google Chart API'
               - 'Bazel'
+              - 'BigQuery'
+              - 'Cloud SQL'
+              - 'Go'
+              - 'Google Chart API'
+              - 'Google Cloud Platform'
+              - 'Material Design'
+              - 'Mercurial'
+              - 'MySQL'
               - 'Python'
+              - 'Sass'
+              - 'TypeScript'
             roles:
               - "I maintained a legacy dashboard for visualizing and managing the lifecycle of devices in our client's enterprise network."
               - 'I refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
@@ -353,17 +425,18 @@ sections:
               start: '2017-01'
               end: '2017-09'
             tags:
-              - 'Python'
-              - 'Django'
+              - 'Bootstrap'
               - 'Django Allauth'
-              - 'PostgreSQL'
-              - 'Google Maps API'
               - 'django-excel'
               - 'django-excel'
               - 'django-import-export'
+              - 'Django'
               - 'editpyxl'
+              - 'Git'
+              - 'Google Maps API'
               - 'openpyxl'
-              - 'Bootstrap'
+              - 'PostgreSQL'
+              - 'Python'
             roles:
               - 'I developed a web application for handling the splitting, handing over, and disposal program of telecommunication assets to external shareholders.'
               - 'I created a utility tool to import, clean, and process huge XLSX files to manage the list of assets information.'
@@ -377,20 +450,39 @@ sections:
               start: '2016-02'
               end: '2016-05'
             tags:
-              - 'Python'
-              - 'Django'
-              - 'Django REST Framework'
+              - 'Bootstrap'
               - 'Django Allauth'
               - 'Django MPTT'
-              - 'Recaptcha2'
+              - 'Django REST Framework'
+              - 'Django'
+              - 'Git'
               - 'PostgreSQL'
-              - 'Bootstrap'
+              - 'Python'
+              - 'Recaptcha2'
             roles:
               - 'I developed and deployed a members information system for a local networking group.'
               - "I used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
             relatedTo:
               - type: 'work-experience'
                 key: 'Self-Employed'
+          - title: 'ResuMaker'
+            meta:
+              show: true
+            dates:
+              start: '2016-01'
+              end: '2016-02'
+            tags:
+              - 'Bootstrap'
+              - 'Git'
+              - 'GitHub Pages'
+              - 'Handlebars.js'
+              - 'html2canvas'
+              - 'html2pdf'
+              - 'HTML5'
+              - 'jspdf'
+            roles:
+              - 'I developed and deployed a members information system for a local networking group.'
+              - "I used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
           - title: 'Engage - Employee Recognition Platform'
             meta:
               show: true
@@ -398,13 +490,16 @@ sections:
               start: '2015-09'
               end: '2016-01'
             tags:
-              - 'Python'
-              - 'Django'
-              - 'Django REST Framework'
-              - 'Django OAuth Toolkit'
               - 'AngularJS'
-              - 'Sentry'
+              - 'Django OAuth Toolkit'
+              - 'Django REST Framework'
+              - 'Django'
+              - 'Docker'
               - 'Jenkins'
+              - 'Mercurial'
+              - 'PostgreSQL'
+              - 'Python'
+              - 'Sentry'
             roles:
               - 'I managed a team to refactor and redesign the internal version of the web application for commercial use.'
               - 'I worked directly with the project manager and product owners regarding the project requirements and specifications.'
@@ -418,14 +513,18 @@ sections:
               start: '2015-03'
               end: '2015-10'
             tags:
-              - 'Python'
-              - 'Django'
+              - 'CoffeeScript'
               - 'Django REST Framework'
-              - 'Titanium'
-              - 'Redis'
-              - 'Redis Cluster'
-              - 'Instagram API'
+              - 'Django'
               - 'Google API'
+              - 'Instagram API'
+              - 'Mercurial'
+              - 'Parse.com API'
+              - 'Python'
+              - 'Redis Cluster'
+              - 'Redis'
+              - 'Sass'
+              - 'Titanium'
               - 'Twitter API'
             roles:
               - 'I worked with a team to create iOS and Android applications to buy Twitter, Instagram, and YouTube followers.'
@@ -440,15 +539,18 @@ sections:
               start: '2015-07'
               end: '2015-10'
             tags:
-              - 'Python'
-              - 'Django'
+              - 'CoffeeScript'
               - 'Django REST Framework'
-              - 'Parse'
-              - 'Redis'
-              - 'Instagram API'
+              - 'Django'
               - 'Google API'
-              - 'Twitter API'
+              - 'Instagram API'
+              - 'Mercurial'
+              - 'Parse'
+              - 'Python'
+              - 'Redis'
+              - 'Sass'
               - 'Titanium'
+              - 'Twitter API'
             roles:
               - 'I helped fix bugs on the Django backend and created new views for a mobile RSS feed reader.'
             relatedTo:
@@ -461,12 +563,15 @@ sections:
               start: '2014-10'
               end: '2014-11'
             tags:
-              - 'Semantic UI'
-              - 'NodeJS'
-              - 'Python'
-              - 'Django'
-              - 'openpyxl'
               - 'django-import-export'
+              - 'Django'
+              - 'Mercurial'
+              - 'NodeJS'
+              - 'openpyxl'
+              - 'PostgreSQL'
+              - 'Python'
+              - 'Sass'
+              - 'Semantic UI'
             roles:
               - 'I used NodeJS for sending real-time push notifications to connected clients.'
               - 'I implemented an importer automatically fetch and clean the map data from the World Bank API to show different color ranges to an interactive map.'
@@ -480,10 +585,13 @@ sections:
               start: '2014-10'
               end: '2014-11'
             tags:
-              - 'Python'
-              - 'Django'
-              - 'openpyxl'
               - 'django-import-export'
+              - 'Django'
+              - 'Grunt'
+              - 'Mercurial'
+              - 'openpyxl'
+              - 'PostgreSQL'
+              - 'Python'
             roles:
               - 'Implemented map data showing different color ranges based on existing data from the World Bank API.'
             relatedTo:
@@ -496,8 +604,11 @@ sections:
               start: '2014-09'
               end: '2015-01'
             tags:
+              - 'CoffeeScript'
               - 'Facebook API'
+              - 'Mercurial'
               - 'Parse.com API'
+              - 'Sass'
               - 'Titanium'
             roles:
               - 'I used Titanium to create a HIIT circuit training application for iOS and Android.'
@@ -512,14 +623,19 @@ sections:
               start: '2014-04'
               end: '2014-09'
             tags:
+              - 'AngularJS'
+              - 'Apache Solr'
+              - 'ChaplinJS'
+              - 'Django Haystack'
               - 'Django'
               - 'Flask'
-              - 'ChaplinJS'
-              - 'AngularJS'
-              - 'PostgreSQL'
-              - 'MongoDB'
               - 'Git'
+              - 'Grunt'
+              - 'Gulp'
               - 'Mercurial'
+              - 'MongoDB'
+              - 'PostgreSQL'
+              - 'Sass'
             roles:
               - 'I migrated a legacy system using Django 1.4 to the latest supported version.'
               - 'I implemented the formatting of chapters to an original story/fanfic publication site.'
@@ -527,17 +643,59 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
-          - title: 'JPLAUREL AIS'
+          - title: 'Theodore Rosebelt WordPress Theme'
+            meta:
+              show: true
+            dates:
+              start: '2013-05'
+              end: '2013-06'
+            tags:
+              - 'PHP'
+              - 'WordPress'
+            roles:
+              - 'I created a WordPress theme for an online flower shop as part of a workshop.'
+          - title: 'The Hidden Cloud Academy for the Overlooked Skills'
+            meta:
+              show: true
+            dates:
+              start: '2012-11'
+              end: '2014-02'
+            tags:
+              - 'django-tastypie'
+              - 'Django'
+              - 'Git'
+              - 'HTML5'
+              - 'JavaScript'
+              - 'LimeJS'
+              - 'NimbusBase'
+              - 'SQLite'
+              - 'PythonAnywhere'
+              - 'REST'
+              - 'south'
+            roles:
+              - 'As part of my undergraduate thesis, I created a project incorporating game-based learning with existing cloud services to improve reading speed and comprehension.'
+          - title: 'JPLAUREL Academic Information System'
             meta:
               show: true
             dates:
               start: '2012-06'
               end: '2013-03'
             tags:
-              - 'Visual C#'
+              - 'Crystal Reports'
               - 'MySQL'
+              - 'Visual C#'
             roles:
               - 'I worked with a team to create an Academic Information System (AIS) for the Jose P. Laurel Sr. Elementary School.'
+          - title: 'The King’s Number'
+            meta:
+              show: true
+            dates:
+              start: '2011-08'
+              end: '2011-10'
+            tags:
+              - 'C++'
+            roles:
+              - 'I created a number game incorporating the set theory of discrete mathematics, presented as part of the requirements for the MATH422C course.'
   - title: 'Educational Background'
     meta:
       avoidPageBreak: true
