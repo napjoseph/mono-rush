@@ -18,7 +18,7 @@ sections:
         image:
           show: true
           source: 'static'
-          path: '/profile-pictures/profile-300x300.jpg'
+          path: '/profile-pictures/professional-300x300.jpg'
         links:
           - title: 'Website'
             value: 'napjose.ph'
