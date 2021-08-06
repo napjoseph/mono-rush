@@ -1,3 +1,5 @@
+import { SectionType } from './section-types';
+
 export interface ProjectsConfig {
   items: ProjectsItem[];
 }
@@ -11,8 +13,14 @@ export interface ProjectsItem {
   };
   tags: string[];
   roles: string[];
+  relatedTo: ProjectsItemRelationship[];
 }
 
 export interface ProjectsItemMeta {
   show?: boolean;
+}
+
+export interface ProjectsItemRelationship {
+  type: SectionType;
+  key: string;
 }

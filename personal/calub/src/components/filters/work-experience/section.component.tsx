@@ -15,14 +15,19 @@ const WorkExperienceFiltersSection: React.FC<WorkExperienceFiltersSectionProps> 
 
   return (
     <>
-      <div className="flex flex-col gap-2 text-sm">
+      <div className="flex flex-col gap-3 text-sm">
         <h3 className="font-semibold uppercase">{title}</h3>
-
-        <div className="ml-2">
+        <div className="flex flex-col gap-4 ml-2">
           <ToggleComponent
-            text="Show Canada Classification?"
+            text="Show Canada Classification"
             checked={snap.showCanadaClassification}
             toggle={snap.toggleCanadaClassification}
+          />
+
+          <ToggleComponent
+            text="Show Related Projects"
+            checked={snap.showRelatedProjects}
+            toggle={snap.toggleRelatedProjects}
           />
         </div>
       </div>

@@ -320,6 +320,9 @@ sections:
             roles:
               - 'I developed tools using Go to send email alerts for non-compliant network devices.'
               - 'I designed dashboards using Data Studio to visualize all the devices of the network taken from BigQuery, Cloud SQL, and sometimes Google Sheets.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
           - title: 'Lifecycle Management Dashboard'
             meta:
               show: true
@@ -340,6 +343,9 @@ sections:
               - "I maintained a legacy dashboard for visualizing and managing the lifecycle of devices in our client's enterprise network."
               - 'I refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
               - 'I upgraded the old task runners using Python to use Go App Engine Cron and Cloud Tasks.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
           - title: 'Assets Handover Management Dashboard'
             meta:
               show: true
@@ -361,6 +367,9 @@ sections:
             roles:
               - 'I developed a web application for handling the splitting, handing over, and disposal program of telecommunication assets to external shareholders.'
               - 'I created a utility tool to import, clean, and process huge XLSX files to manage the list of assets information.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Bell Telecommunication Phils, Inc.'
           - title: 'Allstars Infosys'
             meta:
               show: true
@@ -379,6 +388,9 @@ sections:
             roles:
               - 'I developed and deployed a members information system for a local networking group.'
               - "I used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Self-Employed'
           - title: 'Engage - Employee Recognition Platform'
             meta:
               show: true
@@ -396,6 +408,9 @@ sections:
             roles:
               - 'I managed a team to refactor and redesign the internal version of the web application for commercial use.'
               - 'I worked directly with the project manager and product owners regarding the project requirements and specifications.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'Hybrid Mobile Applications'
             meta:
               show: true
@@ -415,6 +430,9 @@ sections:
             roles:
               - 'I worked with a team to create iOS and Android applications to buy Twitter, Instagram, and YouTube followers.'
               - 'I refactored the REST API servers, integrated various social APIs to the mobile apps, and used Redis/Redis Clusters for managing the followers set.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'Amber'
             meta:
               show: true
@@ -433,6 +451,9 @@ sections:
               - 'Titanium'
             roles:
               - 'I helped fix bugs on the Django backend and created new views for a mobile RSS feed reader.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'Various Web Development Projects II'
             meta:
               show: true
@@ -449,6 +470,9 @@ sections:
             roles:
               - 'I used NodeJS for sending real-time push notifications to connected clients.'
               - 'I implemented an importer automatically fetch and clean the map data from the World Bank API to show different color ranges to an interactive map.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'Not In My Country'
             meta:
               show: true
@@ -462,6 +486,9 @@ sections:
               - 'django-import-export'
             roles:
               - 'Implemented map data showing different color ranges based on existing data from the World Bank API.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'F45 Playoffs'
             meta:
               show: true
@@ -475,6 +502,9 @@ sections:
             roles:
               - 'I used Titanium to create a HIIT circuit training application for iOS and Android.'
               - 'I used parse.com for storing user data and managing authentication.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'Various Web Development Projects'
             meta:
               show: true
@@ -494,6 +524,9 @@ sections:
               - 'I migrated a legacy system using Django 1.4 to the latest supported version.'
               - 'I implemented the formatting of chapters to an original story/fanfic publication site.'
               - 'I implemented the login/registration and timeline features for a digital sports network.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Ingenuity Global Consulting'
           - title: 'JPLAUREL AIS'
             meta:
               show: true

@@ -1,10 +1,14 @@
 import React from 'react';
-
 import Image from 'next/image';
+import { useSnapshot } from 'valtio';
 
-import { WorkExperienceItem } from '../../../models';
+import { ProjectsItem, WorkExperienceItem } from '../../../models';
 import getPublicBasePath from '../../../utils/get-public-base-path';
 import RoleItemComponent from './role-item.component';
+import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
+import ProjectsItemComponent from '../projects/projects-item.component';
+import { tagFiltersStore } from '../../../store';
+import hasAnyTag from '../../../utils/has-any-tag';
 
 import classes from './company-item.module.scss';
 
@@ -15,10 +19,27 @@ interface CompanyItemComponentProps {
 
 const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLast = false }) => {
   const { title, url, address, image, roles } = item;
+  const tagFilters = useSnapshot(tagFiltersStore);
+  const workExperienceFilters = useSnapshot(workExperienceFiltersStore);
 
   let imagePath = image.path || '';
   if (image.source === 'static') {
     imagePath = `${getPublicBasePath()}${image.path}`;
+  }
+
+  let relatedProjects: ProjectsItem[] = workExperienceFilters.relatedProjects
+    .filter((item) => item.key === title)
+    .map((item) => item.value);
+
+  if (tagFilters.mustNotHaveTags.length !== 0) {
+    relatedProjects = relatedProjects.filter(
+      (item) => !hasAnyTag(item.tags, tagFilters.mustNotHaveTags)
+    );
+  }
+  if (tagFilters.onlyWithTags.length !== 0) {
+    relatedProjects = relatedProjects.filter((item) =>
+      hasAnyTag(item.tags, tagFilters.onlyWithTags)
+    );
   }
 
   return (
@@ -61,6 +82,23 @@ const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLas
                 })}
               </ul>
             </div>
+            {workExperienceFilters.showRelatedProjects && relatedProjects.length > 0 && (
+              <>
+                <hr />
+                <div className="mt-3 text-sm text-gray-700">
+                  <div className="text-xs font-semibold">Projects:</div>
+                  <ul className="ml-8 list-square">
+                    {relatedProjects.map((project, index) => {
+                      return (
+                        <li key={index}>
+                          <ProjectsItemComponent item={project} isRelatedProject={true} />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

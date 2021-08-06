@@ -4,12 +4,19 @@ import { useSnapshot } from 'valtio';
 import { ProjectsItem, TagFilterStatus } from '../../../models';
 import formatDate from '../../../utils/format-date';
 import { tagFiltersStore } from '../../../store';
+import joinClassNames from '../../../utils/join-class-names';
 
 interface ProjectsItemComponentProps {
   item: ProjectsItem;
+
+  // When true, this will make the font size smaller.
+  isRelatedProject?: boolean;
 }
 
-const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) => {
+const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
+  item,
+  isRelatedProject = false
+}) => {
   const tagFilters = useSnapshot(tagFiltersStore);
 
   const tagsPrefix = 'Technologies used: ';
@@ -18,7 +25,11 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({ item }) =
   return (
     <>
       <div className="mt-1">
-        <h3 className="font-medium text-gray-900">{item.title}</h3>
+        <h3
+          className={joinClassNames('font-medium text-gray-900', isRelatedProject ? 'text-xs' : '')}
+        >
+          {item.title}
+        </h3>
         <div className="text-xs text-gray-500">
           <span>
             <span>{formatDate(item.dates.start)}</span>

@@ -7,23 +7,11 @@ import {
   HeaderConfig,
   OrganizationsConfig,
   ProjectsConfig,
+  SectionType,
   SkillsConfig,
   WorkExperienceConfig
 } from './sections';
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
-
-export enum SectionType {
-  CERTIFICATIONS = 'certifications',
-  CHARACTER_REFERENCES = 'character-references',
-  DIVIDER = 'divider',
-  EDUCATION = 'education',
-  EVENTS = 'events',
-  HEADER = 'header',
-  ORGANIZATIONS = 'organizations',
-  PROJECTS = 'projects',
-  SKILLS = 'skills',
-  WORK_EXPERIENCE = 'work-experience'
-}
 
 export interface Section {
   title?: string;

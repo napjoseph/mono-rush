@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 
-import { ProjectsConfig, ProjectsItem } from '../../../models';
+import { ProjectsConfig, ProjectsItem, SectionType } from '../../../models';
 import { tagFiltersStore } from '../../../store';
+import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
 import hasAnyTag from '../../../utils/has-any-tag';
+import hasRelatedSection from '../../../utils/has-related-section';
 import ProjectsItemComponent from './projects-item.component';
 
 interface ProjectsSectionComponentProps {
@@ -12,6 +14,7 @@ interface ProjectsSectionComponentProps {
 
 const ProjectsSectionComponent: React.FC<ProjectsSectionComponentProps> = ({ config }) => {
   const tagFilters = useSnapshot(tagFiltersStore);
+  const workExperienceFilters = useSnapshot(workExperienceFiltersStore);
 
   const { items } = config;
 
@@ -21,6 +24,13 @@ const ProjectsSectionComponent: React.FC<ProjectsSectionComponentProps> = ({ con
   }
   if (tagFilters.onlyWithTags.length !== 0) {
     projects = items.filter((item) => hasAnyTag(item.tags, tagFilters.onlyWithTags));
+  }
+
+  // Remove projects with relationships outside showing.
+  if (workExperienceFilters.showRelatedProjects) {
+    projects = projects.filter(
+      (item) => !hasRelatedSection(item.relatedTo || [], SectionType.WORK_EXPERIENCE)
+    );
   }
 
   return (
