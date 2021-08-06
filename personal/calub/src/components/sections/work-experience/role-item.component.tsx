@@ -1,10 +1,12 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 
 import { WorkExperienceRole } from '../../../models';
 import formatDate from '../../../utils/format-date';
 import calculateDateDuration from '../../../utils/calculate-date-duration';
 
 import classes from './role-item.module.scss';
+import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
 
 interface RoleItemComponentProps {
   item: WorkExperienceRole;
@@ -12,6 +14,7 @@ interface RoleItemComponentProps {
 
 const RoleItemComponent: React.FC<RoleItemComponentProps> = ({ item }) => {
   const { title, canadaClassification, startDate, endDate, description } = item;
+  const snap = useSnapshot(workExperienceFiltersStore);
 
   return (
     <div className={classes.container}>
@@ -19,7 +22,7 @@ const RoleItemComponent: React.FC<RoleItemComponentProps> = ({ item }) => {
         {title}
       </h4>
       <div>
-        {canadaClassification && (
+        {snap.showCanadaClassification && canadaClassification && (
           <div className={classes.canadaClassification}>{canadaClassification}</div>
         )}
         <div className={classes.dates} title={calculateDateDuration(startDate, endDate)}>
