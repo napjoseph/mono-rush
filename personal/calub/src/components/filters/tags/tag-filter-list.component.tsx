@@ -27,8 +27,7 @@ const TagFilterList: React.FC<TagFilterListProps> = ({
           className="flex flex-row flex-1 p-1 text-xs uppercase transition duration-100 ease-in-out rounded-sm cursor-pointer hover:bg-gray-700"
           onClick={toggleExpand}
         >
-          <span className="flex-none px-1">{title}</span>
-          <span className="flex-grow"></span>
+          <span className="flex-grow px-1 break-words">{title}</span>
           <span className="flex-none px-2" title="Toggle Details">
             <FontAwesomeIcon
               icon={{ prefix: 'fas', iconName: 'caret-right' }}
