@@ -3,10 +3,9 @@ import { useSnapshot } from 'valtio';
 
 import { HeaderConfig, HeaderImage } from '../../../models';
 import { headerFiltersStore } from '../../../store';
+import joinClassNames from '../../../utils/join-class-names';
 import LinkListComponent from './link-list.component';
 import ProfileImageComponent from './profile-image.component';
-
-import classes from './section.module.scss';
 
 interface HeaderSectionComponentProps {
   config: HeaderConfig;
@@ -23,20 +22,26 @@ const HeaderSectionComponent: React.FC<HeaderSectionComponentProps> = ({ config 
 
   return (
     <>
-      <div className={classes.container}>
+      <div className="flex flex-col items-center space-x-4 lg:space-x-6 xs:flex-row">
         {headerFilters.showProfilePicture &&
           headerFilters.profilePictures.length > 0 &&
           (image.path || '') !== '' && (
-            <div className={classes.imageContainer}>
+            <div
+              className={joinClassNames(
+                'sm:h-44 sm:w-44 print:h-40 print:w-40 overflow-hidden',
+                headerFilters.useCircularImage ? 'rounded-full' : '',
+                headerFilters.addDropShadow ? 'shadow-xl' : ''
+              )}
+            >
               <ProfileImageComponent title={fullName} image={image} />
             </div>
           )}
 
-        <div className={classes.infoContainer}>
-          {introText && <span className={classes.introText}>{introText}</span>}
-          <h1 className={classes.title}>{fullName}</h1>
+        <div className="flex-grow">
+          {introText && <span className="text-sm uppercase font-extralight">{introText}</span>}
+          <h1 className="text-5xl font-medium uppercase">{fullName}</h1>
 
-          <div className={classes.links}>
+          <div className="mt-3">
             <LinkListComponent items={config.links} />
           </div>
         </div>

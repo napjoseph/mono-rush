@@ -24,6 +24,22 @@ const HeaderFiltersSection: React.FC<HeaderFiltersSectionProps> = ({ title = 'He
           />
 
           {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
+            <ToggleComponent
+              text="Use Circular Image"
+              checked={headerFilters.useCircularImage}
+              toggle={headerFilters.toggleUseCircularImage}
+            />
+          )}
+
+          {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
+            <ToggleComponent
+              text="Add Drop Shadow"
+              checked={headerFilters.addDropShadow}
+              toggle={headerFilters.toggleAddDropShadow}
+            />
+          )}
+
+          {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
             <ProfilePictureList
               title="Select Profile Picture"
               choices={headerFilters.profilePictures}

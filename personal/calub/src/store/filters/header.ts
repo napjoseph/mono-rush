@@ -18,6 +18,12 @@ export interface HeaderFiltersStore {
 
   isSelectProfilePicturesExpanded: boolean;
   toggleSelectProfilePicturesExpanded: () => void;
+
+  useCircularImage: boolean;
+  toggleUseCircularImage: () => void;
+
+  addDropShadow: boolean;
+  toggleAddDropShadow: () => void;
 }
 
 export const headerFiltersStore = proxy<HeaderFiltersStore>({
@@ -44,5 +50,15 @@ export const headerFiltersStore = proxy<HeaderFiltersStore>({
   toggleSelectProfilePicturesExpanded: () => {
     headerFiltersStore.isSelectProfilePicturesExpanded =
       !headerFiltersStore.isSelectProfilePicturesExpanded;
+  },
+
+  useCircularImage: false,
+  toggleUseCircularImage: () => {
+    headerFiltersStore.useCircularImage = !headerFiltersStore.useCircularImage;
+  },
+
+  addDropShadow: false,
+  toggleAddDropShadow: () => {
+    headerFiltersStore.addDropShadow = !headerFiltersStore.addDropShadow;
   }
 });

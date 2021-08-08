@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { HeaderLinksItem } from '../../../models';
-
-import classes from './link-item.module.scss';
 
 interface LinkItemComponentProps {
   item: HeaderLinksItem;
@@ -18,7 +15,7 @@ const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ item }) => {
     content = <>{value}</>;
   } else {
     content = (
-      <a href={linkTo} className={classes.link}>
+      <a href={linkTo} className="color-link">
         {value}
       </a>
     );
@@ -26,12 +23,12 @@ const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ item }) => {
 
   return (
     <>
-      <div className={classes.container}>
-        <div className={classes.iconContainer} title={title}>
-          <FontAwesomeIcon icon={icon} size="xs" fixedWidth className={classes.icon} />
+      <div className="flex items-start text-gray-800">
+        <div className="mr-2" title={title}>
+          <FontAwesomeIcon icon={icon} size="xs" fixedWidth className="text-gray-700" />
         </div>
         <div>
-          <span className={classes.content}>{content}</span>
+          <span className="mt-1 text-sm">{content}</span>
         </div>
       </div>
     </>
