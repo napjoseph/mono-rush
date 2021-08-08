@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 
-import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
+import { workExperienceFiltersStore } from '../../../store';
 import ToggleComponent from '../../ui/toggle/toggle.component';
 
 interface WorkExperienceFiltersSectionProps {

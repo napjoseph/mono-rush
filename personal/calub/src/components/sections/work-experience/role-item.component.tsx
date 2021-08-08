@@ -4,9 +4,9 @@ import { useSnapshot } from 'valtio';
 import { WorkExperienceRole } from '../../../models';
 import formatDate from '../../../utils/format-date';
 import calculateDateDuration from '../../../utils/calculate-date-duration';
+import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
 
 import classes from './role-item.module.scss';
-import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
 
 interface RoleItemComponentProps {
   item: WorkExperienceRole;

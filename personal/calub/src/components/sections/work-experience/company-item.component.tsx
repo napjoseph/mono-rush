@@ -5,9 +5,8 @@ import { useSnapshot } from 'valtio';
 import { ProjectsItem, WorkExperienceItem } from '../../../models';
 import getPublicBasePath from '../../../utils/get-public-base-path';
 import RoleItemComponent from './role-item.component';
-import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
 import ProjectsItemComponent from '../projects/projects-item.component';
-import { tagFiltersStore } from '../../../store';
+import { tagFiltersStore, workExperienceFiltersStore } from '../../../store';
 import hasAnyTag from '../../../utils/has-any-tag';
 
 import classes from './company-item.module.scss';

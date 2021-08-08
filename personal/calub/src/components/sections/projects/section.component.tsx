@@ -2,8 +2,7 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 
 import { ProjectsConfig, ProjectsItem, SectionType } from '../../../models';
-import { tagFiltersStore } from '../../../store';
-import { workExperienceFiltersStore } from '../../../store/filters/work-experience';
+import { tagFiltersStore, workExperienceFiltersStore } from '../../../store';
 import hasAnyTag from '../../../utils/has-any-tag';
 import hasRelatedSection from '../../../utils/has-related-section';
 import ProjectsItemComponent from './projects-item.component';

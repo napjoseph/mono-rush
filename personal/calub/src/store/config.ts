@@ -1,8 +1,7 @@
 import { proxy } from 'valtio';
 
 import { Config, DEFAULT_CONFIG, ProjectsItem, SectionType, SkillsCategory } from '../models';
-import { tagFiltersStore } from './filters';
-import { workExperienceFiltersStore } from './filters/work-experience';
+import { tagFiltersStore, workExperienceFiltersStore } from './filters';
 
 export interface ConfigStore {
   config: Config;
