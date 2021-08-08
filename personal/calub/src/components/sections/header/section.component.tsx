@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 
 import { DEFAULT_HEADER_IMAGE, HeaderConfig } from '../../../models';
+import { headerFiltersStore } from '../../../store';
 import LinkListComponent from './link-list.component';
 import ImageComponent from './profile-image.component';
 
@@ -12,11 +14,12 @@ interface HeaderSectionComponentProps {
 
 const HeaderSectionComponent: React.FC<HeaderSectionComponentProps> = ({ config }) => {
   const { introText, fullName, image = DEFAULT_HEADER_IMAGE } = config;
+  const headerFilters = useSnapshot(headerFiltersStore);
 
   return (
     <>
       <div className={classes.container}>
-        {image.show && (image.path || '') !== '' && (
+        {image.show && (image.path || '') !== '' && headerFilters.showProfilePicture && (
           <div className={classes.imageContainer}>
             <ImageComponent title={fullName} image={image} />
           </div>
