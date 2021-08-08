@@ -21,9 +21,12 @@ const SkillsItemBarComponent: React.FC<SkillsItemBarComponentProps> = ({ item })
 
   return (
     <>
-      <div className="w-full mb-2 bg-gray-300 shadow rounded-xl">
+      <div className="relative block w-full bg-gray-300 shadow rounded-xl print:break-inside-avoid">
+        <div className="static top-0 py-1 pl-3 text-xs leading-none text-left text-gray-900">
+          {title}
+        </div>
         <motion.div
-          className="py-1 pl-3 overflow-hidden text-xs leading-none text-left text-white break-words bg-blue-600 cursor-pointer rounded-xl"
+          className="absolute top-0 z-10 py-1 pl-3 overflow-hidden text-xs leading-none text-left text-white bg-blue-600 cursor-pointer whitespace-nowrap rounded-xl"
           title={titleText}
           onClick={() => {
             !sidebar.isFirstToggleFinished && sidebar.firstToggle();

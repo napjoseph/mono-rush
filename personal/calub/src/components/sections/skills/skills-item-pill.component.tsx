@@ -7,9 +7,13 @@ import { sidebarToggleStore, tagFiltersStore } from '../../../store';
 
 interface SkillsItemPillComponentProps {
   item: SkillsItem;
+  showFamiliarity?: boolean;
 }
 
-const SkillsItemPillComponent: React.FC<SkillsItemPillComponentProps> = ({ item }) => {
+const SkillsItemPillComponent: React.FC<SkillsItemPillComponentProps> = ({
+  item,
+  showFamiliarity = true
+}) => {
   const tagFilters = useSnapshot(tagFiltersStore);
   const sidebar = useSnapshot(sidebarToggleStore);
 
@@ -33,10 +37,12 @@ const SkillsItemPillComponent: React.FC<SkillsItemPillComponentProps> = ({ item 
         variants={{
           initial: {
             rotate: 0,
+            translateY: '-20%',
             opacity: 0
           },
           visible: {
             opacity: 1,
+            translateY: '0%',
             transition: {
               duration: 0.5
             }
@@ -46,7 +52,8 @@ const SkillsItemPillComponent: React.FC<SkillsItemPillComponentProps> = ({ item 
           }
         }}
       >
-        {title} &ndash; {titleText}
+        {title}
+        {showFamiliarity ? <> &ndash; {titleText}</> : null}
       </motion.div>
     </>
   );

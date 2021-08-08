@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderFiltersSection from '../../filters/header/section.component';
+import SkillsFiltersSection from '../../filters/skills/section.component';
 
 import TagFiltersSection from '../../filters/tags/section.component';
 import WorkExperienceFiltersSection from '../../filters/work-experience/section.component';
@@ -13,6 +14,7 @@ const SidebarContentComponent: React.FC = (_props) => {
       <HeaderFiltersSection />
       <WorkExperienceFiltersSection />
       <TagFiltersSection />
+      <SkillsFiltersSection />
     </div>
   );
 };

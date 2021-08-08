@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSnapshot } from 'valtio';
 
 import { SkillsCategory } from '../../../models';
+import { skillsFiltersStore } from '../../../store';
+import joinClassNames from '../../../utils/join-class-names';
 import SkillsItemBarComponent from './skills-item-bar.component';
 import SkillsItemPillComponent from './skills-item-pill.component';
 
@@ -9,6 +12,8 @@ interface SkillsCategoryItemComponentProps {
 }
 
 const SkillsCategoryItemComponent: React.FC<SkillsCategoryItemComponentProps> = ({ category }) => {
+  const skillsFilters = useSnapshot(skillsFiltersStore);
+
   const { title, items = [] } = category;
   const list = items
     .filter((item) => {
@@ -26,22 +31,33 @@ const SkillsCategoryItemComponent: React.FC<SkillsCategoryItemComponentProps> = 
       return 0;
     });
 
+  const useProgressBar = skillsFilters.showFamiliarity && skillsFilters.useProgressBar;
+
   return (
     <>
-      <div className="print:avoid-page-break-inside">
+      <div className="block w-full">
         <h3 className="font-medium uppercase">{title}</h3>
 
         {list && (
-          <ul className="mt-1 ml-4 print:flex print:flex-wrap print:gap-1">
+          <ul
+            className={joinClassNames(
+              'mt-1 ml-4 flex',
+              useProgressBar ? 'flex-col gap-2' : 'flex-wrap gap-1'
+            )}
+          >
             {list.map((item, index) => {
               return (
                 <li key={index}>
-                  <div className="print:hidden">
-                    <SkillsItemBarComponent item={item}></SkillsItemBarComponent>
-                  </div>
-                  <div className="hidden print:inline">
-                    <SkillsItemPillComponent item={item}></SkillsItemPillComponent>
-                  </div>
+                  {useProgressBar ? (
+                    <SkillsItemBarComponent item={item} />
+                  ) : (
+                    <div className="inline">
+                      <SkillsItemPillComponent
+                        item={item}
+                        showFamiliarity={skillsFilters.showFamiliarity}
+                      />
+                    </div>
+                  )}
                 </li>
               );
             })}

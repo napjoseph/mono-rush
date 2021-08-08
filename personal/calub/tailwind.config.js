@@ -986,12 +986,96 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('tailwind-scrollbar'),
     // add page break utilities as a plugin
-    // https://github.com/tailwindlabs/tailwindcss/discussions/3754
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/break-before
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/break-after
     plugin(function ({ addUtilities }) {
       addUtilities(
         {
-          '.avoid-page-break-before': { 'page-break-before': 'avoid' },
-          '.avoid-page-break-inside': { 'page-break-inside': 'avoid' }
+          '.break-before-auto': {
+            'page-break-before': 'auto',
+            'break-before': 'auto'
+          },
+          '.break-before-avoid': {
+            'page-break-before': 'avoid',
+            'break-before': 'avoid'
+          },
+          '.break-before-always': {
+            'page-break-before': 'always',
+            'break-before': 'always'
+          },
+          '.break-before-all': { 'break-before': 'all' },
+          '.break-before-avoid-page': { 'break-before': 'avoid-page' },
+          '.break-before-page': { 'break-before': 'page' },
+          '.break-before-left': {
+            'page-break-before': 'left',
+            'break-before': 'left'
+          },
+          '.break-before-right': {
+            'page-break-before': 'right',
+            'break-before': 'right'
+          },
+          '.break-before-recto': { 'break-before': 'recto' },
+          '.break-before-verso': { 'break-before': 'verso' },
+          '.break-before-avoid-column': { 'break-before': 'avoid-column' },
+          '.break-before-column': { 'break-before': 'column' },
+          '.break-before-avoid-region': { 'break-before': 'avoid-region' },
+          '.break-before-region': { 'break-before': 'region' },
+          '.break-before-inherit': { 'break-before': 'inherit' },
+          '.break-before-initial': { 'break-before': 'initial' },
+          '.break-before-revert': { 'break-before': 'revert' },
+          '.break-before-unset': { 'break-before': 'unset' },
+
+          '.break-inside-auto': {
+            'page-break-inside': 'auto',
+            'break-inside': 'auto'
+          },
+          '.break-inside-avoid': {
+            '-webkit-column-break-inside': 'avoid',
+            'page-break-inside': 'avoid',
+            'break-inside': 'avoid'
+          },
+          '.break-inside-avoid-page': { 'break-inside': 'avoid-page' },
+          '.break-inside-avoid-column': { 'break-inside': 'avoid-column' },
+          '.break-inside-avoid-region': { 'break-inside': 'avoid-region' },
+          '.break-inside-inherit': { 'break-inside': 'inherit' },
+          '.break-inside-initial': { 'break-inside': 'initial' },
+          '.break-inside-revert': { 'break-inside': 'revert' },
+          '.break-inside-unset': { 'break-inside': 'unset' },
+
+          '.break-after-auto': {
+            'page-break-after': 'auto',
+            'break-after': 'auto'
+          },
+          '.break-after-avoid': {
+            'page-break-after': 'avoid',
+            'break-after': 'avoid'
+          },
+          '.break-after-always': {
+            'page-break-after': 'always',
+            'break-after': 'always'
+          },
+          '.break-after-all': { 'break-after': 'all' },
+          '.break-after-avoid-page': { 'break-after': 'avoid-page' },
+          '.break-after-page': { 'break-after': 'page' },
+          '.break-after-left': {
+            'page-break-after': 'left',
+            'break-after': 'left'
+          },
+          '.break-after-right': {
+            'page-break-after': 'right',
+            'break-after': 'right'
+          },
+          '.break-after-recto': { 'break-after': 'recto' },
+          '.break-after-verso': { 'break-after': 'verso' },
+          '.break-after-avoid-column': { 'break-after': 'avoid-column' },
+          '.break-after-column': { 'break-after': 'column' },
+          '.break-after-avoid-region': { 'break-after': 'avoid-region' },
+          '.break-after-region': { 'break-after': 'region' },
+          '.break-after-inherit': { 'break-after': 'inherit' },
+          '.break-after-initial': { 'break-after': 'initial' },
+          '.break-after-revert': { 'break-after': 'revert' },
+          '.break-after-unset': { 'break-after': 'unset' }
         },
         ['responsive']
       );

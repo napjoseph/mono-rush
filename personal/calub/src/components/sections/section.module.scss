@@ -2,7 +2,7 @@
   @apply pb-3;
 
   &AvoidPageBreak {
-    @apply pb-3 print:avoid-page-break-inside;
+    @apply pb-3 print:break-inside-avoid;
   }
 }
 

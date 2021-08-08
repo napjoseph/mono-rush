@@ -13,7 +13,7 @@
     @apply pb-1;
 
     .content {
-      @apply print:avoid-page-break-inside;
+      @apply print:break-inside-avoid;
     }
 
     .title {
