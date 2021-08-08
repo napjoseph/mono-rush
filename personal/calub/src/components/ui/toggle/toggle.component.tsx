@@ -10,7 +10,11 @@ interface ToggleComponentProps {
 
 const ToggleComponent: React.FC<ToggleComponentProps> = ({ text, checked, toggle }) => {
   return (
-    <div className="flex flex-row gap-3 cursor-pointer align-center" onClick={toggle} title={text}>
+    <div
+      className="flex flex-row gap-3 ml-2 cursor-pointer align-center"
+      onClick={toggle}
+      title={text}
+    >
       <div className="flex-grow text-xs text-gray-200 uppercase break-words">{text}</div>
       <div className="flex content-center flex-none">
         <div className="relative">

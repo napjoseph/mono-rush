@@ -1,7 +1,14 @@
 import { proxy } from 'valtio';
 
-import { Config, DEFAULT_CONFIG, ProjectsItem, SectionType, SkillsCategory } from '../models';
-import { tagFiltersStore, workExperienceFiltersStore } from './filters';
+import {
+  Config,
+  DEFAULT_CONFIG,
+  HeaderConfig,
+  ProjectsItem,
+  SectionType,
+  SkillsCategory
+} from '../models';
+import { tagFiltersStore, workExperienceFiltersStore, headerFiltersStore } from './filters';
 
 export interface ConfigStore {
   config: Config;
@@ -15,6 +22,9 @@ export const configStore = proxy<ConfigStore>({
 
     config.sections.map((section) => {
       switch (section.content.type) {
+        case SectionType.HEADER:
+          parseHeader(section.content.value);
+          return;
         case SectionType.SKILLS:
           parseSkills(section.content.value.items);
           return;
@@ -25,6 +35,13 @@ export const configStore = proxy<ConfigStore>({
     });
   }
 });
+
+const parseHeader = (config: HeaderConfig) => {
+  (config.images || []).map((image) => {
+    if (!image.use) return;
+    headerFiltersStore.addProfilePicture(image);
+  });
+};
 
 const parseSkills = (skillsCategories: SkillsCategory[]) => {
   skillsCategories

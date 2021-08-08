@@ -15,10 +15,15 @@ sections:
       value:
         introText: 'Curriculum Vitae of'
         fullName: 'Nap Joseph Calub'
-        image:
-          show: true
-          source: 'static'
-          path: '/profile-pictures/professional-300x300.jpg'
+        images:
+          - use: true
+            source: 'static'
+            path: '/profile-pictures/professional-300x300.jpg'
+            title: 'Professional'
+          - use: true
+            source: 'static'
+            path: '/profile-pictures/playful-300x300.jpg'
+            title: 'Playful'
         links:
           - title: 'Website'
             value: 'napjose.ph'

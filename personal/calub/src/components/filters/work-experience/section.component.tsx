@@ -17,7 +17,7 @@ const WorkExperienceFiltersSection: React.FC<WorkExperienceFiltersSectionProps> 
     <>
       <div className="flex flex-col gap-3 text-sm">
         <h3 className="font-semibold uppercase">{title}</h3>
-        <div className="flex flex-col gap-4 ml-2">
+        <div className="flex flex-col gap-4">
           <ToggleComponent
             text="Show Canada National Occupational Classification (NOC)"
             checked={snap.showCanadaClassification}

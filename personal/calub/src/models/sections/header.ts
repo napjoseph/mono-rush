@@ -3,7 +3,7 @@ import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 export interface HeaderConfig {
   introText?: string;
   fullName: string;
-  image?: HeaderImage;
+  images?: HeaderImage[];
   links?: HeaderLinksItem[];
 }
 
@@ -19,11 +19,8 @@ export interface HeaderLinksItem {
 }
 
 export interface HeaderImage {
-  show: boolean;
+  use: boolean;
   source?: 'static' | 'external';
+  title?: string;
   path?: string;
 }
-
-export const DEFAULT_HEADER_IMAGE: HeaderImage = {
-  show: false
-};
