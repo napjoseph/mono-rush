@@ -215,7 +215,7 @@ sections:
                 rating: 8
                 meta:
                   show: true
-              - title: 'NextJS'
+              - title: 'Next.js'
                 rating: 8
                 meta:
                   show: true
@@ -372,20 +372,24 @@ sections:
               - 'Utterances'
             roles:
               - 'I created my personal website using open-source tools such as Next.js and Chakra UI.'
-          - title: 'Network Tools and Dashboards'
+          - title: 'Other Internal Network Tools and Dashboards'
             meta:
               show: true
             dates:
-              start: '2019-07'
+              start: '2020-11'
               end: '2021-05'
             tags:
+              - 'Angular'
               - 'Bazel'
               - 'BigQuery'
               - 'Cloud SQL'
+              - 'Docker'
               - 'Go'
+              - 'Google App Engine'
               - 'Google Apps Script'
               - 'Google Cloud Platform'
               - 'Google Data Studio'
+              - 'Google Drive API'
               - 'gRPC'
               - 'Mercurial'
               - 'MySQL'
@@ -393,8 +397,57 @@ sections:
               - 'Protocol Buffers'
               - 'Sass'
             roles:
-              - 'I developed tools using Go to send email alerts for non-compliant network devices.'
+              - 'I developed different internal tools using Go to send email alerts for non-compliant network devices.'
               - 'I designed dashboards using Data Studio to visualize all the devices of the network taken from BigQuery, Cloud SQL, and sometimes Google Sheets.'
+              - 'I designed and created a tool that can automatically scan the shared Google Drive files for terms that needs to be updated, and then file the appropriate tickets for the change.'
+              - 'I created a tool that parses different lifecycle data for various network assets and created a unified data source that can be read by other internal applications.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'OS Compliance Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2020-07'
+              end: '2020-10'
+            tags:
+              - 'Bazel'
+              - 'BigQuery'
+              - 'Docker'
+              - 'Google Data Studio'
+              - 'gRPC'
+              - 'Mercurial'
+              - 'MySQL'
+            roles:
+              - 'I migrated the previous internal Dremel data and dashboard to use BigQuery and Data Studio.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'Service Provider Performance Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2019-07'
+              end: '2020-07'
+            tags:
+              - 'Angular'
+              - 'Bazel'
+              - 'BigQuery'
+              - 'Cloud SQL'
+              - 'Docker'
+              - 'Go'
+              - 'Google App Engine'
+              - 'Google Chart API'
+              - 'Google Cloud Platform'
+              - 'gRPC'
+              - 'Material Design'
+              - 'Mercurial'
+              - 'MySQL'
+              - 'Sass'
+              - 'TypeScript'
+            roles:
+              - 'I maintained and refactored the legacy codebase and increased unit test coverage.'
+              - 'I added new data sources for the Service Provider details and their promised and actual SLA.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
@@ -409,9 +462,12 @@ sections:
               - 'Bazel'
               - 'BigQuery'
               - 'Cloud SQL'
+              - 'Docker'
               - 'Go'
+              - 'Google App Engine'
               - 'Google Chart API'
               - 'Google Cloud Platform'
+              - 'Google Cloud Tasks'
               - 'gRPC'
               - 'Material Design'
               - 'Mercurial'
@@ -423,6 +479,7 @@ sections:
               - "I maintained a legacy dashboard for visualizing and managing the lifecycle of devices in our client's enterprise network."
               - 'I refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
               - 'I upgraded the old task runners using Python to use Go App Engine Cron and Cloud Tasks.'
+              - 'I added support for different realms other than the corporate network.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
