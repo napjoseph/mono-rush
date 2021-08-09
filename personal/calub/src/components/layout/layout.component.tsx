@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 
-import DocumentHead from '../document/document-head.component';
 import FooterComponent from './footer/footer.component';
 import joinClassNames from '../../utils/join-class-names';
 import MobileSidebarComponent from './sidebar/mobile-sidebar.component';
@@ -9,15 +8,16 @@ import PortalComponent from './portal/portal.component';
 import SidebarToggleButtonComponent from './sidebar/sidebar-toggle-button.component';
 import { sidebarToggleStore } from '../../store';
 import SidebarContentComponent from './sidebar/sidebar-content.component';
+import StaticHead from '../document/static-head.component';
 
 const LayoutComponent: React.FC = (props) => {
   const sidebar = useSnapshot(sidebarToggleStore);
 
   return (
     <>
-      <DocumentHead />
+      <StaticHead />
 
-      <div className={joinClassNames('lg:flex')}>
+      <div className={joinClassNames('font-sans', 'lg:flex')}>
         <div
           className={joinClassNames(
             sidebar.show ? 'flex-1' : 'flex-almost-gone',

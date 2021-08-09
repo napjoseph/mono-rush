@@ -1,7 +1,15 @@
 meta:
+  head:
+    charSet: 'UTF-8'
+    title: 'Nap Joseph Calub'
+    author: 'Nap Joseph Calub'
+    description: 'Curriculum Vitae of Nap Joseph Calub'
+    keywords: 'resume, curriculum vitae, profile'
+    viewport: 'width=device-width, initial-scale=1'
   openGraph:
     ogTitle: 'Nap Joseph Calub'
     ogDescription: 'Curriculum Vitae of Nap Joseph Calub'
+    ogLocale: 'en_US'
     ogImage: 'https://napjose.ph/calub/profile-pictures/professional-300x300.jpg'
     ogType: 'profile'
     ogProfileFirstName: 'Nap Joseph'

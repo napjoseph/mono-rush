@@ -1,23 +1,19 @@
 import React from 'react';
-
 import Head from 'next/head';
 
-import getPublicBasePath from '../../utils/get-public-base-path';
+import getPublicBasepath from '../../utils/get-public-base-path';
 
-/* eslint-disable-next-line */
-interface DocumentHeadProps {}
-
-const DocumentHead: React.FC<DocumentHeadProps> = (_props) => {
-  const basePath = getPublicBasePath();
+/* eslint-disable @next/next/no-page-custom-font */
+const StaticHead: React.FC = (_props) => {
+  const basePath = getPublicBasepath();
 
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
-        <title>Nap Joseph Calub</title>
-
-        <meta name="description" content="Curriculum Vitae of Nap Joseph Calub." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
+          rel="stylesheet"
+        />
 
         {/* See https://developers.google.com/web/fundamentals/web-app-manifest/ */}
         <link rel="manifest" href={basePath + '/manifest.json'} />
@@ -34,5 +30,6 @@ const DocumentHead: React.FC<DocumentHeadProps> = (_props) => {
     </>
   );
 };
+/* eslint-enable @next/next/no-page-custom-font */
 
-export default DocumentHead;
+export default StaticHead;
