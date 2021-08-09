@@ -5,12 +5,18 @@ import { headerFiltersStore } from '../../../store';
 import ToggleComponent from '../../ui/toggle/toggle.component';
 import ProfilePictureList from './profile-picture-list.component';
 
+const DEFAULT_TITLE = 'Header';
+
 interface HeaderFiltersSectionProps {
   title?: string;
 }
 
-const HeaderFiltersSection: React.FC<HeaderFiltersSectionProps> = ({ title = 'Header' }) => {
+const HeaderFiltersSection: React.FC<HeaderFiltersSectionProps> = ({ title }) => {
   const headerFilters = useSnapshot(headerFiltersStore);
+
+  if (title === undefined || title.trim() === '') {
+    title = DEFAULT_TITLE;
+  }
 
   return (
     <>

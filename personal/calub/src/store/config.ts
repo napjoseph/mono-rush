@@ -9,6 +9,7 @@ import {
   SkillsCategory
 } from '../models';
 import { tagFiltersStore, workExperienceFiltersStore, headerFiltersStore } from './filters';
+import { sidebarContentStore } from './sidebar';
 
 export interface ConfigStore {
   config: Config;
@@ -21,6 +22,13 @@ export const configStore = proxy<ConfigStore>({
     configStore.config = config;
 
     config.sections.map((section) => {
+      // Populate the sidebar content for each section.
+      sidebarContentStore.addSection({
+        title: section.title || '',
+        type: section.content.type
+      });
+
+      // Parse individual content types.
       switch (section.content.type) {
         case SectionType.HEADER:
           parseHeader(section.content.value);

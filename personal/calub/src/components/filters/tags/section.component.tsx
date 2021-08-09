@@ -4,12 +4,18 @@ import { useSnapshot } from 'valtio';
 import { TagFilterType, tagFiltersStore } from '../../../store';
 import TagFilterList from './tag-filter-list.component';
 
+const DEFAULT_TITLE = 'Tags';
+
 interface TagFiltersSectionProps {
   title?: string;
 }
 
-const TagFiltersSection: React.FC<TagFiltersSectionProps> = ({ title = 'Filter Tags' }) => {
+const TagFiltersSection: React.FC<TagFiltersSectionProps> = ({ title }) => {
   const tagFilters = useSnapshot(tagFiltersStore);
+
+  if (title === undefined || title.trim() === '') {
+    title = DEFAULT_TITLE;
+  }
 
   return (
     <>

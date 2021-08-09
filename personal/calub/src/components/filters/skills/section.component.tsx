@@ -4,12 +4,18 @@ import { useSnapshot } from 'valtio';
 import { skillsFiltersStore } from '../../../store';
 import ToggleComponent from '../../ui/toggle/toggle.component';
 
+const DEFAULT_TITLE = 'Skills';
+
 interface SkillsFiltersSectionProps {
   title?: string;
 }
 
-const SkillsFiltersSection: React.FC<SkillsFiltersSectionProps> = ({ title = 'Skills' }) => {
+const SkillsFiltersSection: React.FC<SkillsFiltersSectionProps> = ({ title }) => {
   const skillsFilters = useSnapshot(skillsFiltersStore);
+
+  if (title === undefined || title.trim() === '') {
+    title = DEFAULT_TITLE;
+  }
 
   return (
     <>
