@@ -30,6 +30,7 @@ jobs:
       - name: build and export
         run: node common/scripts/install-run-rush.js export --verbose --to calub-web
         env:
+          NEXT_PUBLIC_GA_ID: 'G-26QBVG95QT'
           NEXT_PUBLIC_BASEPATH: '/calub'
           NEXT_IMAGES_LOADER: 'imgix'
           NEXT_IMAGES_PATH: '<empty>'
