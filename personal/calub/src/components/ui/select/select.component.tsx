@@ -1,10 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import joinClassNames from '../../../utils/join-class-names';
 import { HeaderImage } from '../../../models';
 
-interface ProfilePictureListProps {
+interface SelectComponentProps {
   title: string;
   choices: HeaderImage[];
   selectedIndex: number;
@@ -13,7 +14,7 @@ interface ProfilePictureListProps {
   select: (index: number) => void;
 }
 
-const ProfilePictureList: React.FC<ProfilePictureListProps> = ({
+const SelectComponent: React.FC<SelectComponentProps> = ({
   title,
   choices = [],
   selectedIndex,
@@ -53,21 +54,22 @@ const ProfilePictureList: React.FC<ProfilePictureListProps> = ({
           )}
         >
           {choices.length !== 0 && (
-            <div className="flex flex-col flex-wrap gap-2 p-3 overflow-hidden">
+            <div className="flex flex-col flex-wrap gap-2 p-3">
               {choices.map((choice, index) => {
                 return (
-                  <div
+                  <motion.div
                     key={index}
                     className={joinClassNames(
                       selectedIndex === index ? 'bg-blue-700 font-semibold' : '',
                       'p-2 text-xs rounded cursor-pointer hover:bg-gray-700 transition-all duration-100 ease-in-out'
                     )}
+                    whileHover={{ scale: 1.02 }}
                     onClick={() => select(index)}
                   >
                     <span className="inline break-all align-middle" title={choice.path}>
                       {choice.title}
                     </span>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -78,4 +80,4 @@ const ProfilePictureList: React.FC<ProfilePictureListProps> = ({
   );
 };
 
-export default ProfilePictureList;
+export default SelectComponent;

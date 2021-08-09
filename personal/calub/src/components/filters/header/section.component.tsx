@@ -2,8 +2,8 @@ import React from 'react';
 import { useSnapshot } from 'valtio';
 
 import { headerFiltersStore } from '../../../store';
+import SelectComponent from '../../ui/select/select.component';
 import ToggleComponent from '../../ui/toggle/toggle.component';
-import ProfilePictureList from './profile-picture-list.component';
 
 const HeaderFiltersSection: React.FC = (_props) => {
   const headerFilters = useSnapshot(headerFiltersStore);
@@ -32,7 +32,7 @@ const HeaderFiltersSection: React.FC = (_props) => {
       )}
 
       {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
-        <ProfilePictureList
+        <SelectComponent
           title="Select Profile Picture"
           choices={headerFilters.profilePictures}
           selectedIndex={headerFilters.selectedProfilePictureIndex}
