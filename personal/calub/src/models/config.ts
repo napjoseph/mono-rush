@@ -1,5 +1,6 @@
 import { Section } from './section';
 import { FooterConfig, DEFAULT_FOOTER_CONFIG } from './footer';
+import { OpenGraphData } from './open-graph/open-graph-data';
 
 export interface Config {
   meta?: ConfigMeta;
@@ -7,6 +8,7 @@ export interface Config {
 }
 
 export interface ConfigMeta {
+  openGraph?: OpenGraphData;
   footer?: FooterConfig;
 }
 

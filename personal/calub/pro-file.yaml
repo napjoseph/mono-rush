@@ -1,4 +1,15 @@
 meta:
+  openGraph:
+    ogTitle: 'Nap Joseph Calub'
+    ogDescription: 'Curriculum Vitae of Nap Joseph Calub'
+    ogImage: 'https://napjose.ph/calub/profile-pictures/professional-300x300.jpg'
+    ogType: 'profile'
+    ogProfileFirstName: 'Nap Joseph'
+    ogProfileLastName: 'Calub'
+    ogProfileGender: 'male'
+    ogProfileUsername: 'njncalub'
+    ogSiteName: 'Nap Joseph Calub'
+    ogUrl: 'https://napjose.ph/calub'
   footer:
     links:
       - title: 'View source at GitHub'
