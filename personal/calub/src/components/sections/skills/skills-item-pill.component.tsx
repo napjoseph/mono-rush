@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import { motion } from 'framer-motion';
 
 import { SkillsItem, TagFilterStatus } from '../../../models';
-import { sidebarToggleStore, tagFiltersStore } from '../../../store';
+import { sidebarToggleStore, projectsFiltersStore } from '../../../store';
 
 interface SkillsItemPillComponentProps {
   item: SkillsItem;
@@ -14,7 +14,7 @@ const SkillsItemPillComponent: React.FC<SkillsItemPillComponentProps> = ({
   item,
   showFamiliarity = true
 }) => {
-  const tagFilters = useSnapshot(tagFiltersStore);
+  const tagFilters = useSnapshot(projectsFiltersStore);
   const sidebar = useSnapshot(sidebarToggleStore);
 
   const ratingMax = 10;

@@ -7,6 +7,9 @@ const addProfilePicture = (list: HeaderImage[], item: HeaderImage): HeaderImage[
 };
 
 export interface HeaderFiltersStore {
+  showSection: boolean;
+  toggleSection: () => void;
+
   showProfilePicture: boolean;
   toggleProfilePicture: () => void;
 
@@ -27,6 +30,11 @@ export interface HeaderFiltersStore {
 }
 
 export const headerFiltersStore = proxy<HeaderFiltersStore>({
+  showSection: true,
+  toggleSection: () => {
+    headerFiltersStore.showSection = !headerFiltersStore.showSection;
+  },
+
   showProfilePicture: true,
   toggleProfilePicture: () => {
     headerFiltersStore.showProfilePicture = !headerFiltersStore.showProfilePicture;

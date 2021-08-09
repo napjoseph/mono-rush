@@ -33,11 +33,15 @@ export enum TagFilterType {
   EXCLUDED = 'excluded'
 }
 
-export interface TagFiltersStore {
+export interface ProjectsFiltersStore {
+  showSection: boolean;
+  toggleSection: () => void;
+
   tags: TagFilter[];
   add: (value: string) => void;
   remove: (value: string) => void;
   update: (value: string, status: TagFilterStatus) => void;
+
   isAvailableTagsExpanded: boolean;
   isIncludedTagsExpanded: boolean;
   isExcludedTagsExpanded: boolean;
@@ -46,35 +50,43 @@ export interface TagFiltersStore {
   toggleExcludedTagsExpanded: () => void;
 }
 
-export interface TagFiltersStoreComputed {
+export interface ProjectsFiltersStoreComputed {
   unusedTags?: string[];
   onlyWithTags?: string[];
   mustNotHaveTags?: string[];
 }
 
-export const tagFiltersStore = proxyWithComputed<TagFiltersStore, TagFiltersStoreComputed>(
+export const projectsFiltersStore = proxyWithComputed<
+  ProjectsFiltersStore,
+  ProjectsFiltersStoreComputed
+>(
   {
+    showSection: true,
+    toggleSection: () => {
+      projectsFiltersStore.showSection = !projectsFiltersStore.showSection;
+    },
+
     tags: [],
     add: (value: string) => {
-      tagFiltersStore.tags = addTag(tagFiltersStore.tags, value);
+      projectsFiltersStore.tags = addTag(projectsFiltersStore.tags, value);
     },
     remove: (value: string) => {
-      tagFiltersStore.tags = removeTag(tagFiltersStore.tags, value);
+      projectsFiltersStore.tags = removeTag(projectsFiltersStore.tags, value);
     },
     update: (value: string, status: TagFilterStatus) => {
-      tagFiltersStore.tags = updateTag(tagFiltersStore.tags, value, status);
+      projectsFiltersStore.tags = updateTag(projectsFiltersStore.tags, value, status);
     },
     isAvailableTagsExpanded: false,
     isIncludedTagsExpanded: true,
     isExcludedTagsExpanded: true,
     toggleAvailableTagsExpanded: () => {
-      tagFiltersStore.isAvailableTagsExpanded = !tagFiltersStore.isAvailableTagsExpanded;
+      projectsFiltersStore.isAvailableTagsExpanded = !projectsFiltersStore.isAvailableTagsExpanded;
     },
     toggleIncludedTagsExpanded: () => {
-      tagFiltersStore.isIncludedTagsExpanded = !tagFiltersStore.isIncludedTagsExpanded;
+      projectsFiltersStore.isIncludedTagsExpanded = !projectsFiltersStore.isIncludedTagsExpanded;
     },
     toggleExcludedTagsExpanded: () => {
-      tagFiltersStore.isExcludedTagsExpanded = !tagFiltersStore.isExcludedTagsExpanded;
+      projectsFiltersStore.isExcludedTagsExpanded = !projectsFiltersStore.isExcludedTagsExpanded;
     }
   },
   {

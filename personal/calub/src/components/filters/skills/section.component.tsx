@@ -10,12 +10,20 @@ const SkillsFiltersSection: React.FC = (_props) => {
   return (
     <>
       <ToggleComponent
-        text="Show Familiarity"
-        checked={skillsFilters.showFamiliarity}
-        toggle={skillsFilters.toggleShowFamiliarity}
+        text="Show Section"
+        checked={skillsFilters.showSection}
+        toggle={skillsFilters.toggleSection}
       />
 
-      {skillsFilters.showFamiliarity && (
+      {skillsFilters.showSection && (
+        <ToggleComponent
+          text="Show Familiarity"
+          checked={skillsFilters.showFamiliarity}
+          toggle={skillsFilters.toggleShowFamiliarity}
+        />
+      )}
+
+      {skillsFilters.showSection && skillsFilters.showFamiliarity && (
         <ToggleComponent
           text="Use Progress Bar"
           checked={skillsFilters.useProgressBar}

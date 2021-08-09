@@ -6,7 +6,7 @@ import { ProjectsItem, WorkExperienceItem } from '../../../models';
 import getPublicBasePath from '../../../utils/get-public-base-path';
 import RoleItemComponent from './role-item.component';
 import ProjectsItemComponent from '../projects/projects-item.component';
-import { tagFiltersStore, workExperienceFiltersStore } from '../../../store';
+import { projectsFiltersStore, workExperienceFiltersStore } from '../../../store';
 import hasAnyTag from '../../../utils/has-any-tag';
 
 import classes from './company-item.module.scss';
@@ -18,7 +18,7 @@ interface CompanyItemComponentProps {
 
 const CompanyItemComponent: React.FC<CompanyItemComponentProps> = ({ item, isLast = false }) => {
   const { title, url, address, image, roles } = item;
-  const tagFilters = useSnapshot(tagFiltersStore);
+  const tagFilters = useSnapshot(projectsFiltersStore);
   const workExperienceFilters = useSnapshot(workExperienceFiltersStore);
 
   let imagePath = image.path || '';

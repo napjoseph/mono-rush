@@ -3,14 +3,14 @@ import { useSnapshot } from 'valtio';
 import { motion } from 'framer-motion';
 
 import { SkillsItem, TagFilterStatus } from '../../../models';
-import { sidebarToggleStore, tagFiltersStore } from '../../../store';
+import { sidebarToggleStore, projectsFiltersStore } from '../../../store';
 
 interface SkillsItemBarComponentProps {
   item: SkillsItem;
 }
 
 const SkillsItemBarComponent: React.FC<SkillsItemBarComponentProps> = ({ item }) => {
-  const tagFilters = useSnapshot(tagFiltersStore);
+  const tagFilters = useSnapshot(projectsFiltersStore);
   const sidebar = useSnapshot(sidebarToggleStore);
 
   const ratingMax = 10;

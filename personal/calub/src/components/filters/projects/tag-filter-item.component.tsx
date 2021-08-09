@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 
-import { tagFiltersStore } from '../../../store';
+import { projectsFiltersStore } from '../../../store';
 import { TagFilterStatus } from '../../../models';
 
 interface TagFilterItemProps {
@@ -19,7 +19,7 @@ const TagFilterItem: React.FC<TagFilterItemProps> = ({
   showIncludeButton = false,
   showExcludeButton = false
 }) => {
-  const tagFilters = useSnapshot(tagFiltersStore);
+  const tagFilters = useSnapshot(projectsFiltersStore);
 
   return (
     <>

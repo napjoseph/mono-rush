@@ -3,8 +3,12 @@ import { proxy } from 'valtio';
 import { ProjectsItem } from '../../models';
 
 export interface WorkExperienceFiltersStore {
+  showSection: boolean;
+  toggleSection: () => void;
+
   showCanadaClassification: boolean;
   toggleCanadaClassification: () => void;
+
   showRelatedProjects: boolean;
   toggleRelatedProjects: () => void;
 
@@ -18,6 +22,11 @@ export interface WorkExperienceFiltersStore {
 }
 
 export const workExperienceFiltersStore = proxy<WorkExperienceFiltersStore>({
+  showSection: true,
+  toggleSection: () => {
+    workExperienceFiltersStore.showSection = !workExperienceFiltersStore.showSection;
+  },
+
   showCanadaClassification: false,
   toggleCanadaClassification: () => {
     workExperienceFiltersStore.showCanadaClassification =

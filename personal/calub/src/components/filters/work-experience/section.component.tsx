@@ -5,21 +5,31 @@ import { workExperienceFiltersStore } from '../../../store';
 import ToggleComponent from '../../ui/toggle/toggle.component';
 
 const WorkExperienceFiltersSection: React.FC = (_props) => {
-  const snap = useSnapshot(workExperienceFiltersStore);
+  const workExperienceFilters = useSnapshot(workExperienceFiltersStore);
 
   return (
     <>
       <ToggleComponent
-        text="Show Canada National Occupational Classification (NOC)"
-        checked={snap.showCanadaClassification}
-        toggle={snap.toggleCanadaClassification}
+        text="Show Section"
+        checked={workExperienceFilters.showSection}
+        toggle={workExperienceFilters.toggleSection}
       />
 
-      <ToggleComponent
-        text="Show Related Projects"
-        checked={snap.showRelatedProjects}
-        toggle={snap.toggleRelatedProjects}
-      />
+      {workExperienceFilters.showSection && (
+        <ToggleComponent
+          text="Show Canada National Occupational Classification (NOC)"
+          checked={workExperienceFilters.showCanadaClassification}
+          toggle={workExperienceFilters.toggleCanadaClassification}
+        />
+      )}
+
+      {workExperienceFilters.showSection && (
+        <ToggleComponent
+          text="Show Related Projects"
+          checked={workExperienceFilters.showRelatedProjects}
+          toggle={workExperienceFilters.toggleRelatedProjects}
+        />
+      )}
     </>
   );
 };

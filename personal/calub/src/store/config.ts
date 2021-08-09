@@ -8,7 +8,7 @@ import {
   SectionType,
   SkillsCategory
 } from '../models';
-import { tagFiltersStore, workExperienceFiltersStore, headerFiltersStore } from './filters';
+import { projectsFiltersStore, workExperienceFiltersStore, headerFiltersStore } from './filters';
 import { sidebarContentStore } from './sidebar';
 
 export interface ConfigStore {
@@ -67,7 +67,7 @@ const parseSkills = (skillsCategories: SkillsCategory[]) => {
         })
         .map((skill) => {
           // Populate the tags.
-          tagFiltersStore.add(skill.title);
+          projectsFiltersStore.add(skill.title);
         });
     });
 };
@@ -82,7 +82,7 @@ const parseProjects = (projects: ProjectsItem[]) => {
     .map((project) => {
       project.tags.map((tag) => {
         // Populate the tags.
-        tagFiltersStore.add(tag);
+        projectsFiltersStore.add(tag);
       });
       (project.relatedTo || []).map((relationship) => {
         // Populate the project relationships.

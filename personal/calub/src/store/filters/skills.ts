@@ -1,6 +1,9 @@
 import { proxy } from 'valtio';
 
 export interface SkillsFiltersStore {
+  showSection: boolean;
+  toggleSection: () => void;
+
   showFamiliarity: boolean;
   toggleShowFamiliarity: () => void;
 
@@ -9,6 +12,11 @@ export interface SkillsFiltersStore {
 }
 
 export const skillsFiltersStore = proxy<SkillsFiltersStore>({
+  showSection: true,
+  toggleSection: () => {
+    skillsFiltersStore.showSection = !skillsFiltersStore.showSection;
+  },
+
   showFamiliarity: true,
   toggleShowFamiliarity: () => {
     skillsFiltersStore.showFamiliarity = !skillsFiltersStore.showFamiliarity;

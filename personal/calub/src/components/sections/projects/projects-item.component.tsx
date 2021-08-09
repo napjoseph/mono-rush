@@ -3,7 +3,7 @@ import { useSnapshot } from 'valtio';
 
 import { ProjectsItem, TagFilterStatus } from '../../../models';
 import formatDate from '../../../utils/format-date';
-import { sidebarToggleStore, tagFiltersStore } from '../../../store';
+import { sidebarToggleStore, projectsFiltersStore } from '../../../store';
 import joinClassNames from '../../../utils/join-class-names';
 
 interface ProjectsItemComponentProps {
@@ -17,7 +17,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
   item,
   isRelatedProject = false
 }) => {
-  const tagFilters = useSnapshot(tagFiltersStore);
+  const tagFilters = useSnapshot(projectsFiltersStore);
   const sidebarToggle = useSnapshot(sidebarToggleStore);
 
   const tagsPrefix = 'Technologies used: ';
