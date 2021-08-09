@@ -26,8 +26,8 @@ sections:
             title: 'Playful'
         links:
           - title: 'Website'
-            value: 'napjose.ph'
-            linkTo: 'https://napjose.ph'
+            value: 'napjose.ph/calub'
+            linkTo: 'https://napjose.ph/calub'
             icon:
               prefix: 'fas'
               iconName: 'globe-asia'
