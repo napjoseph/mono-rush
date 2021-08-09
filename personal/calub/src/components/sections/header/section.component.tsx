@@ -22,13 +22,13 @@ const HeaderSectionComponent: React.FC<HeaderSectionComponentProps> = ({ config 
 
   return (
     <>
-      <div className="flex flex-col items-center space-x-4 lg:space-x-6 xs:flex-row">
+      <div className="flex flex-col items-center space-x-4 space-y-4 lg:space-x-6 xs:flex-row">
         {headerFilters.showProfilePicture &&
           headerFilters.profilePictures.length > 0 &&
           (image.path || '') !== '' && (
             <div
               className={joinClassNames(
-                'sm:h-44 sm:w-44 print:h-40 print:w-40 overflow-hidden',
+                'w-60 h-60 sm:h-44 sm:w-44 print:h-40 print:w-40 overflow-hidden flex-none',
                 headerFilters.useCircularImage ? 'rounded-full' : '',
                 headerFilters.addDropShadow ? 'shadow-xl' : ''
               )}

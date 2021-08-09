@@ -1,16 +1,18 @@
 import React from 'react';
-
 import Image from 'next/image';
 
 import { HeaderImage } from '../../../models';
 import getPublicBasePath from '../../../utils/get-public-base-path';
 
-interface ImageComponentProps {
+interface ProfileImageComponentProps {
   title: string;
   image: HeaderImage;
 }
 
-const ImageComponent: React.FC<ImageComponentProps> = ({ title = 'Profile Picture', image }) => {
+const ProfileImageComponent: React.FC<ProfileImageComponentProps> = ({
+  title = 'Profile Picture',
+  image
+}) => {
   let imagePath = image.path || '';
   if (image.source === 'static') {
     imagePath = `${getPublicBasePath()}${image.path}`;
@@ -19,7 +21,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ title = 'Profile Pictur
   return (
     <>
       <Image
-        className="object-contain"
+        className="object-cover object-center"
         src={imagePath}
         alt={title}
         title={title}
@@ -32,4 +34,4 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ title = 'Profile Pictur
   );
 };
 
-export default ImageComponent;
+export default ProfileImageComponent;
