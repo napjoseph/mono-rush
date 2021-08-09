@@ -1,6 +1,6 @@
 import { proxy } from 'valtio';
 
-import { SectionType } from '../../models';
+import { SidebarContentSection } from '../../models';
 
 const addSection = (
   list: SidebarContentSection[],
@@ -10,11 +10,6 @@ const addSection = (
     ? [...list, item]
     : [...list];
 };
-
-export interface SidebarContentSection {
-  title: string;
-  type: SectionType;
-}
 
 export interface SidebarContentStore {
   sections: SidebarContentSection[];

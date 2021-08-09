@@ -5,58 +5,42 @@ import { headerFiltersStore } from '../../../store';
 import ToggleComponent from '../../ui/toggle/toggle.component';
 import ProfilePictureList from './profile-picture-list.component';
 
-const DEFAULT_TITLE = 'Header';
-
-interface HeaderFiltersSectionProps {
-  title?: string;
-}
-
-const HeaderFiltersSection: React.FC<HeaderFiltersSectionProps> = ({ title }) => {
+const HeaderFiltersSection: React.FC = (_props) => {
   const headerFilters = useSnapshot(headerFiltersStore);
-
-  if (title === undefined || title.trim() === '') {
-    title = DEFAULT_TITLE;
-  }
-
   return (
     <>
-      <div className="flex flex-col gap-3 text-sm">
-        <h3 className="font-semibold uppercase">{title}</h3>
-        <div className="flex flex-col gap-4">
-          <ToggleComponent
-            text="Show Profile Picture"
-            checked={headerFilters.showProfilePicture}
-            toggle={headerFilters.toggleProfilePicture}
-          />
+      <ToggleComponent
+        text="Show Profile Picture"
+        checked={headerFilters.showProfilePicture}
+        toggle={headerFilters.toggleProfilePicture}
+      />
 
-          {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
-            <ToggleComponent
-              text="Use Circular Image"
-              checked={headerFilters.useCircularImage}
-              toggle={headerFilters.toggleUseCircularImage}
-            />
-          )}
+      {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
+        <ToggleComponent
+          text="Use Circular Image"
+          checked={headerFilters.useCircularImage}
+          toggle={headerFilters.toggleUseCircularImage}
+        />
+      )}
 
-          {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
-            <ToggleComponent
-              text="Add Drop Shadow"
-              checked={headerFilters.addDropShadow}
-              toggle={headerFilters.toggleAddDropShadow}
-            />
-          )}
+      {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
+        <ToggleComponent
+          text="Add Drop Shadow"
+          checked={headerFilters.addDropShadow}
+          toggle={headerFilters.toggleAddDropShadow}
+        />
+      )}
 
-          {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
-            <ProfilePictureList
-              title="Select Profile Picture"
-              choices={headerFilters.profilePictures}
-              selectedIndex={headerFilters.selectedProfilePictureIndex}
-              isExpanded={headerFilters.isSelectProfilePicturesExpanded}
-              toggleExpand={headerFilters.toggleSelectProfilePicturesExpanded}
-              select={headerFilters.selectProfilePicture}
-            />
-          )}
-        </div>
-      </div>
+      {headerFilters.showProfilePicture && headerFilters.profilePictures.length > 0 && (
+        <ProfilePictureList
+          title="Select Profile Picture"
+          choices={headerFilters.profilePictures}
+          selectedIndex={headerFilters.selectedProfilePictureIndex}
+          isExpanded={headerFilters.isSelectProfilePicturesExpanded}
+          toggleExpand={headerFilters.toggleSelectProfilePicturesExpanded}
+          select={headerFilters.selectProfilePicture}
+        />
+      )}
     </>
   );
 };
