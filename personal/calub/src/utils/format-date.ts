@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-const formatDate = (dateString: string, formatString = 'LLLL kkkk'): string => {
+const formatDate = (dateString: string, formatString = 'LLLL yyyy'): string => {
   return DateTime.fromISO(dateString).toFormat(formatString);
 };
 
