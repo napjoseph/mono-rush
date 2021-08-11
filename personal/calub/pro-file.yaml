@@ -367,7 +367,7 @@ sections:
               - 'TypeScript'
               - 'Valtio'
             roles:
-              - 'I created a tool that can generate shareable and interactive online portfolios using Next.js and Tailwind CSS.'
+              - 'Created a tool that can generate shareable and interactive online portfolios using Next.js and Tailwind CSS.'
           - title: 'Personal Website'
             linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/napjoseph'
             meta:
@@ -390,12 +390,12 @@ sections:
               - 'TypeScript'
               - 'Utterances'
             roles:
-              - 'I created my personal website using open-source tools such as Next.js and Chakra UI.'
-          - title: 'Other Internal Network Tools and Dashboards'
+              - 'Created my personal website using open-source tools such as Next.js and Chakra UI.'
+          - title: 'Gobblet'
             meta:
               show: true
             dates:
-              start: '2020-11'
+              start: '2021-01'
               end: '2021-05'
             tags:
               - 'Angular'
@@ -405,49 +405,53 @@ sections:
               - 'Docker'
               - 'Go'
               - 'Google App Engine'
-              - 'Google Apps Script'
               - 'Google Cloud Platform'
-              - 'Google Data Studio'
+              - 'Google Cloud Storage'
+              - 'Google Cloud Tasks'
+              - 'Google Drive API'
+              - 'Google File Picker API'
+              - 'gRPC'
+              - 'Jasmine'
+              - 'Material Design'
+              - 'Mercurial'
+              - 'MySQL'
+              - 'NgRx'
+              - 'PostgreSQL'
+              - 'Python'
+              - 'Sass'
+              - 'TypeScript'
+            roles:
+              - 'Created workflows that fetch external data to be used as a single source of truth for the network fleet.'
+              - 'Created a bulk upload tool that parses different lifecycle data for various vendors and network assets.'
+              - 'Created workflows that re-exports the data to be used in internal tools and dashboards.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'Scanley'
+            meta:
+              show: true
+            dates:
+              start: '2020-12'
+              end: '2021-01'
+            tags:
+              - 'Go'
+              - 'Google Cloud Platform'
+              - 'Google Cloud Storage'
               - 'Google Drive API'
               - 'gRPC'
               - 'Mercurial'
-              - 'MySQL'
-              - 'PostgreSQL'
               - 'Protocol Buffers'
-              - 'Sass'
             roles:
-              - 'I developed different internal tools using Go to send email alerts for non-compliant network devices.'
-              - 'I designed dashboards using Data Studio to visualize all the devices of the network taken from BigQuery, Cloud SQL, and sometimes Google Sheets.'
-              - 'I designed and created a tool that can automatically scan the shared Google Drive files for terms that needs to be updated, and then file the appropriate tickets for the change.'
-              - 'I created a tool that parses different lifecycle data for various network assets and created a unified data source that can be read by other internal applications.'
+              - 'Designed and created a command-line tool that can automatically scan the shared Google Drive files for terms that needs to be updated, and then file the appropriate tickets for the change.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'OS Compliance Dashboard'
+          - title: 'Maintenance/Support and Upkeep for Aging Projects'
             meta:
               show: true
             dates:
-              start: '2020-07'
-              end: '2020-10'
-            tags:
-              - 'Bazel'
-              - 'BigQuery'
-              - 'Docker'
-              - 'Google Data Studio'
-              - 'gRPC'
-              - 'Mercurial'
-              - 'MySQL'
-            roles:
-              - 'I migrated the previous internal Dremel data and dashboard to use BigQuery and Data Studio.'
-            relatedTo:
-              - type: 'work-experience'
-                key: 'Concentrix'
-          - title: 'Service Provider Performance Dashboard'
-            meta:
-              show: true
-            dates:
-              start: '2019-07'
-              end: '2020-07'
+              start: '2020-05'
+              end: '2020-12'
             tags:
               - 'Angular'
               - 'Bazel'
@@ -457,16 +461,133 @@ sections:
               - 'Go'
               - 'Google App Engine'
               - 'Google Chart API'
+              - 'Google Cloud Bigtable'
               - 'Google Cloud Platform'
+              - 'Google Cloud Storage'
+              - 'Google Cloud Tasks'
               - 'gRPC'
+              - 'Jasmine'
               - 'Material Design'
               - 'Mercurial'
               - 'MySQL'
+              - 'NgRx'
               - 'Sass'
               - 'TypeScript'
             roles:
-              - 'I maintained and refactored the legacy codebase and increased unit test coverage.'
-              - 'I added new data sources for the Service Provider details and their promised and actual SLA.'
+              - 'Created libraries to easily query internal data sources in Go.'
+              - 'Fixed data source errors by using the BigQuery to Dremel migrater tool.'
+              - 'Migrated the external dependencies of different applications to use the latest stable version.'
+              - 'Improved code coverage and documentation and implemented CI release pipelines for deploying to App Engine.'
+              - 'Researched and implemented new deployment strategies enforced by the GCP organization.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'BigQuery to Dremel Migrater'
+            meta:
+              show: true
+            dates:
+              start: '2020-05'
+              end: '2020-07'
+            tags:
+              - 'BigQuery'
+              - 'Docker'
+              - 'Go'
+              - 'gRPC'
+              - 'Google Cloud Platform'
+              - 'Mercurial'
+            roles:
+              - 'Continued the implementation of the BigQuery data to Dremel importer.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'Service Provider Performance Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2019-11'
+              end: '2020-04'
+            tags:
+              - 'Angular'
+              - 'Bazel'
+              - 'BigQuery'
+              - 'Cloud SQL'
+              - 'Docker'
+              - 'Go'
+              - 'Google App Engine'
+              - 'Google Chart API'
+              - 'Google Cloud Bigtable'
+              - 'Google Cloud Platform'
+              - 'Google Cloud Storage'
+              - 'Google Cloud Tasks'
+              - 'gRPC'
+              - 'Jasmine'
+              - 'Material Design'
+              - 'Mercurial'
+              - 'MySQL'
+              - 'NgRx'
+              - 'Sass'
+              - 'TypeScript'
+            roles:
+              - 'Maintained and refactored the legacy codebase to the latest Angular version and increased unit test coverage.'
+              - 'Added support for new data sources for the Service Provider data.'
+              - 'Added calculation and visualization for each ISP and their promised vs actual SLA.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'Corpnet Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2019-09'
+              end: '2019-09'
+            tags:
+              - 'Angular'
+              - 'Bazel'
+              - 'Google App Engine'
+              - 'Google Cloud Platform'
+              - 'Jasmine'
+              - 'Material Design'
+              - 'Mercurial'
+              - 'MySQL'
+              - 'NgRx'
+              - 'Sass'
+              - 'TypeScript'
+            roles:
+              - 'Implemented table filters and download data option and other UI fixes.'
+          - title: 'Critical Email Notifiers for Down or Non-Compliant Devices'
+            meta:
+              show: true
+            dates:
+              start: '2019-07'
+              end: '2019-09'
+            tags:
+              - 'Bazel'
+              - 'Docker'
+              - 'Go'
+              - 'gRPC'
+              - 'Mercurial'
+              - 'Protocol Buffers'
+            roles:
+              - 'Created tools that sends daily email notifications that compiles actionable network device alerts.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Concentrix'
+          - title: 'OS Compliance Dashboard'
+            meta:
+              show: true
+            dates:
+              start: '2019-05'
+              end: '2020-06'
+            tags:
+              - 'Bazel'
+              - 'BigQuery'
+              - 'Docker'
+              - 'Google Data Studio'
+              - 'gRPC'
+              - 'Mercurial'
+              - 'MySQL'
+            roles:
+              - 'Fully migrated the previous internal Dremel data sources and dashboard to use BigQuery and Data Studio.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
@@ -474,7 +595,7 @@ sections:
             meta:
               show: true
             dates:
-              start: '2018-05'
+              start: '2018-06'
               end: '2019-07'
             tags:
               - 'Angular'
@@ -486,19 +607,23 @@ sections:
               - 'Google App Engine'
               - 'Google Chart API'
               - 'Google Cloud Platform'
+              - 'Google Cloud Storage'
               - 'Google Cloud Tasks'
               - 'gRPC'
+              - 'Jasmine'
               - 'Material Design'
               - 'Mercurial'
               - 'MySQL'
+              - 'NgRx'
               - 'Python'
               - 'Sass'
               - 'TypeScript'
             roles:
-              - "I maintained a legacy dashboard for visualizing and managing the lifecycle of devices in our client's enterprise network."
-              - 'I refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
-              - 'I upgraded the old task runners using Python to use Go App Engine Cron and Cloud Tasks.'
-              - 'I added support for different realms other than the corporate network.'
+              - "Maintained a legacy dashboard for visualizing and managing the lifecycle data of devices in our client's enterprise network."
+              - 'Refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
+              - 'Migrated the old task runners using Python to use Go App Engine Cron and Cloud Tasks.'
+              - 'Added support for different realms other than the corporate and production network.'
+              - 'Added support for adding remediation dates, NPI dates, and part number data for each asset model.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
@@ -519,7 +644,7 @@ sections:
               - 'Python'
               - 'robobrowser'
             roles:
-              - "I created a command-line utility to scrape and analyze the data from KWF's Diksiyonaryo (filipino dictionary) website and to enable more advanced search queries."
+              - "Created a command-line utility to scrape and analyze the data from KWF's Diksiyonaryo (filipino dictionary) website and to enable more advanced search queries."
           - title: 'Assets Handover Management Dashboard'
             meta:
               show: true
@@ -540,8 +665,8 @@ sections:
               - 'PostgreSQL'
               - 'Python'
             roles:
-              - 'I developed a web application for handling the splitting, handing over, and disposal program of telecommunication assets to external shareholders.'
-              - 'I created a utility tool to import, clean, and process huge XLSX files to manage the list of assets information.'
+              - 'Developed a web application for handling the splitting, handing over, and disposal program of telecommunication assets to external shareholders.'
+              - 'Created a utility tool to import, clean, and process huge XLSX files to manage the list of assets information.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Bell Telecommunication Phils, Inc.'
@@ -562,8 +687,8 @@ sections:
               - 'Python'
               - 'Recaptcha2'
             roles:
-              - 'I developed and deployed a members information system for a local networking group.'
-              - "I used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
+              - 'Developed and deployed a members information system for a local networking group.'
+              - "Used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
             relatedTo:
               - type: 'work-experience'
                 key: 'Self-Employed'
@@ -583,8 +708,8 @@ sections:
               - 'HTML5'
               - 'jspdf'
             roles:
-              - 'I developed and deployed a members information system for a local networking group.'
-              - "I used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
+              - 'Developed and deployed a members information system for a local networking group.'
+              - "Used a trinary tree network diagram to visualize each member's downlines to help plan recruitment strategies."
           - title: 'Engage - Employee Recognition Platform'
             meta:
               show: true
@@ -603,8 +728,8 @@ sections:
               - 'Python'
               - 'Sentry'
             roles:
-              - 'I managed a team to refactor and redesign the internal version of the web application for commercial use.'
-              - 'I worked directly with the project manager and product owners regarding the project requirements and specifications.'
+              - 'Managed a team to refactor and redesign the internal version of the web application for commercial use.'
+              - 'Worked directly with the project manager and product owners regarding the project requirements and specifications.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
@@ -629,8 +754,8 @@ sections:
               - 'Titanium'
               - 'Twitter API'
             roles:
-              - 'I worked with a team to create iOS and Android applications to buy Twitter, Instagram, and YouTube followers.'
-              - 'I refactored the REST API servers, integrated various social APIs to the mobile apps, and used Redis/Redis Clusters for managing the followers set.'
+              - 'Worked with a team to create iOS and Android applications to buy Twitter, Instagram, and YouTube followers.'
+              - 'Refactored the REST API servers, integrated various social APIs to the mobile apps, and used Redis/Redis Clusters for managing the followers set.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
@@ -654,7 +779,7 @@ sections:
               - 'Titanium'
               - 'Twitter API'
             roles:
-              - 'I helped fix bugs on the Django backend and created new views for a mobile RSS feed reader.'
+              - 'Helped fix bugs on the Django backend and created new views for a mobile RSS feed reader.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
@@ -675,8 +800,8 @@ sections:
               - 'Sass'
               - 'Semantic UI'
             roles:
-              - 'I used NodeJS for sending real-time push notifications to connected clients.'
-              - 'I implemented an importer automatically fetch and clean the map data from the World Bank API to show different color ranges to an interactive map.'
+              - 'Used NodeJS for sending real-time push notifications to connected clients.'
+              - 'Implemented an importer automatically fetch and clean the map data from the World Bank API to show different color ranges to an interactive map.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
@@ -713,8 +838,8 @@ sections:
               - 'Sass'
               - 'Titanium'
             roles:
-              - 'I used Titanium to create a HIIT circuit training application for iOS and Android.'
-              - 'I used parse.com for storing user data and managing authentication.'
+              - 'Used Titanium to create a HIIT circuit training application for iOS and Android.'
+              - 'Used parse.com for storing user data and managing authentication.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
@@ -739,9 +864,9 @@ sections:
               - 'PostgreSQL'
               - 'Sass'
             roles:
-              - 'I migrated a legacy system using Django 1.4 to the latest supported version.'
-              - 'I implemented the formatting of chapters to an original story/fanfic publication site.'
-              - 'I implemented the login/registration and timeline features for a digital sports network.'
+              - 'Migrated a legacy system using Django 1.4 to the latest supported version.'
+              - 'Implemented the formatting of chapters to an original story/fanfic publication site.'
+              - 'Implemented the login/registration and timeline features for a digital sports network.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Ingenuity Global Consulting'
@@ -755,7 +880,7 @@ sections:
               - 'PHP'
               - 'WordPress'
             roles:
-              - 'I created a WordPress theme for an online flower shop as part of a workshop.'
+              - 'Created a WordPress theme for an online flower shop as part of a workshop.'
           - title: 'The Hidden Cloud Academy for the Overlooked Skills'
             meta:
               show: true
@@ -775,7 +900,7 @@ sections:
               - 'REST'
               - 'south'
             roles:
-              - 'As part of my undergraduate thesis, I created a project incorporating game-based learning with existing cloud services to improve reading speed and comprehension.'
+              - 'Created a project incorporating game-based learning with existing cloud services to improve reading speed and comprehension as part of my undergraduate thesis.'
           - title: 'JPLAUREL Academic Information System'
             meta:
               show: true
@@ -787,7 +912,7 @@ sections:
               - 'MySQL'
               - 'Visual C#'
             roles:
-              - 'I worked with a team to create an Academic Information System (AIS) for the Jose P. Laurel Sr. Elementary School.'
+              - 'Worked with a team to create an Academic Information System (AIS) for the Jose P. Laurel Sr. Elementary School.'
           - title: 'The King’s Number'
             meta:
               show: true
@@ -797,7 +922,7 @@ sections:
             tags:
               - 'C++'
             roles:
-              - 'I created a number game incorporating the set theory of discrete mathematics, presented as part of the requirements for the MATH422C course.'
+              - 'Created a number game incorporating the set theory of discrete mathematics, presented as part of the requirements for the MATH422C course.'
   - title: 'Educational Background'
     meta:
       avoidPageBreak: true
