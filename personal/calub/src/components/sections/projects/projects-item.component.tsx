@@ -5,6 +5,7 @@ import { ProjectsItem, TagFilterStatus } from '../../../models';
 import formatDate from '../../../utils/format-date';
 import { sidebarToggleStore, projectsFiltersStore } from '../../../store';
 import joinClassNames from '../../../utils/join-class-names';
+import calculateDateDuration from '../../../utils/calculate-date-duration';
 
 interface ProjectsItemComponentProps {
   item: ProjectsItem;
@@ -38,7 +39,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
           )}
         </h3>
         <div className="inline text-xs text-gray-500">
-          <span className="inline">
+          <span className="inline" title={calculateDateDuration(item.dates.start, item.dates.end)}>
             <span>{formatDate(item.dates.start)}</span>
             <span>{datesTo}</span>
             <span>{formatDate(item.dates.end)}</span>
