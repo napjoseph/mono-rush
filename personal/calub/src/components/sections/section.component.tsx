@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSnapshot } from 'valtio';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 
 import { Section, SectionType, DEFAULT_SECTION_META, SectionMeta } from '../../models';
 import CertificationsSectionComponent from './certifications/section.component';
@@ -106,16 +107,48 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
   // Just display the content if there are no headers.
   if (!meta.displayHeader) {
     return (
-      <div
+      <motion.div
         className={joinClassNames('pb-3', meta.avoidPageBreak ? 'print:break-inside-avoid' : '')}
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            opacity: 0,
+            translateY: '15px'
+          },
+          visible: {
+            opacity: 1,
+            translateY: '0px',
+            transition: {
+              duration: 0.5
+            }
+          }
+        }}
       >
         {content && content}
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className={joinClassNames('pb-3', meta.avoidPageBreak ? 'print:break-inside-avoid' : '')}>
+    <motion.div
+      className={joinClassNames('pb-3', meta.avoidPageBreak ? 'print:break-inside-avoid' : '')}
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: {
+          opacity: 0,
+          translateY: '15px'
+        },
+        visible: {
+          opacity: 1,
+          translateY: '0px',
+          transition: {
+            duration: 0.5
+          }
+        }
+      }}
+    >
       <div className="flex items-center">
         {section.icon && (
           <div className="mr-2">
@@ -130,7 +163,7 @@ const SectionComponent: React.FC<SectionComponentProps> = ({ section }) => {
       </div>
 
       <div className="mt-3 ml-5">{content && content}</div>
-    </div>
+    </motion.div>
   );
 };
 
