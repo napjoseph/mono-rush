@@ -197,27 +197,27 @@ sections:
               - title: 'Google Apps Script'
                 rating: 4
                 meta:
-                  show: true
+                  show: false
               - title: 'Java'
                 rating: 2
                 meta:
-                  show: true
+                  show: false
               - title: 'PHP'
                 rating: 2
                 meta:
-                  show: true
+                  show: false
               - title: 'Visual C#'
                 rating: 2
                 meta:
-                  show: true
+                  show: false
               - title: 'C++'
                 rating: 2
                 meta:
-                  show: true
+                  show: false
               - title: 'Dart'
                 rating: 3
                 meta:
-                  show: true
+                  show: false
           - title: 'Other Technologies and Frameworks'
             meta:
               show: true
@@ -253,7 +253,7 @@ sections:
               - title: 'WordPress'
                 rating: 4
                 meta:
-                  show: true
+                  show: false
               - title: 'Flask'
                 rating: 5
                 meta:
@@ -261,7 +261,7 @@ sections:
               - title: 'Flutter'
                 rating: 2
                 meta:
-                  show: true
+                  show: false
           - title: 'Source Code Management'
             meta:
               show: true
@@ -308,36 +308,36 @@ sections:
                   show: true
           - title: 'Applications'
             meta:
-              show: true
+              show: false
             items:
               - title: 'Microsoft Office Suite'
                 rating: 9
                 meta:
-                  show: true
+                  show: false
               - title: 'Adobe Photoshop'
                 rating: 7
                 meta:
-                  show: true
+                  show: false
               - title: 'Adobe Illustrator'
                 rating: 6
                 meta:
-                  show: true
+                  show: false
               - title: 'Adobe Premiere'
                 rating: 6
                 meta:
-                  show: true
+                  show: false
               - title: 'Google Data Studio'
                 rating: 10
                 meta:
-                  show: true
+                  show: false
               - title: 'Figma'
                 rating: 6
                 meta:
-                  show: true
+                  show: false
               - title: 'Sketch'
                 rating: 4
                 meta:
-                  show: true
+                  show: false
   - title: 'Projects'
     icon:
       prefix: 'fas'
