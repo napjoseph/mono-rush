@@ -139,7 +139,7 @@ sections:
                 description: "I created web and mobile solutions based on my customer's needs and specifications. I offered my clients a comprehensive range of services; from creating simple company websites to deploying full-fledged information systems."
           - title: 'Ateneo de Davao University'
             url: 'https://www.addu.edu.ph/'
-            address: 'E. Jacinto Street, Davao City, Davao del Sure, Philippines 8016'
+            address: 'E. Jacinto Street, Davao City, Davao del Sur, Philippines 8016'
             image:
               source: 'static'
               path: '/company-logos/addu.png'
