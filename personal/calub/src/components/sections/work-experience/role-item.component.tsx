@@ -27,7 +27,7 @@ const RoleItemComponent: React.FC<RoleItemComponentProps> = ({ item }) => {
         )}
         <div className={classes.dates} title={calculateDateDuration(startDate, endDate)}>
           <span className={classes.start}>{formatDate(startDate)}</span>–
-          <span className={classes.end}>{formatDate(endDate)}</span>
+          <span className={classes.end}>{endDate ? formatDate(endDate) : <>current</>}</span>
         </div>
       </div>
       <div className={classes.description}>{description}</div>

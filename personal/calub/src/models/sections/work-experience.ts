@@ -19,7 +19,7 @@ export interface WorkExperienceRole {
   title: string;
   canadaClassification?: string;
   startDate: string;
-  endDate: string;
+  endDate?: string; // If empty, it will use the current date.
   description: string;
 }
 

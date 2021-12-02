@@ -1,6 +1,10 @@
 import { DateTime } from 'luxon';
 
-const calculateDateDuration = (dateStart: string, dateEnd: string): string => {
+const calculateDateDuration = (dateStart: string, dateEnd?: string): string => {
+  if (!dateEnd) {
+    dateEnd = DateTime.now().toFormat('yyyy-MM');
+  }
+
   const { years, months } = DateTime.fromISO(dateEnd).diff(DateTime.fromISO(dateStart), [
     'years',
     'months'
