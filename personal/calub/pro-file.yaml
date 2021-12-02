@@ -391,7 +391,7 @@ sections:
               - 'Utterances'
             roles:
               - 'Created my personal website using open-source tools such as Next.js and Chakra UI.'
-          - title: 'Gobblet'
+          - title: 'Bulk Upload Tool for Network Asset Lifecycle Data'
             meta:
               show: true
             dates:
@@ -427,7 +427,7 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'Scanley'
+          - title: 'Google Drive Files Scanner and Ticket Filer'
             meta:
               show: true
             dates:
@@ -482,7 +482,7 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'BigQuery to Dremel Migrater'
+          - title: 'BigQuery Migrater'
             meta:
               show: true
             dates:
@@ -496,11 +496,11 @@ sections:
               - 'Google Cloud Platform'
               - 'Mercurial'
             roles:
-              - 'Continued the implementation of the BigQuery data to Dremel importer.'
+              - 'Continued the implementation of the BigQuery data migrater and importer.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'Service Provider Performance Dashboard'
+          - title: 'Performance Dashboard for Service Providers'
             meta:
               show: true
             dates:
@@ -534,7 +534,7 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'Corpnet Dashboard'
+          - title: 'Dashboard for Corporate Network Team'
             meta:
               show: true
             dates:
@@ -572,7 +572,7 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'OS Compliance Dashboard'
+          - title: 'Dashboard for Tracking Operating System Compliance'
             meta:
               show: true
             dates:
@@ -591,7 +591,7 @@ sections:
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
-          - title: 'Lifecycle Management Dashboard'
+          - title: 'Dashboard for Tracking Network Assets Lifecyle'
             meta:
               show: true
             dates:
