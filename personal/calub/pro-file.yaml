@@ -85,6 +85,18 @@ sections:
       type: 'work-experience'
       value:
         items:
+          - title: 'Oracle'
+            url: 'https://www.oracle.com/'
+            address: '33/F Zuellig Building, Makati Avenue Corner Paseo de Roxas, Metro Manila, Makati City, Philippines 1225'
+            image:
+              source: 'static'
+              path: '/company-logos/oracle.png'
+              title: 'Oracle Logo'
+            roles:
+              - title: 'Senior UI Engineer'
+                canadaClassification: '2 - 21 - 217 - 2175 - Web designers and developers'
+                startDate: '2021-10'
+                description: 'I help with implementing features for the next-generation student information system: Oracle Student Cloud.'
           - title: 'Concentrix'
             url: 'https://www.concentrix.com/'
             address: 'Tera Tower, Bridgetowne, C5, Eulogio Rodriguez Jr. Ave, Quezon City, Metro Manila, Philippines 1110'
