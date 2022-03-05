@@ -2,12 +2,11 @@ const colors = require('tailwindcss/colors');
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  purge: [
+  content: [
     './src/{pages,components}/**/*.{page,component}.{tsx,ts,jsx,js}',
     './src/{pages,components}/**/*.module.{scss,css}'
   ],
   presets: [],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
       '2xs': '480px',
@@ -29,7 +28,7 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
@@ -836,155 +835,8 @@ module.exports = {
     'active',
     'disabled'
   ],
-  variants: {
-    accessibility: ['responsive', 'focus-within', 'focus'],
-    alignContent: ['responsive'],
-    alignItems: ['responsive'],
-    alignSelf: ['responsive'],
-    animation: ['responsive'],
-    appearance: ['responsive'],
-    backdropBlur: ['responsive'],
-    backdropBrightness: ['responsive'],
-    backdropContrast: ['responsive'],
-    backdropDropShadow: ['responsive'],
-    backdropFilter: ['responsive'],
-    backdropGrayscale: ['responsive'],
-    backdropHueRotate: ['responsive'],
-    backdropInvert: ['responsive'],
-    backdropSaturate: ['responsive'],
-    backdropSepia: ['responsive'],
-    backgroundAttachment: ['responsive'],
-    backgroundBlendMode: ['responsive'],
-    backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    backgroundImage: ['responsive'],
-    backgroundOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    backgroundPosition: ['responsive'],
-    backgroundRepeat: ['responsive'],
-    backgroundSize: ['responsive'],
-    backgroundOrigin: ['responsive'],
-    blur: ['responsive'],
-    borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    borderOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    borderRadius: ['hover', 'responsive'],
-    borderStyle: ['responsive'],
-    borderWidth: ['responsive'],
-    boxDecorationBreak: ['responsive'],
-    boxShadow: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
-    boxSizing: ['responsive'],
-    brightness: ['responsive'],
-    clear: ['responsive'],
-    container: ['responsive'],
-    contrast: ['responsive'],
-    cursor: ['responsive'],
-    display: ['responsive'],
-    divideColor: ['responsive', 'dark'],
-    divideOpacity: ['responsive', 'dark'],
-    divideStyle: ['responsive'],
-    divideWidth: ['responsive'],
-    dropShadow: ['responsive'],
-    fill: ['responsive'],
-    filter: ['responsive'],
-    flex: ['responsive'],
-    flexDirection: ['responsive'],
-    flexGrow: ['responsive'],
-    flexShrink: ['responsive'],
-    flexWrap: ['responsive'],
-    float: ['responsive'],
-    fontFamily: ['responsive'],
-    fontSize: ['hover', 'responsive'],
-    fontSmoothing: ['responsive'],
-    fontStyle: ['responsive'],
-    fontVariantNumeric: ['responsive'],
-    fontWeight: ['hover', 'responsive'],
-    gap: ['responsive'],
-    gradientColorStops: ['responsive', 'dark', 'hover', 'focus'],
-    grayscale: ['responsive'],
-    gridAutoColumns: ['responsive'],
-    gridAutoFlow: ['responsive'],
-    gridAutoRows: ['responsive'],
-    gridColumn: ['responsive'],
-    gridColumnEnd: ['responsive'],
-    gridColumnStart: ['responsive'],
-    gridRow: ['responsive'],
-    gridRowEnd: ['responsive'],
-    gridRowStart: ['responsive'],
-    gridTemplateColumns: ['responsive'],
-    gridTemplateRows: ['responsive'],
-    height: ['responsive'],
-    hueRotate: ['responsive'],
-    inset: ['responsive'],
-    invert: ['responsive'],
-    isolation: ['responsive'],
-    justifyContent: ['responsive'],
-    justifyItems: ['responsive'],
-    justifySelf: ['responsive'],
-    letterSpacing: ['responsive'],
-    lineHeight: ['responsive'],
-    listStylePosition: ['responsive'],
-    listStyleType: ['responsive'],
-    margin: ['responsive'],
-    maxHeight: ['responsive'],
-    maxWidth: ['responsive'],
-    minHeight: ['responsive'],
-    minWidth: ['responsive'],
-    mixBlendMode: ['responsive'],
-    objectFit: ['responsive'],
-    objectPosition: ['responsive'],
-    opacity: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
-    order: ['responsive'],
-    outline: ['responsive', 'focus-within', 'focus'],
-    overflow: ['responsive'],
-    overscrollBehavior: ['responsive'],
-    padding: ['hover', 'responsive'],
-    placeContent: ['responsive'],
-    placeItems: ['responsive'],
-    placeSelf: ['responsive'],
-    placeholderColor: ['responsive', 'dark', 'focus'],
-    placeholderOpacity: ['responsive', 'dark', 'focus'],
-    pointerEvents: ['responsive'],
-    position: ['responsive'],
-    resize: ['responsive'],
-    ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
-    ringOpacity: ['responsive', 'dark', 'focus-within', 'focus'],
-    ringWidth: ['responsive', 'focus-within', 'focus'],
-    rotate: ['responsive', 'hover', 'focus'],
-    saturate: ['responsive'],
-    scale: ['responsive', 'hover', 'focus'],
-    scrollbar: ['rounded'],
-    sepia: ['responsive'],
-    skew: ['responsive', 'hover', 'focus'],
-    space: ['responsive'],
-    stroke: ['responsive'],
-    strokeWidth: ['responsive'],
-    tableLayout: ['responsive'],
-    textAlign: ['responsive'],
-    textColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    textDecoration: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
-    textOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    textOverflow: ['responsive'],
-    textTransform: ['responsive'],
-    transform: ['responsive'],
-    transformOrigin: ['responsive'],
-    transitionDelay: ['responsive'],
-    transitionDuration: ['responsive'],
-    transitionProperty: ['responsive'],
-    transitionTimingFunction: ['responsive'],
-    translate: ['responsive', 'hover', 'focus'],
-    userSelect: ['responsive'],
-    verticalAlign: ['responsive'],
-    visibility: ['responsive'],
-    whitespace: ['responsive'],
-    width: ['responsive'],
-    wordBreak: ['responsive'],
-    zIndex: ['responsive', 'focus-within', 'focus']
-  },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
-    require('tailwind-scrollbar'),
     // add page break utilities as a plugin
     // https://developer.mozilla.org/en-US/docs/Web/CSS/break-before
     // https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside
@@ -1088,8 +940,132 @@ module.exports = {
         }
       });
     }),
-    // add scrollbars
-    plugin(function ({ addComponents }) {
+    // Added custom plugin since tailwind-scrollbar does not support tailwind v3 yet.
+    // Sources:
+    //   - https://github.com/adoxography/tailwind-scrollbar/
+    //   - https://gist.github.com/parafeu/3cf1c52d374a52091a685ce030563411
+    plugin(function ({ addUtilities, matchUtilities, theme, addComponents }) {
+      const scrollbarTrackColorValue = (value) => ({
+        '--scrollbar-track': value,
+        '&::-webkit-scrollbar-track': {
+          'background-color': value
+        }
+      });
+
+      const scrollbarTrackRoundedValue = (value) => ({
+        '&::-webkit-scrollbar-track': {
+          'border-radius': value
+        }
+      });
+
+      const scrollbarThumbColorValue = (value) => ({
+        '--scrollbar-thumb': value,
+        '&::-webkit-scrollbar-thumb': {
+          'background-color': value
+        }
+      });
+
+      const scrollbarThumbRoundedValue = (value) => ({
+        '&::-webkit-scrollbar-thumb': {
+          'border-radius': value
+        }
+      });
+
+      /**
+       * Tells an element what to do with --scrollbar-track and --scrollbar-thumb
+       * variables
+       */
+      const SCROLLBAR_SIZE_BASE = {
+        '--scrollbar-track': 'initial',
+        '--scrollbar-thumb': 'initial',
+        'scrollbar-color': 'var(--scrollbar-thumb) var(--scrollbar-track)',
+
+        // Make sure the scrollbars are calculated in the elements width
+        // NOTE: only has effect in webkit-based browsers, but is only really needed
+        // in webkit-based browsers in the first place.
+        overflow: 'overlay',
+
+        // Prevent the plugin from overriding overflow-hidden
+        '&.overflow-x-hidden': {
+          'overflow-x': 'hidden'
+        },
+
+        '&.overflow-y-hidden': {
+          'overflow-y': 'hidden'
+        },
+
+        '&::-webkit-scrollbar-track': {
+          'background-color': 'var(--scrollbar-track)'
+        },
+
+        '&::-webkit-scrollbar-thumb': {
+          'background-color': 'var(--scrollbar-thumb)'
+        }
+      };
+
+      addUtilities({
+        '.scrollbar': {
+          ...SCROLLBAR_SIZE_BASE,
+          'scrollbar-width': 'auto',
+          '&::-webkit-scrollbar': {
+            width: '16px',
+            height: '16px'
+          }
+        },
+        '.scrollbar-thin': {
+          ...SCROLLBAR_SIZE_BASE,
+          'scrollbar-width': 'thin',
+          '&::-webkit-scrollbar': {
+            width: '8px',
+            height: '8px'
+          }
+        },
+        '.scrollbar-none': {
+          'scrollbar-width': 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        }
+      });
+
+      Object.entries(theme('colors')).forEach(([colorName, color]) => {
+        switch (typeof color) {
+          case 'object':
+            matchUtilities(
+              {
+                [`scrollbar-track-${colorName}`]: (value) => scrollbarTrackColorValue(value),
+                [`scrollbar-thumb-${colorName}`]: (value) => scrollbarThumbColorValue(value)
+              },
+              {
+                values: color
+              }
+            );
+            break;
+          case 'function':
+            addUtilities({
+              [`.scrollbar-track-${colorName}`]: scrollbarTrackColorValue(color({})),
+              [`.scrollbar-thumb-${colorName}`]: scrollbarThumbColorValue(color({}))
+            });
+            break;
+          case 'string':
+            addUtilities({
+              [`.scrollbar-track-${colorName}`]: scrollbarTrackColorValue(color),
+              [`.scrollbar-thumb-${colorName}`]: scrollbarThumbColorValue(color)
+            });
+            break;
+        }
+      });
+
+      matchUtilities(
+        {
+          'scrollbar-track-rounded': (value) => scrollbarTrackRoundedValue(value),
+          'scrollbar-thumb-rounded': (value) => scrollbarThumbRoundedValue(value)
+        },
+        {
+          values: theme('borderRadius')
+        }
+      );
+
       addComponents({
         '.with-scrollbars': {
           '@apply scrollbar-thin hover:scrollbar-thumb-gray-600 scrollbar-thumb-gray-500 scrollbar-track-gray-300 scrollbar-track-rounded-full scrollbar-thumb-rounded-full':

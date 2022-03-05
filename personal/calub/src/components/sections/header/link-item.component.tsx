@@ -25,7 +25,12 @@ const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ item }) => {
     <>
       <div className="flex items-start text-gray-800">
         <div className="mr-2" title={title}>
-          <FontAwesomeIcon icon={icon} size="xs" fixedWidth className="text-gray-700" />
+          <FontAwesomeIcon
+            icon={icon}
+            size="xs"
+            fixedWidth
+            className="text-gray-700 inline-icon-item"
+          />
         </div>
         <div>
           <span className="mt-1 text-sm">{content}</span>

@@ -12,7 +12,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": ["types/*.d.ts", "src/**/*.tsx", "src/**/*.ts", "src/**/*.jsx", "src/**/*.js"],
   "exclude": ["node_modules", ".next", "out"]

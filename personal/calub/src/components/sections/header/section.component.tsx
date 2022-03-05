@@ -37,7 +37,7 @@ const HeaderSectionComponent: React.FC<HeaderSectionComponentProps> = ({ config 
             </div>
           )}
 
-        <div className="flex-grow">
+        <div className="grow">
           {introText && <span className="text-sm uppercase font-extralight">{introText}</span>}
           <h1 className="text-5xl font-medium uppercase">{fullName}</h1>
 

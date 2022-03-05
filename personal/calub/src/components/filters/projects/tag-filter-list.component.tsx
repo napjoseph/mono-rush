@@ -27,13 +27,13 @@ const TagFilterList: React.FC<TagFilterListProps> = ({
           className="flex flex-row flex-1 p-1 text-xs uppercase transition duration-100 ease-in-out rounded-sm cursor-pointer hover:bg-gray-700"
           onClick={toggleExpand}
         >
-          <span className="flex-grow px-1 break-words">{title}</span>
+          <span className="grow px-1 break-words">{title}</span>
           <span className="flex-none px-2" title="Toggle Details">
             <FontAwesomeIcon
               icon={{ prefix: 'fas', iconName: 'caret-right' }}
               className={joinClassNames(
                 isExpanded ? 'rotate-90' : '',
-                'transform',
+                '',
                 'transition-all duration-100 ease-in-out'
               )}
             />

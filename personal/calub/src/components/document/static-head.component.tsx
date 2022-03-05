@@ -10,11 +10,6 @@ const StaticHead: React.FC = (_props) => {
   return (
     <>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
-          rel="stylesheet"
-        />
-
         {/* See https://developers.google.com/web/fundamentals/web-app-manifest/ */}
         <link rel="manifest" href={basePath + '/manifest.json'} />
 

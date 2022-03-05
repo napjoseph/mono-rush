@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  // The react-fontawesome package has updated the alignment of .svg-inline--fa
+  // causing the items to be misaligned.
+  // This should undo that change.
+  .inline-icon-item {
+    vertical-align: -0.125em !important;
+  }
+}
