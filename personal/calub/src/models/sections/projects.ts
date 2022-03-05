@@ -10,7 +10,7 @@ export interface ProjectsItem {
   linkTo?: string;
   dates: {
     start: string;
-    end: string;
+    end?: string;
   };
   tags: string[];
   roles: string[];

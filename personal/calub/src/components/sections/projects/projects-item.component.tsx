@@ -42,7 +42,7 @@ const ProjectsItemComponent: React.FC<ProjectsItemComponentProps> = ({
           <span className="inline" title={calculateDateDuration(item.dates.start, item.dates.end)}>
             <span>{formatDate(item.dates.start)}</span>
             <span>{datesTo}</span>
-            <span>{formatDate(item.dates.end)}</span>
+            <span>{item.dates.end ? formatDate(item.dates.end) : <>present</>}</span>
           </span>
 
           <span className="inline mx-1">|</span>

@@ -96,7 +96,7 @@ sections:
               - title: 'Senior UI Engineer'
                 canadaClassification: '2 - 21 - 217 - 2175 - Web designers and developers'
                 startDate: '2021-10'
-                description: 'I help with implementing features for the next-generation student information system: Oracle Student Cloud.'
+                description: 'I implement additional frontend features for the next-generation student information system: Oracle Higher Education Student Cloud.'
           - title: 'Concentrix'
             url: 'https://www.concentrix.com/'
             address: 'Tera Tower, Bridgetowne, C5, Eulogio Rodriguez Jr. Ave, Quezon City, Metro Manila, Philippines 1110'
@@ -274,6 +274,10 @@ sections:
                 rating: 2
                 meta:
                   show: false
+              - title: 'Oracle JET'
+                rating: 8
+                meta:
+                  show: true
           - title: 'Source Code Management'
             meta:
               show: true
@@ -358,7 +362,27 @@ sections:
       type: 'projects'
       value:
         items:
-          - title: 'pro-file'
+          - title: 'Oracle Higher Education Student Cloud'
+            linkTo: 'https://www.oracle.com/ph/industries/government/education/higher-education/student-cloud/'
+            meta:
+              show: true
+            dates:
+              start: '2021-10'
+            tags:
+              - 'Chai'
+              - 'Git'
+              - 'Jenkins'
+              - 'KnockoutJS'
+              - 'lodash'
+              - 'Oracle ADF'
+              - 'Oracle JET'
+              - 'Sass'
+              - 'Selenium'
+              - 'Sinon JS'
+              - 'TypeScript'
+            roles:
+              - 'Implemented additional features while ensuring at least 90% unit test code coverage and having fully automated tests for the acceptance criterias.'
+          - title: 'Professional CV'
             linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/calub'
             meta:
               show: true
@@ -1504,7 +1528,7 @@ sections:
               text: '+63 908 863 9688'
           - title: 'Daryl Ronquillo'
             meta:
-              show: true
+              show: false
             role: 'Software Engineer'
             company:
               text: 'Company Confidential'
@@ -1526,10 +1550,10 @@ sections:
           - title: 'Gianina Juanga'
             meta:
               show: true
-            role: 'Security Software Engineer'
+            role: 'Software Engineer'
             company:
-              text: 'AirAsia'
-              url: 'https://www.airasia.com/'
+              text: 'Hello Fresh'
+              url: 'https://hellofresh.com/'
             email:
               text: 'gianina.juanga@gmail.com'
             mobile:
@@ -1580,7 +1604,7 @@ sections:
               text: '+63 939 918 9201'
           - title: 'Michelle P. Banawan, Ph.D.'
             meta:
-              show: true
+              show: false
             role: 'Academic Vice President'
             company:
               text: 'Ateneo de Davao University'
