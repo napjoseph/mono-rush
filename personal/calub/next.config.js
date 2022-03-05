@@ -1,5 +1,4 @@
 module.exports = {
-  swcMinify: true,
   basePath: process.env.NEXT_PUBLIC_BASEPATH || '',
   pageExtensions: [
     'page.tsx',
