@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Box, Heading, Flex, Text, useColorModeValue as mode } from '@chakra-ui/react';
 
-import profilePicture from '../../public/img/me/ws1.jpg';
 import { createHeadData, generateSiteDescription, generateSiteTitle } from '../lib/utils/head-data';
 import { createOpenGraphData } from '../lib/utils/open-graph-data';
 import OpenGraph from '../components/document/open-graph.component';
@@ -114,7 +113,7 @@ const NotFoundPage: React.FC = (_props) => {
             <Text fontSize={{ base: 'xs', md: 'lg' }}>{message.content}</Text>
           </MotionBox>
           <Box w={{ base: 'full', sm: 5 / 12 }} rounded="full">
-            <Image src={profilePicture} alt="Nap Joseph Calub" />
+            <Image src="https://napjose.ph/img/me/ws1.jpg" alt="Nap Joseph Calub" />
           </Box>
         </Flex>
       </Flex>
