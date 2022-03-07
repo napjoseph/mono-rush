@@ -54,6 +54,10 @@
         "message": "anything related to the calub-web project"
       },
       {
+        "name": "pro-file",
+        "message": "anything related to the pro-file project"
+      },
+      {
         "name": "shelves-web",
         "message": "anything related to the shelves-web project"
       },

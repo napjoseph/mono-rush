@@ -447,6 +447,11 @@
       "packageName": "starters-nextjs",
       "projectFolder": "apps/starters/nextjs",
       "reviewCategory": "prototypes"
+    },
+    {
+      "packageName": "pro-file",
+      "projectFolder": "apps/pro-file",
+      "reviewCategory": "prototypes"
     }
   ]
 }
