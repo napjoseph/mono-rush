@@ -13,6 +13,10 @@
       "path": "personal/calub"
     },
     {
+      "name": "apps/pro-file",
+      "path": "apps/pro-file"
+    },
+    {
       "name": "apps/shelves/web",
       "path": "apps/shelves/web"
     },
