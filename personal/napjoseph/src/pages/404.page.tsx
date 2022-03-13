@@ -113,7 +113,13 @@ const NotFoundPage: React.FC = (_props) => {
             <Text fontSize={{ base: 'xs', md: 'lg' }}>{message.content}</Text>
           </MotionBox>
           <Box w={{ base: 'full', sm: 5 / 12 }} rounded="full">
-            <Image src="https://napjose.ph/img/me/ws1.jpg" alt="Nap Joseph Calub" />
+            <Image
+              src="https://napjose.ph/img/me/ws1.jpg"
+              height={1050}
+              width={750}
+              layout="responsive"
+              alt="Nap Joseph Calub"
+            />
           </Box>
         </Flex>
       </Flex>
