@@ -138,6 +138,8 @@ sections:
                 endDate: '2017-08'
                 description: 'I was hired as a database consultant to help split, hand over, and dispose of the telecommunications network assets to PLDT and Globe Telecom. As the existing database was in the form of multiple spreadsheet files with no unified format, I led a team of analysts to consolidate, normalize, de-duplicate, clean, and verify entries. To ensure data accuracy, I developed an internal web application using Python and Django to improve the current manual data entry and verification process. Lastly, I also worked with external project managers by generating daily reports and presentations to check the overall status of the operation.'
           - title: 'Self-Employed'
+            meta:
+              show: false
             url: 'https://napjose.ph/'
             address: '513 Yakal St, Mt View Subd, Brgy 3, Tanauan City, Batangas, Philippines 4232'
             image:
@@ -383,6 +385,9 @@ sections:
               - 'TypeScript'
             roles:
               - 'Implemented additional features while ensuring at least 90% unit test code coverage and having fully automated tests for the acceptance criterias.'
+            relatedTo:
+              - type: 'work-experience'
+                key: 'Oracle'
           - title: 'Professional CV'
             linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/calub'
             meta:
