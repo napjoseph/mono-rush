@@ -34,6 +34,7 @@ jobs:
           NEXT_PUBLIC_BASEPATH: '/calub'
           NEXT_IMAGES_LOADER: 'imgix'
           NEXT_IMAGES_PATH: '<empty>'
+          BROWSERSLIST_IGNORE_OLD_DATA: '1'
       - name: deploy to external repository
         uses: peaceiris/actions-gh-pages@v3
         with:
