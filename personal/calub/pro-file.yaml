@@ -96,7 +96,8 @@ sections:
               - title: 'Senior UI Engineer'
                 canadaClassification: '2 - 21 - 217 - 2175 - Web designers and developers'
                 startDate: '2021-10'
-                description: 'I implement additional frontend features for the next-generation student information system: Oracle Higher Education Student Cloud.'
+                endDate: '2022-09'
+                description: "I worked with hundreds of developers across multiple countries to improve Oracle's Higher Education Student Cloud information system. I developed new frontend features using Oracle JavaScript Extension Toolkit (JET), and new backend features using Oracle Application Development Framework (ADF). As part of the requirements, I ensured all our repositories had at least 90% code coverage by writing unit tests using Mocha, Chai.js, and Sinon.JS. I also guaranteed that our features met all acceptance criteria in the specifications by creating functional tests using Selenium. Lastly, to reduce technical debt, I also migrated legacy vanilla JavaScript modules to use TypeScript."
           - title: 'Concentrix'
             url: 'https://www.concentrix.com/'
             address: 'Tera Tower, Bridgetowne, C5, Eulogio Rodriguez Jr. Ave, Quezon City, Metro Manila, Philippines 1110'
@@ -109,7 +110,7 @@ sections:
                 canadaClassification: '2 - 21 - 217 - 2173 - Software engineers and designers'
                 startDate: '2018-05'
                 endDate: '2021-05'
-                description: "I created and maintained business-critical applications using a mixture of Python, Go, and TypeScript (Angular) for our client's Network Operations Center. I also analyzed large data sets from Cloud SQL and BigQuery, and created interactive dashboards using Data Studio."
+                description: "I worked as a vendor at Google, creating and maintaining business-critical Network Operations Center dashboards and tools using Python, Go, Angular, TypeScript, Google Cloud Platform, gRPC, Protocol Buffers, and other internal technologies. I also analyzed large data sets from Cloud SQL, Bigtable, and BigQuery and created interactive dashboards using Data Studio and PLX Dashboard. After only three months, I earned an internal Go and TypeScript Readability certification to attest that a developer understands Google's best practices and coding style for a given language, given to only a select few in the Philippines. I worked closely with stakeholders and the technical project manager to ensure project deadlines and proposed different Project Requirements Documents (PRD) for new project initiatives."
           - title: 'Cognizant'
             url: 'https://www.cognizant.com/'
             address: '8/10 Upper McKinley Bldg, Fort Bonifacio, Taguig City, Metro Manila, Philippines 1635'
@@ -122,7 +123,7 @@ sections:
                 canadaClassification: '2 - 22 - 228 - 2282 - User support technicians'
                 startDate: '2017-08'
                 endDate: '2018-04'
-                description: 'I helped big companies across APAC to improve their current Google Ads (previously Google AdWords) and Google Analytics setup, and helped them implement Dynamic Remarketing on their websites using Google Tag Manager.'
+                description: 'I helped notable brands across Asia-Pacific to improve their current Google Ads (previously Google AdWords) and Google Analytics setup and helped them implement Dynamic Remarketing on their websites using Google Tag Manager.'
           - title: 'Bell Telecommunication Phils, Inc.'
             url: 'http://www.belltel.ph/'
             address: '3F 808 Bldg, Meralco Ave cor. Gen. Lim St., Brgy. San Antonio, Pasig City, Metro Manila, Philippines 1603'
@@ -135,7 +136,7 @@ sections:
                 canadaClassification: '2 - 21 - 217 - 2172 - Database analysts and data administrators'
                 startDate: '2017-01'
                 endDate: '2017-08'
-                description: 'I created and managed the system for splitting, handing over, and disposal of our telecommunications network assets to PLDT and Globe Telecom. Additionally, I have also worked with external project managers by generating the daily reports and presentations to check the overall status of the operation.'
+                description: 'I was hired as a database consultant to help split, hand over, and dispose of the telecommunications network assets to PLDT and Globe Telecom. As the existing database was in the form of multiple spreadsheet files with no unified format, I led a team of analysts to consolidate, normalize, de-duplicate, clean, and verify entries. To ensure data accuracy, I developed an internal web application using Python and Django to improve the current manual data entry and verification process. Lastly, I also worked with external project managers by generating daily reports and presentations to check the overall status of the operation.'
           - title: 'Self-Employed'
             url: 'https://napjose.ph/'
             address: '513 Yakal St, Mt View Subd, Brgy 3, Tanauan City, Batangas, Philippines 4232'
@@ -148,7 +149,7 @@ sections:
                 canadaClassification: '2 - 21 - 217 - 2171 - Information systems analysts and consultants'
                 startDate: '2016-01'
                 endDate: '2016-12'
-                description: "I created web and mobile solutions based on my customer's needs and specifications. I offered my clients a comprehensive range of services; from creating simple company websites to deploying full-fledged information systems."
+                description: "I created web and mobile solutions based on my customer's needs and specifications. I offered my clients a comprehensive range of services, from building simple company websites to deploying full-fledged information systems."
           - title: 'Ateneo de Davao University'
             url: 'https://www.addu.edu.ph/'
             address: 'E. Jacinto Street, Davao City, Davao del Sur, Philippines 8016'
@@ -174,7 +175,7 @@ sections:
                 canadaClassification: '2 - 21 - 217 - 2174 - Computer programmers and interactive media developers'
                 startDate: '2013-09'
                 endDate: '2016-01'
-                description: "I created web applications using Python (Django and Flask) and front-end frameworks like AngularJS, Chaplin.js, and Bootstrap. I also created and deployed cross-platform mobile applications using Appcelerator Titanium, which served thousands of daily users. As a way to give back to the community, I also facilitated the training of high school students to create web applications using Python/Django, to improve their school's current information systems."
+                description: 'I developed web applications using Python, Django, Flask, and front-end frameworks like AngularJS, Chaplin.js, and Bootstrap. I also created and deployed cross-platform mobile applications using Appcelerator Titanium, serving thousands of daily active users. As part of the company initiative to give back to the community, I also facilitated training boot camps for high school students to develop web applications using Python and Django.'
   - title: 'Skills'
     icon:
       prefix: 'fas'
