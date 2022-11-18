@@ -33,6 +33,7 @@ jobs:
           NEXT_PUBLIC_GA_ID: 'G-26QBVG95QT'
           NEXT_IMAGES_LOADER: 'imgix'
           NEXT_IMAGES_PATH: '<empty>'
+          BROWSERSLIST_IGNORE_OLD_DATA: '1'
       - name: add cname
         run: echo "napjose.ph" > ./personal/napjoseph/out/CNAME
       - name: deploy to external repository
