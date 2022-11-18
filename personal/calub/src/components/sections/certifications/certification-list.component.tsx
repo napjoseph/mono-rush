@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {
-  CertificationsMeta,
   CertificationItem,
+  CertificationsMeta,
   DEFAULT_CERTIFICATIONS_META
 } from '../../../models';
 import formatDate from '../../../utils/format-date';
@@ -90,16 +90,18 @@ const createSubHeaderItems = (meta: CertificationsMeta, item: CertificationItem)
         );
         break;
       case 'credentialId':
-        items.push(
-          <span>
-            <span className={classes.key}>Credential ID:</span>
-            <span className={classes.value}>
-              <a href={item.verificationUrl} className={classes.link}>
-                {item.credentialId}
-              </a>
+        if ((item.credentialId || '') !== '') {
+          items.push(
+            <span>
+              <span className={classes.key}>Credential ID:</span>
+              <span className={classes.value}>
+                <a href={item.verificationUrl} className={classes.link}>
+                  {item.credentialId}
+                </a>
+              </span>
             </span>
-          </span>
-        );
+          );
+        }
         break;
       case 'issuingOrganization':
         items.push(
