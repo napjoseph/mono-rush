@@ -1042,6 +1042,13 @@ sections:
               displayName: 'GraphAcademy'
               url: 'https://graphacademy.neo4j.com'
         items:
+          - title: 'Intermediate Cypher Queries'
+            credentialType: 'course'
+            credentialId: null
+            credentialUrl: 'https://graphacademy.neo4j.com/u/1584d329-2196-4f42-8e5e-444672d9c540/cypher-intermediate-queries'
+            issuingOrganization: 'graphacademy.neo4j.com'
+            verificationUrl: 'https://graphacademy.neo4j.com/u/1584d329-2196-4f42-8e5e-444672d9c540/cypher-intermediate-queries'
+            issuedDate: '2022-11-19'
           - title: 'Building Neo4j Applications with TypeScript'
             credentialType: 'course'
             credentialId: null
