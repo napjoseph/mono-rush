@@ -1584,6 +1584,17 @@ sections:
       type: 'character-references'
       value:
         items:
+          - title: 'Tricia Joy Posadas'
+            meta:
+              show: true
+            role: 'Tools & Automation Senior Specialist'
+            company:
+              text: 'Google Operations Center'
+              url: 'https://googleoperationscenter.com/'
+            email:
+              text: 'triciaposadas@gmail.com'
+            mobile:
+              text: '+63 936 947 2291'
           - title: 'Nathaniel Capule'
             meta:
               show: true
@@ -1662,7 +1673,7 @@ sections:
               text: '+63 967 288 2935'
           - title: 'Jefford Ray Mamacus'
             meta:
-              show: true
+              show: false
             role: 'Head of Research and Training'
             company:
               text: 'Ingenuity Global Consulting'
