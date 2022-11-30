@@ -63,8 +63,8 @@ sections:
               prefix: 'fab'
               iconName: 'whatsapp'
           - title: 'Address'
-            value: 'Tanauan City, Batangas, Philippines 4232'
-            linkTo: 'https://www.google.com/maps/place/Tanauan,+Batangas/@14.0912399,121.0738416,13z'
+            value: 'Singapore'
+            linkTo: 'https://www.google.com/maps/place/Singapore'
             icon:
               prefix: 'fas'
               iconName: 'map-marker-alt'
