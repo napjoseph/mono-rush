@@ -196,7 +196,7 @@ sections:
                 meta:
                   show: true
               - title: 'TypeScript'
-                rating: 9
+                rating: 10
                 meta:
                   show: true
               - title: 'JavaScript'
@@ -236,7 +236,7 @@ sections:
                 meta:
                   show: true
               - title: 'Angular'
-                rating: 8
+                rating: 9
                 meta:
                   show: true
               - title: 'React'
@@ -298,6 +298,38 @@ sections:
               - title: 'Rush'
                 rating: 7
                 meta:
+                  show: false
+          - title: 'Testing'
+            meta:
+              show: true
+            items:
+              - title: 'Chai'
+                rating: 9
+                meta:
+                  show: true
+              - title: 'Sinon JS'
+                rating: 9
+                meta:
+                  show: true
+              - title: 'Selenium'
+                rating: 9
+                meta:
+                  show: true
+              - title: 'Jasmine'
+                rating: 8
+                meta:
+                  show: true
+          - title: 'Automation'
+            meta:
+              show: true
+            items:
+              - title: 'Jenkins'
+                rating: 7
+                meta:
+                  show: true
+              - title: 'GitHub Actions'
+                rating: 8
+                meta:
                   show: true
           - title: 'Databases'
             meta:
@@ -323,6 +355,10 @@ sections:
                 rating: 7
                 meta:
                   show: true
+              - title: 'Firebase'
+                rating: 6
+                meta:
+                  show: true
               - title: 'SurrealDB'
                 rating: 7
                 meta:
@@ -331,9 +367,25 @@ sections:
                 rating: 8
                 meta:
                   show: true
+          - title: 'Cloud Vendors'
+            meta:
+              show: true
+            items:
+              - title: 'Google Cloud Platform'
+                rating: 8
+                meta:
+                  show: true
+              - title: 'Linode'
+                rating: 7
+                meta:
+                  show: true
+              - title: 'Digital Ocean'
+                rating: 6
+                meta:
+                  show: true
           - title: 'Applications'
             meta:
-              show: false
+              show: true
             items:
               - title: 'Microsoft Office Suite'
                 rating: 9
@@ -354,11 +406,11 @@ sections:
               - title: 'Google Data Studio'
                 rating: 10
                 meta:
-                  show: false
+                  show: true
               - title: 'Figma'
                 rating: 6
                 meta:
-                  show: false
+                  show: true
               - title: 'Sketch'
                 rating: 4
                 meta:
