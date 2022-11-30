@@ -62,12 +62,6 @@ sections:
             icon:
               prefix: 'fab'
               iconName: 'whatsapp'
-          - title: 'Address'
-            value: 'Singapore'
-            linkTo: 'https://www.google.com/maps/place/Singapore'
-            icon:
-              prefix: 'fas'
-              iconName: 'map-marker-alt'
   - title: 'Divider'
     meta:
       displayHeader: false
