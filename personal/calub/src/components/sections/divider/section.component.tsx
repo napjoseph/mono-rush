@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 import SiteLogoComponent from '../../assets/site-logo.component';
 import {
-  DividerConfig,
   DEFAULT_DIVIDER_CONFIG,
-  DividerLogoConfig,
-  DEFAULT_DIVIDER_LOGO_CONFIG
+  DEFAULT_DIVIDER_LOGO_CONFIG,
+  DividerConfig,
+  DividerLogoConfig
 } from '../../../models';
 
 interface DividerSectionComponentProps {
@@ -16,22 +16,25 @@ interface DividerSectionComponentProps {
 const DividerSectionComponent: React.FC<DividerSectionComponentProps> = ({
   config = DEFAULT_DIVIDER_CONFIG
 }) => {
-  const logoConfig: DividerLogoConfig = { ...DEFAULT_DIVIDER_LOGO_CONFIG, ...config.logo };
+  const logoConfig: DividerLogoConfig = {
+    ...DEFAULT_DIVIDER_LOGO_CONFIG,
+    ...config.logo
+  };
 
   return (
     <>
       <div className="relative">
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
-          <div className="w-full border-t-2 border-gray-300"></div>
+          <div className="w-full border-t border-gray-300"></div>
         </div>
         <div className="relative flex justify-center">
           <a
             href={logoConfig.link || ''}
             title={logoConfig.linkTitle || ''}
-            className="px-2 bg-white"
+            className="px-4 bg-white"
           >
             <motion.div
-              className="px-2 text-gray-500 bg-white"
+              className="text-gray-500 bg-white"
               initial="hidden"
               animate="visible"
               whileHover="hover"
