@@ -18,7 +18,7 @@ import {
   faTimesCircle,
   faUsers
 } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 // This ensures that the icon CSS is loaded immediately before attempting to render icons.
@@ -52,4 +52,4 @@ library.add(
 );
 
 // @fortawesome/free-brands-svg-icons
-library.add(faGithub);
+library.add(faGithub, faWhatsapp);
