@@ -1,4 +1,106 @@
 <svg width="1594" height="1768" viewBox="0 0 1594 1768" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+#Gazi {
+  background-color: #ffffff;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  #Gazi {
+    background-color: transparent;
+  }
+}
+#Eye_Pupil_2,
+#Eye_Pupil_Highlight_Big,
+#Eye_Pupil_Highlight_Small {
+  animation: rotateEyes 2s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#Eye_Pupil:hover {
+  cursor: crosshair;
+}
+#Eye_Pupil_2 {
+  transition: 0.4s;
+}
+#Eye_Pupil:hover #Eye_Pupil_2 {
+  fill: rgb(202, 31, 31);
+}
+#Hair_Front_01,
+#Hair_Front_02,
+#Hair_Front_03,
+#Hair_Front_04,
+#Hair_Front_05,
+#Hair_Front_06,
+#Hair_Front_07,
+#Hair_Front_08 {
+  animation: bounceHair 2s ease-in-out alternate infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+#Hair_Front_12,
+#Hair_Front_15,
+#Hair_Front_16,
+#Hair_Front_17 {
+  animation: bounceHair 2s ease-in-out alternate infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+#Hair_Front_18,
+#Hair_Front_19,
+#Hair_Front_20 {
+  animation: bounceHairSide 2s ease-in-out alternate infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+#Hair_Back_09,
+#Hair_Back_10,
+#Hair_Back_11,
+#Hair_Back_13,
+#Hair_Back_14 {
+  animation: bounceHair 2s ease alternate infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+#Hair_Bun_22,
+#Hair_Bun_23,
+#Hair_Bun_24,
+#Hair_Bun_25,
+#Hair_Bun_26,
+#Hair_Bun_27,
+#Hair_Bun_28,
+#Hair_Bun_21,
+#Hair_Bun_29 {
+  animation: bounceHairSide 2s ease alternate infinite;
+  transform-origin: top;
+  transform-box: fill-box;
+}
+@keyframes rotateEyes {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes bounceHair {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(10deg);
+  }
+}
+@keyframes bounceHairSide {
+  from {
+    transform: rotateX(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateX(5deg);
+    transform: rotateY(15deg);
+  }
+}
+</style>
 <g id="Gazi" clip-path="url(#clip0_1_144)">
 <path id="BG" d="M559.732 92.8494C749.733 -10.3666 958.604 38.0404 1110.3 92.8492C1299.65 190.224 1384.35 328.983 1511.76 558.858C1619.18 752.638 1399.16 1052.91 1443.26 1305.4C1487.37 1557.89 1202.23 1743.56 969.422 1700.49C736.616 1657.42 783.703 1784.85 331.377 1700.49C-10.2141 1636.79 158.74 1163.79 82.4191 948.325C5.30593 730.623 85.2345 511.307 210.908 433.974C383.823 327.572 348.025 207.857 559.732 92.8494Z" fill="#E7E7E7"/>
 <g id="Head">
