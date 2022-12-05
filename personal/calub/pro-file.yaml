@@ -1104,7 +1104,17 @@ sections:
             - key: 'graphacademy.neo4j.com'
               displayName: 'GraphAcademy'
               url: 'https://graphacademy.neo4j.com'
+            - key: 'jjs'
+              displayName: 'Just JavaScript'
+              url: 'https://justjavascript.com/'
         items:
+          - title: 'Understand JavaScript'
+            credentialType: 'course'
+            credentialId: null
+            credentialUrl: 'https://napjose.ph/calub/certificates/jjs/jjs-certificate.pdf'
+            issuingOrganization: 'jjs'
+            verificationUrl: 'https://napjose.ph/calub/certificates/jjs/jjs-certificate.pdf'
+            issuedDate: '2022-12-05'
           - title: 'Neo4j Certified Professional'
             credentialType: 'professional_certificate'
             credentialId: null
