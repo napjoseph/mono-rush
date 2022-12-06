@@ -22,7 +22,7 @@ const HeaderSectionComponent: React.FC<HeaderSectionComponentProps> = ({ config 
 
   return (
     <>
-      <div className="flex flex-col items-center space-x-4 space-y-4 lg:space-x-6 xs:flex-row">
+      <div className="flex flex-col items-center space-x-4 space-y-4 xs:space-y-0 lg:space-x-6 xs:flex-row">
         {headerFilters.showProfilePicture &&
           headerFilters.profilePictures.length > 0 &&
           (image.path || '') !== '' && (
