@@ -15,7 +15,7 @@ const LinkItemComponent: React.FC<LinkItemComponentProps> = ({ item }) => {
     content = <>{value}</>;
   } else {
     content = (
-      <a href={linkTo} className="color-link">
+      <a href={linkTo} className="color-link" target="_blank" rel="noreferrer">
         {value}
       </a>
     );
