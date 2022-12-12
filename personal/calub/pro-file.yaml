@@ -57,8 +57,8 @@ sections:
               prefix: 'far'
               iconName: 'envelope'
           - title: 'WhatsApp'
-            value: '+63 922 896 2503'
-            linkTo: 'https://wa.me/639228962503'
+            value: '+65 8374 8954'
+            linkTo: 'https://wa.me/6583748954'
             icon:
               prefix: 'fab'
               iconName: 'whatsapp'
