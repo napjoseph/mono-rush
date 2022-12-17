@@ -1137,7 +1137,7 @@ sections:
                 issuingOrganization: 'coursera.org'
                 verificationUrl: 'https://coursera.org/verify/JRPC96WT887S'
                 issuedDate: '2022-12-16'
-                gradeAchieved: '97.92%'
+                gradeAchieved: '100.00%'
               - title: 'Data Science Methodology'
                 credentialType: 'course'
                 credentialId: 'C5AXFEA2LEWC'
