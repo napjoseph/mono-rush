@@ -1178,6 +1178,8 @@ sections:
             verificationUrl: 'https://coursera.org/verify/N9FCHNZN3CJ7'
             issuedDate: '2022-12-06'
             gradeAchieved: '100.00%'
+            meta:
+              show: false
           - title: 'Introduction to Back-End Development'
             credentialType: 'course'
             credentialId: 'B9WYGL7SA25W'
@@ -1186,6 +1188,8 @@ sections:
             verificationUrl: 'https://coursera.org/verify/B9WYGL7SA25W'
             issuedDate: '2022-12-10'
             gradeAchieved: '100.00%'
+            meta:
+              show: false
           - title: 'HTML and CSS in depth'
             credentialType: 'course'
             credentialId: 'XUZLMS2ANCD8'
@@ -1194,6 +1198,8 @@ sections:
             verificationUrl: 'https://coursera.org/verify/XUZLMS2ANCD8'
             issuedDate: '2022-12-14'
             gradeAchieved: '98.46%'
+            meta:
+              show: false
           - title: 'Introduction to Front-End Development'
             credentialType: 'course'
             credentialId: '7BWQ9SN39XNH'
@@ -1202,6 +1208,8 @@ sections:
             verificationUrl: 'https://coursera.org/verify/7BWQ9SN39XNH'
             issuedDate: '2022-12-06'
             gradeAchieved: '100.00%'
+            meta:
+              show: false
           - title: 'Version Control'
             credentialType: 'course'
             credentialId: 'XWR96Z8JWPB7'
@@ -1210,6 +1218,8 @@ sections:
             verificationUrl: 'https://coursera.org/verify/XWR96Z8JWPB7'
             issuedDate: '2022-12-06'
             gradeAchieved: '100.00%'
+            meta:
+              show: false
           - title: 'Ask Questions to Make Data-Driven Decisions'
             credentialType: 'course'
             credentialId: '9XHV4J8FG9UF'
