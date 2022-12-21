@@ -75,9 +75,6 @@ rush update
 | ------- | ------ | -------- |
 | `napjoseph` | [personal/napjoseph](./personal/napjoseph) | `production` |
 | `calub-web` | [personal/calub](./personal/calub) | `production` |
-| `pro-file` | [apps/pro-file](./apps/pro-file) | `prototypes` |
-| `shelves-web` | [apps/shelves/web](./apps/shelves/web) | `production` |
-| `starters-nextjs` | [apps/starters/nextjs](./apps/starters/nextjs) | `prototypes` |
 
 ## Contributing
 
