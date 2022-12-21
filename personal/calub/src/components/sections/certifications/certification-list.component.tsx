@@ -103,6 +103,16 @@ const createSubHeaderItems = (meta: CertificationsMeta, item: CertificationItem)
           );
         }
         break;
+      case 'offeredBy':
+        if ((item.offeredBy || '') !== '') {
+          items.push(
+            <span>
+              <span className={classes.key}>Offered By:</span>
+              <span className={classes.value}>{mapOfferedByValue(meta, item)}</span>
+            </span>
+          );
+        }
+        break;
       case 'issuingOrganization':
         items.push(
           <span>
@@ -165,6 +175,28 @@ const mapIssuingOrganizationValue = (
 
   if (results.length === 0) {
     return <>{item.issuingOrganization}</>;
+  }
+
+  const mapping = results[0];
+  if (mapping.url) {
+    return (
+      <>
+        <a className={classes.link} href={mapping.url}>
+          {mapping.displayName}
+        </a>
+      </>
+    );
+  }
+
+  return <>{mapping.displayName}</>;
+};
+
+const mapOfferedByValue = (meta: CertificationsMeta, item: CertificationItem): JSX.Element => {
+  const key = item.offeredBy || '';
+  const results = meta.offeredByMapping.filter((mapItem) => mapItem.key === key);
+
+  if (results.length === 0) {
+    return <>{item.offeredBy}</>;
   }
 
   const mapping = results[0];

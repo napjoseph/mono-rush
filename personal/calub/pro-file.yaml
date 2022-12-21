@@ -1090,6 +1090,7 @@ sections:
       value:
         meta:
           subHeaderItems:
+            - 'offeredBy'
             - 'issuingOrganization'
             - 'issuedDate'
             - 'credentialId'
