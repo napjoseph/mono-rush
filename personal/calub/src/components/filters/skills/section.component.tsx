@@ -15,6 +15,12 @@ const SkillsFiltersSection: React.FC = (_props) => {
         toggle={skillsFilters.toggleSection}
       />
 
+      <ToggleComponent
+        text="Show Total Usage"
+        checked={skillsFilters.showTotalUsage}
+        toggle={skillsFilters.toggleShowTotalUsage}
+      />
+
       {skillsFilters.showSection && (
         <ToggleComponent
           text="Show Familiarity"

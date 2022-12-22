@@ -49,11 +49,15 @@ const SkillsCategoryItemComponent: React.FC<SkillsCategoryItemComponentProps> = 
               return (
                 <li key={index}>
                   {useProgressBar ? (
-                    <SkillsItemBarComponent item={item} />
+                    <SkillsItemBarComponent
+                      item={item}
+                      showTotalUsage={skillsFilters.showTotalUsage}
+                    />
                   ) : (
                     <div className="inline">
                       <SkillsItemPillComponent
                         item={item}
+                        showTotalUsage={skillsFilters.showTotalUsage}
                         showFamiliarity={skillsFilters.showFamiliarity}
                       />
                     </div>

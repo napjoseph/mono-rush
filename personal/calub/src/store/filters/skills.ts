@@ -4,6 +4,9 @@ export interface SkillsFiltersStore {
   showSection: boolean;
   toggleSection: () => void;
 
+  showTotalUsage: boolean;
+  toggleShowTotalUsage: () => void;
+
   showFamiliarity: boolean;
   toggleShowFamiliarity: () => void;
 
@@ -17,12 +20,17 @@ export const skillsFiltersStore = proxy<SkillsFiltersStore>({
     skillsFiltersStore.showSection = !skillsFiltersStore.showSection;
   },
 
-  showFamiliarity: true,
+  showTotalUsage: true,
+  toggleShowTotalUsage: () => {
+    skillsFiltersStore.showTotalUsage = !skillsFiltersStore.showTotalUsage;
+  },
+
+  showFamiliarity: false,
   toggleShowFamiliarity: () => {
     skillsFiltersStore.showFamiliarity = !skillsFiltersStore.showFamiliarity;
   },
 
-  useProgressBar: true,
+  useProgressBar: false,
   toggleUseProgressBar: () => {
     skillsFiltersStore.useProgressBar = !skillsFiltersStore.useProgressBar;
   }

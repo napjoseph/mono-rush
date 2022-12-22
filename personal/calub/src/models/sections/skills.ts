@@ -47,6 +47,7 @@ export const DEFAULT_SKILLS_ITEM_META: SkillsItemMeta = {
 export interface SkillsItem {
   title: string;
   rating: number;
+  totalMonths: number;
   maxRating?: number;
   meta?: SkillsItemMeta;
 }
@@ -54,6 +55,7 @@ export interface SkillsItem {
 export const DEFAULT_SKILLS_ITEM: SkillsItem = {
   title: '',
   rating: 0,
+  totalMonths: 0,
   maxRating: DEFAULT_SKILLS_MAX_RATING,
   meta: DEFAULT_SKILLS_ITEM_META
 };

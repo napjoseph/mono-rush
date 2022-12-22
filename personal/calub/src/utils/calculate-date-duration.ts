@@ -1,5 +1,7 @@
 import { DateTime } from 'luxon';
 
+import addUnits from './add-units';
+
 const calculateDateDuration = (dateStart: string, dateEnd?: string): string => {
   if (!dateEnd) {
     dateEnd = DateTime.now().toFormat('yyyy-MM');
@@ -18,17 +20,6 @@ const calculateDateDuration = (dateStart: string, dateEnd?: string): string => {
   const monthsMessage = addUnits(months, 'month', 'months');
 
   return `${yearsMessage} ${monthsMessage}`.trim();
-};
-
-const addUnits = (someNumber: number, unitSingular: string, unitPlural: string): string => {
-  switch (someNumber) {
-    case 0:
-      return '';
-    case 1:
-      return `${someNumber} ${unitSingular}`;
-    default:
-      return `${someNumber} ${unitPlural}`;
-  }
 };
 
 export default calculateDateDuration;
