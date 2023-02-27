@@ -1169,6 +1169,9 @@ sections:
             - key: 'jjs'
               displayName: 'Just JavaScript'
               url: 'https://justjavascript.com/'
+            - key: 'linkedin.com'
+              displayName: 'LinkedIn Learning'
+              url: 'https://linkedin.com/learning'
           offeredByMapping:
             - key: 'meta'
               displayName: 'Meta'
@@ -1192,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'Learning 3D Graphics on the Web with Three.js'
+            credentialType: 'course'
+            credentialId: 'f425d7147e6d11367907185b03603e4f20c284f7d17f5957d130f995a2322e04'
+            credentialUrl: 'https://www.linkedin.com/learning/learning-3d-graphics-on-the-web-with-three-js'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/f425d7147e6d11367907185b03603e4f20c284f7d17f5957d130f995a2322e04'
+            issuedDate: '2023-02-27'
           - title: 'Principles of UX/UI Design'
             offeredBy: 'meta'
             credentialType: 'course'
