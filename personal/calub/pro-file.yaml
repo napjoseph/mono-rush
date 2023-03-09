@@ -1195,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'Kubernetes: Native Tools'
+            credentialType: 'course'
+            credentialId: 'd757e3494605ba15df4213681faaa0f7936d98d069a1cc77896746f4f97bae3d'
+            credentialUrl: 'https://www.linkedin.com/learning/kubernetes-native-tools'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/d757e3494605ba15df4213681faaa0f7936d98d069a1cc77896746f4f97bae3d'
+            issuedDate: '2023-03-09'
           - title: 'Learning Kubernetes'
             credentialType: 'course'
             credentialId: '3f70594456d77c099690f7b1814bc9a11607f2d6c6d06580020adb36014f8310'
