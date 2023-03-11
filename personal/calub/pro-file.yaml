@@ -1195,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'React: Testing and Debugging'
+            credentialType: 'course'
+            credentialId: '67f3c6219813c9130d608fa0c079b9e6597021cc6daeb46e246e0c744e79a723'
+            credentialUrl: 'https://www.linkedin.com/learning/react-testing-and-debugging/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/67f3c6219813c9130d608fa0c079b9e6597021cc6daeb46e246e0c744e79a723'
+            issuedDate: '2023-03-11'
           - title: 'Kubernetes: Native Tools'
             credentialType: 'course'
             credentialId: 'd757e3494605ba15df4213681faaa0f7936d98d069a1cc77896746f4f97bae3d'
