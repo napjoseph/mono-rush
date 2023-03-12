@@ -1195,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'Big Data Analytics with Hadoop and Apache Spark'
+            credentialType: 'course'
+            credentialId: '58eedf0f36ea19fe7f422751748164d7e7de23981d0788293f946ba850a5b9fc'
+            credentialUrl: 'https://www.linkedin.com/learning/big-data-analytics-with-hadoop-and-apache-spark/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/58eedf0f36ea19fe7f422751748164d7e7de23981d0788293f946ba850a5b9fc'
+            issuedDate: '2023-03-12'
           - title: 'React: Testing and Debugging'
             credentialType: 'course'
             credentialId: '67f3c6219813c9130d608fa0c079b9e6597021cc6daeb46e246e0c744e79a723'
