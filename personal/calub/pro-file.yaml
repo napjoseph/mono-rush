@@ -1195,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'CISSP Cert Prep (2021): The Basics'
+            credentialType: 'course'
+            credentialId: '586ac6fd973657ea009e45fdfb1b6923554436fa21070eb8c25d45c5e188c219'
+            credentialUrl: 'https://www.linkedin.com/learning/cissp-cert-prep-2021-the-basics/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/586ac6fd973657ea009e45fdfb1b6923554436fa21070eb8c25d45c5e188c219'
+            issuedDate: '2023-03-13'
           - title: 'React: Accessibility'
             credentialType: 'course'
             credentialId: '8a2c95b3a7915193833cb89a3ac887fa80b36768d8bb1210d85ae1a2cdb91aab'
