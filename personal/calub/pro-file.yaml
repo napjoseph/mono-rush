@@ -1195,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'React: Accessibility'
+            credentialType: 'course'
+            credentialId: '8a2c95b3a7915193833cb89a3ac887fa80b36768d8bb1210d85ae1a2cdb91aab'
+            credentialUrl: 'https://www.linkedin.com/learning/react-accessibility/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/8a2c95b3a7915193833cb89a3ac887fa80b36768d8bb1210d85ae1a2cdb91aab'
+            issuedDate: '2023-03-13'
           - title: 'Meta Front-End Developer Specialization'
             offeredBy: 'meta'
             credentialType: 'specialization'
