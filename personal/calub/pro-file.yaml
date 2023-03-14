@@ -1195,6 +1195,13 @@ sections:
               displayName: 'Deep Teaching Solutions'
               url: 'https://www.coursera.org/oakley'
         items:
+          - title: 'Express Essential Training'
+            credentialType: 'course'
+            credentialId: 'b6414cce8bbe13c577482dde6b67b5458994f9e4d189d73909a8c24fea1e747f'
+            credentialUrl: 'https://www.linkedin.com/learning/express-essential-training-14539342/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/b6414cce8bbe13c577482dde6b67b5458994f9e4d189d73909a8c24fea1e747f'
+            issuedDate: '2023-03-14'
           - title: 'CISSP Cert Prep (2021): The Basics'
             credentialType: 'course'
             credentialId: '586ac6fd973657ea009e45fdfb1b6923554436fa21070eb8c25d45c5e188c219'
