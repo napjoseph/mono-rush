@@ -12,13 +12,19 @@ const LinkListComponent: React.FC<LinkListComponentProps> = ({ items }) => {
     <>
       {items && (
         <ul>
-          {items.map((item, index) => {
-            return (
-              <li key={index}>
-                <LinkItemComponent item={item} />
-              </li>
-            );
-          })}
+          {items
+            .filter((item) => {
+              if (!item.meta || item.meta.show === undefined) return true;
+
+              return !!item.meta.show;
+            })
+            .map((item, index) => {
+              return (
+                <li key={index}>
+                  <LinkItemComponent item={item} />
+                </li>
+              );
+            })}
         </ul>
       )}
     </>

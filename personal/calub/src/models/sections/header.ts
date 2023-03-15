@@ -16,6 +16,11 @@ export interface HeaderLinksItem {
   value: string;
   linkTo?: string;
   icon: IconLookup;
+  meta?: HeaderLinksItemMeta;
+}
+
+export interface HeaderLinksItemMeta {
+  show?: boolean;
 }
 
 export interface HeaderImage {
