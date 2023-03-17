@@ -1206,6 +1206,13 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'Angular: Workflows'
+            credentialType: 'course'
+            credentialId: '1ae261def8f3043c4956e1a60d16cc95de2c77a68ccbe17569afa89c2fe9458a'
+            credentialUrl: 'https://www.linkedin.com/learning/angular-workflows/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/1ae261def8f3043c4956e1a60d16cc95de2c77a68ccbe17569afa89c2fe9458a'
+            issuedDate: '2023-03-17'
           - title: 'Incident Response, BC, and DR Concepts'
             offeredBy: 'isc2'
             credentialType: 'course'
