@@ -1206,6 +1206,13 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'React: Server-Side Rendering'
+            credentialType: 'course'
+            credentialId: '5b07f7f74d94b3e63624acb05b2730a5aba25bb3ec01f4715cd2bb3551eeb869'
+            credentialUrl: 'https://www.linkedin.com/learning/react-server-side-rendering-8539269/'
+            issuingOrganization: 'linkedin.com'
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/5b07f7f74d94b3e63624acb05b2730a5aba25bb3ec01f4715cd2bb3551eeb869'
+            issuedDate: '2023-03-18'
           - title: 'Angular: Workflows'
             credentialType: 'course'
             credentialId: '1ae261def8f3043c4956e1a60d16cc95de2c77a68ccbe17569afa89c2fe9458a'
