@@ -1206,6 +1206,17 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'Hands-on Introduction to Linux Commands and Shell Scripting'
+            offeredBy: 'ibm'
+            credentialType: 'course'
+            credentialId: 'YTH7U8TZWYHP'
+            credentialUrl: 'https://www.coursera.org/learn/hands-on-introduction-to-linux-commands-and-shell-scripting/'
+            issuingOrganization: 'coursera.org'
+            verificationUrl: 'https://coursera.org/verify/YTH7U8TZWYHP'
+            issuedDate: '2023-03-25'
+            gradeAchieved: '100.00%'
+            meta:
+              show: false
           - title: 'Certified in Cybersecurity Specialization'
             offeredBy: 'isc2'
             credentialType: 'specialization'
