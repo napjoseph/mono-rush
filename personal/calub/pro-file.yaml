@@ -1206,7 +1206,7 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
-          - title: 'Certified in Cybersecurity'
+          - title: 'Certified in Cybersecurity Specialization'
             offeredBy: 'isc2'
             credentialType: 'specialization'
             credentialId: 'B7CJ9Z9JHSCY'
