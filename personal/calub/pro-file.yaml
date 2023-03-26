@@ -1207,6 +1207,28 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'Introduction to DevOps'
+            offeredBy: 'ibm'
+            credentialType: 'course'
+            credentialId: 'A5Z3BSCMQDFV'
+            credentialUrl: 'https://www.coursera.org/learn/intro-to-devops/'
+            issuingOrganization: 'coursera.org'
+            verificationUrl: 'https://coursera.org/verify/A5Z3BSCMQDFV'
+            issuedDate: '2023-03-26'
+            gradeAchieved: '100.00%'
+            meta:
+              show: false
+          - title: 'Getting Started with Git and GitHub'
+            offeredBy: 'ibm'
+            credentialType: 'course'
+            credentialId: 'VVUNTUAEUBKM'
+            credentialUrl: 'https://www.coursera.org/learn/getting-started-with-git-and-github/'
+            issuingOrganization: 'coursera.org'
+            verificationUrl: 'https://coursera.org/verify/VVUNTUAEUBKM'
+            issuedDate: '2023-03-26'
+            gradeAchieved: '100.00%'
+            meta:
+              show: false
           - title: 'Hands-on Introduction to Linux Commands and Shell Scripting'
             offeredBy: 'ibm'
             credentialType: 'course'
