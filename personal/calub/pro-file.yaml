@@ -1207,6 +1207,15 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'Introduction to Containers w/ Docker, Kubernetes & OpenShift'
+            offeredBy: 'ibm'
+            credentialType: 'course'
+            credentialId: 'SRBFXBNFX2KF'
+            credentialUrl: 'https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift/'
+            issuingOrganization: 'coursera.org'
+            verificationUrl: 'https://coursera.org/verify/SRBFXBNFX2KF'
+            issuedDate: '2023-03-28'
+            gradeAchieved: '100.00%'
           - title: 'Introduction to DevOps'
             offeredBy: 'ibm'
             credentialType: 'course'
@@ -1216,8 +1225,6 @@ sections:
             verificationUrl: 'https://coursera.org/verify/A5Z3BSCMQDFV'
             issuedDate: '2023-03-26'
             gradeAchieved: '100.00%'
-            meta:
-              show: false
           - title: 'Getting Started with Git and GitHub'
             offeredBy: 'ibm'
             credentialType: 'course'
