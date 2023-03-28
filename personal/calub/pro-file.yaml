@@ -267,12 +267,12 @@ sections:
                   show: true
               - title: 'React'
                 rating: 8
-                totalMonths: 36
+                totalMonths: 48
                 meta:
                   show: true
               - title: 'Next.js'
                 rating: 8
-                totalMonths: 24
+                totalMonths: 36
                 meta:
                   show: true
               - title: 'Sass'
@@ -316,6 +316,16 @@ sections:
                 meta:
                   show: true
               - title: 'Fresh'
+                rating: 6
+                totalMonths: 12
+                meta:
+                  show: true
+              - title: 'Docker'
+                rating: 8
+                totalMonths: 24
+                meta:
+                  show: true
+              - title: 'Kubernetes'
                 rating: 6
                 totalMonths: 12
                 meta:
@@ -395,7 +405,7 @@ sections:
                 rating: 9
                 totalMonths: 36
                 meta:
-                  show: true
+                  show: false
               - title: 'MySQL'
                 rating: 9
                 totalMonths: 96
@@ -426,7 +436,7 @@ sections:
                 totalMonths: 6
                 meta:
                   show: true
-          - title: 'Cloud Vendors'
+          - title: 'Cloud Service Providers'
             meta:
               show: true
             items:
@@ -443,6 +453,11 @@ sections:
               - title: 'Digital Ocean'
                 rating: 6
                 totalMonths: 48
+                meta:
+                  show: true
+              - title: 'Amazon Web Services'
+                rating: 5
+                totalMonths: 6
                 meta:
                   show: true
           - title: 'Applications'
@@ -1187,7 +1202,7 @@ sections:
               url: 'https://www.coursera.org/meta'
             - key: 'ibm'
               displayName: 'IBM'
-              url: 'https://www.coursera.org/ibm'
+              url: 'https://www.coursera.org/ibm-skills-network'
             - key: 'google'
               displayName: 'Google'
               url: 'https://www.coursera.org/google'
