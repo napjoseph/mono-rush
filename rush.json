@@ -437,21 +437,6 @@
       "packageName": "calub-web",
       "projectFolder": "personal/calub",
       "reviewCategory": "production"
-    },
-    {
-      "packageName": "shelves-web",
-      "projectFolder": "apps/shelves/web",
-      "reviewCategory": "production"
-    },
-    {
-      "packageName": "starters-nextjs",
-      "projectFolder": "apps/starters/nextjs",
-      "reviewCategory": "prototypes"
-    },
-    {
-      "packageName": "pro-file",
-      "projectFolder": "apps/pro-file",
-      "reviewCategory": "prototypes"
     }
   ]
 }

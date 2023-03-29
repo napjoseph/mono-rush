@@ -1,7 +1,0 @@
-node_modules
-.next
-out
-dist
-
-# snapshots
-**/__snapshots__/*.snap

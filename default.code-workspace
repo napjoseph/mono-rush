@@ -11,26 +11,11 @@
     {
       "name": "personal/calub",
       "path": "personal/calub"
-    },
-    {
-      "name": "apps/pro-file",
-      "path": "apps/pro-file"
-    },
-    {
-      "name": "apps/shelves/web",
-      "path": "apps/shelves/web"
-    },
-    {
-      "name": "apps/starters/nextjs",
-      "path": "apps/starters/nextjs"
     }
   ],
   "settings": {
     "editor.renderWhitespace": "all",
-    "editor.rulers": [
-      80,
-      100
-    ],
+    "editor.rulers": [80, 100],
     "editor.formatOnSave": true,
     "css.validate": false,
     "scss.validate": false,
