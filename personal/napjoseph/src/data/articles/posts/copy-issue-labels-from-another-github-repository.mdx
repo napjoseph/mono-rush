@@ -1,0 +1,56 @@
+---
+title: 'Copy Issue Labels From Another GitHub Repository'
+publishedDate: '2023-03-29T18:31:00Z'
+tags:
+  - 'GitHub'
+---
+
+If you manage multiple projects across different GitHub Organizations, you may have faced a common scenario: the need to copy [GitHub issue labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels) from one repository to another. It used to be a manual process before, but luckily we can now use [GitHub's official CLI](https://cli.github.com/).
+
+## Why copy issue labels?
+
+Here are some common scenarios when you might need to copy issue labels between projects:
+
+- **Standardization**: If your Organization requires a standard list of issue labels for all projects, copying issue labels from an existing project with the required labels ensures consistency.
+- **Project Migration**: When a project is moved from one Organization to another, you might want to retain the issue labels to maintain the same workflow and issue categorization.
+- **Team Collaboration**: If multiple teams within an Organization work on similar projects, having a unified set of issue labels for better collaboration and understanding across teams is helpful.
+
+## Using the GitHub CLI
+
+Before we dive into the process, make sure you have the GitHub CLI installed on your system. If you haven't installed it yet, head to https://cli.github.com/ and follow the installation instructions for your operating system.
+
+You can authenticate with the CLI using:
+
+```bash
+gh auth login
+```
+
+Once you have the GitHub CLI installed and configured, you can copy issue labels between repositories by executing the following command:
+
+```bash
+gh label clone owner-name/source-repo-name --repo owner-name/destination-repo-name --force
+```
+
+Here's a breakdown of the command:
+
+- `gh`: The GitHub CLI command.
+- `label`: The command group for working with issue labels.
+- `clone`: The command to copy labels from one repository to another.
+- `owner-name/source-repo-name`: The source repository from which you want to copy the issue labels.
+- `--repo`: The flag to specify the destination repository to which the issue labels will be copied.
+- `owner-name/destination-repo-name`: The destination repository to which the issue labels will be copied.
+- `--force`: Optional flag to overwrite existing labels in the destination repository.
+
+Documentation for the command can be found at https://cli.github.com/manual/gh_label_clone.
+
+> **NOTE**: Please note that you must have the necessary permissions (write access) for the destination repositories.
+
+Once the command executes successfully, all issue labels from `owner-name/source-repo-name` will be copied to `owner-name/destination-repo-name`, ensuring that the latter now follows the Organization's standard list of issue labels.
+
+## Creating default labels for your Organization
+
+As an Organization owner, you can also create default labels that will be automatically included in every new repository in your Organization. This is a convenient way to standardize issue labels across all projects within your Organization.
+
+Please refer to the GitHub documentation on [Managing Default Labels for Repositories in Your Organization](https://docs.github.com/en/organizations/managing-organization-settings/managing-default-labels-for-repositories-in-your-organization) for detailed instructions and screenshots.
+
+> **NOTE**: Adding, editing, or deleting a default label does not affect existing repositories. Default labels only apply to new repositories created after the changes.
