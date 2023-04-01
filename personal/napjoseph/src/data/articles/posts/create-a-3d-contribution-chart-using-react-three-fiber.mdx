@@ -1,14 +1,14 @@
 ---
 title: 'Create a 3D Contribution Chart Using React Three Fiber'
-publishedDate: '2023-03-31T21:28:00Z'
-draft: true
+publishedDate: '2023-04-02T03:27:00Z'
 tags:
-  - 'React'
-  - 'React Three Fiber'
-  - 'Data Visualization'
   - '3D'
-  - 'TypeScript'
+  - 'Data Visualization'
+  - 'React Three Fiber'
+  - 'React'
+  - 'The Wandering Inn'
   - 'Three.js'
+  - 'TypeScript'
 ---
 
 In this blog post, we will create a 3D visualization of our timeseries data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber), a React renderer for [Three.js](https://threejs.org/). This is inspired by [GitHub Skyline](https://skyline.github.com/), a web application that creates a 3D visualization of a user's GitHub contributions.
@@ -16,6 +16,30 @@ In this blog post, we will create a 3D visualization of our timeseries data usin
 ![Project Titan](/img/posts/3d-bar-charts/titan.png)
 
 > **NOTE**: You can find the live version at [The Wandering Inndex](https://titan.inndex.omg.lol/) and the full source code on [the wandering-inndex/titan repository](https://github.com/wandering-inndex/titan).
+
+This is rather long, so here's a table of contents:
+
+- [Step 1: Project Setup](#step-1-project-setup)
+  - [Prerequisites](#prerequisites)
+  - [Create a new Next.js project](#create-a-new-nextjs-project)
+  - [Install Additional Project Dependencies](#install-additional-project-dependencies)
+  - [Clean up the Home Page](#clean-up-the-home-page)
+- [Step 2: Preparing our Data](#step-2-preparing-our-data)
+  - [Creating the Type Definitions](#creating-the-type-definitions)
+  - [Convert the Chapter data to a mapping of dates to values](#convert-the-chapter-data-to-a-mapping-of-dates-to-values)
+  - [Show the parsed Chapter data on the page](#show-the-parsed-chapter-data-on-the-page)
+- [Step 3: Creating the Time-series Data](#step-3-creating-the-time-series-data)
+  - [Defining the Time-series Data Types](#defining-the-time-series-data-types)
+  - [Gregorian Calendar vs ISO 8601 Calendar](#gregorian-calendar-vs-iso-8601-calendar)
+  - [Modified Version](#modified-version)
+  - [Using date-fns](#using-date-fns)
+  - [Converting the ValuesPerDay mapping to our desired data structure](#converting-the-valuesperday-mapping-to-our-desired-data-structure)
+- [Step 4: Show the data in a 2D Grid](#step-4-show-the-data-in-a-2d-grid)
+- [Step 5: Show the Data in a 3D Grid](#step-5-show-the-data-in-a-3d-grid)
+- [Step 6: Adding a helper GUI to customize the chart](#step-6-adding-a-helper-gui-to-customize-the-chart)
+- [Conclusion](#conclusion)
+
+---
 
 ## Step 1: Project Setup
 
@@ -79,12 +103,13 @@ $ cd titan
 Install additional dependencies for our project:
 
 ```bash
-$ pnpm add three @types/three @react-three/fiber leva date-fns yaml
+$ pnpm add three @types/three @react-three/fiber @react-three/drei leva date-fns yaml
 ```
 
 - `three` is a JavaScript 3D library that we will use to create our 3D visualization.
 - `@types/three` is the TypeScript type definitions for `three`.
 - `@react-three/fiber` is a React renderer for `three`.
+- `@react-three/drei` is a collection of React components for `three`.
 - `leva` is a UI library that we will use to create controls for our visualization.
 - `date-fns` is a date utility library that we will use to parse and format dates.
 - `yaml` is a [YAML](https://yaml.org/) parser that we will use to parse our data source.
@@ -94,7 +119,7 @@ $ pnpm add three @types/three @react-three/fiber leva date-fns yaml
 Open the project in your favorite code editor and delete the contents of `src/pages/index.tsx`. Replace it with the following code:
 
 ```tsx filename=src/pages/index.tsx
-import { type NextPage } from 'next';
+import type { NextPage } from 'next';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
@@ -139,7 +164,7 @@ $ pnpm dev
 
 It should show an empty page with our project name at the top.
 
-![Empty Page](/img/posts/3d-bar-charts/step-00-empty-page.png)
+![Empty Page](/img/posts/3d-bar-charts/step-01-empty-page.png)
 
 ## Step 2: Preparing our Data
 
@@ -332,7 +357,7 @@ export * from './chapters';
 Let's update our `src/pages/index.tsx` page to fetch our `Chapter` data from the source repository. Afterwards, we'll convert the data using `convertChaptersToMapping` and show the relevant data on the page.
 
 ```tsx filename=src/pages/index.tsx
-import { type NextPage } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import { parse as parseYaml } from 'yaml';
@@ -376,7 +401,7 @@ const Home: NextPage<HomeProps> = ({ minYear, maxYear, minValue, maxValue }) => 
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const res = await fetch(URL);
   const text = await res.text();
   const chapters: Chapter[] = parseYaml(text) as Chapter[];
@@ -398,7 +423,7 @@ export default Home;
 
 [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) is a special Next.js function that will run on the server before the page is rendered. We are using this function to fetch the YAML data from [our data source](https://raw.githubusercontent.com/wandering-inndex/seed-data/main/data/media/twi-webnovel-chapters.yaml). We will then convert the data to a mapping of dates to values using the `convertChaptersToMapping` function we created earlier. We are then returning the `minYear`, `maxYear`, `minValue`, and `maxValue` properties as props to our `Home` component. We are then showing the values as a simple HTML list.
 
-![With Values](/img/posts/3d-bar-charts/step-01-with-values.png)
+![With Values](/img/posts/3d-bar-charts/step-02-with-values.png)
 
 ## Step 3: Creating the Time-series Data
 
@@ -481,7 +506,7 @@ Our goal for this step is to convert the `ValuesPerDay` mapping to an array of `
 
 To help you visualize this multi-dimensional array, we'll create a 2D grid, where the X-axis represents the week number, the Y-axis represents the day, and the cell value represents the word count.
 
-[![Year Grid](/img/posts/3d-bar-charts/step-02-year-grid.png)](/img/posts/3d-bar-charts/step-02-year-grid.png)
+[![Year Grid](/img/posts/3d-bar-charts/step-03-year-grid.png)](/img/posts/3d-bar-charts/step-03-year-grid.png)
 
 You may have noticed a few things about this grid:
 
@@ -504,11 +529,11 @@ Here are some of the differences between the Gregorian Calendar and the ISO 8601
 
 Below, you can see the difference when transitioning from December 2004 to January 2005. The Gregorian Calendar starts the year on January 1, while the ISO 8601 Calendar starts the year on January 3.
 
-![Different Calendars](/img/posts/3d-bar-charts/step-02-iso-8601-calendar.png)
+![Different Calendars](/img/posts/3d-bar-charts/step-03-iso-8601-calendar.png)
 
 Calendar applications will usually use the Gregorian calendar, and will have the option to show the ISO 8601 week numbers, as well.
 
-![Combined Calendars](/img/posts/3d-bar-charts/step-02-combined-calendars.png)
+![Combined Calendars](/img/posts/3d-bar-charts/step-03-combined-calendars.png)
 
 ### Modified Version
 
@@ -524,17 +549,17 @@ ISO 8601 is a very useful standard, but we need to modify it to fit our requirem
 
 Let's try to visualize this modified calendar:
 
-![Combined and Modified Calendars](/img/posts/3d-bar-charts/step-02-combined-modified-calendars.png)
+![Combined and Modified Calendars](/img/posts/3d-bar-charts/step-03-combined-modified-calendars.png)
 
 2004 will end on Week 53, with two unused days at the end (marked as `X` in the chart). 2005 will start on Week 0, with five unused days at the beginning (marked as `X` in the chart). Week 1 will start on January 3. If we continue and fill up our grid for the year 2005 with our dates, we will get:
 
-[![Year 2005 Grid](/img/posts/3d-bar-charts/step-02-year-2005-grid.png)](/img/posts/3d-bar-charts/step-02-year-2005-grid.png)
+[![Year 2005 Grid](/img/posts/3d-bar-charts/step-03-year-2005-grid.png)](/img/posts/3d-bar-charts/step-03-year-2005-grid.png)
 
 > **NOTE**: Notice that we have 13 unused days for 2005. Week 0 has 5 at the start, Week 52 has 1 at the end, and Week 53 has all 7 slots unused.
 
 In our data structure, we will initialize the grid with negative numbers for the unused days, and 0 for the rest:
 
-[![Year 2005 Grid Initialized](/img/posts/3d-bar-charts/step-02-year-2005-grid-initialized.png)](/img/posts/3d-bar-charts/step-02-year-2005-grid-initialized.png)
+[![Year 2005 Grid Initialized](/img/posts/3d-bar-charts/step-03-year-2005-grid-initialized.png)](/img/posts/3d-bar-charts/step-03-year-2005-grid-initialized.png)
 
 ### Using date-fns
 
@@ -756,7 +781,7 @@ Here are the recap for each function:
 - `initializeEmptyCalendarYearData`: This function initializes an empty `CalendarYearData` object for the given year. It first calculates the first and last dates of the year, along with their adjusted ISO week numbers and ISO day numbers (subtracting 1 to have a 0-based index). Then, it creates an array of 54 weeks (maximum possible weeks in a year), where each week is an array of 7 days. It fills the days with 0 if the day is part of the calendar year and -1 if the day is not part of the calendar year, using the calculated week and day numbers.
 - `convertToCalendarYearData`: This function converts a `ValuesPerDay` object into an array of `CalendarYearData` values. It starts by extracting the minimum and maximum years from the input data using the `extractYearRange` function. Then, it initializes an empty `CalendarYearsData` object for each year in the range using the `initializeEmptyCalendarYearData` function. Next, it iterates through the input data, parsing the date strings, and calculating the year, week, and day indexes. It then adds the value to the appropriate day in the corresponding `CalendarYearData`.
 
-## Step 4: Show the data in a 2D grid
+## Step 4: Show the data in a 2D Grid
 
 Now that we have the data in the correct format, we can use it to create a 2D grid per year to visualize the data.
 
@@ -837,7 +862,7 @@ This just shows a simple table for each year, with the week numbers on the left,
 Next, add the `FlatGrids` component to the Home Page:
 
 ```tsx filename=src/pages/index.tsx
-import { type NextPage } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import { parse as parseYaml } from 'yaml';
@@ -885,7 +910,7 @@ const Home: NextPage<HomeProps> = ({ data, minYear, maxYear, minValue, maxValue 
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const res = await fetch(URL);
   const text = await res.text();
   const chapters: Chapter[] = parseYaml(text) as Chapter[];
@@ -909,10 +934,411 @@ export default Home;
 
 After saving, you can now see the values in a 2D grid:
 
-![Show Tables Per Year](/img/posts/3d-bar-charts/step-02-show-year-array.png)
+![Show Tables Per Year](/img/posts/3d-bar-charts/step-04-show-year-array.png)
 
-## Creating a 3D grid to visualize Time-series Data
+## Step 5: Show the Data in a 3D Grid
 
-## Customizing the appearance and behavior of the 3D grid
+Now... let's make it 3D!
+
+Create a new file called `src/components/TitanicGrids.tsx` and add the following code:
+
+```tsx filename=src/components/TitanicGrids.tsx
+import { type FC, useMemo } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, PerspectiveCamera, Box } from '@react-three/drei';
+
+import type { CalendarYearsData, CalendarWeekData } from '~/types';
+
+interface TitanicGridsProps {
+  /** The list of number values per calendar year. */
+  data: CalendarYearsData;
+  /** The first year in the dataset. */
+  startYear: number;
+  /** The maximum value in the dataset. */
+  maxValue: number;
+}
+
+/** Temporary interface for the light values. */
+interface LightValues {
+  /** The position of the light. */
+  position: [number, number, number];
+  /** The intensity of the light. */
+  intensity: number;
+  /** The color of the light. */
+  color: string;
+  /** Whether the light is enabled or not. */
+  enable: boolean;
+}
+
+/** Shows a grid of 3D bar charts to represent the number values per year. */
+const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
+  // START: The temporary values for the grid.
+  /** The size of each cell in the grid. */
+  const cellSize = 1.0;
+  /** The spacing between each cell in the grid. */
+  const cellSpacing = 0.2;
+  /** The spacing between each grid in the scene. */
+  const gridSpacing = 1.2;
+  /** The color of the cells. */
+  const color = '#a0185a';
+  /** The color of the unused cells. */
+  const unusedColor = '#cccccc';
+  /** The scale of the cells. */
+  const scale = 20;
+  /** The target of the camera. */
+  const target: [number, number, number] = [30, 2, 32];
+  /** Whether the camera should rotate or not. */
+  const rotate = true;
+  /** The speed of the camera rotation. */
+  const speed = 1.0;
+  /** The position of the camera. */
+  const camera: [number, number, number] = [-49, 17, 30];
+  /** The values for the first light. */
+  const light1: LightValues = {
+    position: [90, 0, 0],
+    intensity: 0.8,
+    color: '#ffffff',
+    enable: true
+  };
+  /** The values for the second light. */
+  const light2: LightValues = {
+    position: [-180, 0, 0],
+    intensity: 0.8,
+    color: '#ffffff',
+    enable: true
+  };
+  // END: The temporary values for the grid.
+
+  /** The function to calculate the height of the cells. */
+  const heightScale = useMemo(() => {
+    return (value: number) => (value / maxValue) * scale;
+  }, [maxValue, scale]);
+
+  return (
+    <>
+      <Canvas>
+        <OrbitControls target={target} autoRotate={rotate} autoRotateSpeed={speed} />
+        <PerspectiveCamera makeDefault position={camera} />
+
+        <hemisphereLight />
+        {light1.enable && (
+          <directionalLight
+            position={light1.position}
+            intensity={light1.intensity}
+            color={light1.color}
+          />
+        )}
+        {light2.enable && (
+          <directionalLight
+            position={light2.position}
+            intensity={light2.intensity}
+            color={light2.color}
+          />
+        )}
+
+        {data.map((yearData, index) => {
+          const gridPosition: [number, number, number] = [
+            index * (gridSpacing * (cellSize + cellSpacing) * 7),
+            0,
+            0
+          ];
+          const yearValue = startYear + index;
+          return (
+            <group key={`grid-${yearValue}`} position={gridPosition}>
+              {yearData.map((week: CalendarWeekData, weekIndex: number) => {
+                return week.map((value: number, dayIndex: number) => {
+                  const cellHeight = heightScale(value);
+                  const cellPosition: [number, number, number] = [
+                    (cellSize + cellSpacing) * dayIndex,
+                    cellHeight / 2,
+                    (cellSize + cellSpacing) * weekIndex
+                  ];
+                  return (
+                    <Box
+                      key={`grid-${yearValue}-cell-${weekIndex}-${dayIndex}`}
+                      args={[cellSize, cellHeight, cellSize]}
+                      position={cellPosition}
+                    >
+                      <meshPhongMaterial color={value < 0 ? unusedColor : color} />
+                    </Box>
+                  );
+                });
+              })}
+            </group>
+          );
+        })}
+      </Canvas>
+    </>
+  );
+};
+
+export default TitanicGrids;
+```
+
+This component is a bit more complex than the previous one.
+
+A quick explanation on the imported components:
+
+- It uses the `Canvas` component from `@react-three/fiber` to render the 3D scene.
+- The `PerspectiveCamera` is a camera type that simulates the way humans perceive the world. It projects the 3D scene onto a 2D plane, creating a sense of depth by making objects appear smaller as they get farther away.
+- The `OrbitControls` is a helper that allows the user to interact with the 3D scene using mouse or touch inputs. It enables panning, zooming, and orbiting the scene, providing an intuitive way to navigate the 3D space.
+- The [`hemisphereLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/hemisphereLight) and [`directionalLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/DirectionalLight) are used to add some lights to the scene.
+- The `Box` component is a convinient wrapper that used to render cuboid shapes.
+- The [`meshPhongMaterial`](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) is a material that is used to render the surface of the 3D objects. It is a good choice for rendering objects with a shiny surface.
+
+The calculations for the positions and dimensions are as follows:
+
+- The `heightScale` function is used to calculate the height of the boxes based on its value, the maximum value in the dataset, and the scale factor. The height is calculated by dividing the cell value by the maximum value, then multiplying it by the scale factor. This ensures that the height of each cell is proportional to its value in relation to the `maxValue`.
+- The `gridPosition` determines the position of each year's grid in the 3D space. The X-coordinate is calculated by multiplying the index of the year by the total width of the 7 columns of cells (including spacing between cells), and then by the `gridSpacing` value. This ensures that each year's grid is placed at a consistent distance from the previous grid along the X-axis.
+- The `cellPosition` determines the position of each cell box within a year's grid. It is calculated based on the day and week indexes, `cellSize`, and `cellSpacing`. The X-coordinate is calculated by multiplying the day index by the sum of the `cellSize` and `cellSpacing`. The Y-coordinate is equal to half the cell height, ensuring that the base of each cell rests on the ground. The Z-coordinate is calculated by multiplying the week index by the sum of the `cellSize` and `cellSpacing`. This arrangement ensures that each cell is positioned correctly within the grid.
+
+Now update the index page to use the new component:
+
+```tsx filename=src/pages/index.tsx
+import type { NextPage, GetServerSideProps } from 'next';
+import Head from 'next/head';
+
+import { parse as parseYaml } from 'yaml';
+
+import { convertChaptersToMapping, convertToCalendarYearData } from '~/utils';
+import type { Chapter, CalendarYearsData } from '~/types';
+import TitanicGrids from '~/components/TitanicGrids';
+
+const URL = `https://raw.githubusercontent.com/wandering-inndex/seed-data/main/data/media/twi-webnovel-chapters.yaml`;
+
+interface HomeProps {
+  /** The list of word counts per calendar year. */
+  data: CalendarYearsData;
+  /** The minimum year in the dataset. */
+  minYear: number;
+  /** The maximum value in the dataset. */
+  maxValue: number;
+}
+
+const Home: NextPage<HomeProps> = ({ data, minYear, maxValue }) => {
+  return (
+    <>
+      <Head>
+        <title>Titan</title>
+        <meta name="description" content="Visualize contribution charts in 3D" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="h-screen w-screen p-1">
+        <nav className="absolute left-1/2 z-10 mx-auto my-4 -translate-x-1/2 text-center text-4xl font-bold">
+          Titan
+        </nav>
+        <TitanicGrids data={data} startYear={minYear} maxValue={maxValue} />
+      </main>
+    </>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  const res = await fetch(URL);
+  const text = await res.text();
+  const chapters: Chapter[] = parseYaml(text) as Chapter[];
+
+  const { mapping, minYear, maxValue } = convertChaptersToMapping(chapters);
+  const data = convertToCalendarYearData(mapping);
+
+  return {
+    props: {
+      data,
+      minYear,
+      maxValue
+    }
+  };
+};
+
+export default Home;
+```
+
+If you run the app now, you should see something like this:
+
+![Add 3D Chart](/img/posts/3d-bar-charts/step-05-add-3d-chart.png)
+
+You can move the camera around by clicking and dragging the left mouse button, or by using touch inputs. You can also zoom in and out by scrolling the mouse wheel, or by pinching the screen. You can use the right mouse button or two finger drag to pan the camera.
+
+## Step 6: Adding a helper GUI to customize the chart
+
+We're almost done! There is one library we can add to make the chart easier to customize.
+
+Open your `src/components/TitanicGrids.tsx` file and update it to look like this:
+
+```tsx filename=src/components/TitanicGrids.tsx
+import { type FC, useMemo } from 'react';
+import { useControls, Leva } from 'leva';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, PerspectiveCamera, Box } from '@react-three/drei';
+
+import type { CalendarYearsData, CalendarWeekData } from '~/types';
+
+interface TitanicGridsProps {
+  /** The list of number values per calendar year. */
+  data: CalendarYearsData;
+  /** The first year in the dataset. */
+  startYear: number;
+  /** The maximum value in the dataset. */
+  maxValue: number;
+}
+
+/** Shows a grid of 3D bar charts to represent the number values per year. */
+const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
+  const { cellSize, cellSpacing, gridSpacing, color, unusedColor, scale } = useControls('Cells', {
+    /** The size of each cell in the grid. */
+    cellSize: 1.0,
+    /** The spacing between each cell in the grid. */
+    cellSpacing: 0.2,
+    /** The spacing between each grid in the scene. */
+    gridSpacing: 1.2,
+    /** The color of the cells. */
+    color: '#a0185a',
+    /** The color of the unused cells. */
+    unusedColor: '#cccccc',
+    /** The scale of the cells. */
+    scale: {
+      value: 20,
+      min: 1
+    }
+  });
+
+  const { target, rotate, speed, camera } = useControls('Controls', {
+    /** The position of the camera. */
+    camera: [-49, 17, 30],
+    /** The target of the camera. */
+    target: [30, 2, 32],
+    /** Whether the camera should rotate or not. */
+    rotate: true,
+    /** The speed of the camera rotation. */
+    speed: {
+      value: 1.0,
+      step: 0.1,
+      min: 0
+    }
+  });
+
+  /** The values for the first light. */
+  const light1 = useControls('Light 1', {
+    /** The position of the light. */
+    position: {
+      value: [90, 0, 0],
+      step: 10
+    },
+    /** The intensity of the light. */
+    intensity: {
+      value: 0.8,
+      step: 1.0
+    },
+    /** The color of the light. */
+    color: '#ffffff',
+    /** Whether the light is enabled or not. */
+    enable: true
+  });
+
+  const light2 = useControls('Light 2', {
+    /** The position of the light. */
+    position: {
+      value: [-180, 0, 0],
+      step: 10
+    },
+    /** The intensity of the light. */
+    intensity: {
+      value: 0.8,
+      step: 1.0
+    },
+    /** The color of the light. */
+    color: '#ffffff',
+    /** Whether the light is enabled or not. */
+    enable: true
+  });
+
+  /** The function to calculate the height of the cells. */
+  const heightScale = useMemo(() => {
+    return (value: number) => (value / maxValue) * scale;
+  }, [maxValue, scale]);
+
+  return (
+    <>
+      <Leva collapsed />
+      <Canvas>
+        <OrbitControls target={target} autoRotate={rotate} autoRotateSpeed={speed} />
+        <PerspectiveCamera makeDefault position={camera} />
+
+        <hemisphereLight />
+        {light1.enable && (
+          <directionalLight
+            position={light1.position}
+            intensity={light1.intensity}
+            color={light1.color}
+          />
+        )}
+        {light2.enable && (
+          <directionalLight
+            position={light2.position}
+            intensity={light2.intensity}
+            color={light2.color}
+          />
+        )}
+
+        {data.map((yearData, index) => {
+          const gridPosition: [number, number, number] = [
+            index * (gridSpacing * (cellSize + cellSpacing) * 7),
+            0,
+            0
+          ];
+          return (
+            <group key={`grid-${startYear + index}`} position={gridPosition}>
+              {yearData.map((week: CalendarWeekData, weekIndex: number) => {
+                return week.map((value: number, dayIndex: number) => {
+                  const cellHeight = heightScale(value);
+                  const cellPosition: [number, number, number] = [
+                    (cellSize + cellSpacing) * dayIndex,
+                    cellHeight / 2,
+                    (cellSize + cellSpacing) * weekIndex
+                  ];
+                  return (
+                    <Box
+                      key={`${weekIndex}-${dayIndex}`}
+                      args={[cellSize, cellHeight, cellSize]}
+                      position={cellPosition}
+                    >
+                      <meshPhongMaterial color={value < 0 ? unusedColor : color} />
+                    </Box>
+                  );
+                });
+              })}
+            </group>
+          );
+        })}
+      </Canvas>
+    </>
+  );
+};
+
+export default TitanicGrids;
+```
+
+We are using the `leva` library to add a panel to the right side of the screen. This floating panel will allow us to change the appearance of the grids in real time.
+
+![Customize 3D Chart](/img/posts/3d-bar-charts/step-06-customize-3d-chart.png)
 
 ## Conclusion
+
+In conclusion, we have successfully created a 3D grid visualization for time-series data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber). To recap the steps we followed:
+
+1. [Project Setup](#step-1-project-setup): We initialized a new React project using [Create T3 App](https://create.t3.gg/) and installed the necessary dependencies.
+2. [Preparing our Data](#step-2-preparing-our-data): We fetched the raw dataset and transformed it into a format suitable for analysis.
+3. [Creating the Time-series Data](#step-3-creating-the-time-series-data): We transformed the data again, this time organizing it by year and week. We also learned the basics of the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard and modified it to fit our needs.
+4. [Show the data in a 2D Grid](#step-4-show-the-data-in-a-2d-grid): We started to visualize the data in a simple 2D grid format, understanding the structure of the data and preparing it for the next step.
+5. [Show the Data in a 3D Grid](#step-5-show-the-data-in-a-3d-grid): We built upon our 2D grid and created a 3D grid representing the data points. This provided a more visually appealing representation of the time-series data.
+6. [Adding a helper GUI to customize the chart](#step-6-adding-a-helper-gui-to-customize-the-chart): We used the [`leva` library](https://github.com/pmndrs/leva) to add a helper interface for customizing the appearance and behavior of the grid elements in real-time.
+
+This tutorial is just the beginning of what you can do with React Three Fiber. Potential improvements could include:
+
+- Adding tooltips and labels to display more information about each bar on hover.
+- Adding animations to the bars for a more dynamic user experience.
+- Integrating filters and controls for users to modify the data displayed in real-time.
+
+I encourage you to experiment with the code and build upon it to create your own unique 3D grid visualizations. With the foundation laid out in this tutorial, you can now explore the possibilities of React Three Fiber and create even more complex and engaging 3D visualizations.
+
+Happy coding!
