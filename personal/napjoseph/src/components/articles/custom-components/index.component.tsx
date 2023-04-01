@@ -1,4 +1,17 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Flex,
+  Image,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr
+} from '@chakra-ui/react';
 
 import CustomCodeBlock from './custom-code-block.component';
 import CustomCodeInline from './custom-code-inline.component';
@@ -19,6 +32,21 @@ const CustomComponents: Record<string, React.ReactNode> = {
   ul: (props) => <Flex direction="column" as="ul" pl={4} ml={2} gridGap={1} {...props} />,
   ol: (props) => <Flex direction="column" as="ol" pl={4} ml={2} gridGap={1} {...props} />,
   li: (props) => <Box as="li" {...props} />,
+  img: (props) => (
+    <Center as="span">
+      <Image src={props.src} alt={props.alt} />
+    </Center>
+  ),
+  table: (props) => (
+    <TableContainer>
+      <Table variant="striped" {...props} />
+    </TableContainer>
+  ),
+  tr: (props) => <Tr {...props} />,
+  th: (props) => <Th {...props} />,
+  td: (props) => <Td {...props} />,
+  thead: (props) => <Thead {...props} />,
+  tbody: (props) => <Tbody {...props} />,
   hr: CustomDivider,
   a: CustomLink,
   blockquote: CustomQuote,

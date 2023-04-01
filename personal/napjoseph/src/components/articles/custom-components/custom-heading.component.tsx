@@ -16,7 +16,12 @@ const CustomHeading: React.FC<HeadingProps> = (props) => {
             aria-label="anchor"
             href={`#${props.id}`}
           >
-            #
+            {props.as === 'h1' && '#'}
+            {props.as === 'h2' && '##'}
+            {props.as === 'h3' && '###'}
+            {props.as === 'h4' && '####'}
+            {props.as === 'h5' && '#####'}
+            {props.as === 'h6' && '######'}
           </NextChakraLink>
         )}
         {props.children}
