@@ -1006,7 +1006,7 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
   // END: The temporary values for the grid.
 
   /** The function to calculate the height of the cells. */
-  const heightScale = useMemo(() => {
+  const scaledHeight = useMemo(() => {
     return (value: number) => (value / maxValue) * scale;
   }, [maxValue, scale]);
 
@@ -1043,7 +1043,7 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
             <group key={`grid-${yearValue}`} position={gridPosition}>
               {yearData.map((week: CalendarWeekData, weekIndex: number) => {
                 return week.map((value: number, dayIndex: number) => {
-                  const cellHeight = heightScale(value);
+                  const cellHeight = scaledHeight(value);
                   const cellPosition: [number, number, number] = [
                     (cellSize + cellSpacing) * dayIndex,
                     cellHeight / 2,
@@ -1071,7 +1071,7 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
 export default TitanicGrids;
 ```
 
-Alas, this component is more complex than the previous one. Let's break it down.
+This component is more complex than the previous one, so let's break it down.
 
 Here's a brief overview of the 3D components we imported:
 
@@ -1084,14 +1084,16 @@ Here's a brief overview of the 3D components we imported:
 
 Here's an explanation of the position and dimension calculations:
 
-- The `heightScale` function calculates `Box` heights based on their value, the maximum value in the dataset, and the `scale` factor. The final height is determined by dividing the cell value by the maximum value, and then multiplying by the `scale` factor. This ensures that each cell's height is proportional to its value compared to the maximum value in the data set.
+![3D Plane Calculation](/img/posts/3d-bar-charts/step-05-3d-plane-calculation.png)
+
+- The `scaledHeight` function calculates `Box` heights based on their value, the maximum value in the dataset, and the `scale` factor. The final height is determined by dividing the cell value by the maximum value, and then multiplying by the `scale` factor. This ensures that each cell's height is proportional to its value compared to the maximum value in the data set.
 - The `gridPosition` calculates the position of each year's grid in the 3D space. The X-coordinate is determined by multiplying the index of the year by the total width of the 7 columns of cells (including cell spacing), and then by the `gridSpacing` value. This ensures that each year's grid is consistently spaced from the previous grid along the X-axis.
 - The `cellPosition` calculates the position of each cell within a year's grid based on the day and week indexes, `cellSize`, and `cellSpacing`.
   - The X-coordinate is determined by multiplying the day index by the sum of the `cellSize` and `cellSpacing`.
   - The Y-coordinate is equal to half the cell height, ensuring that each cell's base rests on the ground.
   - The Z-coordinate is determined by multiplying the week index by the sum of the `cellSize` and `cellSpacing`. This ensures that each cell is correctly positioned within the grid.
 
-For more information about the ordered triplet of numbers used to represent a position in 3D space, see the [Three.js documentation about `Vector3`](https://threejs.org/docs/#api/en/math/Vector3).
+> **NOTE**: For more information about the ordered triplet of numbers used to represent a position in 3D space, see the Three.js documentation about [`Vector3`](https://threejs.org/docs/#api/en/math/Vector3).
 
 Now, update the index page to use the new component:
 
@@ -1254,7 +1256,7 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
   });
 
   /** The function to calculate the height of the cells. */
-  const heightScale = useMemo(() => {
+  const scaledHeight = useMemo(() => {
     return (value: number) => (value / maxValue) * scale;
   }, [maxValue, scale]);
 
@@ -1291,7 +1293,7 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
             <group key={`grid-${startYear + index}`} position={gridPosition}>
               {yearData.map((week: CalendarWeekData, weekIndex: number) => {
                 return week.map((value: number, dayIndex: number) => {
-                  const cellHeight = heightScale(value);
+                  const cellHeight = scaledHeight(value);
                   const cellPosition: [number, number, number] = [
                     (cellSize + cellSpacing) * dayIndex,
                     cellHeight / 2,
