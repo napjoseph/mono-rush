@@ -11,13 +11,13 @@ tags:
   - 'TypeScript'
 ---
 
-In this blog post, we will create a 3D visualization of our timeseries data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber), a React renderer for [Three.js](https://threejs.org/). This is inspired by [GitHub Skyline](https://skyline.github.com/), a web application that creates a 3D visualization of a user's GitHub contributions.
+In this tutorial, we will create a 3D grid visualization of our timeseries data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber), a React renderer for [Three.js](https://threejs.org/). By following these steps, you'll gain a deeper understanding of how to work with time-series data, create compelling visualizations, and customize them in real-time.
 
 ![Project Titan](/img/posts/3d-bar-charts/titan.png)
 
-> **NOTE**: You can find the live version at [The Wandering Inndex](https://titan.inndex.omg.lol/) and the full source code on [the wandering-inndex/titan repository](https://github.com/wandering-inndex/titan).
+> **NOTE**: You can find the live version at [The Wandering Inndex](https://titan.inndex.omg.lol/) and the full source code on the [wandering-inndex/titan](https://github.com/wandering-inndex/titan) repository. This project is inspired by [GitHub Skyline](https://skyline.github.com/), a web application that creates a 3D visualization of a user's GitHub contributions.
 
-This is rather long, so here's a table of contents:
+As this is a lengthy post, here's a table of contents to help you navigate:
 
 - [Step 1: Project Setup](#step-1-project-setup)
   - [Prerequisites](#prerequisites)
@@ -39,20 +39,18 @@ This is rather long, so here's a table of contents:
 - [Step 6: Adding a helper GUI to customize the chart](#step-6-adding-a-helper-gui-to-customize-the-chart)
 - [Conclusion](#conclusion)
 
----
-
 ## Step 1: Project Setup
 
-In this step, we will be creating a new project using [Create T3 App](https://create.t3.gg/). If you already have a React project set up, just install the [additional dependencies listed below](#install-additional-project-dependencies) and skip to the [next step](#step-2-preparing-our-data).
+In this initial step, we will create a new project utilizing [Create T3 App](https://create.t3.gg/). If you already have a [React](https://react.dev/) project in place, simply install the [additional dependencies](#install-additional-project-dependencies) mentioned below and proceed to the [following step](#step-2-preparing-our-data).
 
 ### Prerequisites
 
-Install a version manager for [Node.js](https://nodejs.org/en) for your operating system:
+First, install a version manager for [Node.js](https://nodejs.org/en) compatible with your operating system:
 
 - [Node Version Manager](https://github.com/nvm-sh/nvm) (Linux/macOS)
 - [NVM for Windows](https://github.com/coreybutler/nvm-windows) (Windows)
 
-After installing `nvm`, install the latest LTS version of [Node.js](https://nodejs.org/en) by running:
+After installing `nvm`, install the latest [LTS version](https://en.wikipedia.org/wiki/Long-term_support) of `node` by executing:
 
 ```bash
 # Linux/macOS
@@ -62,7 +60,7 @@ $ nvm install --lts
 $ nvm install lts
 ```
 
-Once that's done, we shall install [pnpm](https://pnpm.io/), an alternative to [npm](https://www.npmjs.com/) that is faster and uses less disk space. To install `pnpm`, run:
+Next, we'll install [pnpm](https://pnpm.io/), a faster and more efficient alternative to [npm](https://www.npmjs.com/). To install `pnpm`, run:
 
 ```bash
 $ npm install -g pnpm
@@ -70,9 +68,9 @@ $ npm install -g pnpm
 
 ### Create a new Next.js project
 
-For this project, we will use [Create T3 App](https://create.t3.gg/) to bootstrap our project. Create T3 App is a CLI tool that helps you create a new project with a pre-configured setup for [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind CSS](https://tailwindcss.com/).
+For our project, we'll use [Create T3 App](https://create.t3.gg/), a command-line tool that helps you generate a new React project with pre-configured setups for [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), and [Tailwind CSS](https://tailwindcss.com/).
 
-To create a new T3 project, run:
+To create a new T3 project, execute:
 
 ```bash
 $ pnpm create t3-app@latest
@@ -90,33 +88,33 @@ $ pnpm create t3-app@latest
 # ✔ titan scaffolded successfully!
 ```
 
-Feel free to select any name you'd like for your project. However, for the purpose of this guide, we'll go with `titan`, inspired by a character found in [The Wandering Inn](https://wanderinginn.com/), one of the longest pieces of fiction written in English. The [author](https://www.patreon.com/pirateaba) has been writing consistently since 2016, and we'll utilize their writing data for our visualization.
+You can choose any project name you prefer. For this guide, we'll use `titan`, which is inspired by a character in [The Wandering Inn](https://wanderinginn.com/), one of the longest pieces of English fiction. The [author](https://www.patreon.com/pirateaba) has been consistently writing since 2016, and we'll use their writing data for our visualization.
 
 ### Install Additional Project Dependencies
 
-After the project is created, change into the project directory:
+Once the project is created, navigate to the project directory:
 
 ```bash
 $ cd titan
 ```
 
-Install additional dependencies for our project:
+Now, install the necessary dependencies for our project:
 
 ```bash
 $ pnpm add three @types/three @react-three/fiber @react-three/drei leva date-fns yaml
 ```
 
-- `three` is a JavaScript 3D library that we will use to create our 3D visualization.
-- `@types/three` is the TypeScript type definitions for `three`.
-- `@react-three/fiber` is a React renderer for `three`.
-- `@react-three/drei` is a collection of React components for `three`.
-- `leva` is a UI library that we will use to create controls for our visualization.
-- `date-fns` is a date utility library that we will use to parse and format dates.
-- `yaml` is a [YAML](https://yaml.org/) parser that we will use to parse our data source.
+- [`three`](https://threejs.org/) is a JavaScript 3D library that we will use to create our 3D visualization.
+- [`@types/three`](https://www.npmjs.com/package/@types/three) provides TypeScript type definitions for `three`.
+- [`@react-three/fiber`](https://github.com/pmndrs/react-three-fiber) serves as a React renderer for `three`.
+- [`@react-three/drei`](https://github.com/pmndrs/drei) offers a suite of React components for `@react-three/fiber`.
+- [`leva`](https://github.com/pmndrs/leva) is a GUI library for building controls for our visualization.
+- [`date-fns`](https://date-fns.org/) is a date utility library for parsing and formatting dates.
+- [`yaml`](https://github.com/eemeli/yaml) is a [YAML](https://yaml.org/) data parser.
 
 ### Clean up the Home Page
 
-Open the project in your favorite code editor and delete the contents of `src/pages/index.tsx`. Replace it with the following code:
+Open the project directory in your preferred code editor and replace the contents of `src/pages/index.tsx` with the following code:
 
 ```tsx filename=src/pages/index.tsx
 import type { NextPage } from 'next';
@@ -142,7 +140,7 @@ const Home: NextPage = () => {
 export default Home;
 ```
 
-Add a style to your `body` tag by updating `src/styles/globals.css`:
+Update the look of your `body` tag by modifying `src/styles/globals.css`:
 
 ```css filename=src/styles/globals.css
 @tailwind base;
@@ -156,25 +154,25 @@ Add a style to your `body` tag by updating `src/styles/globals.css`:
 }
 ```
 
-Afterwards, you can start the development server by running:
+Finally, start the development server by running:
 
 ```bash
 $ pnpm dev
 ```
 
-It should show an empty page with our project name at the top.
+You should now see an empty page with the project name at the top.
 
 ![Empty Page](/img/posts/3d-bar-charts/step-01-empty-page.png)
 
 ## Step 2: Preparing our Data
 
-For this project, we will be fetching data from [The Wandering Inndex](https://inndex.omg.lol/), a community-driven project that aims to collect data about [The Wandering Inn](https://wanderinginn.com/) and make it available for the public. The raw data for the published chapters is available in [YAML](https://yaml.org/) format, and we will be using the [yaml](https://www.npmjs.com/package/yaml) package to parse the data.
+In this step, we'll fetch our data from [The Wandering Inndex](https://inndex.omg.lol/), a community-driven project that compiles and analyzes data about [The Wandering Inn](https://wanderinginn.com/) for public access. The raw data for the published chapters is in [YAML format](https://yaml.org/), and we'll use the [`yaml`](https://www.npmjs.com/package/yaml) package to parse it and convert it to our desired format.
 
 ### Creating the Type Definitions
 
-In [TypeScript](https://www.typescriptlang.org/), [type declarations](https://www.typescriptlang.org/docs/handbook/2/type-declarations.html) are used to define the structure of objects, interfaces, classes, and functions. It provides clarity and documentation to the codebase, making it easier for developers to understand and maintain the project.
+In [TypeScript](https://www.typescriptlang.org/), [type declarations](https://www.typescriptlang.org/docs/handbook/2/type-declarations.html) define the structure of objects, interfaces, classes, and functions. This enhances clarity and documentation within the codebase, making it more comprehensible and maintainable for developers.
 
-To get started, let's declare the type definitions that we will use in our application. Luckily for us, the data that we will be using already has [type definitions available](https://github.com/wandering-inndex/seed-data/blob/main/types/media.ts). We will be using the `Chapter` interface, which represents the individual chapter data. We will only be using a subset of the available fields from the full type definitions, so let's create a new file at `src/types/chapters.ts` and add the following code:
+First, let's declare the type definitions for our application. Conveniently, the data we're working with already has [type definitions available](https://github.com/wandering-inndex/seed-data/blob/main/types/media.ts) available. We'll use the `Chapter` interface, which represents data about individual chapters. Since we'll only use a portion of the available fields from the complete type definitions, create a new file at `src/types/chapters.ts` and insert the following code:
 
 ```ts filename=src/types/chapters.ts
 /** Minimal interface that represents the individual Chapter data. */
@@ -207,9 +205,9 @@ export interface Chapter {
 }
 ```
 
-We only want to show the chapters that are marked as to be shown in the table of contents (`meta.show === true`) and is part of a Web Novel Volume (`partOf.webNovel.ref > 0`). We will also be using the `partOf.webNovel.published` field to determine the date that the chapter was published and the `partOf.webNovel.totalWords` field to determine the number of words for that chapter.
+We want to display chapters that are being shown in the [Table of Contents page](https://wanderinginn.com/table-of-contents/) (`meta.show === true`) and are part of a Web Novel Volume (`partOf.webNovel.ref > 0`). Additionally, we'll use the `partOf.webNovel.published` field to determine the chapter's publication date and the `partOf.webNovel.totalWords` field to identify the chapter's word count.
 
-We should also create the type definitions for our Time-related data. Create `src/types/calendar.ts` and add the following:
+Next, create the type definitions for our time-related data. Create `src/types/calendar.ts` and include the following:
 
 ```ts filename=src/types/calendar.ts
 // TODO: Add type definition for `CalendarWeekData`.
@@ -232,20 +230,20 @@ We should also create the type definitions for our Time-related data. Create `sr
 export type ValuesPerDay = Map<string, number>;
 ```
 
-Our goal for this step is to convert the `Chapter` data into a mapping of word counts by date (`ValuesPerDay`).
-
-Afterwards, create a `src/types/index.ts` file and add the following code:
+Then, create a `src/types/index.ts` file and insert the following code:
 
 ```ts filename=src/types/index.ts
 export * from './calendar';
 export * from './chapters';
 ```
 
-This will allow us to import all of our types from a single location (e.g. `import { ValuesPerDay } from "~/types/";`).
+This allows us to import all our types from a single location (e.g. `import { ValuesPerDay } from "~/types/";`).
+
+Our goal for this step is to transform the `Chapter` data into a mapping of word counts by date (`ValuesPerDay`).
 
 ### Convert the Chapter data to a mapping of dates to values
 
-Let's create a `src/utils/chapters.ts` file and add the following code:
+Now, create a `src/utils/chapters.ts` file and add the following code:
 
 ```ts filename=src/utils/chapters.ts
 import { isMatch, formatISO, parseISO } from 'date-fns';
@@ -328,25 +326,25 @@ export const convertChaptersToMapping = (chapters: Chapter[]): ConvertChaptersTo
 };
 ```
 
-This file contains a utility function that will help us convert our `Chapter` data into a mapping of dates to word counts. The code is fairly straightforward, but let's go over it in more detail.
+This file contains a utility function that converts our `Chapter` data into a mapping of dates to word counts (`ValuesPerDay`). The code is relatively straightforward, but let's examine it more closely.
 
-It starts by defining a `shouldIncludeChapter` function that will check if a chapter should be included based on the given conditions. This function will return `true` if the chapter should be included, and `false` otherwise. The conditions are as follows:
+First, we define a `shouldIncludeChapter` function to verify whether a chapter should be included based on specific conditions. This function returns `true` if the chapter meets the conditions and `false` otherwise. The conditions are:
 
 - `chapter.meta.show` must be `true`.
 - `chapter.partOf.webNovel.ref` must be greater than 0.
 - `chapter.partOf.webNovel.published` must be a valid date string.
 
-Next, we define a `convertChaptersToMapping` function that will convert an array of `Chapter` objects to a `ConvertChaptersToMappingOutput`. This function will return an object that contains the following properties:
+Next, we define a `convertChaptersToMapping` function that converts an array of `Chapter` objects to an object with the following properties:
 
 - `mapping`: This maps a date string to the number of words written on that day.
-- `minYear`: The minimum year in the dataset.
-- `maxYear`: The maximum year in the dataset.
-- `minValue`: The minimum value in the dataset.
-- `maxValue`: The maximum value in the dataset.
+- `minYear`: The earliest year in the dataset.
+- `maxYear`: The latest year in the dataset.
+- `minValue`: The smallest value in the dataset.
+- `maxValue`: The largest value in the dataset.
 
-The function will loop through each chapter and check if it should be included. If it should be included, it will add the number of words written on that day to the mapping. It will also update the `minYear`, `maxYear`, `minValue`, and `maxValue` properties as needed.
+The function iterates through each `Chapter`, verifying if it should be included. If so, it adds the number of words written on that day to the mapping. It also updates the `minYear`, `maxYear`, `minValue`, and `maxValue` properties as needed.
 
-Like before, create a `src/utils/index.ts` file and add the following code:
+Finally, let's create a `src/utils/index.ts` file and add the following code:
 
 ```ts filename=src/utils/index.ts
 export * from './chapters';
@@ -354,7 +352,7 @@ export * from './chapters';
 
 ### Show the parsed Chapter data on the page
 
-Let's update our `src/pages/index.tsx` page to fetch our `Chapter` data from the source repository. Afterwards, we'll convert the data using `convertChaptersToMapping` and show the relevant data on the page.
+Update the `src/pages/index.tsx` page to fetch our `Chapter` data from the source repository. Then, use the `convertChaptersToMapping` function to convert the data and display the relevant information on the page.
 
 ```tsx filename=src/pages/index.tsx
 import type { NextPage, GetServerSideProps } from 'next';
@@ -421,15 +419,17 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 export default Home;
 ```
 
-[getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) is a special Next.js function that will run on the server before the page is rendered. We are using this function to fetch the YAML data from [our data source](https://raw.githubusercontent.com/wandering-inndex/seed-data/main/data/media/twi-webnovel-chapters.yaml). We will then convert the data to a mapping of dates to values using the `convertChaptersToMapping` function we created earlier. We are then returning the `minYear`, `maxYear`, `minValue`, and `maxValue` properties as props to our `Home` component. We are then showing the values as a simple HTML list.
+[`getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props) is a unique Next.js function that runs on the server before the page is rendered. We use this function to fetch the YAML data from our data source. We then convert the data to a mapping of dates to values using the `convertChaptersToMapping` function we created earlier. We return the outputs as props to our Home page component, displaying the values as a simple HTML unordered list.
 
 ![With Values](/img/posts/3d-bar-charts/step-02-with-values.png)
 
 ## Step 3: Creating the Time-series Data
 
+In this step, we'll organize the data by year and week. This process involves creating utility functions that calculate the week numbers using a modified ISO 8601 standard.
+
 ### Defining the Time-series Data Types
 
-Now, let's go define the data structure that will be used to visualize the data. We'll start by updating the `src/types/calendar.ts` file and adding the following code to the top:
+First, let's update the `src/types/calendar.ts` file to define the data structure we will use to visualize the data. Add the following code to the top:
 
 ```ts filename=src/types/calendar.ts
 /**
@@ -502,70 +502,70 @@ export type CalendarYearsData = Array<CalendarYearData>;
 // Definition for `ValuesPerDay`
 ```
 
-Our goal for this step is to convert the `ValuesPerDay` mapping to an array of `CalendarYearData`. A `CalendarYearData` is just an array of `CalendarWeekData` values, which are just arrays of word counts per week.
+Our objective is to transform the `ValuesPerDay` mapping we created previosly into an array of `CalendarYearData`. A `CalendarYearData` consists of an array of `CalendarWeekData` values, which are themselves arrays of word counts per week.
 
-To help you visualize this multi-dimensional array, we'll create a 2D grid, where the X-axis represents the week number, the Y-axis represents the day, and the cell value represents the word count.
+To help visualize this multi-dimensional array, imagine a 2D grid where one axis represents the week number, another axis represents the day of the week, and the cell value represents the word count.
 
 [![Year Grid](/img/posts/3d-bar-charts/step-03-year-grid.png)](/img/posts/3d-bar-charts/step-03-year-grid.png)
 
-You may have noticed a few things about this grid:
+Some key points to note about this grid:
 
 - The week starts on Monday (index 0) and ends on Sunday (index 6).
 - There are 54 weeks (indexes 0 to 53) instead of the usual 52 or 53 weeks.
 
-Firstly, it's important to note that the beginning of the week [differs across cultures](https://www.timeanddate.com/date/week-numbers.html), and the number of weeks in a year can vary too. Some years have 52 weeks, others have 53 weeks on leap years. Additionally, since the start of the week can vary, the number of weeks can differ as well. For this project, we will use the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) as our basis, with some modifications.
+It's essential to recognize that the start of the week [varies across cultures](https://www.timeanddate.com/date/week-numbers.html), as does the number of weeks in a year. Some years have 52 weeks, while others have 53 weeks during leap years. Additionally, since the start of the week can differ, the number of weeks can also vary. In this project, we will use the [ISO 8601 standard](https://en.wikipedia.org/wiki/ISO_8601) standard as our basis, with some modifications.
 
 ### Gregorian Calendar vs ISO 8601 Calendar
 
-ISO 8601 is a standard that defines a way to represent dates and times. For further reading, check out [Wikipedia: ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), [Wikipedia: ISO week date](https://en.wikipedia.org/wiki/ISO_week_date#Relation_with_the_Gregorian_calendar), and [Tableau: ISO-8601 Week-Based Calendar](https://help.tableau.com/current/pro/desktop/en-us/dates_calendar.htm).
+ISO 8601 is a standard that defines how to represent dates and times. For further information, check out the articles for [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), [ISO week date](https://en.wikipedia.org/wiki/ISO_week_date#Relation_with_the_Gregorian_calendar), and [ISO-8601 Week-Based Calendar](https://help.tableau.com/current/pro/desktop/en-us/dates_calendar.htm).
 
-Here are some of the differences between the Gregorian Calendar and the ISO 8601 Calendar:
+Here are some key differences between the Gregorian Calendar and the ISO 8601 Calendar:
 
-| Gregorian Calendar                       | ISO 8601 Calendar                                                                                                                      |
-| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Will always start the year on January 1. | Years always start on the first Monday closest to January 1. This means the year may start anywhere between December 29 and January 4. |
-| Permits weeks to extend across years.    | Weeks have exactly 7 days and start on a Monday. Each week belongs to single year.                                                     |
-| Years can have 365 or 366 days.          | An ISO week-numbering year has 52 or 53 full weeks. That is 364 or 371 days.                                                           |
+| Gregorian Calendar                   | ISO 8601 Calendar                                                                                                                |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| The year always starts on January 1. | The year starts on the first Monday closest to January 1, meaning the year may begin anywhere between December 29 and January 4. |
+| Weeks can extend across years.       | Each week has exactly 7 days, starts on Monday, and belongs to a single year.                                                    |
+| Years can have 365 or 366 days.      | A year has 52 or 53 full weeks, which is 364 or 371 days.                                                                        |
 
-Below, you can see the difference when transitioning from December 2004 to January 2005. The Gregorian Calendar starts the year on January 1, while the ISO 8601 Calendar starts the year on January 3.
+The following example demonstrates the difference when transitioning from December 2004 to January 2005. The Gregorian Calendar starts the year on January 1, while the ISO 8601 Calendar starts the year on January 3.
 
 ![Different Calendars](/img/posts/3d-bar-charts/step-03-iso-8601-calendar.png)
 
-Calendar applications will usually use the Gregorian calendar, and will have the option to show the ISO 8601 week numbers, as well.
+Calendar applications typically use the Gregorian calendar but offer the option to show ISO 8601 week numbers.
 
 ![Combined Calendars](/img/posts/3d-bar-charts/step-03-combined-calendars.png)
 
 ### Modified Version
 
-ISO 8601 is a very useful standard, but we need to modify it to fit our requirements:
+While ISO 8601 is a valuable standard, we must modify it to suit our needs:
 
-- Our year will always have 54 weeks (378 days). This ensures that all years have the same number of columns when we show the grids side-by-side.
-  - The extra week will be placed at the start, giving it the index of 0.
-- The week number will follow the ISO 8601 standard, with the following exceptions:
-  - If the date's month is January but the ISO week number is greater than 50, change the week number to 0.
-  - If the date's month is December but the ISO week number is less than 10, change the week number to the max ISO 8601 week number plus 1.
-- Our weeks will start on Monday. The days will have 0 based indexes, so Monday will be 0 and Sunday will be 6.
+- Our year will always have 54 weeks (378 days), ensuring all years have the same number of columns when displayed side-by-side in grids.
+  - The extra week will be placed at the beginning, assigned an index of 0.
+- The week number will follow the ISO 8601 standard, with a few exceptions:
+  - If the date's month is January, but the ISO week number is greater than 50, change the week number to 0.
+  - If the date's month is December, but the ISO week number is less than 10, change the week number to the last ISO 8601 week number of that year plus 1.
+- Our weeks will start on Monday, with days having 0-based indexes, so Monday will be 0 and Sunday will be 6.
 - In our data structure, the word counts for each week will be represented as an array of 7 numbers. If the week has unused slots, the values for those days will be represented as negative numbers.
 
-Let's try to visualize this modified calendar:
+Let's visualize this modified calendar:
 
 ![Combined and Modified Calendars](/img/posts/3d-bar-charts/step-03-combined-modified-calendars.png)
 
-2004 will end on Week 53, with two unused days at the end (marked as `X` in the chart). 2005 will start on Week 0, with five unused days at the beginning (marked as `X` in the chart). Week 1 will start on January 3. If we continue and fill up our grid for the year 2005 with our dates, we will get:
+In 2004, Week 53 will end with two unused days at the end (marked as `X` in the chart). In 2005, Week 0 will start with five unused days at the beginning (marked as `X` in the chart), and Week 1 will start on January 3. If we continue and fill up our grid for the year 2005 with our dates, we will get:
 
 [![Year 2005 Grid](/img/posts/3d-bar-charts/step-03-year-2005-grid.png)](/img/posts/3d-bar-charts/step-03-year-2005-grid.png)
 
 > **NOTE**: Notice that we have 13 unused days for 2005. Week 0 has 5 at the start, Week 52 has 1 at the end, and Week 53 has all 7 slots unused.
 
-In our data structure, we will initialize the grid with negative numbers for the unused days, and 0 for the rest:
+In our data structure, we will initialize the grid with negative numbers for the unused days and 0 for the rest:
 
 [![Year 2005 Grid Initialized](/img/posts/3d-bar-charts/step-03-year-2005-grid-initialized.png)](/img/posts/3d-bar-charts/step-03-year-2005-grid-initialized.png)
 
 ### Using date-fns
 
-To make our lives easier, we'll use the [date-fns](https://date-fns.org/) library to help us with the ISO 8601 calculations. We will use the [`getISOWeek`](https://date-fns.org/docs/getISOWeek) function to get the week number for a given date, and the [`getISOWeeksInYear`](https://date-fns.org/docs/getISOWeeksInYear) function to get the number of weeks in a given year. We can get the day index by using the [`getDay`](https://date-fns.org/docs/getDay) function and subtracting 1 from the result.
+We'll use the [date-fns](https://date-fns.org/) library to simplify our ISO 8601 calculations. We will use the [`getISOWeek`](https://date-fns.org/docs/getISOWeek) function to get the week number for a given date, and the [`getISOWeeksInYear`](https://date-fns.org/docs/getISOWeeksInYear) function to get the number of weeks in a given year. We can get the day index by using the [`getDay`](https://date-fns.org/docs/getDay) function and subtracting 1 from the result.
 
-Let's try checking the ISO 8061 values for a few dates. We can create a function that will return an object with the values we need:
+Let's try checking the values for `2004-12-28` to `2005-01-04`:
 
 ```ts
 import {
@@ -600,11 +600,7 @@ const analyzeDate = (date: Date) => {
     isoWeeksInYear: getISOWeeksInYear(date)
   };
 };
-```
 
-Now, let's check the results for the dates `2004-12-28` to `2005-01-04`:
-
-```ts
 console.table([
   analyzeDate(newDate(2004, 12, 28)),
   analyzeDate(newDate(2004, 12, 29)),
@@ -632,7 +628,7 @@ console.table([
 
 ### Converting the ValuesPerDay mapping to our desired data structure
 
-Let's now create a function that will convert our `ValuesPerDay` mapping to an array of `CalendarYearData` data. Create a `src/utils/calendar.ts` file and add the following code:
+Now let's build a function to convert our `ValuesPerDay` mapping into an array of `CalendarYearData`. First, create a `src/utils/calendar.ts` file and include the following code:
 
 ```ts filename=src/utils/calendar.ts
 import { getISODay, getISOWeek, getISOWeeksInYear, getYear, parseISO } from 'date-fns';
@@ -766,26 +762,26 @@ export const convertToCalendarYearData = (valuesPerDay: ValuesPerDay): CalendarY
 };
 ```
 
-Don't forget to export the functions in the `src/utils/index.ts` file:
+Remember to export the functions in the `src/utils/index.ts` file:
 
 ```ts filename=src/utils/index.ts
 // ...
 export * from './calendar';
 ```
 
-Here are the recap for each function:
+Let's recap the purpose of each function:
 
-- `createUtcDate`: This function creates a UTC date object given the year, month, and day as input. It takes the year, month, and day, and creates a new Date object with the specified values, ensuring the time components are set to 0 (midnight). By using [`Date.UTC`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC), it ensures the date is represented in the UTC timezone.
-- `extractYearRange`: This function takes a `ValuesPerDay` object as input and iterates through the date strings in the object to find the minimum and maximum years. It does this by first initializing the minimum year as `Infinity` and the maximum year as `-Infinity`. Then, for each date string, it parses the date and extracts the year, updating the minimum and maximum years accordingly.
-- `getAdjustedISOWeek`: This function calculates an adjusted ISO week number for a given date based on the project's requirements. It first gets the month and the ISO week number of the input date. Then, it checks if the date falls under the specific conditions (i.e., January with a week number greater than 50, or December with a week number less than 10). If the date meets any of these conditions, it returns the adjusted week number. Otherwise, it returns the original week number.
-- `initializeEmptyCalendarYearData`: This function initializes an empty `CalendarYearData` object for the given year. It first calculates the first and last dates of the year, along with their adjusted ISO week numbers and ISO day numbers (subtracting 1 to have a 0-based index). Then, it creates an array of 54 weeks (maximum possible weeks in a year), where each week is an array of 7 days. It fills the days with 0 if the day is part of the calendar year and -1 if the day is not part of the calendar year, using the calculated week and day numbers.
-- `convertToCalendarYearData`: This function converts a `ValuesPerDay` object into an array of `CalendarYearData` values. It starts by extracting the minimum and maximum years from the input data using the `extractYearRange` function. Then, it initializes an empty `CalendarYearsData` object for each year in the range using the `initializeEmptyCalendarYearData` function. Next, it iterates through the input data, parsing the date strings, and calculating the year, week, and day indexes. It then adds the value to the appropriate day in the corresponding `CalendarYearData`.
+- `createUtcDate`: This function generates a UTC date object using the given year, month, and day as input. It takes these values, creates a new Date object, and sets the time components to 0 (midnight). By using [`Date.UTC`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/UTC), the date is represented in the UTC timezone.
+- `extractYearRange`: Given a `ValuesPerDay` object, this function iterates through the date strings and determines the minimum and maximum years. It initializes the minimum year to `Infinity` and the maximum year to `-Infinity`. For each date string, the function parses the date, extracts the year, and updates the minimum and maximum years as needed.
+- `getAdjustedISOWeek`: This function computes an adjusted ISO week number for a specific date based on the project requirements. First, it retrieves the month and ISO week number of the input date. Then, it checks if the date meets certain conditions (i.e., January with a week number greater than 50 or December with a week number less than 10). If the date satisfies any of these conditions, the adjusted week number is returned; otherwise, the original week number is returned.
+- `initializeEmptyCalendarYearData`: This function initializes an empty `CalendarYearData` object for a specified year. It calculates the first and last dates of the year, along with their adjusted ISO week numbers and ISO day numbers (subtracting 1 for a 0-based index). Then, it creates an array of 54 weeks (the maximum possible number of weeks in a year), where each week is an array of 7 days. Days that are part of the calendar year are filled with 0, while days that are not part of the calendar year are filled with -1, using the calculated week and day numbers.
+- `convertToCalendarYearData`: This function transforms a `ValuesPerDay` object into an array of `CalendarYearData` values. First, it uses the `extractYearRange` function to determine the minimum and maximum years from the input data. Then, for each year in the range, it initializes an empty `CalendarYearsData` object using the `initializeEmptyCalendarYearData` function. Next, it iterates through the input data, parsing the date strings and calculating the year, week, and day indexes. Finally, it adds the value to the appropriate day in the corresponding `CalendarYearData`.
 
 ## Step 4: Show the data in a 2D Grid
 
-Now that we have the data in the correct format, we can use it to create a 2D grid per year to visualize the data.
+With the data converted, we can now create a 2D grid for each year to visualize it in a calendar-like format.
 
-Create a new file called `src/components/FlatGrids.tsx` and add the following code:
+First, create a new file named `src/components/FlatGrids.tsx` and insert the following code:
 
 ```tsx filename=src/components/FlatGrids.tsx
 import type { FC } from 'react';
@@ -857,9 +853,7 @@ const FlatGrids: FC<{
 export default FlatGrids;
 ```
 
-This just shows a simple table for each year, with the week numbers on the left, the days of the week on the top, and the word counts in the cells. If the cell has a negative value, it will only show a gray background.
-
-Next, add the `FlatGrids` component to the Home Page:
+Now, incorporate the `FlatGrids` component into the Home Page:
 
 ```tsx filename=src/pages/index.tsx
 import type { NextPage, GetServerSideProps } from 'next';
@@ -932,13 +926,15 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 export default Home;
 ```
 
-After saving, you can now see the values in a 2D grid:
+Once you save the changes, you'll be able to see the values in a 2D grid:
 
 ![Show Tables Per Year](/img/posts/3d-bar-charts/step-04-show-year-array.png)
 
+Our code will display a simple table for each year, with week numbers on the left, days of the week on the top, and word counts in the cells. Cells with unused slots (negative values) will have a gray background.
+
 ## Step 5: Show the Data in a 3D Grid
 
-Now... let's make it 3D!
+Now, it's time to bring our visualization into the third dimension!
 
 Create a new file called `src/components/TitanicGrids.tsx` and add the following code:
 
@@ -1075,24 +1071,29 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
 export default TitanicGrids;
 ```
 
-This component is a bit more complex than the previous one.
+Alas, this component is more complex than the previous one. Let's break it down.
 
-A quick explanation on the imported components:
+Here's a brief overview of the 3D components we imported:
 
-- It uses the `Canvas` component from `@react-three/fiber` to render the 3D scene.
-- The `PerspectiveCamera` is a camera type that simulates the way humans perceive the world. It projects the 3D scene onto a 2D plane, creating a sense of depth by making objects appear smaller as they get farther away.
-- The `OrbitControls` is a helper that allows the user to interact with the 3D scene using mouse or touch inputs. It enables panning, zooming, and orbiting the scene, providing an intuitive way to navigate the 3D space.
-- The [`hemisphereLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/hemisphereLight) and [`directionalLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/DirectionalLight) are used to add some lights to the scene.
-- The `Box` component is a convinient wrapper that used to render cuboid shapes.
-- The [`meshPhongMaterial`](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) is a material that is used to render the surface of the 3D objects. It is a good choice for rendering objects with a shiny surface.
+- The `Canvas` component from `@react-three/fiber` renders the 3D scene.
+- The `PerspectiveCamera` simulates human perception by projecting the 3D scene onto a 2D plane, creating depth by making objects appear smaller as they recede into the distance.
+- The `OrbitControls` helper enables interaction with the 3D scene using mouse or touch inputs, providing an intuitive way to navigate the 3D space through panning, zooming, and orbiting.
+- The [`hemisphereLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/hemisphereLight) and [`directionalLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/DirectionalLight) add lighting to the scene.
+- The `Box` component is a convenient wrapper for rendering cuboid shapes.
+- The [`meshPhongMaterial`](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) renders the surface of 3D objects and is suitable for objects with a shiny surface.
 
-The calculations for the positions and dimensions are as follows:
+Here's an explanation of the position and dimension calculations:
 
-- The `heightScale` function is used to calculate the height of the boxes based on its value, the maximum value in the dataset, and the scale factor. The height is calculated by dividing the cell value by the maximum value, then multiplying it by the scale factor. This ensures that the height of each cell is proportional to its value in relation to the `maxValue`.
-- The `gridPosition` determines the position of each year's grid in the 3D space. The X-coordinate is calculated by multiplying the index of the year by the total width of the 7 columns of cells (including spacing between cells), and then by the `gridSpacing` value. This ensures that each year's grid is placed at a consistent distance from the previous grid along the X-axis.
-- The `cellPosition` determines the position of each cell box within a year's grid. It is calculated based on the day and week indexes, `cellSize`, and `cellSpacing`. The X-coordinate is calculated by multiplying the day index by the sum of the `cellSize` and `cellSpacing`. The Y-coordinate is equal to half the cell height, ensuring that the base of each cell rests on the ground. The Z-coordinate is calculated by multiplying the week index by the sum of the `cellSize` and `cellSpacing`. This arrangement ensures that each cell is positioned correctly within the grid.
+- The `heightScale` function calculates `Box` heights based on their value, the maximum value in the dataset, and the `scale` factor. The final height is determined by dividing the cell value by the maximum value, and then multiplying by the `scale` factor. This ensures that each cell's height is proportional to its value compared to the maximum value in the data set.
+- The `gridPosition` calculates the position of each year's grid in the 3D space. The X-coordinate is determined by multiplying the index of the year by the total width of the 7 columns of cells (including cell spacing), and then by the `gridSpacing` value. This ensures that each year's grid is consistently spaced from the previous grid along the X-axis.
+- The `cellPosition` calculates the position of each cell within a year's grid based on the day and week indexes, `cellSize`, and `cellSpacing`.
+  - The X-coordinate is determined by multiplying the day index by the sum of the `cellSize` and `cellSpacing`.
+  - The Y-coordinate is equal to half the cell height, ensuring that each cell's base rests on the ground.
+  - The Z-coordinate is determined by multiplying the week index by the sum of the `cellSize` and `cellSpacing`. This ensures that each cell is correctly positioned within the grid.
 
-Now update the index page to use the new component:
+For more information about the ordered triplet of numbers used to represent a position in 3D space, see the [Three.js documentation about `Vector3`](https://threejs.org/docs/#api/en/math/Vector3).
+
+Now, update the index page to use the new component:
 
 ```tsx filename=src/pages/index.tsx
 import type { NextPage, GetServerSideProps } from 'next';
@@ -1153,17 +1154,17 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 export default Home;
 ```
 
-If you run the app now, you should see something like this:
+Running the app now should display something like this:
 
 ![Add 3D Chart](/img/posts/3d-bar-charts/step-05-add-3d-chart.png)
 
-You can move the camera around by clicking and dragging the left mouse button, or by using touch inputs. You can also zoom in and out by scrolling the mouse wheel, or by pinching the screen. You can use the right mouse button or two finger drag to pan the camera.
+You can move the camera around by clicking and dragging the left mouse button or using touch inputs. Zoom in and out by scrolling the mouse wheel or pinching the screen. Pan the camera using the right mouse button or a two-finger drag.
 
 ## Step 6: Adding a helper GUI to customize the chart
 
-We're almost done! There is one library we can add to make the chart easier to customize.
+We're nearly finished! To make our chart easier to customize, let's add one more library.
 
-Open your `src/components/TitanicGrids.tsx` file and update it to look like this:
+Open the `src/components/TitanicGrids.tsx` file and update it with the following:
 
 ```tsx filename=src/components/TitanicGrids.tsx
 import { type FC, useMemo } from 'react';
@@ -1318,27 +1319,29 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
 export default TitanicGrids;
 ```
 
-We are using the `leva` library to add a panel to the right side of the screen. This floating panel will allow us to change the appearance of the grids in real time.
+We're using the [`leva` library](https://github.com/pmndrs/leva) to add a helper panel on the right side of the screen. This floating panel enables real-time modification of the grid's appearance.
 
 ![Customize 3D Chart](/img/posts/3d-bar-charts/step-06-customize-3d-chart.png)
 
+We can change the size of the cells, the spacing between them, the color of the cells, and more. We can also enable/disable the camera rotation and change its speed. We can also enable/disable the two lights in the scene and change their position, intensity, and color. The panel also shows the current values of the controls. This is very useful for debugging and tweaking the grid's appearance.
+
 ## Conclusion
 
-In conclusion, we have successfully created a 3D grid visualization for time-series data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber). To recap the steps we followed:
+Give yourself a pat on the back! We have successfully created a 3D grid visualization for time-series data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber). Let's review the steps we took:
 
-1. [Project Setup](#step-1-project-setup): We initialized a new React project using [Create T3 App](https://create.t3.gg/) and installed the necessary dependencies.
-2. [Preparing our Data](#step-2-preparing-our-data): We fetched the raw dataset and transformed it into a format suitable for analysis.
-3. [Creating the Time-series Data](#step-3-creating-the-time-series-data): We transformed the data again, this time organizing it by year and week. We also learned the basics of the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard and modified it to fit our needs.
-4. [Show the data in a 2D Grid](#step-4-show-the-data-in-a-2d-grid): We started to visualize the data in a simple 2D grid format, understanding the structure of the data and preparing it for the next step.
-5. [Show the Data in a 3D Grid](#step-5-show-the-data-in-a-3d-grid): We built upon our 2D grid and created a 3D grid representing the data points. This provided a more visually appealing representation of the time-series data.
-6. [Adding a helper GUI to customize the chart](#step-6-adding-a-helper-gui-to-customize-the-chart): We used the [`leva` library](https://github.com/pmndrs/leva) to add a helper interface for customizing the appearance and behavior of the grid elements in real-time.
+1. [Project Setup](#step-1-project-setup): We initialized a new React project using [Create T3 App](https://create.t3.gg/) and installed the required dependencies.
+2. [Preparing our Data](#step-2-preparing-our-data): We retrieved the raw dataset and transformed it into a suitable format for analysis.
+3. [Creating the Time-series Data](#step-3-creating-the-time-series-data): We further transformed the data, organizing it by year and week. We also learned about the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) standard and adapted it to our needs.
+4. [Show the data in a 2D Grid](#step-4-show-the-data-in-a-2d-grid): We began visualizing the data in a simple 2D grid format to understand the data structure and prepare for the next step.
+5. [Show the Data in a 3D Grid](#step-5-show-the-data-in-a-3d-grid): We built upon the 2D grid to create a 3D grid representing data points, providing a more visually appealing representation of the time-series data.
+6. [Adding a helper GUI to customize the chart](#step-6-adding-a-helper-gui-to-customize-the-chart): We added a helper interface that allows real-time customization of the grid elements' appearance and behavior.
 
-This tutorial is just the beginning of what you can do with React Three Fiber. Potential improvements could include:
+This tutorial serves as a starting point for what you can achieve with React Three Fiber. Potential enhancements could include:
 
-- Adding tooltips and labels to display more information about each bar on hover.
-- Adding animations to the bars for a more dynamic user experience.
-- Integrating filters and controls for users to modify the data displayed in real-time.
+- Adding tooltips and labels to show more information about each bar when hovering.
+- Adding animations to the bars like a growing animation when the data is first loaded.
+- Adding filters to enable users to modify the displayed data in real-time.
 
-I encourage you to experiment with the code and build upon it to create your own unique 3D grid visualizations. With the foundation laid out in this tutorial, you can now explore the possibilities of React Three Fiber and create even more complex and engaging 3D visualizations.
+I encourage you to experiment with the code and build upon it to create your own unique 3D grid visualizations.
 
 Happy coding!
