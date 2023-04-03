@@ -936,14 +936,82 @@ Our code will display a simple table for each year, with week numbers on the lef
 
 Now, it's time to bring our visualization into the third dimension!
 
-Create a new file called `src/components/TitanicGrids.tsx` and add the following code:
+First, create a custom hook at `src/hooks/useGridCalculations.ts` to calculate the grid parameters:
 
-```tsx filename=src/components/TitanicGrids.tsx
-import { type FC, useMemo } from 'react';
+```tsx filename=src/hooks/useGridCalculations.ts
+import { useMemo } from 'react';
+
+import type { CalendarYearsData } from '~/types';
+
+/** Creates a set of calculations for the grid. */
+export const useGridCalculations = (
+  /** The data to be used for the calculations. */
+  data: CalendarYearsData,
+  /** The spacing between the grids. */
+  gridSpacing: number,
+  /** The length of each cell in the grid. */
+  cellSize: number,
+  /** The spacing between the cells. */
+  cellSpacing: number,
+  /** The scale of the cells. */
+  scale: number,
+  /** The maximum value of the data. */
+  maxValue: number
+) => {
+  return useMemo(() => {
+    /** Calculates the distance of a cell from the origin. */
+    const cellDistance = (items: number): number => {
+      // prettier-ignore
+      return (cellSize * items) + (cellSpacing * (items - 1));
+    };
+
+    /** Calculates the distance of grid from the origin. */
+    const gridDistance = (items: number): number => {
+      // prettier-ignore
+      return (gridWidth * items) + (gridSpacing * (items - 1));
+    };
+
+    /** Calculates the scaled height of the cells based on the maximum value. */
+    const calcCellHeight = (value: number) => (value / maxValue) * scale;
+
+    /** Calculates the adjusted starting position of a cell. */
+    const calcCellPosition = (index: number): number => {
+      // prettier-ignore
+      return ((cellSize + cellSpacing) * index) + (cellSize / 2);
+    };
+
+    /** Calculates the starting position of the grid. */
+    const calcGridPosition = (index: number): [number, number, number] => {
+      return [(cellDistance(7) + gridSpacing) * index, 0, 0];
+    };
+
+    const gridWidth = cellDistance(7);
+    const gridLength = cellDistance(54);
+    const totalWidth = gridDistance(data.length);
+    const totalLength = gridLength;
+
+    /** The center of the Canvas. */
+    const center: [number, number, number] = [totalWidth / 2, 0, totalLength / 2];
+
+    return { calcCellHeight, calcGridPosition, calcCellPosition, center };
+  }, [data, gridSpacing, cellSize, cellSpacing, maxValue, scale]);
+};
+```
+
+Don't forget to export it from `src/hooks/index.ts`:
+
+```tsx filename=src/hooks/index.ts
+export * from './useGridCalculations';
+```
+
+After that, create a new file called `src/components/TitanicGrids.tsx` and add the following code:
+
+```tsx filename=src/components/TitanicGrids.tsximport { type FC, useId } from "react";
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera, Box } from '@react-three/drei';
+import { Box, PerspectiveCamera, OrbitControls } from '@react-three/drei';
 
 import type { CalendarYearsData, CalendarWeekData } from '~/types';
+import { useGridCalculations } from '~/hooks';
 
 interface TitanicGridsProps {
   /** The list of number values per calendar year. */
@@ -954,41 +1022,40 @@ interface TitanicGridsProps {
   maxValue: number;
 }
 
-/** Temporary interface for the light values. */
-interface LightValues {
-  /** The position of the light. */
-  position: [number, number, number];
-  /** The intensity of the light. */
-  intensity: number;
-  /** The color of the light. */
-  color: string;
-  /** Whether the light is enabled or not. */
-  enable: boolean;
-}
-
 /** Shows a grid of 3D bar charts to represent the number values per year. */
 const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
+  const id = useId();
+
   // START: The temporary values for the grid.
   /** The size of each cell in the grid. */
   const cellSize = 1.0;
   /** The spacing between each cell in the grid. */
   const cellSpacing = 0.2;
   /** The spacing between each grid in the scene. */
-  const gridSpacing = 1.2;
+  const gridSpacing = 1.4;
   /** The color of the cells. */
   const color = '#a0185a';
   /** The color of the unused cells. */
   const unusedColor = '#cccccc';
   /** The scale of the cells. */
-  const scale = 20;
-  /** The target of the camera. */
-  const target: [number, number, number] = [30, 2, 32];
+  const scale = 20.0;
   /** Whether the camera should rotate or not. */
   const rotate = true;
   /** The speed of the camera rotation. */
   const speed = 1.0;
   /** The position of the camera. */
-  const camera: [number, number, number] = [-49, 17, 30];
+  const camera: [number, number, number] = [-50, 25, 29];
+  /** Temporary interface for the light values. */
+  interface LightValues {
+    /** The position of the light. */
+    position: [number, number, number];
+    /** The intensity of the light. */
+    intensity: number;
+    /** The color of the light. */
+    color: string;
+    /** Whether the light is enabled or not. */
+    enable: boolean;
+  }
   /** The values for the first light. */
   const light1: LightValues = {
     position: [90, 0, 0],
@@ -1005,15 +1072,19 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
   };
   // END: The temporary values for the grid.
 
-  /** The function to calculate the height of the cells. */
-  const scaledHeight = useMemo(() => {
-    return (value: number) => (value / maxValue) * scale;
-  }, [maxValue, scale]);
+  const { calcCellHeight, calcGridPosition, calcCellPosition, center } = useGridCalculations(
+    data,
+    gridSpacing,
+    cellSize,
+    cellSpacing,
+    scale,
+    maxValue
+  );
 
   return (
     <>
       <Canvas>
-        <OrbitControls target={target} autoRotate={rotate} autoRotateSpeed={speed} />
+        <OrbitControls autoRotate={rotate} autoRotateSpeed={speed} target={center} />
         <PerspectiveCamera makeDefault position={camera} />
 
         <hemisphereLight />
@@ -1032,26 +1103,23 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
           />
         )}
 
-        {data.map((yearData, index) => {
-          const gridPosition: [number, number, number] = [
-            index * (gridSpacing * (cellSize + cellSpacing) * 7),
-            0,
-            0
-          ];
-          const yearValue = startYear + index;
+        {data.map((yearData, yearIndex) => {
+          const forYear = startYear + yearIndex;
+          const gridPosition = calcGridPosition(yearIndex);
           return (
-            <group key={`grid-${yearValue}`} position={gridPosition}>
+            <group key={`${id}-grid-${forYear}`} position={gridPosition}>
               {yearData.map((week: CalendarWeekData, weekIndex: number) => {
                 return week.map((value: number, dayIndex: number) => {
-                  const cellHeight = scaledHeight(value);
+                  const cellHeight = calcCellHeight(value);
                   const cellPosition: [number, number, number] = [
-                    (cellSize + cellSpacing) * dayIndex,
+                    calcCellPosition(dayIndex),
                     cellHeight / 2,
-                    (cellSize + cellSpacing) * weekIndex
+                    calcCellPosition(weekIndex)
                   ];
+
                   return (
                     <Box
-                      key={`grid-${yearValue}-cell-${weekIndex}-${dayIndex}`}
+                      key={`${id}-grid-${weekIndex}-${dayIndex}`}
                       args={[cellSize, cellHeight, cellSize]}
                       position={cellPosition}
                     >
@@ -1080,20 +1148,18 @@ Here's a brief overview of the 3D components we imported:
 - The `OrbitControls` helper enables interaction with the 3D scene using mouse or touch inputs, providing an intuitive way to navigate the 3D space through panning, zooming, and orbiting.
 - The [`hemisphereLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/hemisphereLight) and [`directionalLight`](https://threejs.org/docs/?q=directionalLight#api/en/lights/DirectionalLight) add lighting to the scene.
 - The `Box` component is a convenient wrapper for rendering cuboid shapes.
-- The [`meshPhongMaterial`](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) renders the surface of 3D objects and is suitable for objects with a shiny surface.
+- The [`meshPhongMaterial`](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) is a type of material suitable for 3D objects with shiny surfaces.
 
 Here's an explanation of the position and dimension calculations:
 
 ![3D Plane Calculation](/img/posts/3d-bar-charts/step-05-3d-plane-calculation.png)
 
-- The `scaledHeight` function calculates `Box` heights based on their value, the maximum value in the dataset, and the `scale` factor. The final height is determined by dividing the cell value by the maximum value, and then multiplying by the `scale` factor. This ensures that each cell's height is proportional to its value compared to the maximum value in the data set.
-- The `gridPosition` calculates the position of each year's grid in the 3D space. The X-coordinate is determined by multiplying the index of the year by the total width of the 7 columns of cells (including cell spacing), and then by the `gridSpacing` value. This ensures that each year's grid is consistently spaced from the previous grid along the X-axis.
-- The `cellPosition` calculates the position of each cell within a year's grid based on the day and week indexes, `cellSize`, and `cellSpacing`.
-  - The X-coordinate is determined by multiplying the day index by the sum of the `cellSize` and `cellSpacing`.
-  - The Y-coordinate is equal to half the cell height, ensuring that each cell's base rests on the ground.
-  - The Z-coordinate is determined by multiplying the week index by the sum of the `cellSize` and `cellSpacing`. This ensures that each cell is correctly positioned within the grid.
+- The `calcCellHeight` function calculates `Box` heights based on their value, the maximum value in the dataset, and the `scale` factor. The final height is determined by dividing the cell value by the maximum value, and then multiplying by the `scale` factor. This ensures that each cell's height is proportional to its value compared to the maximum value in the data set.
+- The `calcCellPosition` calculates the distance of a cell from point `[0, 0, 0]` of a grid. It takes in an index value and multiplies it by the sum of the `cellSize` and `cellSpacing` values. This ensures that each cell is consistently spaced from the previous cell along the X- and Z-axes. We add half the cell size to the result to ensure that the cell starts at the correct position since objects are positioned from their center.
+- The `calcGridPosition` calculates the position of each year's grid in the 3D space. The X-coordinate is determined by multiplying the index of the year by the total width of the 7 columns of cells (including cell spacing), and then by the `gridSpacing` value. This ensures that each year's grid is consistently spaced from the previous grid along the X-axis.
+- We can then calculate for the `center` of the Canvas by calculating the `gridWidth` (7 cells for 7 days) and `gridLength` (54 cells for 54 weeks) and then dividing each by 2. This gives us the center of the grid, which we can use to center the camera and the orbit controls.
 
-> **NOTE**: For more information about the ordered triplet of numbers used to represent a position in 3D space, see the Three.js documentation about [`Vector3`](https://threejs.org/docs/#api/en/math/Vector3).
+> **NOTE**: For more information about the triplet of numbers used to represent a position in 3D space, see the Three.js documentation about [`Vector3`](https://threejs.org/docs/#api/en/math/Vector3).
 
 Now, update the index page to use the new component:
 
@@ -1169,12 +1235,13 @@ We're nearly finished! To make our chart easier to customize, let's add one more
 Open the `src/components/TitanicGrids.tsx` file and update it with the following:
 
 ```tsx filename=src/components/TitanicGrids.tsx
-import { type FC, useMemo } from 'react';
-import { useControls, Leva } from 'leva';
+import { type FC, useId } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera, Box } from '@react-three/drei';
+import { Box, PerspectiveCamera, OrbitControls } from '@react-three/drei';
+import { useControls, Leva } from 'leva';
 
 import type { CalendarYearsData, CalendarWeekData } from '~/types';
+import { useGridCalculations } from '~/hooks';
 
 interface TitanicGridsProps {
   /** The list of number values per calendar year. */
@@ -1187,40 +1254,52 @@ interface TitanicGridsProps {
 
 /** Shows a grid of 3D bar charts to represent the number values per year. */
 const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
+  const id = useId();
+
   const { cellSize, cellSpacing, gridSpacing, color, unusedColor, scale } = useControls('Cells', {
-    /** The size of each cell in the grid. */
-    cellSize: 1.0,
+    /** The length of each cell in the grid. */
+    cellSize: {
+      value: 1.0,
+      step: 0.05,
+      min: 1.0
+    },
     /** The spacing between each cell in the grid. */
-    cellSpacing: 0.2,
-    /** The spacing between each grid in the scene. */
-    gridSpacing: 1.2,
-    /** The color of the cells. */
-    color: '#a0185a',
-    /** The color of the unused cells. */
-    unusedColor: '#cccccc',
+    cellSpacing: {
+      value: 0.2,
+      step: 0.05,
+      min: 0.1
+    },
     /** The scale of the cells. */
     scale: {
-      value: 20,
-      min: 1
-    }
+      value: 20.0,
+      step: 1.0,
+      min: 0.0
+    },
+    /** The spacing between each grid in the scene. */
+    gridSpacing: {
+      value: 1.4,
+      step: 0.05,
+      min: 0.1
+    },
+    /** The color of the regular cells. */
+    color: '#a0185a',
+    /** The color of the unused cells. */
+    unusedColor: '#cccccc'
   });
 
-  const { target, rotate, speed, camera } = useControls('Controls', {
+  const { rotate, speed, camera } = useControls('Controls', {
     /** The position of the camera. */
-    camera: [-49, 17, 30],
-    /** The target of the camera. */
-    target: [30, 2, 32],
+    camera: [-50, 25, 29],
     /** Whether the camera should rotate or not. */
     rotate: true,
     /** The speed of the camera rotation. */
     speed: {
       value: 1.0,
       step: 0.1,
-      min: 0
+      min: 0.0
     }
   });
 
-  /** The values for the first light. */
   const light1 = useControls('Light 1', {
     /** The position of the light. */
     position: {
@@ -1255,16 +1334,20 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
     enable: true
   });
 
-  /** The function to calculate the height of the cells. */
-  const scaledHeight = useMemo(() => {
-    return (value: number) => (value / maxValue) * scale;
-  }, [maxValue, scale]);
+  const { calcCellHeight, calcGridPosition, calcCellPosition, center } = useGridCalculations(
+    data,
+    gridSpacing,
+    cellSize,
+    cellSpacing,
+    scale,
+    maxValue
+  );
 
   return (
     <>
-      <Leva collapsed />
+      <Leva collapsed={false} />
       <Canvas>
-        <OrbitControls target={target} autoRotate={rotate} autoRotateSpeed={speed} />
+        <OrbitControls autoRotate={rotate} autoRotateSpeed={speed} target={center} />
         <PerspectiveCamera makeDefault position={camera} />
 
         <hemisphereLight />
@@ -1283,25 +1366,23 @@ const TitanicGrids: FC<TitanicGridsProps> = ({ data, startYear, maxValue }) => {
           />
         )}
 
-        {data.map((yearData, index) => {
-          const gridPosition: [number, number, number] = [
-            index * (gridSpacing * (cellSize + cellSpacing) * 7),
-            0,
-            0
-          ];
+        {data.map((yearData, yearIndex) => {
+          const forYear = startYear + yearIndex;
+          const gridPosition = calcGridPosition(yearIndex);
           return (
-            <group key={`grid-${startYear + index}`} position={gridPosition}>
+            <group key={`${id}-grid-${forYear}`} position={gridPosition}>
               {yearData.map((week: CalendarWeekData, weekIndex: number) => {
                 return week.map((value: number, dayIndex: number) => {
-                  const cellHeight = scaledHeight(value);
+                  const cellHeight = calcCellHeight(value);
                   const cellPosition: [number, number, number] = [
-                    (cellSize + cellSpacing) * dayIndex,
+                    calcCellPosition(dayIndex),
                     cellHeight / 2,
-                    (cellSize + cellSpacing) * weekIndex
+                    calcCellPosition(weekIndex)
                   ];
+
                   return (
                     <Box
-                      key={`${weekIndex}-${dayIndex}`}
+                      key={`${id}-grid-${weekIndex}-${dayIndex}`}
                       args={[cellSize, cellHeight, cellSize]}
                       position={cellPosition}
                     >
@@ -1329,7 +1410,9 @@ We can change the size of the cells, the spacing between them, the color of the 
 
 ## Conclusion
 
-Give yourself a pat on the back! We have successfully created a 3D grid visualization for time-series data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber). Let's review the steps we took:
+Give yourself a pat on the back! We have successfully created a 3D grid visualization for time-series data using [React Three Fiber](https://github.com/pmndrs/react-three-fiber). You can find the live version at [The Wandering Inndex](https://titan.inndex.omg.lol/) and the full source code on the [wandering-inndex/titan](https://github.com/wandering-inndex/titan) repository.
+
+Let's review the steps we took:
 
 1. [Project Setup](#step-1-project-setup): We initialized a new React project using [Create T3 App](https://create.t3.gg/) and installed the required dependencies.
 2. [Preparing our Data](#step-2-preparing-our-data): We retrieved the raw dataset and transformed it into a suitable format for analysis.
