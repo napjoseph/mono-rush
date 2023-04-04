@@ -27,6 +27,11 @@ cd personal/napjoseph
 # run development server
 rushx dev
 
+# generate sitemap. be sure to set env variables
+# ROOT_URL="https://napjose.ph"
+# TARGET_FOLDER="./out"
+rushx sitemap
+
 # see other commands in package.json
 rushx --help
 

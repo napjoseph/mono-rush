@@ -40,7 +40,7 @@ jobs:
         run: node common/scripts/install-run-rush.js sitemap --verbose --to napjoseph
         env:
           ROOT_URL: 'https://napjose.ph/'
-          TARGET_FOLDER: './personal/napjoseph/out'
+          TARGET_FOLDER: './out'
       - name: deploy to external repository
         uses: peaceiris/actions-gh-pages@v3
         with:
