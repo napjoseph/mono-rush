@@ -211,6 +211,10 @@
       "allowedCategories": [ "production", "prototypes" ]
     },
     {
+      "name": "ts-node",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "typescript",
       "allowedCategories": [ "production", "prototypes" ]
     },

@@ -7,9 +7,18 @@ const StaticHead: React.FC = (_props) => {
   return (
     <>
       <Head>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&display=optional"
+          rel="stylesheet"
+        />
       </Head>
     </>
   );

@@ -5,7 +5,8 @@ import TagCardList from '../../components/tags/tag-card-list.component';
 import { ArticleTag } from '../../models';
 import { getArticleTags } from '../../lib/api/tags';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
-import { createHeadData, generateSiteTitle, generateSiteUrl } from '../../lib/utils/head-data';
+import { createHeadData, generateSiteTitle } from '../../lib/utils/head-data';
+import { generateSiteUrl } from '../../lib/utils/site-url';
 import OpenGraph from '../../components/document/open-graph.component';
 import DynamicHead from '../../components/document/dynamic-head.component';
 

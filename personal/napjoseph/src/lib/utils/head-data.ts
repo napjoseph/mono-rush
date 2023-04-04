@@ -1,12 +1,6 @@
 import { SITE_CONFIG } from '../../config';
 import { HeadData } from '../../models';
 
-export const generateSiteUrl = (): string => {
-  const { rootUrl } = SITE_CONFIG;
-  if (!rootUrl || rootUrl === '') return 'https://napjose.ph/';
-  return rootUrl.endsWith('/') ? rootUrl : `${rootUrl}/`;
-}
-
 export const generateSiteTitle = (pageTitle?: string): string => {
   if (!pageTitle || pageTitle === '') return SITE_CONFIG.title || '';
   const suffix = SITE_CONFIG.title ? ` | ${SITE_CONFIG.title}` : '';

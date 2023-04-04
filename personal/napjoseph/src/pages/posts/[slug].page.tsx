@@ -10,9 +10,9 @@ import ArticleComments from '../../components/articles/article-comments.componen
 import {
   createHeadData,
   generateSiteDescription,
-  generateSiteTitle,
-  generateSiteUrl
+  generateSiteTitle
 } from '../../lib/utils/head-data';
+import { generateSiteUrl } from '../../lib/utils/site-url';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 import DynamicHead from '../../components/document/dynamic-head.component';
 import OpenGraph from '../../components/document/open-graph.component';

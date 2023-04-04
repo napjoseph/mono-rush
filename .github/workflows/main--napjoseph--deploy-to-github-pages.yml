@@ -36,6 +36,11 @@ jobs:
           BROWSERSLIST_IGNORE_OLD_DATA: '1'
       - name: add cname
         run: echo "napjose.ph" > ./personal/napjoseph/out/CNAME
+      - name: generate sitemap
+        run: node common/scripts/install-run-rush.js sitemap --verbose --to napjoseph
+        env:
+          ROOT_URL: 'https://napjose.ph/'
+          TARGET_FOLDER: './personal/napjoseph/out'
       - name: deploy to external repository
         uses: peaceiris/actions-gh-pages@v3
         with:

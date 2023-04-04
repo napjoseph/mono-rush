@@ -2,7 +2,8 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 
 import { Article } from '../../models';
-import { createHeadData, generateSiteTitle, generateSiteUrl } from '../../lib/utils/head-data';
+import { createHeadData, generateSiteTitle } from '../../lib/utils/head-data';
+import { generateSiteUrl } from '../../lib/utils/site-url';
 import DynamicHead from '../../components/document/dynamic-head.component';
 import OpenGraph from '../../components/document/open-graph.component';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
