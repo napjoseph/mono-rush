@@ -6,6 +6,7 @@ import { SiteNavigationLinkItem } from './site-navigation-links';
 import { SocialLinkItem } from './social-links';
 
 export interface SiteConfig {
+  rootUrl: string;
   title: string;
   description?: string;
   metadata?: {

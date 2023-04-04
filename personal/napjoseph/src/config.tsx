@@ -3,6 +3,7 @@ import { FaGithub, FaKeybase, FaLinkedin } from 'react-icons/fa';
 import { SiteConfig } from './models';
 
 export const SITE_CONFIG: SiteConfig = {
+  rootUrl: 'https://napjose.ph/',
   title: 'Nap Joseph Calub',
   description: 'Software Engineer and Open Source Enthusiast',
   metadata: {
