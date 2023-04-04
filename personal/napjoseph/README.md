@@ -31,6 +31,7 @@ rushx dev
 rushx --help
 
 # adding new dependencies
+rush add --package <package-name>
 rush add --dev --package <package-name>
 ```
 
