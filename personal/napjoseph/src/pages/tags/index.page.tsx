@@ -5,11 +5,7 @@ import TagCardList from '../../components/tags/tag-card-list.component';
 import { ArticleTag } from '../../models';
 import { getArticleTags } from '../../lib/api/tags';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
-import {
-  createHeadData,
-  generateSiteDescription,
-  generateSiteTitle
-} from '../../lib/utils/head-data';
+import { createHeadData, generateSiteTitle, generateSiteUrl } from '../../lib/utils/head-data';
 import OpenGraph from '../../components/document/open-graph.component';
 import DynamicHead from '../../components/document/dynamic-head.component';
 
@@ -20,7 +16,8 @@ interface TagsPageProps {
 const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
   const pageTitle = 'Tags';
   const siteTitle = generateSiteTitle(pageTitle);
-  const siteDescription = generateSiteDescription();
+  const siteDescription = 'A list of tags for all of my blog posts';
+  const siteUrl = generateSiteUrl();
 
   const headData = createHeadData({
     title: siteTitle,
@@ -29,7 +26,8 @@ const TagsPage: React.FC<TagsPageProps> = ({ tags }) => {
 
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
-    ogDescription: siteDescription
+    ogDescription: siteDescription,
+    ogUrl: `${siteUrl}tags/`
   });
 
   return (

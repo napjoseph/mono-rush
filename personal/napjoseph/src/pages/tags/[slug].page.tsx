@@ -6,7 +6,8 @@ import { getArticleTags, getArticleTagBySlug } from '../../lib/api/tags';
 import {
   createHeadData,
   generateSiteDescription,
-  generateSiteTitle
+  generateSiteTitle,
+  generateSiteUrl
 } from '../../lib/utils/head-data';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 import DynamicHead from '../../components/document/dynamic-head.component';
@@ -25,6 +26,7 @@ const TagPage: React.FC<TagPageProps> = ({ tag, articles }) => {
   const pageTitle = `Posts with the "${tag.name}" tag`;
   const siteTitle = generateSiteTitle(pageTitle);
   const siteDescription = generateSiteDescription();
+  const siteUrl = generateSiteUrl();
 
   const headData = createHeadData({
     title: siteTitle,
@@ -33,7 +35,8 @@ const TagPage: React.FC<TagPageProps> = ({ tag, articles }) => {
 
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
-    ogDescription: siteDescription
+    ogDescription: siteDescription,
+    ogUrl: `${siteUrl}tags/${tag.slug}`
   });
 
   return (

@@ -2,11 +2,7 @@ import React from 'react';
 import { GetStaticProps } from 'next';
 
 import { Article } from '../../models';
-import {
-  createHeadData,
-  generateSiteDescription,
-  generateSiteTitle
-} from '../../lib/utils/head-data';
+import { createHeadData, generateSiteTitle, generateSiteUrl } from '../../lib/utils/head-data';
 import DynamicHead from '../../components/document/dynamic-head.component';
 import OpenGraph from '../../components/document/open-graph.component';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
@@ -20,7 +16,8 @@ interface PostsPageProps {
 const PostsPage: React.FC<PostsPageProps> = ({ articles }) => {
   const pageTitle = 'Posts';
   const siteTitle = generateSiteTitle(pageTitle);
-  const siteDescription = generateSiteDescription();
+  const siteDescription = "A list of all the posts I've written.";
+  const siteUrl = generateSiteUrl();
 
   const headData = createHeadData({
     title: siteTitle,
@@ -29,7 +26,8 @@ const PostsPage: React.FC<PostsPageProps> = ({ articles }) => {
 
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
-    ogDescription: siteDescription
+    ogDescription: siteDescription,
+    ogUrl: `${siteUrl}posts/`
   });
 
   return (

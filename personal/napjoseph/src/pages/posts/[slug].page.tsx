@@ -10,7 +10,8 @@ import ArticleComments from '../../components/articles/article-comments.componen
 import {
   createHeadData,
   generateSiteDescription,
-  generateSiteTitle
+  generateSiteTitle,
+  generateSiteUrl
 } from '../../lib/utils/head-data';
 import { createOpenGraphData } from '../../lib/utils/open-graph-data';
 import DynamicHead from '../../components/document/dynamic-head.component';
@@ -26,6 +27,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
   const pageTitle = article.title;
   const siteTitle = generateSiteTitle(pageTitle);
   const siteDescription = generateSiteDescription(article.excerpt);
+  const siteUrl = generateSiteUrl();
 
   const headData = createHeadData({
     title: siteTitle,
@@ -35,7 +37,8 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ article }) => {
   const ogData = createOpenGraphData({
     ogTitle: siteTitle,
     ogDescription: siteDescription,
-    ogType: 'article'
+    ogType: 'article',
+    ogUrl: `${siteUrl}posts/${article.slug}`
   });
 
   return (
