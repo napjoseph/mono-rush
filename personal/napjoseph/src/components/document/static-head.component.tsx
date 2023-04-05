@@ -7,16 +7,10 @@ const StaticHead: React.FC = (_props) => {
   return (
     <>
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto&display=optional"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Code&display=optional"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inte&family=Roboto&display=swap"
           rel="stylesheet"
         />
       </Head>
