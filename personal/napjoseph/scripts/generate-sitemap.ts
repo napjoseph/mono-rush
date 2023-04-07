@@ -1,18 +1,15 @@
 import * as fs from 'fs-extra';
 
-import { Article, ArticleTag } from '../src/models';
+import { Article } from '../src/models';
 import { getArticles } from '../src/lib/api/articles';
-import { getArticleTags } from '../src/lib/api/tags';
 import { generateSiteUrl } from '../src/lib/utils/site-url';
 
 const generateSiteMapBody = ({
   rootUrl,
-  articles,
-  tags
+  articles
 }: {
   rootUrl: string;
   articles: Article[];
-  tags: ArticleTag[];
 }): string => {
   const today = new Date().toISOString();
   const url = generateSiteUrl(rootUrl);
@@ -31,18 +28,6 @@ const generateSiteMapBody = ({
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>${url}posts/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>${url}tags/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
   ${articles
     .map(({ slug, frontMatter: { publishedDate } }) => {
       return `
@@ -51,17 +36,6 @@ const generateSiteMapBody = ({
     <lastmod>${publishedDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>`;
-    })
-    .join('')}
-  ${tags
-    .map(({ slug }) => {
-      return `
-  <url>
-    <loc>${url}tags/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>`;
     })
     .join('')}
@@ -74,9 +48,8 @@ export const generateSiteMap = async (rootUrl: string, targetFolder: string): Pr
   }
 
   const articles = await getArticles('posts');
-  const tags = await getArticleTags('posts');
 
-  const body = generateSiteMapBody({ rootUrl, articles, tags });
+  const body = generateSiteMapBody({ rootUrl, articles });
   const path = `${targetFolder}/sitemap.xml`;
 
   await fs.writeFile(path, body);
