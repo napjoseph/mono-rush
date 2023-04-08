@@ -515,17 +515,20 @@ sections:
               start: '2022-11'
               end: '2022-12'
             tags:
-              - 'Deno'
-              - 'TypeScript'
-              - 'Fresh'
               - 'Charts.js'
-              - 'twind'
-              - 'preact'
-              - 'SurrealDB'
-              - 'SVG'
+              - 'Deno'
+              - 'Fresh'
               - 'Neo4j'
+              - 'Next.js'
+              - 'preact'
+              - 'React Three Fiber'
+              - 'SurrealDB'
+              - 'twind'
+              - 'TypeScript'
+              - 'vitest'
             roles:
-              - 'Used graph databases to create a fan-made index of Named Entities for one of the longest pieces of fiction written in English.'
+              - 'Architected and developed a comprehensive fan-made index of Named Entities for one of the longest pieces of fiction written in English, utilizing advanced graph databases like Neo4j and SurrealDB.'
+              - "Created an interactive 3D visualization of the author's word counts per year using React Three Fiber."
           - title: 'Lebenslauf'
             linkTo: 'https://lebenslauf.napjose.ph'
             meta:
@@ -561,12 +564,13 @@ sections:
               - 'Sinon JS'
               - 'TypeScript'
             roles:
-              - 'Implemented additional features while ensuring at least 90% unit test code coverage and having fully automated tests for the acceptance criterias.'
+              - 'Implemented the subjects, tags, and grades management features using TypeScript and ensured high-quality code by maintaining at least 90% unit test coverage and incorporating fully automated acceptance tests using Sinon JS and Selenium.'
+              - 'Collaborated with cross-functional teams across multiple countries to ensure optimal user experience and adherence to accessibility guidelines.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Oracle'
           - title: 'Professional CV'
-            linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/calub'
+            linkTo: 'https://napjose.ph/calub'
             meta:
               show: true
             dates:
@@ -588,7 +592,7 @@ sections:
             roles:
               - 'Created a tool that can generate shareable and interactive online portfolios using Next.js and Tailwind CSS.'
           - title: 'Personal Website'
-            linkTo: 'https://github.com/napjoseph/mono-rush/tree/main/personal/napjoseph'
+            linkTo: 'https://napjose.ph'
             meta:
               show: true
             dates:
@@ -747,9 +751,8 @@ sections:
               - 'Sass'
               - 'TypeScript'
             roles:
-              - 'Maintained and refactored the legacy codebase to the latest Angular version and increased unit test coverage.'
-              - 'Added support for new data sources for the Service Provider data.'
-              - 'Added calculation and visualization for each ISP and their promised vs actual SLA.'
+              - "Modernized a legacy Angular codebase and integrated new data sources for Internet Service Providers, enhancing the dashboard's capabilities and versatility."
+              - 'Implemented advanced SLA calculations and visualizations using Google Charts, enabling comparisons between promised and actual performance metrics for each ISP.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
@@ -838,11 +841,8 @@ sections:
               - 'Sass'
               - 'TypeScript'
             roles:
-              - "Maintained a legacy dashboard for visualizing and managing the lifecycle data of devices in our client's enterprise network."
-              - 'Refactored the code to use the latest Angular version and added unit tests to both the Go backend and TypeScript frontend.'
-              - 'Migrated the old task runners using Python to use Go App Engine Cron and Cloud Tasks.'
-              - 'Added support for different realms other than the corporate and production network.'
-              - 'Added support for adding remediation dates, NPI dates, and part number data for each asset model.'
+              - 'Refactored and maintained a legacy Angular dashboard for visualizing and managing the lifecycle data of devices in an enterprise network, utilizing gRPC for efficient data ingestion and communication between frontend and backend components.'
+              - 'Expanded dashboard functionality by supporting multiple realms and incorporating essential data points, including remediation dates, NPI dates, and part numbers for each asset model.'
             relatedTo:
               - type: 'work-experience'
                 key: 'Concentrix'
@@ -1196,6 +1196,9 @@ sections:
             - key: 'linkedin.com'
               displayName: 'LinkedIn Learning'
               url: 'https://linkedin.com/learning'
+            - key: 'apollographql.com'
+              displayName: 'Apollo GraphQL'
+              url: 'https://www.apollographql.com/'
           offeredByMapping:
             - key: 'meta'
               displayName: 'Meta'
@@ -1222,6 +1225,20 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'Apollo Graph Developer - Professional'
+            credentialType: 'professional_certificate'
+            credentialId: 'dc5913a6-439a-4dd8-ae7f-5eeb9cd70064'
+            credentialUrl: 'https://www.apollographql.com/tutorials/certifications/apollo-graph-professional'
+            issuingOrganization: 'apollographql.com'
+            verificationUrl: 'https://www.apollographql.com/tutorials/certifications/dc5913a6-439a-4dd8-ae7f-5eeb9cd70064'
+            issuedDate: '2023-04-08'
+          - title: 'Apollo Graph Developer - Associate'
+            credentialType: 'professional_certificate'
+            credentialId: '963f5425-eb91-49b8-b687-456de07d36b1'
+            credentialUrl: 'https://www.apollographql.com/tutorials/certifications/apollo-graph-associate'
+            issuingOrganization: 'apollographql.com'
+            verificationUrl: 'https://www.apollographql.com/tutorials/certifications/963f5425-eb91-49b8-b687-456de07d36b1'
+            issuedDate: '2023-04-05'
           - title: 'Introduction to Containers w/ Docker, Kubernetes & OpenShift'
             offeredBy: 'ibm'
             credentialType: 'course'
