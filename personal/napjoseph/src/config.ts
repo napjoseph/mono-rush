@@ -30,7 +30,7 @@ export const SITE_CONFIG: SiteConfig = {
       },
       {
         name: 'View Curriculum Vitae',
-        href: 'https://napjose.ph/calub',
+        href: 'https://napjose.ph/calub/',
         external: true
       }
     ]
