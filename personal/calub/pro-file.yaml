@@ -140,7 +140,7 @@ sections:
               path: '/company-logos/belltel.jpg'
               title: 'Bell Telecommunication Phils, Inc. Logo'
             roles:
-              - title: 'Database Administrator'
+              - title: 'Solutions Architect'
                 canadaClassification: '2 - 21 - 217 - 2172 - Database analysts and data administrators'
                 startDate: '2017-01'
                 endDate: '2017-08'
