@@ -1,0 +1,83 @@
+---
+title: '0xffffffffffffffffn: uint64 hack to decrement by one using addition'
+publishedDate: '2023-10-12T10:15:02Z'
+tags:
+  - 'Deno'
+  - 'Deno KV'
+  - 'TypeScript'
+  - 'JavaScript'
+  - 'Binary Arithmetic'
+---
+
+## Introduction
+
+In the world of software development, there are often clever tricks and hacks that developers use to solve specific problems. One such trick involves using `uint64` (unsigned 64-bit integer) arithmetic to subtract 1 from a number without actually using subtraction. This might sound confusing at first, but with a simple analogy and some examples, it becomes clear!
+
+## The Toy Cash Register Analogy
+
+Imagine a child's toy cash register that can only count up to `9`. When it reaches `9`, and you try adding `1` more, it wraps around and returns to `0`. Now, if this toy didn't have a subtraction button, how could you subtract `1` from any number? The trick is to add `9`! When you add `9`, you essentially go full circle and land `1` number behind where you started.
+
+## The Technical Explanation
+
+In binary arithmetic, numbers are represented using bits. A `uint64` number uses 64 bits. When you add two numbers and the result is too big to fit in 64 bits, it wraps around, similar to our toy cash register.
+
+The magic number `0xffffffffffffffffn` (which represents all `1`s in binary for a 64-bit number) acts like the number `9` in our analogy. When you add this number to any `uint64`, it's equivalent to subtracting `1`.
+
+| Bit Position:        | 63-56    | 55-48    | 47-40    | 39-32    | 31-24    | 23-16    | 15-8     | 7-0      |
+| -------------------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Previous Number: 3   | 00000000 | 00000000 | 00000000 | 00000000 | 00000000 | 00000000 | 00000000 | 00000011 |
+| Magic Number to add: | 11111111 | 11111111 | 11111111 | 11111111 | 11111111 | 11111111 | 11111111 | 11111111 |
+| Result: 2            | 00000000 | 00000000 | 00000000 | 00000000 | 00000000 | 00000000 | 00000000 | 00000010 |
+
+### Example Code
+
+```javascript
+// Convention for BigInts is to add an "n" at the end.
+const previousNumber = 3n;
+
+// Hexadecimal representation of 64-bit magic number.
+const magicNumber = 0xffffffffffffffffn;
+
+// Convert to 64-bit unsigned integer.
+const result = BigInt.asUintN(64, previousNumber + magicNumber);
+
+console.log(result); // This will be 2n.
+```
+
+## Why is this Useful?
+
+In the realm of programming, there are instances where certain operations, like subtraction, might be restricted due to system constraints. This "magic number" trick offers a clever workaround for such situations.
+
+Take, for example, [Deno KV](https://deno.com/kv). This key-value storage system in Deno provides an atomic [sum](https://docs.deno.com/kv/manual/operations#sum) operation, allowing you to add two [`Deno.KvU64`](https://deno.land/api@v1.37.0?s=Deno.KvU64&unstable=) values. This is particularly handy for incrementing numeric counters in an [ACID-compliant way](https://en.wikipedia.org/wiki/ACID). However, there's a catch: you can't directly decrement a value using this method since `Deno.KvU64` requires a positive number in the construction.
+
+Here's how you'd typically increment a counter:
+
+```typescript
+await kv
+  .atomic()
+  .mutate({
+    type: 'sum',
+    key: ['users_count'],
+    value: new Deno.KvU64(1n)
+  })
+  .commit();
+```
+
+But what if you wanted to decrease this counter? Enter our magic number trick. By using the magic number `0xffffffffffffffffn`, you can effectively subtract from the counter:
+
+```typescript
+await kv
+  .atomic()
+  .mutate({
+    type: 'sum',
+    key: ['users_count'],
+    value: new Deno.KvU64(0xffffffffffffffffn)
+  })
+  .commit();
+```
+
+In essence, this approach leverages the properties of binary arithmetic to bypass system constraints. Pretty cool, right?
+
+## Conclusion
+
+Understanding the underlying principles of binary arithmetic can open the door to many clever tricks in programming. The `uint64` subtraction trick is just one example. Hopefully, you can find efficient solutions to complex problems by understanding and applying these concepts to your following projects.
