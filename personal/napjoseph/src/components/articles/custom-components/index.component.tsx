@@ -39,7 +39,7 @@ const CustomComponents: Record<string, React.ReactNode> = {
   ),
   table: (props) => (
     <TableContainer>
-      <Table variant="striped" {...props} />
+      <Table colorScheme="blue" variant="striped" {...props} />
     </TableContainer>
   ),
   tr: (props) => <Tr {...props} />,
