@@ -1,0 +1,61 @@
+---
+title: 'iTerm2 key bindings'
+publishedDate: '2024-01-22T10:15:23+08:00'
+tags:
+  - 'iTerm2'
+  - 'OSX'
+  - 'ASCII'
+  - 'ANSI'
+---
+
+I recently got a new Mac mini M1 and I wanted to share my [iTerm2](https://iterm2.com/) key bindings:
+
+| Description                       | Keyboard shortcut | Action        | Value       |
+| --------------------------------- | ----------------- | ------------- | ----------- |
+| Move to the beginning of the line | ⌘ + ←             | Send Hex Code | `0x01`      |
+| Move to the end of the line       | ⌘ + →             | Send Hex Code | `0x05`      |
+| Deleting a line                   | ⌘ + ←Delete       | Send Hex Code | `0x15`      |
+| Move forward a word               | ⌥ + →             | Send Hex Code | `0x1B 0x66` |
+| Move backward a word              | ⌥ + ←             | Send Hex Code | `0x1B 0x62` |
+| Deleting a word                   | ⌥ + ←Delete       | Send Hex Code | `0x17`      |
+
+In order to set these key bindings, you need to go to **iTerm2** > **Preferences** > **Keys** > **Key Bindings** > **+** and then add the key bindings above.
+
+## Nerd Deep Dive
+
+Terminal emulators like iTerm2 simulate the behavior of physical terminals (like the [DEC VT100](https://en.wikipedia.org/wiki/VT100)) from the early days of computing. These physical terminals were hardware devices used to interact with a computer, allowing users to input commands and view the output. The communication between the terminal and the computer was standardized through specific codes and sequences, facilitating text manipulation and cursor movement, among other functions.
+
+### ASCII Control Characters
+
+[ASCII](https://en.wikipedia.org/wiki/ASCII), or _American Standard Code for Information Interchange_, is a character encoding standard for electronic communication. It includes a set of [control characters](https://en.wikipedia.org/wiki/Control_character) that are intended not to represent printable information but to control devices that use ASCII, such as terminals.
+
+| Hex Code | Name                                                                     | Meaning                   | Usage Above           |
+| -------- | ------------------------------------------------------------------------ | ------------------------- | --------------------- |
+| `0x01`   | [SOH](https://en.wikipedia.org/wiki/C0_and_C1_control_codes#SOH)         | Start of Heading          | move to start of line |
+| `0x05`   | [ENQ](https://en.wikipedia.org/wiki/Enquiry_character)                   | Enquiry                   | move to end of line   |
+| `0x15`   | [NAK](<https://en.wikipedia.org/wiki/Acknowledgement_(data_networks)>)   | Negative Acknowledgement  | delete line           |
+| `0x17`   | [ETB](https://en.wikipedia.org/wiki/End-of-Transmission-Block_character) | End of Transmission Block | delete word           |
+
+### ANSI Escape Sequences
+
+[Escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code) are strings of characters that start with the `ESC` character followed by a series of characters that instruct the terminal to perform a specific action, like moving the cursor or changing text colors.
+
+For terminals that adhere to the [xterm](https://en.wikipedia.org/wiki/Xterm) protocol or similar, moving forward or backward by a word is often achieved through specific escape sequences rather than hex codes.
+
+| Sequence    | Description          |
+| ----------- | -------------------- |
+| `ESC` + `f` | move forward a word  |
+| `ESC` + `b` | move backward a word |
+
+On iTerm2, you can actually use the "Send Escape Sequence" for such:
+
+| Description          | Keyboard shortcut | Action               | Value |
+| -------------------- | ----------------- | -------------------- | ----- |
+| Move forward a word  | ⌥ + →             | Send Escape Sequence | `f`   |
+| Move backward a word | ⌥ + ←             | Send Escape Sequence | `b`   |
+
+So what is the deal with `0x1B 0x66` and `0x1B 0x62` above?
+
+The `0x1B` is the hex code for the `ESC` character, and `0x66` and `0x62` are the hex values for `f` ([ASCII Character 102](https://www.ascii-code.com/102)) and `b` ([ASCII Character 98](https://www.ascii-code.com/98)), respectively.
+
+This is just another way to represent the same escape sequences.
