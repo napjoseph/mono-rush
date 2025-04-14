@@ -1,5 +1,5 @@
 [build.environment]
-  NODE_VERSION = "14.17.2"
+  NODE_VERSION = "15.14.0"
 
 [build]
   command = '''
