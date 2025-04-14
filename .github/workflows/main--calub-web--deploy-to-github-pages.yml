@@ -36,9 +36,9 @@ jobs:
           NEXT_IMAGES_PATH: '<empty>'
           BROWSERSLIST_IGNORE_OLD_DATA: '1'
       - name: deploy to external repository
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.CV_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.PAGE_DEPLOY_KEY }}
           external_repository: napjoseph/calub
           publish_dir: ./personal/calub/out
           publish_branch: export--mono-rush
