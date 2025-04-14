@@ -44,7 +44,7 @@ jobs:
       - name: deploy to external repository
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.PAGE_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.BLOG_DEPLOY_KEY }}
           external_repository: napjoseph/napjoseph.github.io
           publish_dir: ./personal/napjoseph/out
           publish_branch: export--mono-rush
