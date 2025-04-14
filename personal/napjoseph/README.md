@@ -6,6 +6,8 @@ The website of Nap Joseph Calub.
 
 A project using [NextJS](http://nextjs.org/).
 
+Updated.
+
 ## Local Development
 
 ```
