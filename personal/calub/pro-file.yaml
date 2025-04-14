@@ -93,6 +93,18 @@ sections:
       type: 'work-experience'
       value:
         items:
+          - title: 'Penbrothers'
+            url: 'https://penbrothers.com/'
+            address: '6F OPL Building, 100 C Palanca St, Legaspi Village, Metro Manila, Makati City, Philippines 1225'
+            image:
+              source: 'static'
+              path: '/company-logos/penbrothers.png'
+              title: 'Penbrothers Logo'
+            roles:
+              - title: 'Senior Software Engineer'
+                canadaClassification: '2 - 21 - 217 - 2175 - Web designers and developers'
+                startDate: '2023-11'
+                description: 'I am part of the Pipeline-as-a-Service (PASS) team, responsible for designing, implementing, and maintaining the end-to-end build and release pipelines for all applications within our organization. Our mission is to provide a standardized, scalable, and efficient route-to-production, ensuring smooth and secure deployments across multiple platforms. In this role, I focus on optimizing the continuous integration and deployment experience for all product teams, ensuring releases are timely, reliable, and compliant. By leveraging automation and best-in-class tooling, our team delivers a resilient, self-service pipeline infrastructure that accelerates feature delivery across the organization.'
           - title: 'Oracle'
             url: 'https://www.oracle.com/'
             address: '33/F Zuellig Building, Makati Avenue Corner Paseo de Roxas, Metro Manila, Makati City, Philippines 1225'
@@ -203,22 +215,22 @@ sections:
             items:
               - title: 'Go'
                 rating: 9
-                totalMonths: 36
+                totalMonths: 48
                 meta:
                   show: true
               - title: 'Python'
                 rating: 5
-                totalMonths: 48
+                totalMonths: 60
                 meta:
                   show: true
               - title: 'TypeScript'
                 rating: 10
-                totalMonths: 72
+                totalMonths: 86
                 meta:
                   show: true
               - title: 'JavaScript'
                 rating: 7
-                totalMonths: 96
+                totalMonths: 108
                 meta:
                   show: true
               - title: 'Google Apps Script'
@@ -317,22 +329,22 @@ sections:
                   show: true
               - title: 'Deno'
                 rating: 8
-                totalMonths: 12
+                totalMonths: 24
                 meta:
                   show: true
               - title: 'Fresh'
                 rating: 6
-                totalMonths: 12
+                totalMonths: 24
                 meta:
                   show: true
               - title: 'Docker'
                 rating: 8
-                totalMonths: 24
+                totalMonths: 36
                 meta:
                   show: true
               - title: 'Kubernetes'
                 rating: 6
-                totalMonths: 12
+                totalMonths: 24
                 meta:
                   show: true
               - title: 'GraphQL'
@@ -346,7 +358,7 @@ sections:
             items:
               - title: 'Git'
                 rating: 10
-                totalMonths: 120
+                totalMonths: 132
                 meta:
                   show: true
               - title: 'Mercurial'
@@ -392,6 +404,11 @@ sections:
             meta:
               show: true
             items:
+              - title: 'GitLab CI'
+                rating: 7
+                totalMonths: 12
+                meta:
+                  show: true
               - title: 'Jenkins'
                 rating: 7
                 totalMonths: 12
@@ -467,7 +484,7 @@ sections:
                   show: true
               - title: 'Amazon Web Services'
                 rating: 5
-                totalMonths: 6
+                totalMonths: 12
                 meta:
                   show: true
           - title: 'Applications'
@@ -517,6 +534,42 @@ sections:
       type: 'projects'
       value:
         items:
+          - title: 'Deployment Orchestrator'
+            meta:
+              show: true
+            dates:
+              start: '2023-11'
+            tags:
+              - 'Python'
+              - 'Pydantic'
+              - 'JIRA API'
+              - 'GitLab API'
+              - 'GitLab CI/CD'
+              - 'Jinja2'
+              - 'Kubernetes'
+              - 'OpenShift'
+              - 'Skaffold'
+              - 'FastAPI'
+            roles:
+              - 'I maintained an application that orchestrates the deployment of the production stages of all the apps, seeing to it that only one app can deploy to production at any given time. Since there are many platforms and that apps can deploy to different platforms. If there is a problem in one platform, it is reverted and rolled back to a working version.'
+          - title: 'GitLab Webhook Receiver'
+            meta:
+              show: true
+            dates:
+              start: '2023-11'
+            tags:
+              - 'Python'
+              - 'Pydantic'
+              - 'JIRA API'
+              - 'GitLab API'
+              - 'GitLab CI/CD'
+              - 'MySQL'
+              - 'Kubernetes'
+              - 'OpenShift'
+              - 'Skaffold'
+              - 'Flask'
+            roles:
+              - 'I maintained a tool that handles the creation and updating of JIRA tickets based on the gitlab CI pipeline job statuses. This creates the respective tickets for each platform an app is released into. It sees that the pipeline results are audited and is reflected on the ticketes for auditors to look into.'
           - title: 'The Wandering Inndex'
             linkTo: 'https://inndex.omg.lol'
             meta:
@@ -1197,6 +1250,9 @@ sections:
             - key: 'skills_track'
               displayName: 'Skills Track'
           issuingOrganizationMapping:
+            - key: 'kodekloud.com'
+              displayName: 'KodeKloud'
+              url: 'https://kodekloud.org'
             - key: 'coursera.org'
               displayName: 'Coursera'
               url: 'https://coursera.org'
@@ -1244,6 +1300,37 @@ sections:
               displayName: '(ISC)²'
               url: 'https://www.coursera.org/isc2'
         items:
+          - title: 'Docker Training Course for the Absolute Beginner'
+            credentialType: 'course'
+            credentialId: '2D16A9653F9D-2D16A360B8FB-2D16A3322F4F'
+            credentialUrl: 'https://kodekloud.com/courses/docker-training-course-for-the-absolute-beginner'
+            issuingOrganization: 'kodekloud.com'
+            verificationUrl: 'https://learn.kodekloud.com/user/certificate/2D16A9653F9D-2D16A360B8FB-2D16A3322F4F'
+            issuedDate: '2024-05-05'
+            gradeAchieved: '100.00%'
+          - title: 'Helm for Beginners'
+            credentialType: 'course'
+            credentialId: '2D16A9653F9D-2DEF377EB781-2D16A3322F4F'
+            credentialUrl: 'https://kodekloud.com/courses/helm-for-beginners'
+            issuingOrganization: 'kodekloud.com'
+            verificationUrl: 'https://learn.kodekloud.com/user/certificate/2D16A9653F9D-2DEF377EB781-2D16A3322F4F'
+            issuedDate: '2024-04-15'
+            gradeAchieved: '100.00%'
+          - title: 'Kustomize'
+            credentialType: 'course'
+            credentialId: '2D16A9653F9D-2DFD1E031808-2D16A3322F4F'
+            credentialUrl: 'https://kodekloud.com/courses/kustomize'
+            issuingOrganization: 'kodekloud.com'
+            verificationUrl: 'https://learn.kodekloud.com/user/certificate/2D16A9653F9D-2DFD1E031808-2D16A3322F4F'
+            issuedDate: '2023-11-22'
+            gradeAchieved: '100.00%'
+          - title: 'Kubernetes for the Absolute Beginners - Hands-on Tutorial'
+            credentialType: 'course'
+            credentialId: '2D16A9653F9D-2D16A360DE80-2D16A3322F4F'
+            credentialUrl: 'https://kodekloud.com/courses/kubernetes-for-the-absolute-beginners-hands-on-tutorial'
+            issuingOrganization: 'kodekloud.com'
+            verificationUrl: 'https://learn.kodekloud.com/user/certificate/2D16A9653F9D-2D16A360DE80-2D16A3322F4F'
+            issuedDate: '2023-11-20'
           - title: 'DevOps on AWS: Code, Build, and Test'
             offeredBy: 'aws'
             credentialType: 'course'
@@ -2214,6 +2301,11 @@ sections:
       type: 'events'
       value:
         items:
+          - title: 'PyCon Philippines 2024'
+            role: 'Participant'
+            address: 'Makati Sports Club, Makati City, Philippines'
+            dates:
+              start: '2024-02'
           - title: 'UX+'
             role: 'Participant'
             address: 'SMX Convention Center Aura, SM Aura, BGC, Taguig City, Philippines'
@@ -2340,6 +2432,12 @@ sections:
       type: 'organizations'
       value:
         items:
+          - title: 'Favor Church'
+            url: 'https://favor.church/'
+            roles:
+              - title: 'Volunteer'
+                dates:
+                  start: '2024-09'
           - title: 'Davao Graphic Designers Community'
             url: 'https://www.facebook.com/DGDCommunity/'
             roles:
