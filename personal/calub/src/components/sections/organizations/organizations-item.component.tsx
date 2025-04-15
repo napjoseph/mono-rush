@@ -34,7 +34,7 @@ const OrganizationsItemComponent: React.FC<OrganizationsItemComponentProps> = ({
                     <span>{datesPrefix}</span>
                     <span>{formatDate(role.dates.start)}</span>
                     <span>{datesTo}</span>
-                    <span>{formatDate(role.dates.end)}</span>
+                    <span>{role.dates.end ? formatDate(role.dates.end) : <>present</>}</span>
                     <span>{datesSuffix}</span>
                   </span>
                 </li>
